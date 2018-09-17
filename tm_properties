@@ -1,0 +1,27 @@
+# Version 1.1 -- Generated Yakir
+disableTabAutoClose      = true
+fontName                 = SourceCodePro-Regular
+fontSize                 = 12
+fontAscentDelta          = 1
+# fontLeadingDelta         = 1
+lineHeight               = 0.6
+showIndentGuides         = flase
+showInvisibles           = true
+theme                    = E7E82498-F9EA-49A6-A0D8-12327EA46B01
+lineNumberFontName       = SourceCodePro-Regular
+lineNumberScaleFactor    = 0.8
+fileBrowserStyle         = SourceList
+tabItemMinWidth          = 200
+tabItemMaxWidth          = 250
+tabItemLineBreakStyle    = 4
+tabsAboveDocument        = true
+enableLoopFilterList     = true
+windowTitleSCM     	     = '${TM_SCM_BRANCH:+ ($TM_SCM_NAME: $TM_SCM_BRANCH)}'
+windowTitleProject 	     = '${projectDirectory:+ — ${projectDirectory/^.*\///}}'
+windowTitle        	     = '$TM_DISPLAYNAME$windowTitleProject$windowTitleSCM'
+
+[ *.gmk ]
+fileType         = source.makefile
+
+[ attr.untitled ]
+fileType         = source.json

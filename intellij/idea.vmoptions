@@ -1,0 +1,66 @@
+# custom IntelliJ IDEA VM options
+
+# 默认
+# -Xms128m
+# -Xmx750m
+# -XX:ReservedCodeCacheSize=240m
+# -XX:+UseCompressedOops
+# -Dfile.encoding=UTF-8
+# -XX:+UseConcMarkSweepGC
+# -XX:SoftRefLRUPolicyMSPerMB=50
+# -ea
+# -Dsun.io.useCanonCaches=false
+# -Djava.net.preferIPv4Stack=true
+# -XX:+HeapDumpOnOutOfMemoryError
+# -XX:-OmitStackTraceInFastThrow
+# -Xverify:none
+
+# -XX:ErrorFile=$USER_HOME/java_error_in_idea_%p.log
+# -XX:HeapDumpPath=$USER_HOME/java_error_in_idea.hprof
+
+-server
+-ea
+-Xdiag
+-XshowSettings:all
+-Xmx1152M
+-Xms1152M
+-XX:ReservedCodeCacheSize=384M
+-XX:MaxMetaspaceSize=512M
+-XX:MinMetaspaceFreeRatio=60
+-Xverify:none
+-XX:+UseG1GC
+# -XX:+DontCompileHugeMethods
+-XX:+UseNUMA
+-XX:ParallelGCThreads=8
+-XX:ConcGCThreads=4
+-XX:SurvivorRatio=8
+-XX:MaxGCPauseMillis=1000
+-XX:+UnlockExperimentalVMOptions
+-XX:InitiatingHeapOccupancyPercent=30
+-XX:G1NewSizePercent=6
+-XX:G1ReservePercent=15
+-XX:+UseCompressedOops
+-XX:SoftRefLRUPolicyMSPerMB=50
+
+-XX:+PrintGC
+-XX:+AlwaysPreTouch
+-XX:+UseNUMA
+-Xverify:none
+-XX:-OmitStackTraceInFastThrow
+-XX:+HeapDumpOnOutOfMemoryError
+
+-Xloggc:/Volumes/sd/logs/gc/idea.gc.%p.log
+-XX:+PrintGCDetails
+-XX:+PrintGCDateStamps
+
+-XX:ErrorFile=/Volumes/sd/logs/error/java_error_in_idea_%p.log
+-XX:HeapDumpPath=/Volumes/sd/logs/dump/java_error_in_idea.hprof
+-Xbootclasspath/a:../lib/boot.jar
+
+-Dfile.encoding=UTF-8
+-Dsun.io.useCanonCaches=false
+-Djava.net.preferIPv4Stack=true
+-Dos.detected.name=osx
+-Dos.detected.arch=x86_64
+-Dos.detected.classifier=osx-x86_64
+

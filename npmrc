@@ -1,0 +1,5 @@
+prefix=/Users/yakir/local/node
+cache=/Volumes/sd/repos/node_cache
+registry=https://registry.npm.taobao.org
+ELECTRON_MIRROR="https://npm.taobao.org/mirrors/electron/"
+ELECTRON_CACHE=${VOLUMES_SD}/repos/electron

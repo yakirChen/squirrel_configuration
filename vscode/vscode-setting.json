@@ -1,0 +1,99 @@
+{
+    "window.newWindowDimensions": "inherit",
+    "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}",
+    "breadcrumbs.enabled": true,
+    // 字体
+    "editor.fontFamily": "Source Code Pro",
+    "editor.renderWhitespace": "boundary",
+    // 控制行高。使用 0 通过字号计算行高。
+    "editor.lineHeight": 14,
+    // 显示控制字符
+    "editor.renderControlCharacters": true,
+    // 控制编辑器是否在滚动时使用动画
+    "editor.smoothScrolling": false,
+    // 字号
+    "editor.fontSize": 12,
+    "editor.cursorStyle": "line-thin",
+    "editor.wordWrapColumn": 100,
+    "editor.fontLigatures": true,
+    "editor.accessibilitySupport": "off",
+    "editor.trimAutoWhitespace": false,
+    "extensions.autoUpdate": false,
+    "editor.find.autoFindInSelection": true,
+    "editor.formatOnPaste": true,
+    // 编辑区缩览
+    "editor.minimap.enabled": false,
+    "editor.tabCompletion": true,
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": true,
+        "strings": true
+    },
+    "files.defaultLanguage": "jsonc",
+    "files.autoSaveDelay": 10000,
+    // 文件类型和语言模式映射
+    "files.associations": {
+        "*.properties": "properties",
+        "*.conf": "properties",
+        "*.options": "properties",
+        "*.json": "jsonc",
+        "*.toml": "toml"
+    },
+    "workbench.activityBar.visible": true,
+    "workbench.colorTheme": "Quiet Light",
+    "workbench.commandPalette.history": 9999999,
+    // 启动新建文档
+    "workbench.startupEditor": "newUntitledFile",
+    // 控制编辑器标签的格式。修改这项设置会让文件的路径更容易理解：
+    // - short: "parent"
+    // - medium: "workspace/src/parent"
+    // - long: "/home/user/workspace/src/parent"
+    // - default: 当与另一选项卡标题相同时为 ".../parent"。选项卡被禁用时则为相对工作区路径
+    "workbench.editor.labelFormat": "short",
+    "workbench.editor.showIcons": false,
+    // 控制编辑器的选项卡关闭按钮的位置，或当设置为 "off" 时禁用关闭它们。
+    "workbench.editor.tabCloseButton": "left",
+    "workbench.editor.enablePreview": false,
+    // 控制工作台中字体的渲染方式
+    // - default: 次像素平滑字体。将在大多数非 retina 显示器上显示最清晰的文字
+    // - antialiased: 进行像素而不是次像素级别的字体平滑。可能会导致字体整体显示得更细
+    // - none: 禁用字体平滑。将显示边缘粗糙、有锯齿的文字
+    // - auto: 根据显示器 DPI 自动应用 "default" 或 "antialiased" 选项。
+    "workbench.fontAliasing": "auto",
+    "workbench.panel.defaultLocation": "right",
+    // 控制 Quick Open 是否应在失去焦点时自动关闭。
+    "workbench.quickOpen.closeOnFocusLost": false,
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.statusBar.feedback.visible": false,
+    "explorer.confirmDelete": true,
+    "keyboard.touchbar.enabled": false,
+    // php
+    "php.suggest.basic": false,
+    "php.validate.enable": false,
+    // Java Perform settings
+    "java.debug.logLevel": "info",
+    "java.trace.server": "messages",
+    "java.referencesCodeLens.enabled": true,
+    "java.signatureHelp.enabled": true,
+    "java.implementationsCodeLens.enabled": true,
+    "java.errors.incompleteClasspath.severity": "ignore",
+    "java.configuration.maven.userSettings": "/Users/yakir/Developer/server/maven/conf/settings.xml",
+    "java.home": "/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home",
+    "extensions.ignoreRecommendations": false,
+    "update.channel": "default",
+    "update.enableWindowsBackgroundUpdates": false,
+    // feedback
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    // markdown折行关闭
+    "[markdown]": {
+        "editor.wordWrap": "off",
+        "editor.quickSuggestions": true
+    },
+    // 控制 Markdown 预览中使用的字号(以像素为单位)。
+    "markdown.preview.fontSize": 12,
+    // markdown预览行高
+    "markdown.preview.lineHeight": 1,
+    "markdown.preview.fontFamily": "-apple-system, BlinkMacSystemFont,'Source Code Pro', 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif",
+    "rust-client.channel": "nightly",
+}
