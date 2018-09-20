@@ -74,8 +74,8 @@ export FISH_HOME=${LOCAL}/fish
 export PKG_CONFIG=${LOCAL}/bin/pkg-config       # pkg-config
 export PKG_CONFIG_PATH=${PKG_CONFIG}
 export PKG_CONFIG_LIBDIR=${LOCAL}/lib/pkgconfig
-export CFLAGS="-I${LOCAL}/include -I${LOCAL}/include/openssl -I${LOCAL}/include/sodium"
-# -I${LOCAL}/include/lzma -I${LOCAL}/include/readline -I${LOCAL}/include/freetype2
+export CFLAGS="-I${LOCAL}/include -I${LOCAL}/include/openssl -I${LOCAL}/include/readline -I${LOCAL}/include/sodium"
+# -I${LOCAL}/include/lzma -I${LOCAL}/include/freetype2
 export CXXFLAGS=${CFLAGS}
 export CPPFLAGS=${CFLAGS}
 export LDFLAGS="-L${LOCAL}/lib"

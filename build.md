@@ -74,7 +74,7 @@ chmod 600 ~/.ssh/authorized_keys    # -rw-------
 # pkg-config
 ./configure --prefix=${LOCAL} --with-internal-glib && make -j4 && make install
 # zlib
-# ./configure --prefix=${LOCAL} && make -j4 && make install
+./configure --prefix=${LOCAL} && make -j4 && make install
 # xz
 # ./configure --prefix=${LOCAL} && make -j4 && make install
 # autoconf
@@ -135,7 +135,7 @@ mkdir build && cd build && \
 make -j4 && make install
 # python2
 mkdir build && cd build && \
-../configure --enable-shared --enable-optimizations --enable-unicode=ucs4  --prefix="${PY2_HOME}" && \
+../configure --enable-shared --enable-optimizations --enable-unicode=ucs4  --prefix=${PY2_HOME} && \
 make -j4 && make install && python2 --version
 # python2扩展包安装
 curl -O https://bootstrap.pypa.io/get-pip.py
