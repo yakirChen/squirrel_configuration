@@ -59,7 +59,7 @@ export RUST_SRC_PATH=${RUSTUP_HOME}/toolchains/${RUSTUP_TOOLCHAIN}-x86_64-apple-
 export DYLD_LIBRARY_PATH=$(${CARGO_HOME}/bin/rustc --print sysroot)/lib:$DYLD_LIBRARY_PATH
 # export RUST_SRC_PATH=
 export GCC_HOME=${LOCAL}/gcc
-export CLANG_HOME=${VOLUMES_SD_REPOS}/clang
+#export CLANG_HOME=${VOLUMES_SD_REPOS}/clang
 export IGV_HOME=${LOCAL}/igv
 
 # 开发辅助
@@ -74,7 +74,8 @@ export FISH_HOME=${LOCAL}/fish
 export PKG_CONFIG=${LOCAL}/bin/pkg-config       # pkg-config
 export PKG_CONFIG_PATH=${PKG_CONFIG}
 export PKG_CONFIG_LIBDIR=${LOCAL}/lib/pkgconfig
-export CFLAGS="-I${LOCAL}/include -I${LOCAL}/include/lzma -I${LOCAL}/include/openssl -I${LOCAL}/include/readline -I${LOCAL}/include/freetype2 -I${LOCAL}/include/sodium"
+export CFLAGS="-I${LOCAL}/include -I${LOCAL}/include/openssl -I${LOCAL}/include/sodium"
+# -I${LOCAL}/include/lzma -I${LOCAL}/include/readline -I${LOCAL}/include/freetype2
 export CXXFLAGS=${CFLAGS}
 export CPPFLAGS=${CFLAGS}
 export LDFLAGS="-L${LOCAL}/lib"
@@ -128,17 +129,17 @@ export NVIM_HOME=${LOCAL}/nvim
 export JFX_HOME=${VOLUMES_SD_APP}/openjfx
 export JAVA_8_HOME=$(/usr/libexec/java_home -v 1.8)
 export JAVA_11_HOME=$(/usr/libexec/java_home -v 11)
-export JAVA_12_HOME=$(/usr/libexec/java_home -v 12)
+#export JAVA_12_HOME=$(/usr/libexec/java_home -v 12)
 # export GRAAL_HOME='/Library/Java/JavaVirtualMachines/graalvm/Contents/Home'
 export JDK_18_HOME=${JAVA_8_HOME}
 export JDK_11_HOME=${JAVA_11_HOME}
-export JDK_12_HOME=${JAVA_12_HOME}
+#export JDK_12_HOME=${JAVA_12_HOME}
 export KOTLIN_HOME=${VOLUMES_SD_APP}/kotlinc
 
 alias jdk8="export JAVA_HOME=${JAVA_8_HOME}"
 #alias jdk90="export JAVA_HOME=${JDK_19_ZERO_HOME}"
 alias jdk11="export JAVA_HOME=${JAVA_11_HOME}"
-alias jdk12="export JAVA_HOME=${JAVA_12_HOME}"
+#alias jdk12="export JAVA_HOME=${JAVA_12_HOME}"
 # alias graal="export JAVA_HOME=${GRAAL_HOME} && \
     # export PATH=$JAVA_HOME/bin:$PATH"
 # alias zulujdk8="export JAVA_HOME=${ZULU_JDK_18_HOME}"
@@ -190,7 +191,7 @@ PATH=${AUTOCONF_HOME}/bin:${AUTOMAKE_HOME}/bin:${PKG_CONFIG_HOME}/bin:${CMAKE_HO
 PATH=${CARGO_HOME}/bin:$PATH
 PATH=${PROTOBUF_HOME}/bin:${M2_HOME}/bin:${GRADLE_HOME}/bin:${ANT_HOME}/bin:${BAZEL_HOME}/bin:$PATH
 PATH=${BTRACE_HOME}/bin:${HTOP_HOME}/bin:$PATH
-PATH=$CBC_HOME/bin:$JAVACC_HOME/bin:${CLANG_HOME}/bin:$GCC_HOME/bin:$NASM:$PATH
+PATH=$CBC_HOME/bin:$JAVACC_HOME/bin:$GCC_HOME/bin:$NASM:$PATH
 PATH=$MYSQL_BASE_DIR/bin:$MYSQL_BASE_DIR/support-files:$REDIS_HOME/bin:$NGINX:${MYSQL_SHELL}/bin:$PATH
 PATH=$KOTLIN_HOME/bin:$PATH
 PATH=$HASKELL_BIN/bin:$ZK_HOME/bin:$TOMCAT_HOME/bin:$PATH

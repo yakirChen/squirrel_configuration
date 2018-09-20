@@ -73,6 +73,10 @@ chmod 600 ~/.ssh/authorized_keys    # -rw-------
 ```bash
 # pkg-config
 ./configure --prefix=${LOCAL} --with-internal-glib && make -j4 && make install
+# zlib
+# ./configure --prefix=${LOCAL} && make -j4 && make install
+# xz
+# ./configure --prefix=${LOCAL} && make -j4 && make install
 # autoconf
 ./configure --prefix=${LOCAL} && make -j4 && make install
 # automake
@@ -83,14 +87,9 @@ chmod 600 ~/.ssh/authorized_keys    # -rw-------
 # libressl
 ./configure --prefix=${LOCAL} && make -j4 && make install
 # boost
-./bootstrap.sh --prefix=${LOCAL} --with-libraries=all
-./b2
-./b2 --prefix=${LOCAL} install # 默认安装在/usr/local目录下
+./bootstrap.sh --prefix=${LOCAL} --with-libraries=all && \
+    ./b2 -j4 && ./b2 -j4 --prefix=${LOCAL} install # 默认安装在/usr/local目录下
 export BOOST_ROOT=${LOCAL} # 引入环境变量
-# zlib
-./configure --prefix=${LOCAL} && make -j4 && make install
-# xz
-./configure --prefix=${LOCAL} && make -j4 && make install
 # freetype
 ./configure --prefix=${LOCAL} --without-harfbuzz && \
     make -j4 && make install
@@ -122,13 +121,13 @@ autoreconf -i && \
     make LDFLAGS=-all-static -j4 && make LDFLAGS=-all-static install
 # ruby 
 ./configure --prefix=${RUBY_HOME} && make -j4 && make install
+# libsodium 支持 shadowsocks chacha20
+./configure --prefix=${LOCAL} && make -j4 && make install
 ```
 
 ### Python2 & Python3 源码构建
 
 ```bash
-# libsodium 支持 shadowsocks chacha20
-./configure --prefix=${LOCAL} && make -j4 && make install
 # Readline
 git clone --depth 1 git://git.savannah.gnu.org/readline.git
 mkdir build && cd build && \
