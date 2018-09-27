@@ -381,6 +381,8 @@ curl -L caca.zoy.org/files/libcaca/libcaca-0.99.beta19.tar.gz -o libcaca-0.99.be
 ./configure --prefix=${LOCAL} && make -j4 && make install
 
 # x265
+hg clone https://bitbucket.org/multicoreware/x265
+# cd x265 && hg co 1.2
 cd build/linux
 ./make-Makefiles.bash
 # `<enter>`  CMAKE_INSTALL_PREFIX   /Users/yakir/Developer/local

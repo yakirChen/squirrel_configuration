@@ -6,7 +6,7 @@ export ZSH=${HOME}/.oh-my-zsh
 ZSH_THEME="jtriley"
 plugins=(
     ant
-    mvn
+   # mvn
     bazel
     spring
     rust
@@ -185,20 +185,21 @@ export OPENSSL_INCLUDE_DIR=${HOME}/local/include/openssl/
 export OPENSSL_LIB_DIR=${HOME}/local/lib/
 
 # ############################################ PATH #################################################
-PATH=${SPRINGCLI_HOME}/bin:${LOCAL}/bin:${LOCAL}/kits:${VOLUMES_SD_BIN}:${FFMPEG_HOME}/bin:${WGET_HOME}/bin:${GNUPG_HOME}/bin:$PATH
-PATH=${LIBRESSL_HOME}/bin:${FISH_HOME}/bin:$PATH
-PATH=${AUTOCONF_HOME}/bin:${AUTOMAKE_HOME}/bin:${PKG_CONFIG_HOME}/bin:${CMAKE_HOME}/bin:${NASM_HOME}/bin:${YASM_HOME}/bin:${YARN_HOME}/bin:${BISON_HOME}/bin:$PATH
-PATH=${CARGO_HOME}/bin:$PATH
-PATH=${PROTOBUF_HOME}/bin:${M2_HOME}/bin:${GRADLE_HOME}/bin:${ANT_HOME}/bin:${BAZEL_HOME}/bin:$PATH
-PATH=${BTRACE_HOME}/bin:${HTOP_HOME}/bin:$PATH
-PATH=$CBC_HOME/bin:$JAVACC_HOME/bin:$GCC_HOME/bin:$NASM:$PATH
+PATH=${LOCAL}/bin:${LOCAL}/kits:$PATH
+PATH=${WGET_HOME}/bin:$PATH
+PATH=${SPRINGCLI_HOME}/bin:${VOLUMES_SD_BIN}:${FFMPEG_HOME}/bin:${GNUPG_HOME}/bin:$PATH
+PATH=${CMAKE_HOME}/bin:${NASM_HOME}/bin:${YASM_HOME}/bin:${YARN_HOME}/bin:${BISON_HOME}/bin:$PATH
+PATH=${CARGO_HOME}/bin:${M2_HOME}/bin:${GRADLE_HOME}/bin:${ANT_HOME}/bin:$PATH
+# PATH=${BTRACE_HOME}/bin:${HTOP_HOME}/bin:$PATH
+# PATH=$CBC_HOME/bin:$JAVACC_HOME/bin:$GCC_HOME/bin:$PATH
 PATH=$MYSQL_BASE_DIR/bin:$MYSQL_BASE_DIR/support-files:$REDIS_HOME/bin:$NGINX:${MYSQL_SHELL}/bin:$PATH
 PATH=$KOTLIN_HOME/bin:$PATH
 PATH=$HASKELL_BIN/bin:$ZK_HOME/bin:$TOMCAT_HOME/bin:$PATH
 PATH=$RUBY_HOME/bin:$PY2_HOME/bin:$PY3_HOME/bin:$LUA_HOME/bin:$PATH
 PATH=$GOROOT/bin:$GOPATH/bin:$CHEZ_SCHEME_HOME/bin:$NODE_PATH/bin:$NODE_GLOBAL_PATH/bin:$PATH
-PATH=${NVIM_HOME}/bin:$PATH
-# PATH=$RUST_HOME/bin:$PATH
+
+PATH=${LOCAL}/jadx/bin:$PATH
+
 
 export PATH
 
@@ -222,6 +223,9 @@ MVN_MB="-Dmaven.compiler.fork=true -T6"        # MVN_MULTI_THREADED_BUILDER
 MVN_TEMPLATE="mvn clean package -DskipTests ${1} -U "
 # ; mvn dependency:sources ${1} -U ; mvn dependency:resolve -Dclassifier=javadoc ${1} -U
 
+alias mvnc="mvn clean"
+alias mvnsrc="mvn dependency:sources"
+alias mvndocs="mvn dependency:resolve -Dclassifier=javadoc"
 alias mvncpst="${MVN_TEMPLATE}"
 alias mvncpstc="${MVN_TEMPLATE} -Pmaven2 ; mvn clean"
 alias mvna="mvn dependency:sources ; mvn dependency:resolve -Dclassifier=javadoc ; ${MVN_TEMPLATE} -Pmaven2 ; mvn clean"
