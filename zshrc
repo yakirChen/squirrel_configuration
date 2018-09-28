@@ -37,6 +37,7 @@ export VOLUMES_TOSHIBA=/Volumes/Toshiba
 export SPRINGCLI_HOME=${LOCAL}/springcli
 export JARS=${LOCAL}/jar
 export VOLUMES_SD_BIN=${VOLUMES_SD_APP}/bin
+export _LOCAL=${VOLUMES_SD_REPOS}/_local
 
 # 语言工具
 export RUBY_HOME=${LOCAL}/ruby
@@ -119,12 +120,12 @@ export YARN_HOME=${LOCAL}/yarn                # yarn
 # repos
 export HASKELL_BIN=${VOLUMES_SD}/repos/haskell
 export GRADLE_USER_HOME=${VOLUMES_SD}/repos/gradle
+export GEM_HOME=${VOLUMES_SD}/repos/gem
 
 # 日常工具
 # export ARIA2_HOME=${LOCAL}/aria2              # aria2
 export FFMPEG_HOME=${LOCAL}/ffmpeg
 export GNUPG_HOME=${LOCAL}/gnupg
-export NVIM_HOME=${LOCAL}/nvim
 
 export JFX_HOME=${VOLUMES_SD_APP}/openjfx
 export JAVA_8_HOME=$(/usr/libexec/java_home -v 1.8)
@@ -185,7 +186,7 @@ export OPENSSL_INCLUDE_DIR=${HOME}/local/include/openssl/
 export OPENSSL_LIB_DIR=${HOME}/local/lib/
 
 # ############################################ PATH #################################################
-PATH=${LOCAL}/bin:${LOCAL}/kits:$PATH
+PATH=${LOCAL}/bin:${LOCAL}/kits:${_LOCAL}/bin:$PATH
 PATH=${WGET_HOME}/bin:$PATH
 PATH=${SPRINGCLI_HOME}/bin:${VOLUMES_SD_BIN}:${FFMPEG_HOME}/bin:${GNUPG_HOME}/bin:$PATH
 PATH=${CMAKE_HOME}/bin:${NASM_HOME}/bin:${YASM_HOME}/bin:${YARN_HOME}/bin:${BISON_HOME}/bin:$PATH
@@ -195,7 +196,7 @@ PATH=${CARGO_HOME}/bin:${M2_HOME}/bin:${GRADLE_HOME}/bin:${ANT_HOME}/bin:$PATH
 PATH=$MYSQL_BASE_DIR/bin:$MYSQL_BASE_DIR/support-files:$REDIS_HOME/bin:$NGINX:${MYSQL_SHELL}/bin:$PATH
 PATH=$KOTLIN_HOME/bin:$PATH
 PATH=$HASKELL_BIN/bin:$ZK_HOME/bin:$TOMCAT_HOME/bin:$PATH
-PATH=$RUBY_HOME/bin:$PY2_HOME/bin:$PY3_HOME/bin:$LUA_HOME/bin:$PATH
+PATH=$RUBY_HOME/bin:$GEM_HOME/bin:$PY2_HOME/bin:$PY3_HOME/bin:$LUA_HOME/bin:$PATH
 PATH=$GOROOT/bin:$GOPATH/bin:$CHEZ_SCHEME_HOME/bin:$NODE_PATH/bin:$NODE_GLOBAL_PATH/bin:$PATH
 
 PATH=${LOCAL}/jadx/bin:$PATH

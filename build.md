@@ -120,7 +120,13 @@ autoreconf -i && \
     ./configure --with-oniguruma=builtin --disable-maintainer-mode --prefix=${LOCAL} && \
     make LDFLAGS=-all-static -j4 && make LDFLAGS=-all-static install
 # ruby 
-./configure --prefix=${RUBY_HOME} && make -j4 && make install
+gcl --depth 1  https://github.com/ruby/ruby.git && \
+    autoconf && \
+    ./configure --prefix=${RUBY_HOME} && \
+    make -j4 && \
+    make install && \
+    gem install cocoapods
+
 # libsodium 支持 shadowsocks chacha20
 ./configure --prefix=${LOCAL} && make -j4 && make install
 ```
