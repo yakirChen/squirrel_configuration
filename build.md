@@ -97,7 +97,7 @@ export BOOST_ROOT=${LOCAL} # 引入环境变量
 git clone --depth 1 git@github.com:libffi/libffi.git
 cd libffi
 ./autogen.sh && \
-python ./generate-darwin-source-and-headers.py && \
+# python ./generate-darwin-source-and-headers.py && \
 ./configure --enable-debug \
     --disable-dependency-tracking \
     --enable-purify-safety \

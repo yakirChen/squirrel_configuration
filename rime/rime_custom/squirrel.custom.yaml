@@ -30,79 +30,86 @@ patch:
     yakir_white:
       name: "yakir White主题／yakir_white"
       author: "yakirChen <iamyakirchen@outlook.com>"
-      border_height: 4 # 窗口邊界高度，大於圓角半徑才有效果 
-      border_width: 4  # 窗口邊界寬度，大於圓角半徑才有效果
-      back_color: 0xFFFFFF
-      border_color: 0xFFFFFF
-      text_color: 0x000000
-      font_point: 14
-      corner_radius: 4 # 窗口圓角半徑
-      font_face: "Lucida Grande"
-      horizontal: true
-      inline_preedit: true
-      line_spacing: 0
-      spacing: 10
-      label_font_face: "Lucida Grande"
-      label_font_point: 10
-      hilited_text_color: 0xFFFFFF
-      hilited_back_color: 0x514B64
-      hilited_candidate_text_color: 0xFFFFFF
-      hilited_candidate_back_color: 0xCAAF16
-      hilited_candidate_label_color: 0x999999 # 第一候选项编号颜色
-      candidate_text_color: 0x000000
-      comment_text_color: 0x000000
-    yakir:
-      name: "yakir Dark主题／yakir"
-      author: "yakirChen <iamyakirchen@outlook.com>"
-      border_height: 4 # 窗口邊界高度，大於圓角半徑才有效果 
-      border_width: 4  # 窗口邊界寬度，大於圓角半徑才有效果
-      back_color: 0x2A2A2A
-      border_color: 0xFFFFFF
-      text_color: 0xFFFFFF
-      font_point: 14
-      corner_radius: 4 # 窗口圓角半徑
-      font_face: "Lucida Grande"
-      label_font_face: "Lucida Grande"
-      horizontal: true
-      inline_preedit: true
-      line_spacing: 0
-      spacing: 10
-      label_font_point: 10
-      hilited_text_color: 0xFFFFFF
-      # hilited_back_color: 0x514B64
-      # hilited_candidate_text_color: 0xFFFFFF
-      # hilited_candidate_back_color: 0xCAAF16
-      # hilited_candidate_text_color: 0xCAAF16
-      # hilited_candidate_text_color: 0xEDF0DD
-      hilited_candidate_text_color: 0xCAAF16
-      # hilited_candidate_text_color: 0xf57c75
-      # hilited_candidate_back_color: 0x2A2A2A
-      hilited_candidate_back_color: 0x404040
-      # hilited_candidate_back_color: 0xD2BC1F
-      candidate_text_color: 0xFFFFFF
-      comment_text_color: 0xFFFFFF
+      horizontal: true                              # 水平排列
+      inline_preedit: true                          # 单行显示，false双行显示
+      candidate_format: "%c\u2005%@"                # 用 1/6 em 空格 U+2005 来控制编号 %c 和候选词 %@ 前后的空间。
+      corner_radius: 4                              # 候选条圆角
+      hilited_corner_radius: 3                      # 高亮圆角
+      border_height: 4                              # 窗口邊界高度，大於圓角半徑才有效果 
+      border_width: 4                               # 窗口邊界寬度，大於圓角半徑才有效果
+      border_color_width: 0                         # 边框宽度
+      font_face: "Lucida Grande"                    # 候选词字体
+      label_font_face: "Lucida Grande"              # 候选编号字体
+      font_point: 16                                # 候选字词大小
+      label_font_point: 12                          # 候选编号大小
+      text_color: 0x000000                          # 拼音行文字颜色，24位色值，16进制，BGR顺序
+      back_color: 0xFFFFFF                          # 候选条背景色
+      label_color: 0xA0A0A0                         # 预选栏编号颜色
+      border_color: 0xFFFFFF                        # 边框颜色
+      candidate_text_color: 0x666666                # 预选项文字颜色
+      comment_text_color: 0x000000                  # 拼音等提示文字颜色
+      hilited_text_color: 0xFFFFFF                  # 高亮拼音 (需要开启内嵌编码)
+      hilited_back_color: 0x514B64                  # 高亮背景颜色
+      hilited_candidate_text_color: 0xFFFFFF        # 第一候选项文字颜色 
+      hilited_candidate_back_color: 0xCAAF16        # 第一候选项背景背景色
+      hilited_candidate_label_color: 0xFFFFFF       # 第一候选项编号颜色
+      hilited_comment_text_color: 0x666666          # 注解文字高亮
     yakir_placeless:
       name: "yakir placeless主题／yakir"
       author: "yakirChen <iamyakirchen@outlook.com>"
-      back_color: 0xFFFFFF #背景
-      text_color: 0x000000 # 編碼行文字顏色，24位色值，用十六進制書寫方便些，順序是藍綠紅0xBBGGRR
-      candidate_text_color: 0x666666 #非第一候选项
-      hilited_candidate_back_color: 0xFFFFFF #第一候选项背景
-      hilited_candidate_text_color: 0xf57c75 #第一候选项
-      corner_radius: 4                   # 窗口圆角半径
-      border_height: 0                   # 窗口边界高度，大于圆角半径才有效果
-      border_width: 4                   # 窗口边界宽度，大于圆角半径才有效果
-      # line_spacing: 5                    # 候选词的行间距
-      line_spacing: 0                    # 候选词的行间距
-      # spacing: 10                        # 在非内嵌编码模式下，预编辑和候选词之间的间距
-      spacing: 0                        # 在非内嵌编码模式下，预编辑和候选词之间的间距
-      # font_face: "Lantinghei SC"         # 字体名称
-      font_face: "Lucida Grande"
-      font_point: 14                     # 字号
-      #candidate_format: '%c. %@'
-      label_font_point: 10
-      horizontal: true
-      inline_preedit: true               # 关闭内嵌编码，这样就可以显示首行的拼音
+      horizontal: true                              # 水平排列
+      inline_preedit: true                          # 单行显示，false双行显示
+      candidate_format: "%c\u2005%@"                # 用 1/6 em 空格 U+2005 来控制编号 %c 和候选词 %@ 前后的空间。
+      corner_radius: 4                              # 候选条圆角
+      hilited_corner_radius: 3                      # 高亮圆角
+      border_height: 4                              # 窗口邊界高度，大於圓角半徑才有效果 
+      border_width: 4                               # 窗口邊界寬度，大於圓角半徑才有效果
+      border_color_width: 0                         # 边框宽度
+      font_face: "Lucida Grande"                    # 候选词字体
+      label_font_face: "Lucida Grande"              # 候选编号字体
+      font_point: 16                                # 候选字词大小
+      label_font_point: 12                          # 候选编号大小
+      text_color: 0x000000                          # 拼音行文字颜色，24位色值，16进制，BGR顺序
+      back_color: 0xFFFFFF                          # 候选条背景色
+      label_color: 0xA0A0A0                         # 预选栏编号颜色
+      border_color: 0xFFFFFF                        # 边框颜色
+      candidate_text_color: 0x666666                # 预选项文字颜色
+      comment_text_color: 0xF57C75                  # 拼音等提示文字颜色
+      hilited_text_color: 0xFFFFFF                  # 高亮拼音 (需要开启内嵌编码)
+      hilited_candidate_text_color: 0xF57C75        # 第一候选项文字颜色 
+      hilited_candidate_back_color: 0xFFFFFF        # 第一候选项背景背景色
+      hilited_candidate_label_color: 0x999999       # 第一候选项编号颜色
+      hilited_comment_text_color: 0xF57C75          # 注解文字高亮
+      # line_spacing: 0
+      # spacing: 10
+    yakir:
+      name: "yakir Dark主题／yakir"
+      author: "yakirChen <iamyakirchen@outlook.com>"
+      horizontal: true                              # 水平排列
+      inline_preedit: true                          # 单行显示，false双行显示
+      candidate_format: "%c\u2005%@"                # 用 1/6 em 空格 U+2005 来控制编号 %c 和候选词 %@ 前后的空间。
+      corner_radius: 4                              # 候选条圆角
+      hilited_corner_radius: 3                      # 高亮圆角
+      border_height: 4                              # 窗口邊界高度，大於圓角半徑才有效果 
+      border_width: 4                               # 窗口邊界寬度，大於圓角半徑才有效果
+      border_color_width: 0                         # 边框宽度
+      font_face: "Lucida Grande"                    # 候选词字体
+      label_font_face: "Lucida Grande"              # 候选编号字体
+      font_point: 16                                # 候选字词大小
+      label_font_point: 12                          # 候选编号大小
+      text_color: 0xFFFFFF                          # 拼音行文字颜色，24位色值，16进制，BGR顺序
+      back_color: 0x2A2A2A                          # 候选条背景色
+      label_color: 0xA0A0A0                         # 预选栏编号颜色
+      border_color: 0xFFFFFF                        # 边框颜色
+      candidate_text_color: 0xFFFFFF                # 预选项文字颜色
+      comment_text_color: 0xFFFFFF                  # 拼音等提示文字颜色
+      hilited_text_color: 0xFFFFFF                  # 高亮拼音 (需要开启内嵌编码)
+      hilited_candidate_text_color: 0xFFFFFF        # 第一候选项文字颜色 
+      hilited_candidate_back_color: 0xCAAF16        # 第一候选项背景背景色
+      hilited_candidate_label_color: 0xFFFFFF       # 第一候选项编号颜色
+      hilited_comment_text_color: 0xDEDDDD          # 注解文字高亮
+      # line_spacing: 0
+      # spacing: 10
   show_notifications_when: appropriate
   style:
     color_scheme: yakir
