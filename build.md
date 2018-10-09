@@ -177,11 +177,15 @@ pip3 list --outdate
 
 ```bash
 pkgs=(
-    "libgpg-error-1.29.tar.gz"
-    "libgcrypt-1.8.2.tar.gz"
+    "libgpg-error-1.32.tar.gz"
+    "libgcrypt-1.8.3.tar.gz"
     "libassuan-2.5.1.tar.bz2"
     "libksba-1.3.5.tar.bz2"
-    "npth-1.5.tar.bz2"
+    "npth-1.6.tar.bz2"
+    "gnupg-2.2.10.tar.bz2"
+    "gettext-0.19.8.1.tar.xz"
+    "pinentry-1.1.0.tar.bz2"
+    "ntbtls-0.1.2.tar.bz2"
 );
 
 urls=(
@@ -190,6 +194,10 @@ urls=(
     "https://gnupg.org/ftp/gcrypt/libassuan/${pkgs[3]}"
     "https://gnupg.org/ftp/gcrypt/libksba/${pkgs[4]}"
     "https://gnupg.org/ftp/gcrypt/npth/${pkgs[5]}"
+    "https://gnupg.org/ftp/gcrypt/gnupg/${pkgs[6]}"
+    "https://ftp.gnu.org/pub/gnu/gettext/${pkgs[7]}"
+    "https://gnupg.org/ftp/gcrypt/pinentry/${pkgs[8]}"
+    "https://gnupg.org/ftp/gcrypt/ntbtls/${pkgs[9]}"
 );
 
 for pkg in ${urls[@]}; do
@@ -285,7 +293,7 @@ done;
       
 # gpg-agent --homedir /Users/yakir/.gnupg --use-standard-socket --daemon
 # 安装完成之后执行
-# gpgconf --kill gpg-agent && gpg-agent --use-standard-socket --pinentry-program /Users/yakir/local/pinentry/bin/pinentry --daemon
+# gpgconf --kill gpg-agent && gpg-agent --use-standard-socket --pinentry-program ${LOCAL}/pinentry/bin/pinentry --daemon
 # gpg --list-secret-keys --keyid-format LONG
 
 # dirmngr.conf
