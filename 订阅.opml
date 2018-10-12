@@ -110,6 +110,7 @@
 		</outline>
 		<outline text="存储" title="存储">
 			<outline htmlUrl="https://pingcap.com/blog-cn/" title="Blog-cns on PingCAP Site" xmlUrl="https://pingcap.com/blog-cn/index.xml" type="rss" text="Blog-cns on PingCAP Site"/>
+			<outline htmlUrl="http://yoursite.com/" title="pagefault" xmlUrl="http://www.pagefault.info/atom.xml" type="rss" text="pagefault"/>
 		</outline>
 		<outline text="安全" title="安全">
 			<outline title="翻牆網 ATGFW.ORG" xmlUrl="https://www.atgfw.org/feeds/posts/default" type="rss" text="翻牆網 ATGFW.ORG"/>
