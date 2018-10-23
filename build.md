@@ -37,7 +37,7 @@ ssh-keygen -t rsa -b 4096 -C "iamyakirchen@outlook.com"
 # 远程免密登录
 touch ~/.ssh/authorized_keys
 chmod 700 ~/.ssh                    # drwx------
-chmod 600 ~/.ssh/authorized_keys    # -rw------- 
+chmod 600 ~/.ssh/*                  # -rw------- 
 ```
 
 ## 安装包下载链接

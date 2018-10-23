@@ -7,7 +7,6 @@ ZSH_THEME="jtriley"
 plugins=(
     ant
    # mvn
-    bazel
     spring
     rust
     cargo
@@ -29,29 +28,22 @@ func ssproxy() {
 
 # ########################################## User Configuration #####################################
 export LOCAL=${HOME}/local
-
-export VOLUMES_SD=/Volumes/sd
-export VOLUMES_SD_APP=${VOLUMES_SD}/app
-export VOLUMES_SD_REPOS=${VOLUMES_SD}/repos
 export VOLUMES_TOSHIBA=/Volumes/Toshiba
-export SPRINGCLI_HOME=${LOCAL}/springcli
+export VOLUMES_TOSHIBA_REPOS=/Volumes/Toshiba/repos
+export VOLUMES_TOSHIBA_SERVERS=/Volumes/Toshiba/servers
 export JARS=${LOCAL}/jar
-export VOLUMES_SD_BIN=${VOLUMES_SD_APP}/bin
-export _LOCAL=${VOLUMES_SD_REPOS}/_local
 
 # 语言工具
 export RUBY_HOME=${LOCAL}/ruby
-export OCAML_HOME=${LOCAL}/ocaml
-# export GROOVY_HOME=${LOCAL}/groovy
 export PY2_HOME=${LOCAL}/python2
 export PY3_HOME=${LOCAL}/python3
-export LUA_HOME=${LOCAL}/lua
 export GOROOT=${LOCAL}/go
 export NODE_PATH=${LOCAL}/node
-export NODE_GLOBAL_PATH=${VOLUMES_SD_REPOS}/node_global
+export NODE_GLOBAL_PATH=${VOLUMES_TOSHIBA_REPOS}/node_global
 #export RUST_HOME=${LOCAL}/rust
-export CARGO_HOME=${VOLUMES_SD}/repos/cargo
-export RUSTUP_HOME=${VOLUMES_SD}/repos/rustup
+export CARGO_HOME=${VOLUMES_TOSHIBA_REPOS}/cargo
+export CARGO_PATH=${CARGO_HOME}/
+export RUSTUP_HOME=${VOLUMES_TOSHIBA_REPOS}/rustup
 export RUSTFLAGS='-C target-cpu=native'
 export RUSTUP_TOOLCHAIN=nightly
 #export RUSTUP_DIST_SERVER=https://static.rust-lang.org
@@ -59,17 +51,20 @@ export RUSTUP_TOOLCHAIN=nightly
 export RUST_SRC_PATH=${RUSTUP_HOME}/toolchains/${RUSTUP_TOOLCHAIN}-x86_64-apple-darwin/lib/rustlib/src/rust/src
 export DYLD_LIBRARY_PATH=$(${CARGO_HOME}/bin/rustc --print sysroot)/lib:$DYLD_LIBRARY_PATH
 # export RUST_SRC_PATH=
-export GCC_HOME=${LOCAL}/gcc
-#export CLANG_HOME=${VOLUMES_SD_REPOS}/clang
-export IGV_HOME=${LOCAL}/igv
+# export OCAML_HOME=${LOCAL}/ocaml
+# export GROOVY_HOME=${LOCAL}/groovy
+# export LUA_HOME=${LOCAL}/lua
+# export GCC_HOME=${LOCAL}/gcc
+#export CLANG_HOME=${VOLUMES_TOSHIBA_REPOS}/clang
+# export IGV_HOME=${LOCAL}/igv
 
 # 开发辅助
-export MYSQL_BASE_DIR=${HOME}/local/mysql
-export MYSQL_DATA_DIR=/Volumes/Toshiba/mysql/data
-export MYSQL_LOGS_DIR=/Volumes/Toshiba/mysql/logs
-export BTRACE_HOME=${LOCAL}/btrace
-export HTOP_HOME=${LOCAL}/htop
-export FISH_HOME=${LOCAL}/fish
+export MYSQL_BASE_DIR=/Volumes/Toshiba/servers/mysql
+export MYSQL_DATA_DIR=/Volumes/Toshiba/repos/mysql/data
+export MYSQL_LOGS_DIR=/Volumes/Toshiba/repos/mysql/logs
+# export BTRACE_HOME=${LOCAL}/btrace
+# export HTOP_HOME=${LOCAL}/htop
+# export FISH_HOME=${LOCAL}/fish
 
 # 运行时环境变量
 export PKG_CONFIG=${LOCAL}/bin/pkg-config       # pkg-config
@@ -80,29 +75,28 @@ export CFLAGS="-I${LOCAL}/include -I${LOCAL}/include/openssl -I${LOCAL}/include/
 export CXXFLAGS=${CFLAGS}
 export CPPFLAGS=${CFLAGS}
 export LDFLAGS="-L${LOCAL}/lib"
-export BOOST_ROOT=${LOCAL}
-# export OPENSSL_CFLAGS=${LOCAL}/bin/openssl      # openssl
-# export OPENSSL_LIBS=${LOCAL}/lib                # openssl lib
-export OPAMROOT=${VOLUMES_SD_REPOS}/opam
-export OCAML_TOPLEVEL_PATH=${VOLUMES_SD_REPOS}/ocaml
-export COREUTILS=${LOCAL}/coreutils
-export GOPATH=${VOLUMES_SD_REPOS}/go/gopath
-export GOCACHE=${VOLUMES_SD_REPOS}/go/gocache
-export MAVEN_REPOSITORY=${VOLUMES_SD_REPOS}/m2                   # maven
+export BOOST_ROOT=${VOLUMES_TOSHIBA_REPOS}/boost
+export OPENSSL_CFLAGS=${LOCAL}/bin/openssl      # openssl
+export OPENSSL_LIBS=${LOCAL}/lib                # openssl lib
+# export OPAMROOT=${VOLUMES_TOSHIBA_REPOS}/opam
+# export OCAML_TOPLEVEL_PATH=${VOLUMES_TOSHIBA_REPOS}/ocaml
+# export COREUTILS=${LOCAL}/coreutils
+export GOPATH=${VOLUMES_TOSHIBA_REPOS}/go/gopath
+export GOCACHE=${VOLUMES_TOSHIBA_REPOS}/go/gocache
 
 # 服务
 #export ZK_HOME=${VOLUMES_TOSHIBA}/Developer/zookeeper
 export ZK_HOME=${LOCAL}/zookeeper
-export TOMCAT_HOME=${VOLUMES_SD_APP}/tomcat
-export REDIS_HOME=${VOLUMES_SD_APP}/redis
-export KOTLIN_NATIVE_HOME=${VOLUMES_SD_APP}/kotlin-native
-export NGINX=${LOCAL}/nginx
-export MYSQL_SHELL=${LOCAL}/mysqlsh
+export TOMCAT_HOME=${VOLUMES_TOSHIBA_SERVERS}/tomcat
+export REDIS_HOME=${VOLUMES_TOSHIBA_REPOS}/redis
+export KOTLIN_NATIVE_HOME=${VOLUMES_TOSHIBA_REPOS}/kotlin-native
+# export NGINX=${LOCAL}/nginx
+# export MYSQL_SHELL=${LOCAL}/mysqlsh
 export WGET_HOME=${LOCAL}/wget
 
 # 打包编译工具
 export JAVACC_HOME=${LOCAL}/javacc
-export CHEZ_SCHEME_HOME=${LOCAL}/chez_scheme
+export CHEZ_SCHEME_HOME=${VOLUMES_TOSHIBA_SERVERS}/chez_scheme
 export NASM_HOME=${LOCAL}/nasm
 export BISON_HOME=${LOCAL}/bison
 export PROTOBUF_HOME=${LOCAL}/protobuf
@@ -130,17 +124,17 @@ export GNUPG_HOME=${LOCAL}/gnupg
 export JFX_HOME=${VOLUMES_SD_APP}/openjfx
 export JAVA_8_HOME=$(/usr/libexec/java_home -v 1.8)
 export JAVA_11_HOME=$(/usr/libexec/java_home -v 11)
-#export JAVA_12_HOME=$(/usr/libexec/java_home -v 12)
+export JAVA_12_HOME=$(/usr/libexec/java_home -v 12)
 # export GRAAL_HOME='/Library/Java/JavaVirtualMachines/graalvm/Contents/Home'
 export JDK_18_HOME=${JAVA_8_HOME}
 export JDK_11_HOME=${JAVA_11_HOME}
-#export JDK_12_HOME=${JAVA_12_HOME}
+export JDK_12_HOME=${JAVA_12_HOME}
 export KOTLIN_HOME=${VOLUMES_SD_APP}/kotlinc
 
 alias jdk8="export JAVA_HOME=${JAVA_8_HOME}"
 #alias jdk90="export JAVA_HOME=${JDK_19_ZERO_HOME}"
 alias jdk11="export JAVA_HOME=${JAVA_11_HOME}"
-#alias jdk12="export JAVA_HOME=${JAVA_12_HOME}"
+alias jdk12="export JAVA_HOME=${JAVA_12_HOME}"
 # alias graal="export JAVA_HOME=${GRAAL_HOME} && \
     # export PATH=$JAVA_HOME/bin:$PATH"
 # alias zulujdk8="export JAVA_HOME=${ZULU_JDK_18_HOME}"
@@ -167,12 +161,12 @@ export JAVA_DEBUG_OPTS="-Xdebug -Xrunjdwp:server=y,transport=dt_socket,suspend=n
 #export JAVA_OPTS="${DEF_JAVA_OPTS} --illegal-access=deny -XX:HeapDumpPath=${VOLUMES_SD}/logs/jvm_error.hprof"
 export JAVA_OPTS="${DEF_JAVA_OPTS} -XX:HeapDumpPath=${VOLUMES_SD}/logs/jvm_error.hprof"
 export MAVEN_OPTS="${DEF_JAVA_OPTS} -XX:HeapDumpPath=${VOLUMES_SD}/logs/maven_java_error.hprof"
-export ANT_ARGS="-nouserlib -lib ${VOLUMES_SD_REPOS}/ant/lib"
-export ANT_OPTS="-Divy_install_path=${VOLUMES_SD_REPOS}/ant/lib -Ddest=${VOLUMES_SD_REPOS}/ant -Divy.default.ivy.user.dir=${VOLUMES_SD_REPOS}/ivy2"
+export ANT_ARGS="-nouserlib -lib ${VOLUMES_TOSHIBA_REPOS}/ant/lib"
+export ANT_OPTS="-Divy_install_path=${VOLUMES_TOSHIBA_REPOS}/ant/lib -Ddest=${VOLUMES_TOSHIBA_REPOS}/ant -Divy.default.ivy.user.dir=${VOLUMES_TOSHIBA_REPOS}/ivy2"
 export SBT_OPTS="-Dsbt.global.base=/Volumes/sd/servers/sbt \
 -Dsbt.version=1.0.4 \
 -Dsbt.boot.directory=${SBT_HOME}/boot \
--Dsbt.ivy.home=${VOLUMES_SD_REPOS}/ivy2 \
+-Dsbt.ivy.home=${VOLUMES_TOSHIBA_REPOS}/ivy2 \
 -Dsbt.override.build.repos=true \
 -Dsbt.repository.config=/Volumes/sd/servers/sbt/repositories"
 
@@ -242,16 +236,13 @@ alias rbr="rustup run beta cargo --color always "
 alias rsu="rustup self update"
 alias ru="rustup update"
 
-source $ZSH/oh-my-zsh.sh
 # source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # OPAM configuration
+# . /Volumes/sd/repos/opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
+source $ZSH/oh-my-zsh.sh
+ # source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+ 
+ # OPAM configuration
 . /Volumes/sd/repos/opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-
-
-
-
-
-
-
-

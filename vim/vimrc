@@ -10,7 +10,7 @@ set cindent
 set equalalways "分隔窗口始终平分
 "set mouse=a
 "colorscheme gruvbox
-colorscheme onedark
+"colorscheme onedark
 set background=dark
 set termguicolors
 set laststatus=2 " 总是显示状态栏

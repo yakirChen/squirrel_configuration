@@ -1,22 +1,23 @@
 # custom IntelliJ IDEA VM options
 
 # 默认
-# -Xms128m
-# -Xmx750m
-# -XX:ReservedCodeCacheSize=240m
-# -XX:+UseCompressedOops
-# -Dfile.encoding=UTF-8
-# -XX:+UseConcMarkSweepGC
-# -XX:SoftRefLRUPolicyMSPerMB=50
-# -ea
-# -Dsun.io.useCanonCaches=false
-# -Djava.net.preferIPv4Stack=true
-# -XX:+HeapDumpOnOutOfMemoryError
-# -XX:-OmitStackTraceInFastThrow
-# -Xverify:none
-
-# -XX:ErrorFile=$USER_HOME/java_error_in_idea_%p.log
-# -XX:HeapDumpPath=$USER_HOME/java_error_in_idea.hprof
+#-Xms128m
+#-Xmx750m
+#-XX:ReservedCodeCacheSize=240m
+#-XX:+UseCompressedOops
+#-Dfile.encoding=UTF-8
+#-XX:+UseConcMarkSweepGC
+#-XX:SoftRefLRUPolicyMSPerMB=50
+#-ea
+#-Dsun.io.useCanonCaches=false
+#-Djava.net.preferIPv4Stack=true
+#-Djdk.http.auth.tunneling.disabledSchemes=""
+#-XX:+HeapDumpOnOutOfMemoryError
+#-XX:-OmitStackTraceInFastThrow
+#-Xverify:none
+#
+#-XX:ErrorFile=$USER_HOME/java_error_in_idea_%p.log
+#-XX:HeapDumpPath=$USER_HOME/java_error_in_idea.hprof
 
 -server
 -ea
@@ -49,12 +50,12 @@
 -XX:-OmitStackTraceInFastThrow
 -XX:+HeapDumpOnOutOfMemoryError
 
--Xloggc:/Volumes/sd/logs/gc/idea.gc.%p.log
+-Xloggc:/Volumes/Toshiba/dev/logs/gc/idea.gc.%p.log
 -XX:+PrintGCDetails
 -XX:+PrintGCDateStamps
 
--XX:ErrorFile=/Volumes/sd/logs/error/java_error_in_idea_%p.log
--XX:HeapDumpPath=/Volumes/sd/logs/dump/java_error_in_idea.hprof
+-XX:ErrorFile=/Volumes/Toshiba/dev/logs/error/java_error_in_idea_%p.log
+-XX:HeapDumpPath=/Volumes/Toshiba/dev/logs/dump/java_error_in_idea.hprof
 -Xbootclasspath/a:../lib/boot.jar
 
 -Dfile.encoding=UTF-8
@@ -63,4 +64,3 @@
 -Dos.detected.name=osx
 -Dos.detected.arch=x86_64
 -Dos.detected.classifier=osx-x86_64
-
