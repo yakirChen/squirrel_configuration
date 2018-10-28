@@ -167,13 +167,13 @@ pip3 list --outdate
 
 ### GnuPG
 
-[gettext](http://www.gnu.org/software/gettext/)
-[libgpg-error](https://gnupg.org/ftp/gcrypt/libgpg-error)
-[libgcrypt](https://gnupg.org/ftp/gcrypt/libgcrypt/)
-[libassuan](https://gnupg.org/ftp/gcrypt/libassuan/)
-[libksba](https://gnupg.org/ftp/gcrypt/libksba/)
-[npth](https://gnupg.org/ftp/gcrypt/npth/)
-[gnupg](https://www.gnupg.org)
+[gettext](http://www.gnu.org/software/gettext/)  
+[libgpg-error](https://gnupg.org/ftp/gcrypt/libgpg-error)  
+[libgcrypt](https://gnupg.org/ftp/gcrypt/libgcrypt/)  
+[libassuan](https://gnupg.org/ftp/gcrypt/libassuan/)  
+[libksba](https://gnupg.org/ftp/gcrypt/libksba/)  
+[npth](https://gnupg.org/ftp/gcrypt/npth/)  
+[gnupg](https://www.gnupg.org)  
 
 ```bash
 pkgs=(
@@ -221,7 +221,7 @@ done;
 # gettext
 ./configure --prefix=${LOCAL} --disable-java && make -j4 && make install
 # adns
-./configure --prefix=${LOCAL} --disable-dynamic && make -j4 && make install
+# ./configure --prefix=${LOCAL} --disable-dynamic && make -j4 && make install
 # libgpg-error
 ./configure --prefix=${LOCAL} \
     --disable-dependency-tracking \
@@ -295,7 +295,7 @@ done;
 # 安装完成之后执行
 # gpgconf --kill gpg-agent && gpg-agent --use-standard-socket --pinentry-program ${LOCAL}/pinentry/bin/pinentry --daemon
 # gpg --list-secret-keys --keyid-format LONG
-
+# gpg -v --keyserver keyserver.ubuntu.com --send-keys
 # dirmngr.conf
 # hkp-cacert /Users/yakir/Think/sks-keyservers.netCA.pem
 ```

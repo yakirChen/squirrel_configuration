@@ -48,8 +48,10 @@ export RUSTFLAGS='-C target-cpu=native'
 export RUSTUP_TOOLCHAIN=nightly
 #export RUSTUP_DIST_SERVER=https://static.rust-lang.org
 #export RUSTUP_UPDATE_ROOT=https://static.rust-lang.org/rustup
-export RUST_SRC_PATH=${RUSTUP_HOME}/toolchains/${RUSTUP_TOOLCHAIN}-x86_64-apple-darwin/lib/rustlib/src/rust/src
-export DYLD_LIBRARY_PATH=$(${CARGO_HOME}/bin/rustc --print sysroot)/lib:$DYLD_LIBRARY_PATH
+# export RUST_SRC_PATH=${RUSTUP_HOME}/toolchains/${RUSTUP_TOOLCHAIN}-x86_64-apple-darwin/lib/rustlib/src/rust/src
+# export DYLD_LIBRARY_PATH=$(${CARGO_HOME}/bin/rustc --print sysroot)/lib:$DYLD_LIBRARY_PATH
+# export DYLD_LIBRARY_PATH=$(rustc --print sysroot)/lib:$DYLD_LIBRARY_PATH
+
 # export RUST_SRC_PATH=
 # export OCAML_HOME=${LOCAL}/ocaml
 # export GROOVY_HOME=${LOCAL}/groovy
@@ -130,6 +132,9 @@ export JDK_18_HOME=${JAVA_8_HOME}
 export JDK_11_HOME=${JAVA_11_HOME}
 export JDK_12_HOME=${JAVA_12_HOME}
 export KOTLIN_HOME=${TOSHIBA_SERVERS}/kotlinc
+export SCALA_HOME=${TOSHIBA_SERVERS}/scala
+export SBT_HOME=${TOSHIBA_SERVERS}/sbt
+export sbt_home=${TOSHIBA_SERVERS}/sbt
 
 alias jdk8="export JAVA_HOME=${JAVA_8_HOME}"
 #alias jdk90="export JAVA_HOME=${JDK_19_ZERO_HOME}"
@@ -165,7 +170,7 @@ export ANT_ARGS="-nouserlib -lib ${TOSHIBA_REPOS}/ant/lib"
 export ANT_OPTS="-Divy_install_path=${TOSHIBA_REPOS}/ant/lib -Ddest=${TOSHIBA_REPOS}/ant -Divy.default.ivy.user.dir=${TOSHIBA_REPOS}/ivy2"
 export SBT_OPTS="-Dsbt.global.base=${TOSHIBA_SERVERS}/sbt \
 -Dsbt.version=1.0.4 \
--Dsbt.boot.directory=${SBT_HOME}/boot \
+-Dsbt.boot.directory=${TOSHIBA_REPOS}/sbt/boot \
 -Dsbt.ivy.home=${TOSHIBA_REPOS}/ivy2 \
 -Dsbt.override.build.repos=true \
 -Dsbt.repository.config=${TOSHIBA_REPOS}/sbt/repositories"
@@ -198,7 +203,6 @@ PATH=${LOCAL}/jadx/bin:$PATH
 
 export PATH
 
-export DYLD_LIBRARY_PATH=$(rustc --print sysroot)/lib:$DYLD_LIBRARY_PATH
 
 # ########################################## User Alias Commond #####################################
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
