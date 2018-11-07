@@ -324,6 +324,24 @@ go get github.com/shadowsocks/shadowsocks-go/cmd/shadowsocks-local
 cargo install shadowsocks-rust
 ```
 
+### Textmate
+
+#### 依赖
+- ninja — build system similar to make
+- ragel — state machine compiler
+- boost — portable C++ source libraries
+- sparsehash — A cache friendly hash_map
+- multimarkdown — marked-up plain text compiler
+- mercurial — distributed SCM system
+- Cap’n Proto — serialization library
+- LibreSSL - OpenBSD fork of OpenSSL
+
+```bash
+# Ragel sparsehash 
+./configure --prefix=${LOCAL} && make -j6 && make insatall
+```
+
+
 ### 构建流程备份
 
 ```bash

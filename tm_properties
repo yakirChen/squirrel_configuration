@@ -7,7 +7,7 @@ fontAscentDelta          = 1
 lineHeight               = 0.6
 showIndentGuides         = flase
 showInvisibles           = true
-theme                    = E7E82498-F9EA-49A6-A0D8-12327EA46B01
+# theme                    = E7E82498-F9EA-49A6-A0D8-12327EA46B01
 lineNumberFontName       = SourceCodePro-Regular
 lineNumberScaleFactor    = 0.8
 fileBrowserStyle         = SourceList
@@ -16,9 +16,9 @@ tabItemMaxWidth          = 250
 tabItemLineBreakStyle    = 4
 tabsAboveDocument        = true
 enableLoopFilterList     = true
-windowTitleSCM     	     = '${TM_SCM_BRANCH:+ ($TM_SCM_NAME: $TM_SCM_BRANCH)}'
-windowTitleProject 	     = '${projectDirectory:+ — ${projectDirectory/^.*\///}}'
-windowTitle        	     = '$TM_DISPLAYNAME$windowTitleProject$windowTitleSCM'
+windowTitleSCM           = '${TM_SCM_BRANCH:+ ($TM_SCM_NAME: $TM_SCM_BRANCH)}'
+windowTitleProject       = '${projectDirectory:+ — ${projectDirectory/^.*\///}}'
+windowTitle              = '$TM_DISPLAYNAME$windowTitleProject$windowTitleSCM'
 
 [ *.gmk ]
 fileType         = source.makefile

@@ -13,7 +13,7 @@
 			<outline title="优哉·幽斋" xmlUrl="http://liyaos.com/blog/feed/" type="rss" text="优哉·幽斋"/>
 		</outline>
 		<outline text="elastic" title="elastic">
-			<outline htmlUrl="https://www.felayman.com:443" title="felayman个人博客,专注于Elasticsearch搜索技术" xmlUrl="https://www.felayman.com/blog-articles-rss.do" type="rss" text="felayman个人博客,专注于Elasticsearch搜索技术"/>
+			<outline title="felayman个人博客,专注于Elasticsearch搜索技术" xmlUrl="https://www.felayman.com/blog-articles-rss.do" type="rss" text="felayman个人博客,专注于Elasticsearch搜索技术"/>
 		</outline>
 		<outline text="Java" title="Java">
 			<outline htmlUrl="https://blog.codefx.org" title="blog@CodeFX" xmlUrl="https://blog.codefx.org/feed/" type="rss" text="blog@CodeFX"/>
@@ -22,6 +22,7 @@
 			<outline htmlUrl="http://www.ibm.com/developerworks/cn/" title="IBM developerWorks 中国 : Java technology : Articles,Tutorials" xmlUrl="https://www.ibm.com/developerworks/cn/views/rss/customrssatom.jsp?zone_by=Java+technology&amp;type_by=Articles&amp;type_by=Tutorials&amp;search_by=&amp;max_entries=50&amp;feed_by=rss" type="rss" text="IBM developerWorks 中国 : Java technology : Articles,Tutorials"/>
 			<outline htmlUrl="http://www.ibm.com/developerworks/cn/" title="IBM developerWorks 中国 : XML,Java technology,Rational,Linux,Open source,WebSphere : Tutorials" xmlUrl="http://www.ibm.com/developerworks/cn/views/rss/customrssatom.jsp?zone_by=XML&amp;zone_by=Java&amp;zone_by=Rational&amp;zone_by=Linux&amp;zone_by=Open+source&amp;zone_by=WebSphere&amp;type_by=Tutorials&amp;search_by=&amp;day=1&amp;month=06&amp;year=2007&amp;max_entries=20&amp;feed_by=rss&amp;isGUI=true&amp;Submit.x=48&amp;Submit.y=14" type="rss" text="IBM developerWorks 中国 : XML,Java technology,Rational,Linux,Open source,WebSphere : Tutorials"/>
 			<outline htmlUrl="http://www.importnew.com" title="ImportNew" xmlUrl="http://www.importnew.com/feed" type="rss" text="ImportNew"/>
+			<outline htmlUrl="http://blog.javachen.com/" title="JavaChen Blog" xmlUrl="http://blog.javachen.com/rss.xml" type="rss" text="JavaChen Blog"/>
 			<outline htmlUrl="https://jaxenter.com" title="JAXenter" xmlUrl="https://jaxenter.com/feed" type="rss" text="JAXenter"/>
 			<outline htmlUrl="https://imququ.com" title="JerryQu 的小站" xmlUrl="http://imququ.com/rss.html" type="rss" text="JerryQu 的小站"/>
 			<outline title="joyo's world" xmlUrl="http://www.iforfee.com/atom.xml" type="rss" text="joyo's world"/>
@@ -95,6 +96,7 @@
 			<outline htmlUrl="http://leichunfeng.github.io/" title="雷纯锋的技术博客" xmlUrl="http://blog.leichunfeng.com/atom.xml" type="rss" text="雷纯锋的技术博客"/>
 		</outline>
 		<outline text="rust" title="rust">
+			<outline htmlUrl="https://www.aloxaf.com/" title="Aloxaf's blog" xmlUrl="https://www.aloxaf.com/atom.xml" type="rss" text="Aloxaf's blog"/>
 			<outline htmlUrl="http://www.ncameron.org/blog/" title="featherweight musings" xmlUrl="https://www.ncameron.org/blog/rss/" type="rss" text="featherweight musings"/>
 			<outline htmlUrl="https://blog.rust-lang.org/" title="The Rust Programming Language Blog" xmlUrl="https://blog.rust-lang.org/feed.xml" type="rss" text="The Rust Programming Language Blog"/>
 		</outline>

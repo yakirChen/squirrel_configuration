@@ -4,12 +4,12 @@ patch:
       ascii_mode: true
     com.sublimetext.3:
       ascii_mode: true
-    org.netbeans.modules:
-      ascii_mode: true
+    # org.netbeans.modules:
+      # ascii_mode: true
     abnerworks.Typora:
       ascii_mode: true
-    com.jetbrains.intellij:
-      ascii_mode: true
+    # com.jetbrains.intellij:
+    #   ascii_mode: true
     com.apple.Spotlight:
       ascii_mode: true
     com.apple.Terminal:

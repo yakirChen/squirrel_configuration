@@ -13,8 +13,6 @@ plugins=(
     rustup
     golang
     npm
-    git
-    git-extras
     zsh-completions
 #    zsh-autosuggestions
     zsh-navigation-tools
@@ -45,6 +43,7 @@ export CARGO_HOME=${TOSHIBA_REPOS}/cargo
 export CARGO_PATH=${CARGO_HOME}/
 export RUSTUP_HOME=${TOSHIBA_REPOS}/rustup
 export RUSTFLAGS='-C target-cpu=native'
+# export RUSTFLAGS='-C prefer-dynamic'
 export RUSTUP_TOOLCHAIN=nightly
 #export RUSTUP_DIST_SERVER=https://static.rust-lang.org
 #export RUSTUP_UPDATE_ROOT=https://static.rust-lang.org/rustup
@@ -214,6 +213,7 @@ alias week='date +%V'
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 alias recaf="${JAVA_11_HOME}/bin/java -Dapplication.home=${JAVA_11_HOME} -jar ${JARS}/recaf.jar >/dev/null 2>&1 &"
 alias bcv="${JAVA_11_HOME}/bin/java -Dapplication.home=${JAVA_11_HOME} -jar ${JARS}/Bytecode-Viewer.jar >/dev/null 2>&1 &"
+alias gitrb="git reset && git checkout -- . && git checkout origin/master &&  git branch -D master && git status && git checkout master && git status"
 
 MVN_MB="-Dmaven.compiler.fork=true -T6"        # MVN_MULTI_THREADED_BUILDER
 # MVN_AS="-Paliyun -Pspring"
@@ -239,6 +239,8 @@ alias rsr="rustup run stable cargo --color always "
 alias rbr="rustup run beta cargo --color always "
 alias rsu="rustup self update"
 alias ru="rustup update"
+
+alias gcr="git clone --recurse-submodules "
 
 source $ZSH/oh-my-zsh.sh
  # source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
