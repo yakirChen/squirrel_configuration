@@ -69,11 +69,11 @@ export MYSQL_LOGS_DIR=/Volumes/Toshiba/repos/mysql/logs
 
 # 运行时环境变量
 export PKG_CONFIG=${LOCAL}/bin/pkg-config       # pkg-config
-export PKG_CONFIG_PATH=${PKG_CONFIG}
+export PKG_CONFIG_PATH=/Users/yakir/local/lib/pkgconfig
 export PKG_CONFIG_LIBDIR=${LOCAL}/lib/pkgconfig
 export CFLAGS="-I${LOCAL}/include -I${LOCAL}/include/openssl -I${LOCAL}/include/readline -I${LOCAL}/include/sodium"
 # -I${LOCAL}/include/lzma -I${LOCAL}/include/freetype2
-export CXXFLAGS=${CFLAGS}
+export CXXFLAGS="--std=c++17 "
 export CPPFLAGS=${CFLAGS}
 export LDFLAGS="-L${LOCAL}/lib"
 export BOOST_ROOT=${TOSHIBA_REPOS}/boost
