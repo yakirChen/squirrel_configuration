@@ -1,66 +1,47 @@
+__build_info:
+  rime_version: 1.3.2
+  timestamps:
+    squirrel: 1542199167
+    squirrel.custom: 0
 app_options:
-  com.apple.dt.Xcode:
+  co.zeit.hyper:
     ascii_mode: true
-  com.sublimetext.3:
-    ascii_mode: true
-  org.netbeans.modules:
-    ascii_mode: true
-  abnerworks.Typora:
-    ascii_mode: true
-  com.jetbrains.intellij:
+  com.alfredapp.Alfred:
     ascii_mode: true
   com.apple.Spotlight:
     ascii_mode: true
   com.apple.Terminal:
     ascii_mode: true
-  com.torusknot.SourceTreeNotMAS:
+    no_inline: true
+  com.apple.dt.Xcode:
+    ascii_mode: true
+  com.barebones.textwrangler:
+    ascii_mode: true
+  com.blacktree.Quicksilver:
+    ascii_mode: true
+  com.github.atom:
     ascii_mode: true
   com.googlecode.iterm2:
     ascii_mode: true
-  com.sequelpro.SequelPro:
+  com.macromates.TextMate.preview:
     ascii_mode: true
-  com.electron.postman:
+  com.microsoft.VSCode:
     ascii_mode: true
-  abnerworks.Typora:
+  "com.runningwithcrayons.Alfred-2":
     ascii_mode: true
+  com.sublimetext.2:
+    ascii_mode: true
+  org.gnu.Aquamacs:
+    ascii_mode: true
+  org.gnu.Emacs:
+    ascii_mode: true
+    no_inline: true
+  org.vim.MacVim:
+    ascii_mode: true
+    no_inline: true
 chord_duration: 0.1
 config_version: 0.30
 preset_color_schemes:
-  yakir_white:
-    name: "yakir白色主题／yakir_white"
-    author: "yakirChen <iamyakirchen@outlook.com>"
-    back_color: 0xFFFFFF
-    border_color: 0xFFFFFF
-    text_color: 0x000000
-    font_point: 14
-    # font_face: 'Source Code Pro'
-    # label_font_face: 'Source Sans Pro' # 'Lucida Grande' supporting soft cursor '›'
-    label_font_face: "Lucida Grande"
-    label_font_point: 10
-    hilited_text_color: 0xFFFFFF
-    hilited_back_color: 0x514B64
-    hilited_candidate_text_color: 0xFFFFFF
-    hilited_candidate_back_color: 0xCAAF16
-    hilited_candidate_label_color: 0x999999 # 第一候选项编号颜色
-    candidate_text_color: 0x000000
-    comment_text_color: 0x000000
-  yakir:
-    name: "yakir黑色主题／yakir"
-    author: "yakirChen <iamyakirchen@outlook.com>"
-    back_color: 0x2F2F2F
-    border_color: 0xFFFFFF
-    text_color: 0xFFFFFF
-    font_point: 14
-    # font_face: 'Source Code Pro'
-    # label_font_face: 'Source Sans Pro'
-    label_font_point: 10
-    hilited_text_color: 0xFFFFFF
-    hilited_back_color: 0x514B64
-    hilited_candidate_text_color: 0xFFFFFF
-    hilited_candidate_back_color: 0xCAAF16
-    # hilited_candidate_back_color: 0xD2BC1F
-    candidate_text_color: 0xFFFFFF
-    comment_text_color: 0xFFFFFF
   apathy:
     author: "LIANG Hai"
     back_color: 0xFFFFFF
@@ -261,14 +242,13 @@ preset_color_schemes:
     text_color: 0xccaa88
 show_notifications_when: appropriate
 style:
-  border_height: 4 # 窗口邊界高度，大於圓角半徑才有效果 
-  border_width: 4  # 窗口邊界寬度，大於圓角半徑才有效果
-  color_scheme: yakir
-  corner_radius: 3 # 窗口圓角半徑
+  border_height: 0
+  border_width: 0
+  color_scheme: native
+  corner_radius: 10
   font_face: "Lucida Grande"
-  # font_face: "Source Han Sans HW K Regular"
-  horizontal: true
+  horizontal: false
   inline_preedit: true
-  line_spacing: 0
-  spacing: 0
-us_keyboard_layout: true
+  line_spacing: 5
+  spacing: 10
+us_keyboard_layout: false
