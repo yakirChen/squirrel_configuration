@@ -86,13 +86,13 @@ patch:
       candidate_format: "%c\u2005%@"                # 用 1/6 em 空格 U+2005 来控制编号 %c 和候选词 %@ 前后的空间。
       corner_radius: 4                              # 候选条圆角
       hilited_corner_radius: 3                      # 高亮圆角
-      border_height: 4                              # 窗口邊界高度，大於圓角半徑才有效果 
-      border_width: 4                               # 窗口邊界寬度，大於圓角半徑才有效果
+      border_height: 5                              # 窗口邊界高度，大於圓角半徑才有效果 
+      border_width: 5                               # 窗口邊界寬度，大於圓角半徑才有效果
       border_color_width: 0                         # 边框宽度
       font_face: "Lucida Grande"                    # 候选词字体
       label_font_face: "Lucida Grande"              # 候选编号字体
       font_point: 16                                # 候选字词大小
-      label_font_point: 12                          # 候选编号大小
+      label_font_point: 14                          # 候选编号大小
       text_color: 0xFFFFFF                          # 拼音行文字颜色，24位色值，16进制，BGR顺序
       back_color: 0x2A2A2A                          # 候选条背景色
       label_color: 0xA0A0A0                         # 预选栏编号颜色

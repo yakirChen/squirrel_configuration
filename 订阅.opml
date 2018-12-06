@@ -60,7 +60,7 @@
 			<outline htmlUrl="http://blog.inico.me" title="Nico" xmlUrl="http://blog.inico.me/atom.xml" type="rss" text="Nico"/>
 			<outline title="Nonomori" xmlUrl="http://nonomori.farbox.com/feed" type="rss" text="Nonomori"/>
 			<outline htmlUrl="https://nshipster.cn/" title="NSHipster" xmlUrl="http://nshipster.cn/feed.xml" type="rss" text="NSHipster"/>
-			<outline htmlUrl="http://onevcat.com/" title="OneV's Den" xmlUrl="http://onevcat.com/atom.xml" type="rss" text="OneV's Den"/>
+			<outline htmlUrl="https://onevcat.com/" title="OneV's Den" xmlUrl="http://onevcat.com/atom.xml" type="rss" text="OneV's Den"/>
 			<outline htmlUrl="http://blog.sunnyxx.com/" title="sunnyxx的技术博客" xmlUrl="http://blog.sunnyxx.com/atom.xml" type="rss" text="sunnyxx的技术博客"/>
 			<outline title="Swift.org" xmlUrl="https://swift.org/atom.xml" type="rss" text="Swift.org"/>
 			<outline htmlUrl="https://swifter.tips/" title="Swifter" xmlUrl="http://swifter.tips/feed.xml" type="rss" text="Swifter"/>
@@ -69,7 +69,7 @@
 			<outline title="webfrogs" xmlUrl="http://blog.nswebfrog.com/feed/" type="rss" text="webfrogs"/>
 			<outline htmlUrl="http://blog.callmewhy.com/" title="Why's Blog" xmlUrl="http://blog.callmewhy.com/atom.xml" type="rss" text="Why's Blog"/>
 			<outline htmlUrl="http://wonderffee.github.io/" title="Wonderffee's Blog" xmlUrl="http://wonderffee.github.io/atom.xml" type="rss" text="Wonderffee's Blog"/>
-			<outline htmlUrl="http://zhaoxinyu.me/" title="X140Yu's Blog" xmlUrl="https://zhaoxinyu.me/atom.xml" type="rss" text="X140Yu's Blog"/>
+			<outline htmlUrl="https://zhaoxinyu.me/" title="X140Yu's Blog" xmlUrl="https://zhaoxinyu.me/atom.xml" type="rss" text="X140Yu's Blog"/>
 			<outline title="Yuan博客" xmlUrl="http://www.heyuan110.com/?feed=rss2" type="rss" text="Yuan博客"/>
 			<outline htmlUrl="http://yulingtianxia.com/" title="yulingtianxia's blog" xmlUrl="http://yulingtianxia.com/atom.xml" type="rss" text="yulingtianxia's blog"/>
 			<outline htmlUrl="http://studentdeng.github.com/" title="不会开机的男孩" xmlUrl="http://studentdeng.github.io/atom.xml" type="rss" text="不会开机的男孩"/>
@@ -112,6 +112,7 @@
 		</outline>
 		<outline text="存储" title="存储">
 			<outline htmlUrl="https://pingcap.com/blog-cn/" title="Blog-cns on PingCAP Site" xmlUrl="https://pingcap.com/blog-cn/index.xml" type="rss" text="Blog-cns on PingCAP Site"/>
+			<outline htmlUrl="https://ericfu.me/" title="Coding Husky" xmlUrl="https://ericfu.me/atom.xml" type="rss" text="Coding Husky"/>
 			<outline htmlUrl="http://yoursite.com/" title="pagefault" xmlUrl="http://www.pagefault.info/atom.xml" type="rss" text="pagefault"/>
 		</outline>
 		<outline text="安全" title="安全">

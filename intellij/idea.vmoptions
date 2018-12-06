@@ -23,8 +23,8 @@
 -ea
 -Xdiag
 -XshowSettings:all
--Xmx1152M
--Xms1152M
+-Xmx1536M
+-Xms1536M
 -XX:ReservedCodeCacheSize=384M
 -XX:MaxMetaspaceSize=512M
 -XX:MinMetaspaceFreeRatio=60
@@ -43,13 +43,14 @@
 -XX:+UseCompressedOops
 -XX:SoftRefLRUPolicyMSPerMB=50
 
--XX:+PrintGC
 -XX:+AlwaysPreTouch
 -XX:+UseNUMA
 -Xverify:none
 -XX:-OmitStackTraceInFastThrow
 -XX:+HeapDumpOnOutOfMemoryError
 
+-XX:+PrintGC
+-XX:+UseGCLogFileRotation
 -Xloggc:/Volumes/Toshiba/dev/logs/gc/idea.gc.%p.log
 -XX:+PrintGCDetails
 -XX:+PrintGCDateStamps
@@ -64,3 +65,4 @@
 -Dos.detected.name=osx
 -Dos.detected.arch=x86_64
 -Dos.detected.classifier=osx-x86_64
+

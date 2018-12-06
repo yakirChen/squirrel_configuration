@@ -270,10 +270,15 @@
 	</data>
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
+	<key>NSToolbar Configuration com.apple.NSColorPanel</key>
+	<dict>
+		<key>TB Is Shown</key>
+		<integer>1</integer>
+	</dict>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>2406 639 1018 447 1920 120 1920 1080 </string>
+	<string>2008 741 928 394 1920 120 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>2102 426 1270 750 1920 120 1920 1080 </string>
+	<string>1920 116 1564 1080 1920 120 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>2146 232 1270 750 1920 120 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -482,12 +487,16 @@
 			<string></string>
 			<key>Cursor Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.91648769378662109</real>
+				<real>0.25882352941176473</real>
+				<key>Color Space</key>
+				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.91671288013458252</real>
+				<real>0.30588235294117649</real>
 				<key>Red Component</key>
-				<real>0.91654461622238159</real>
+				<real>1</real>
 			</dict>
 			<key>Cursor Guide Color</key>
 			<dict>
@@ -1003,7 +1012,7 @@
 	<key>UseBorder</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.2.6beta1</string>
+	<string>3.2.6</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>7</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
