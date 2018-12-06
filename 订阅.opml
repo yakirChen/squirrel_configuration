@@ -122,8 +122,10 @@
 		</outline>
 		<outline text="扯扯" title="扯扯">
 			<outline htmlUrl="https://blog.blahgeek.com" title="BlahGeek's Blog" xmlUrl="https://blog.blahgeek.com/feeds/all.rss.xml" type="rss" text="BlahGeek's Blog"/>
+			<outline htmlUrl="https://hexilee.me/" title="Hexi Blog" xmlUrl="https://hexilee.me/feed.xml" type="rss" text="Hexi Blog"/>
 			<outline htmlUrl="http://maskray.me/blog/" title="MaskRay" xmlUrl="http://maskray.me/blog/atom.xml" type="rss" text="MaskRay"/>
 			<outline htmlUrl="http://ppwwyyxx.com/" title="Yuxin's Blog" xmlUrl="http://ppwwyyxx.com/atom.xml" type="rss" text="Yuxin's Blog"/>
+			<outline htmlUrl="http://yoursite.com/" title="栋哥的博客" xmlUrl="https://liuyandong.com/atom.xml" type="rss" text="栋哥的博客"/>
 		</outline>
 		<outline text="野生技术" title="野生技术">
 			<outline htmlUrl="http://www.ahonn.me/" title="Ahonn's Blog" xmlUrl="http://www.ahonn.me/atom.xml" type="rss" text="Ahonn's Blog"/>

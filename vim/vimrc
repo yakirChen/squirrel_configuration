@@ -1,3 +1,5 @@
+scriptencoding utf-8
+
 set nocompatible " 关闭vi兼容模式
 set t_Co=256 " 开启终端256色 terminal Color
 set showcmd
@@ -31,6 +33,7 @@ set ttyfast
 set so=1
 syntax enable " 开启语法高亮功能
 " syntax on " 允许用指定语法高亮配色方案替换默认方案 自适应不同语言的智能缩进
+filetype on
 filetype plugin on
 filetype indent on
 set autoread
