@@ -32,16 +32,17 @@ export TO_SERVERS=/Volumes/To/servers
 export JARS=${LOCAL}/jars
 
 # 语言工具
-# export RUBY_HOME=${LOCAL}/ruby
+export RUBY_HOME=${LOCAL}/ruby
 export PY2_HOME=${LOCAL}/python2
 export PY3_HOME=${LOCAL}/python3
 export GOROOT=${LOCAL}/go
+export ERL_HOME=${LOCAL}/otp
 export NODE_PATH=${LOCAL}/node
 export NODE_GLOBAL_PATH=${TO_REPOS}/node_global
 #export RUST_HOME=${LOCAL}/rust
 export CARGO_HOME=${TO_REPOS}/cargo
 export CARGO_PATH=${CARGO_HOME}/
-export RUSTUP_HOME=${TO_REPOS}/rustup
+export RUSTUP_HOME=${TO_REPOS}/cargo
 export RUSTFLAGS='-C target-cpu=native'
 # export RUSTFLAGS='-C prefer-dynamic'
 export RUSTUP_TOOLCHAIN=nightly
@@ -88,7 +89,7 @@ export GOCACHE=${TO_REPOS}/go/gocache
 export ZK_HOME=${TO_SERVERS}/zookeeper
 # export ZK_HOME=${LOCAL}/zookeeper
 # export TOMCAT_HOME=${TO_SERVERS}/tomcat
-# export REDIS_HOME=${TO_REPOS}/redis
+export REDIS_HOME=${TO_SERVERS}/redis
 # export NGINX=${LOCAL}/nginx
 # export MYSQL_SHELL=${LOCAL}/mysqlsh
 export WGET_HOME=${LOCAL}/wget
@@ -190,18 +191,20 @@ PATH=${WGET_HOME}/bin:$PATH
 PATH=${GNUPG_HOME}/bin:$PATH
 PATH=${CMAKE_HOME}/bin:$PATH
 PATH=${CARGO_HOME}/bin:${M2_HOME}/bin:${GRADLE_HOME}/bin:${ANT_HOME}/bin:$PATH
+PATH=${ERL_HOME}/bin:$PATH
 PATH=$MYSQL_BASE_DIR/bin:$MYSQL_BASE_DIR/support-files:${MYSQL_SHELL}/bin:$PATH
 PATH=$KOTLIN_HOME/bin:$PATH
 PATH=$PY2_HOME/bin:$PY3_HOME/bin:$LUA_HOME/bin:$PATH
 PATH=$GOROOT/bin:$GOPATH/bin:$CHEZ_SCHEME_HOME/bin:$NODE_PATH/bin:$NODE_GLOBAL_PATH/bin:$PATH
+PATH=$REDIS_HOME/bin:$PATH
 
 # PATH=$HASKELL_BIN/bin:$ZK_HOME/bin:$TOMCAT_HOME/bin:$PATH
 # PATH=${BTRACE_HOME}/bin:${HTOP_HOME}/bin:$PATH
-# PATH=$REDIS_HOME/bin:$NGINX:$PATH
+# PATH=$NGINX:$PATH
 # PATH=$CBC_HOME/bin:$JAVACC_HOME/bin:$GCC_HOME/bin:$PATH
 # PATH${SPRINGCLI_HOME}/bin:${FFMPEG_HOME}/bin:$PATH
 # PATH=${NASM_HOME}/bin:${YASM_HOME}/bin:${YARN_HOME}/bin:${BISON_HOME}/bin:$PATH
-# PATH=$RUBY_HOME/bin:$GEM_HOME/bin:$PATH
+PATH=$RUBY_HOME/bin:$GEM_HOME/bin:$PATH
 # PATH=${LOCAL}/jadx/bin:$PATH
 
 export PATH
@@ -231,19 +234,24 @@ alias mvndocs="mvn dependency:resolve -Dclassifier=javadoc"
 alias mvncpst="${MVN_TEMPLATE}"
 alias mvncpstc="${MVN_TEMPLATE} -Pmaven2 ; mvn clean"
 alias mvna="mvn dependency:sources -P163 ; mvn dependency:resolve -Dclassifier=javadoc -P163 ; ${MVN_TEMPLATE} -P163 -Pmaven2 ; mvn clean -P163"
+alias mvna24="mvn -T24 dependency:sources -P163; mvn -T24 dependency:resolve -Dclassifier=javadoc -P163 ; ${MVN_TEMPLATE} -T24 -P163 -Pmaven2 ; mvn clean -P163"
+alias mvnversion="mvn -T24 versions:display-plugin-updates -P163 -Pspring -Papache ; mvn -T24 versions:display-property-updates -P163 -Pspring -Papache"
 
 alias mx="mx --user-home=${TO_REPOS}/mx"
 alias schemescript='scheme --script'
 alias clojure='java -jar ${LOCAL_LIB_DIR}/clojure/clojure.jar'
 
-########################################### RustUp ##################################################
+########################################### rustup ##################################################
 alias rnr="rustup run nightly cargo --color always "
 alias rsr="rustup run stable cargo --color always "
 alias rbr="rustup run beta cargo --color always "
 alias rsu="rustup self update"
 alias ru="rustup update"
 
+############################################ alias ##################################################
+alias rm="rm -v "
 alias gcr="git clone --recurse-submodules "
+alias gcr1="git clone --recurse-submodules --depth 1 "
 
 source $ZSH/oh-my-zsh.sh
  # source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

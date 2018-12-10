@@ -72,27 +72,27 @@ chmod 600 ~/.ssh/*                  # -rw-------
 
 ```bash
 # pkg-config
-./configure --prefix=${LOCAL} --with-internal-glib && make -j4 && make install
+./configure --prefix=${LOCAL} --with-internal-glib && make -j 12 && make install
 # zlib
-./configure --prefix=${LOCAL} && make -j4 && make install
+./configure --prefix=${LOCAL} && make -j 12 && make install
 # xz
-# ./configure --prefix=${LOCAL} && make -j4 && make install
+# ./configure --prefix=${LOCAL} && make -j 12 && make install
 # autoconf
-./configure --prefix=${LOCAL} && make -j4 && make install
+./configure --prefix=${LOCAL} && make -j 12 && make install
 # automake
-./configure --prefix=${LOCAL} && make -j4 && make install
+./configure --prefix=${LOCAL} && make -j 12 && make install
 # libtool
-./configure --prefix=${LOCAL} && make -j4 && make install && \
+./configure --prefix=${LOCAL} && make -j 12 && make install && \
     cd ${LOCAL}/bin && ln -s libtoolize glibtoolize && cd -
 # libressl
-./configure --prefix=${LOCAL} && make -j4 && make install
+./configure --prefix=${LOCAL} && make -j 12 && make install
 # boost
 ./bootstrap.sh --prefix=${LOCAL} --with-libraries=all && \
-    ./b2 -j4 && ./b2 -j4 --prefix=${LOCAL} install # 默认安装在/usr/local目录下
+    ./b2 -j 12 && ./b2 -j 12 --prefix=${LOCAL} install # 默认安装在/usr/local目录下
 export BOOST_ROOT=${LOCAL} # 引入环境变量
 # freetype
 ./configure --prefix=${LOCAL} --without-harfbuzz && \
-    make -j4 && make install
+    make -j 12 && make install
 # libffi
 git clone --depth 1 git@github.com:libffi/libffi.git
 cd libffi
@@ -102,33 +102,33 @@ cd libffi
     --disable-dependency-tracking \
     --enable-purify-safety \
     --prefix=${LOCAL} && \
-    make -j4 && make install
+    make -j 12 && make install
 # 使用macOS自带Python2 
 # Ccache
-./configure --prefix=${LOCAL} && make -j4 && make install
+./configure --prefix=${LOCAL} && make -j 12 && make install
 # wget
 ./configure --prefix=${LOCAL}/wget \
     --with-ssl=openssl \
     --with-openssl=yes \
     --with-gnu-ld=no \
     --with-libssl-prefix=/Users/yakir/local \
-    --without-libgnutls-prefix && make -j4 && make install
+    --without-libgnutls-prefix && make -j 12 && make install
 # bison
-./configure --prefix=${LOCAL} && make -j4 && make install
+./configure --prefix=${LOCAL} && make -j 12 && make install
 # jq
 autoreconf -i && \
     ./configure --with-oniguruma=builtin --disable-maintainer-mode --prefix=${LOCAL} && \
-    make LDFLAGS=-all-static -j4 && make LDFLAGS=-all-static install
+    make LDFLAGS=-all-static -j 12 && make LDFLAGS=-all-static install
 # ruby 
 gcl --depth 1  https://github.com/ruby/ruby.git && \
     autoconf && \
     ./configure --prefix=${RUBY_HOME} && \
-    make -j4 && \
+    make -j 12 && \
     make install && \
     gem install cocoapods
 
 # libsodium 支持 shadowsocks chacha20
-./configure --prefix=${LOCAL} && make -j4 && make install
+./configure --prefix=${LOCAL} && make -j 12 && make install
 ```
 
 ### Python2 & Python3 源码构建
@@ -138,11 +138,11 @@ gcl --depth 1  https://github.com/ruby/ruby.git && \
 git clone --depth 1 git://git.savannah.gnu.org/readline.git
 mkdir build && cd build && \
 ../configure --prefix=${LOCAL} --enable-shared --enable-static --with-purify --enable-FEATURE=yes && \
-make -j4 && make install
+make -j 12 && make install
 # python2
 mkdir build && cd build && \
 ../configure --enable-shared --enable-optimizations --enable-unicode=ucs4  --prefix=${PY2_HOME} && \
-make -j4 && make install && python2 --version
+make -j 12 && make install && python2 --version
 # python2扩展包安装
 curl -O https://bootstrap.pypa.io/get-pip.py
 python2 get-pip.py
@@ -160,7 +160,7 @@ mkdir build && cd build && \
     --with-dtrace \
     --enable-optimizations \
     --prefix=${PY3_HOME} && \
-    make -j4 && make install && python3 --version
+    make -j 12 && make install && python3 --version
 # 在python3中自带pip，pip3包检查更新
 pip3 list --outdate
 ```
@@ -219,15 +219,15 @@ done;
 
 ```bash
 # gettext
-./configure --prefix=${LOCAL} --disable-java && make -j4 && make install
+./configure --prefix=${LOCAL} --disable-java && make -j 12 && make install
 # adns
-# ./configure --prefix=${LOCAL} --disable-dynamic && make -j4 && make install
+# ./configure --prefix=${LOCAL} --disable-dynamic && make -j 12 && make install
 # libgpg-error
 ./configure --prefix=${LOCAL} \
     --disable-dependency-tracking \
     --disable-silent-rules \
     --enable-static && \
-    make -j4 && \
+    make -j 12 && \
     make install
 # libgcrypt
 ./configure --disable-dependency-tracking \
@@ -236,26 +236,26 @@ done;
     --prefix=${LOCAL} \
     --disable-asm \
     --disable-jent-support && \
-    make -j4 && \
+    make -j 12 && \
     make install
 # libksba
 ./configure --disable-dependency-tracking \
     --disable-silent-rules \
     --prefix=${LOCAL} && \
-    make -j4 && \
+    make -j 12 && \
     make install
 # libassuan
 ./configure --disable-dependency-tracking \
     --disable-silent-rules \
     --prefix=${LOCAL} \
     --enable-static && \
-    make -j4 && \
+    make -j 12 && \
     make install
 # npth
 ./configure --disable-dependency-tracking \
     --disable-silent-rules \
     --prefix=${LOCAL} && \
-    make -j4 && \
+    make -j 12 && \
     make install
 # pinentry
 ./configure --disable-dependency-tracking \
@@ -268,7 +268,7 @@ done;
     --disable-pinentry-fltk \
     --enable-pinentry-tty \
     --disable-pinentry-gtk2 && \
-    make -j4 && \
+    make -j 12 && \
     make install
 # ntbtls
 ./configure --disable-dependency-tracking \
@@ -276,7 +276,7 @@ done;
     --disable-silent-rules \
     --prefix=${LOCAL} \
     --disable-heartbeat-support && \
-    make -j4 && \
+    make -j 12 && \
     make install
 # gnupg
 ./configure --disable-dependency-tracking \
@@ -288,7 +288,7 @@ done;
       --with-pinentry-pgm=/Users/yakir/local/pinentry/bin/pinentry \
       --enable-all-tests \
       --disable-sqlite \
-      --disable-ccid-driver && make -j4 && \
+      --disable-ccid-driver && make -j 12 && \
       make install
       
 # gpg-agent --homedir /Users/yakir/.gnupg --use-standard-socket --daemon
@@ -364,13 +364,13 @@ hg --version
     --with-http_stub_status_module \
     --with-http_realip_module \
     --add-module=../ngx_cache_purge-2.3 && \
-    make -j4 && make install
+    make -j 12 && make install
 # 开启 & 关闭
 sudo nginx
 sudo nginx -s stop
 
 # Little CMS & FriBidi & libass & JPEG 
-./configure --prefix=${LOCAL} && make -j4 && make install
+./configure --prefix=${LOCAL} && make -j 12 && make install
 
 # Berkeley DB
 cd build_unix
@@ -383,14 +383,14 @@ cd build_unix
     --enable-stl \
     --enable-jdbc \
     --enable-java \
-    --enable-server && make -j4 && make install
+    --enable-server && make -j 12 && make install
 
 # jack-audio-connection-kit & libxml2
-./configure --prefix=${LOCAL} && make -j4 && make install 
+./configure --prefix=${LOCAL} && make -j 12 && make install 
 
 # libbluray
 git clone --recursive http://git.videolan.org/git/libbluray.git
-./bootstrap && ./configure --prefix=${LOCAL} && make -j4 && make install 
+./bootstrap && ./configure --prefix=${LOCAL} && make -j 12 && make install 
 
 # libcaca
 curl -L caca.zoy.org/files/libcaca/libcaca-0.99.beta19.tar.gz -o libcaca-0.99.beta19.tar.gz
@@ -405,12 +405,12 @@ curl -L caca.zoy.org/files/libcaca/libcaca-0.99.beta19.tar.gz -o libcaca-0.99.be
     --disable-java \
     --disable-csharp \
     --disable-ruby && \
-    make -j4 && make install
+    make -j 12 && make install
 
 # libdvdnav
 
 # yasm
-./configure --prefix=${LOCAL} && make -j4 && make install
+./configure --prefix=${LOCAL} && make -j 12 && make install
 
 # x265
 hg clone https://bitbucket.org/multicoreware/x265
@@ -419,7 +419,7 @@ cd build/linux
 ./make-Makefiles.bash
 # `<enter>`  CMAKE_INSTALL_PREFIX   /Users/yakir/Developer/local
 # `<g>`
-make -j4 && make install
+make -j 12 && make install
 
 # x264
 ./configure --prefix=${LOCAL} \
@@ -438,7 +438,7 @@ make -j4 && make install
     --enable-version3 \
     --enable-libx264 \
     --enable-libx265 && \
-    make -j4 && \
+    make -j 12 && \
     make install
 
 # ffmpeg
@@ -452,7 +452,7 @@ make -j4 && make install
     --enable-libx264 \
     --enable-lzma \
     --enable-libbluray && \
-    make -j4 && \
+    make -j 12 && \
     make install
 
 # MuJS
