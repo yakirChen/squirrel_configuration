@@ -2,14 +2,14 @@
 <!-- MarkdownTOC autolink="true" autoanchor="false" markdown_preview="" uri_encoding="false" bullets="-,+,*" remove_image="false" -->
 
 - [基础工具](#基础工具)
-    + [Terminal基础配置](#terminal基础配置)
-    + [SSH免密](#ssh免密)
+  + [Terminal基础配置](#terminal基础配置)
+  + [SSH免密](#ssh免密)
 - [安装包下载链接](#安装包下载链接)
-    + [配置 & 编译](#配置--编译)
-    + [Python2 & Python3 源码构建](#python2--python3-源码构建)
-    + [GnuPG](#gnupg)
-    + [Python 模块安装](#python-模块安装)
-    + [构建流程备份](#构建流程备份)
+  + [配置 & 编译](#配置--编译)
+  + [Python2 & Python3 源码构建](#python2--python3-源码构建)
+  + [GnuPG](#gnupg)
+  + [Python 模块安装](#python-模块安装)
+  + [构建流程备份](#构建流程备份)
 
 <!-- /MarkdownTOC -->
 
@@ -43,18 +43,23 @@ chmod 600 ~/.ssh/*                  # -rw-------
 ## 安装包下载链接
 
 + [autoconf](https://www.gnu.org/software/autoconf/autoconf.html)
+  - https://ftp.gnu.org/gnu/autoconf/
 + [automake](http://www.gnu.org/software/automake)
+  - https://ftp.gnu.org/gnu/automake/
 + [libtool](https://www.gnu.org/software/libtool/)
+  - http://mirrors.nju.edu.cn/gnu/libtool/
 + [zlib](http://www.zlib.net)
 + [XZ Utils](https://tukaani.org/xz)
 + [uuid](http://www.ossp.org/pkg/lib/uuid)
 + [pkg-config](https://www.freedesktop.org/wiki/Software/pkg-config)
 + [Docutils](http://docutils.sourceforge.net)
 + [Freetype](https://www.freetype.org)
+  - https://download.savannah.gnu.org/releases/freetype/
 + [Libffi](https://github.com/libffi/libffi)
 + [LibreSSL](https://www.libressl.org)
 + [Ccache](https://ccache.samba.org/download.html)
 + [libsodium](https://download.libsodium.org/libsodium/releases/)
+  - https://github.com/jedisct1/libsodium
 + [Python](https://www.python.org/downloads/source)
 + [gdbm](https://www.gnu.org.ua/software/gdbm/download.html)
 + [Readline](https://tiswww.cwru.edu/php/chet/readline/rltop.html)
@@ -63,7 +68,9 @@ chmod 600 ~/.ssh/*                  # -rw-------
 + [nginx](http://nginx.org/en/download.html)
 + [pcre](http://www.pcre.org)
 + [ngx_cache_purge](http://labs.frickle.com/nginx_ngx_cache_purge)
+  - https://github.com/FRiCKLE/ngx_cache_purge/
 + [libssh2](https://www.libssh2.org)
+  - https://github.com/libssh2/libssh2
 + [wget](https://ftp.gnu.org/gnu/wget/)
 + [bison](https://ftp.gnu.org/gnu/bison/)
 + [jq JSON processor](https://github.com/stedolan/jq)
@@ -87,9 +94,9 @@ chmod 600 ~/.ssh/*                  # -rw-------
 # libressl
 ./configure --prefix=${LOCAL} && make -j 12 && make install
 # boost
-./bootstrap.sh --prefix=${LOCAL} --with-libraries=all && \
-    ./b2 -j 12 && ./b2 -j 12 --prefix=${LOCAL} install # 默认安装在/usr/local目录下
-export BOOST_ROOT=${LOCAL} # 引入环境变量
+export BOOST_ROOT=/Volumes/To/repos/boost # 引入环境变量
+./bootstrap.sh --prefix=${BOOST_ROOT} --with-libraries=all && \
+    ./b2 -j 12 && ./b2 -j 12 --prefix=${BOOST_ROOT} install # 默认安装在/usr/local目录下
 # freetype
 ./configure --prefix=${LOCAL} --without-harfbuzz && \
     make -j 12 && make install
@@ -174,15 +181,16 @@ pip3 list --outdate
 [libksba](https://gnupg.org/ftp/gcrypt/libksba/)  
 [npth](https://gnupg.org/ftp/gcrypt/npth/)  
 [gnupg](https://www.gnupg.org)  
+[pinentry](https://gnupg.org/ftp/gcrypt/pinentry/)
 
 ```bash
 pkgs=(
-    "libgpg-error-1.32.tar.gz"
-    "libgcrypt-1.8.3.tar.gz"
-    "libassuan-2.5.1.tar.bz2"
+    "libgpg-error-1.33.tar.bz2"
+    "libgcrypt-1.8.4.tar.bz2"
+    "libassuan-2.5.2.tar.bz2"
     "libksba-1.3.5.tar.bz2"
     "npth-1.6.tar.bz2"
-    "gnupg-2.2.10.tar.bz2"
+    "gnupg-2.2.12.tar.bz2"
     "gettext-0.19.8.1.tar.xz"
     "pinentry-1.1.0.tar.bz2"
     "ntbtls-0.1.2.tar.bz2"
@@ -351,18 +359,22 @@ python2 setup.py build && \
 python2 setup.py install --prefix=${PYTHON2_HOME}
 hg --version
 
-# Ruby
-
 # nginx
 ./configure --prefix=${NGINX}  \
     --sbin-path=${NGINX}/nginx  \
     --conf-path=${NGINX}/nginx.conf  \
     --pid-path=${NGINX}/nginx.pid \
-    --with-pcre=../pcre-8.41  \
-    --with-zlib=../zlib-1.2.11  \
-    --with-openssl=../libressl-2.6.2 \
+    --with-threads \
+    --with-http_v2_module \
+    --with-http_ssl_module \
+    --http-log-path=/Volumes/To/logs/nginx/access.log \
+    --error-log-path=/Volumes/To/logs/nginx/error.log \
+    --lock-path=/Volumes/To/logs/nginx/nginx.lock \
     --with-http_stub_status_module \
     --with-http_realip_module \
+    --with-pcre=../pcre-8.42  \
+    --with-zlib=../zlib-1.2.11  \
+    --with-openssl=../libressl-2.8.3 \
     --add-module=../ngx_cache_purge-2.3 && \
     make -j 12 && make install
 # 开启 & 关闭
@@ -410,6 +422,7 @@ curl -L caca.zoy.org/files/libcaca/libcaca-0.99.beta19.tar.gz -o libcaca-0.99.be
 # libdvdnav
 
 # yasm
+./autogen.sh # from source
 ./configure --prefix=${LOCAL} && make -j 12 && make install
 
 # x265

@@ -90,7 +90,7 @@ export ZK_HOME=${TO_SERVERS}/zookeeper
 # export ZK_HOME=${LOCAL}/zookeeper
 # export TOMCAT_HOME=${TO_SERVERS}/tomcat
 export REDIS_HOME=${TO_SERVERS}/redis
-# export NGINX=${LOCAL}/nginx
+export NGINX=${LOCAL}/nginx
 # export MYSQL_SHELL=${LOCAL}/mysqlsh
 export WGET_HOME=${LOCAL}/wget
 
@@ -196,11 +196,10 @@ PATH=$MYSQL_BASE_DIR/bin:$MYSQL_BASE_DIR/support-files:${MYSQL_SHELL}/bin:$PATH
 PATH=$KOTLIN_HOME/bin:$PATH
 PATH=$PY2_HOME/bin:$PY3_HOME/bin:$LUA_HOME/bin:$PATH
 PATH=$GOROOT/bin:$GOPATH/bin:$CHEZ_SCHEME_HOME/bin:$NODE_PATH/bin:$NODE_GLOBAL_PATH/bin:$PATH
-PATH=$REDIS_HOME/bin:$PATH
+PATH=$REDIS_HOME/bin:$NGINX:$PATH
 
 # PATH=$HASKELL_BIN/bin:$ZK_HOME/bin:$TOMCAT_HOME/bin:$PATH
 # PATH=${BTRACE_HOME}/bin:${HTOP_HOME}/bin:$PATH
-# PATH=$NGINX:$PATH
 # PATH=$CBC_HOME/bin:$JAVACC_HOME/bin:$GCC_HOME/bin:$PATH
 # PATH${SPRINGCLI_HOME}/bin:${FFMPEG_HOME}/bin:$PATH
 # PATH=${NASM_HOME}/bin:${YASM_HOME}/bin:${YARN_HOME}/bin:${BISON_HOME}/bin:$PATH
