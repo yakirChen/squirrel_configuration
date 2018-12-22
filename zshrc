@@ -197,13 +197,13 @@ PATH=$KOTLIN_HOME/bin:$PATH
 PATH=$PY2_HOME/bin:$PY3_HOME/bin:$LUA_HOME/bin:$PATH
 PATH=$GOROOT/bin:$GOPATH/bin:$CHEZ_SCHEME_HOME/bin:$NODE_PATH/bin:$NODE_GLOBAL_PATH/bin:$PATH
 PATH=$REDIS_HOME/bin:$NGINX:$PATH
+PATH=$RUBY_HOME/bin:$GEM_HOME/bin:$PATH
 
 # PATH=$HASKELL_BIN/bin:$ZK_HOME/bin:$TOMCAT_HOME/bin:$PATH
 # PATH=${BTRACE_HOME}/bin:${HTOP_HOME}/bin:$PATH
 # PATH=$CBC_HOME/bin:$JAVACC_HOME/bin:$GCC_HOME/bin:$PATH
 # PATH${SPRINGCLI_HOME}/bin:${FFMPEG_HOME}/bin:$PATH
 # PATH=${NASM_HOME}/bin:${YASM_HOME}/bin:${YARN_HOME}/bin:${BISON_HOME}/bin:$PATH
-PATH=$RUBY_HOME/bin:$GEM_HOME/bin:$PATH
 # PATH=${LOCAL}/jadx/bin:$PATH
 
 export PATH
@@ -233,8 +233,12 @@ alias mvndocs="mvn dependency:resolve -Dclassifier=javadoc"
 alias mvncpst="${MVN_TEMPLATE}"
 alias mvncpstc="${MVN_TEMPLATE} -Pmaven2 ; mvn clean"
 alias mvna="mvn dependency:sources -P163 ; mvn dependency:resolve -Dclassifier=javadoc -P163 ; ${MVN_TEMPLATE} -P163 -Pmaven2 ; mvn clean -P163"
-alias mvna24="mvn -T24 dependency:sources -P163; mvn -T24 dependency:resolve -Dclassifier=javadoc -P163 ; ${MVN_TEMPLATE} -T24 -P163 -Pmaven2 ; mvn clean -P163"
-alias mvnversion="mvn -T24 versions:display-plugin-updates -P163 -Pspring -Papache ; mvn -T24 versions:display-property-updates -P163 -Pspring -Papache"
+alias mvna24="mvn -T24 dependency:sources -P163 -Papache; mvn -T24 dependency:resolve -Dclassifier=javadoc -P163 -Papache; ${MVN_TEMPLATE} -T24 -P163 -Pmaven2 ; mvn clean -P163 -Papache"
+alias mvnversion="mvn versions:display-plugin-updates -P163 -Pspring -Papache ; mvn -T24 versions:display-property-updates -P163 -Pspring -Papache"
+
+alias mvnaxw="mvn dependency:sources -P163 -Pxinwang; mvn dependency:resolve -Dclassifier=javadoc -P163 -Pxinwang; ${MVN_TEMPLATE} -P163 -Pmaven2"
+alias mvna24xw="mvn -T24 dependency:sources -P163 -Pxinwang; mvn -T24 dependency:resolve -Dclassifier=javadoc -P163 -Pxinwang; ${MVN_TEMPLATE} -T24 -P163 -Pmaven2 "
+alias mvnversionxw="mvn -T24 versions:display-plugin-updates -P163 -Pspring -Papache -Pxinwang; mvn -T24 versions:display-property-updates -P163 -Pspring -Papache -Pxinwang"
 
 alias mx="mx --user-home=${TO_REPOS}/mx"
 alias schemescript='scheme --script'
