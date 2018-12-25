@@ -9,6 +9,7 @@
   + [Python2 & Python3 源码构建](#python2--python3-源码构建)
   + [GnuPG](#gnupg)
   + [Python 模块安装](#python-模块安装)
+  + [Nginx](#nginx)
   + [构建流程备份](#构建流程备份)
 
 <!-- /MarkdownTOC -->
@@ -106,10 +107,13 @@ cd libffi
 ./autogen.sh && \
 # python ./generate-darwin-source-and-headers.py && \
 ./configure --enable-debug \
+    --disable-docs \
     --disable-dependency-tracking \
     --enable-purify-safety \
     --prefix=${LOCAL} && \
     make -j 12 && make install
+# 拷贝 $LOCAL/lib/libffixxx/include/***.h -> $LOCAL/include
+
 # 使用macOS自带Python2 
 # Ccache
 ./configure --prefix=${LOCAL} && make -j 12 && make install
@@ -141,6 +145,26 @@ gcl --depth 1  https://github.com/ruby/ruby.git && \
 ### Python2 & Python3 源码构建
 
 ```bash
+# gdbm
+./configure --prefix=${LOCAL} \
+    --disable-dependency-tracking \
+    --disable-silent-rules \
+    --without-readline \
+    --enable-libgdbm-compat && \
+    make && make install
+# sqlite
+export CPPFLAGS="$CPPFLAGS -DSQLITE_ENABLE_COLUMN_METADATA=1 \
+-DSQLITE_MAX_VARIABLE_NUMBER=250000 \
+-DSQLITE_ENABLE_RTREE=1 \
+-DSQLITE_ENABLE_FTS3=1 -DSQLITE_ENABLE_FTS3_PARENTHESIS=1 \
+-DSQLITE_ENABLE_FTS5=1 \
+-DSQLITE_ENABLE_JSON1=1" && \
+./configure --prefix=${LOCAL}/sqlite \
+    --disable-dependency-tracking \
+    --enable-dynamic-extensions \
+    --enable-readline \
+    --disable-editline && \
+    make && make install 
 # Readline
 git clone --depth 1 git://git.savannah.gnu.org/readline.git
 mkdir build && cd build && \
@@ -160,12 +184,14 @@ pip2 list --outdate
 # Docutils
 ./python2 setup.py install
 
-# python3 python3.6.6 依赖 libffi 3.2.1
+# python3 python3.7.2 依赖 libffi 3.2.1
+export CFLAGS="$CFLAGS -I/Users/yakir/local/sqlite/include"
 mkdir build && cd build && \
 ../configure --enable-shared \
     --enable-ipv6 \
     --with-dtrace \
     --enable-optimizations \
+    --enable-loadable-sqlite-extensions \
     --prefix=${PY3_HOME} && \
     make -j 12 && make install && python3 --version
 # 在python3中自带pip，pip3包检查更新
@@ -181,7 +207,7 @@ pip3 list --outdate
 [libksba](https://gnupg.org/ftp/gcrypt/libksba/)  
 [npth](https://gnupg.org/ftp/gcrypt/npth/)  
 [gnupg](https://www.gnupg.org)  
-[pinentry](https://gnupg.org/ftp/gcrypt/pinentry/)
+[pinentry](https://gnupg.org/ftp/gcrypt/pinentry/)  
 
 ```bash
 pkgs=(
@@ -349,17 +375,7 @@ cargo install shadowsocks-rust
 ./configure --prefix=${LOCAL} && make -j6 && make insatall
 ```
 
-
-### 构建流程备份
-
-```bash
-# mercurial
-rm -rf build
-python2 setup.py build && \
-python2 setup.py install --prefix=${PYTHON2_HOME}
-hg --version
-
-# nginx
+### Nginx
 ./configure --prefix=${NGINX}  \
     --sbin-path=${NGINX}/nginx  \
     --conf-path=${NGINX}/nginx.conf  \
@@ -380,6 +396,16 @@ hg --version
 # 开启 & 关闭
 sudo nginx
 sudo nginx -s stop
+
+
+### 构建流程备份
+
+```bash
+# mercurial
+rm -rf build
+python2 setup.py build && \
+python2 setup.py install --prefix=${PYTHON2_HOME}
+hg --version
 
 # Little CMS & FriBidi & libass & JPEG 
 ./configure --prefix=${LOCAL} && make -j 12 && make install

@@ -38,13 +38,14 @@ export PY3_HOME=${LOCAL}/python3
 export GOROOT=${LOCAL}/go
 export ERL_HOME=${LOCAL}/otp
 export NODE_PATH=${LOCAL}/node
-export NODE_GLOBAL_PATH=${TO_REPOS}/node_global
+export NPM_GLOBAL=${TO_REPOS}/npm
 #export RUST_HOME=${LOCAL}/rust
 export CARGO_HOME=${TO_REPOS}/cargo
 export CARGO_PATH=${CARGO_HOME}/
 export RUSTUP_HOME=${TO_REPOS}/cargo
 export RUSTFLAGS='-C target-cpu=native'
 # export RUSTFLAGS='-C prefer-dynamic'
+#export RUSTUP_TOOLCHAIN=stable
 export RUSTUP_TOOLCHAIN=nightly
 #export RUSTUP_DIST_SERVER=https://static.rust-lang.ogr
 #export RUSTUP_UPDATE_ROOT=https://static.rust-lang.org/rustup
@@ -61,6 +62,7 @@ export RUSTUP_TOOLCHAIN=nightly
 # export IGV_HOME=${LOCAL}/igv
 
 # 开发辅助
+export SQLITE=${LOCAL}/sqlite
 export MYSQL_BASE_DIR=/Volumes/TO/servers/mysql
 export MYSQL_DATA_DIR=/Volumes/TO/repos/mysql/data
 export MYSQL_LOGS_DIR=/Volumes/TO/repos/mysql/logs
@@ -72,7 +74,7 @@ export MYSQL_LOGS_DIR=/Volumes/TO/repos/mysql/logs
 export PKG_CONFIG=${LOCAL}/bin/pkg-config       # pkg-config
 export PKG_CONFIG_PATH=/Users/yakir/local/lib/pkgconfig
 export PKG_CONFIG_LIBDIR=${LOCAL}/lib/pkgconfig
-export CFLAGS="-I${LOCAL}/include -I${LOCAL}/include/openssl -I${LOCAL}/include/readline -I${LOCAL}/include/sodium"
+export CFLAGS="-I${LOCAL}/include -I${LOCAL}/include/openssl -I${LOCAL}/include/readline -I${LOCAL}/include/sodium -I${LOCAL}/include/freetype2"
 # -I${LOCAL}/include/lzma -I${LOCAL}/include/freetype2
 export CXXFLAGS="--std=c++17 "
 export CPPFLAGS=${CFLAGS}
@@ -192,10 +194,10 @@ PATH=${GNUPG_HOME}/bin:$PATH
 PATH=${CMAKE_HOME}/bin:$PATH
 PATH=${CARGO_HOME}/bin:${M2_HOME}/bin:${GRADLE_HOME}/bin:${ANT_HOME}/bin:$PATH
 PATH=${ERL_HOME}/bin:$PATH
-PATH=$MYSQL_BASE_DIR/bin:$MYSQL_BASE_DIR/support-files:${MYSQL_SHELL}/bin:$PATH
+PATH=${SQLITE}/bin:$MYSQL_BASE_DIR/bin:$MYSQL_BASE_DIR/support-files:${MYSQL_SHELL}/bin:$PATH
 PATH=$KOTLIN_HOME/bin:$PATH
 PATH=$PY2_HOME/bin:$PY3_HOME/bin:$LUA_HOME/bin:$PATH
-PATH=$GOROOT/bin:$GOPATH/bin:$CHEZ_SCHEME_HOME/bin:$NODE_PATH/bin:$NODE_GLOBAL_PATH/bin:$PATH
+PATH=$GOROOT/bin:$GOPATH/bin:$CHEZ_SCHEME_HOME/bin:$NODE_PATH/bin:$NPM_GLOBAL/bin:$PATH
 PATH=$REDIS_HOME/bin:$NGINX:$PATH
 PATH=$RUBY_HOME/bin:$GEM_HOME/bin:$PATH
 
