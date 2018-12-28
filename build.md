@@ -376,6 +376,7 @@ cargo install shadowsocks-rust
 ```
 
 ### Nginx
+```bash
 ./configure --prefix=${NGINX}  \
     --sbin-path=${NGINX}/nginx  \
     --conf-path=${NGINX}/nginx.conf  \
@@ -396,7 +397,7 @@ cargo install shadowsocks-rust
 # 开启 & 关闭
 sudo nginx
 sudo nginx -s stop
-
+```
 
 ### 构建流程备份
 
