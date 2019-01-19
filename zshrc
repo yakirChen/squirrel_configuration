@@ -13,6 +13,7 @@ plugins=(
     rustup
     golang
     npm
+    docker
     zsh-completions
 #    zsh-autosuggestions
     zsh-navigation-tools
@@ -52,6 +53,7 @@ export RUSTUP_TOOLCHAIN=nightly
 # export RUST_SRC_PATH=${RUSTUP_HOME}/toolchains/${RUSTUP_TOOLCHAIN}-x86_64-apple-darwin/lib/rustlib/src/rust/src
 # export DYLD_LIBRARY_PATH=$(${CARGO_HOME}/bin/rustc --print sysroot)/lib:$DYLD_LIBRARY_PATH
 # export DYLD_LIBRARY_PATH=$(rustc --print sysroot)/lib:$DYLD_LIBRARY_PATH
+export STACK_HOME=${LOCAL}/stack
 
 # export RUST_SRC_PATH=
 # export OCAML_HOME=${LOCAL}/ocaml
@@ -111,7 +113,7 @@ export GRADLE_HOME=${LOCAL}/gradle              # gradle
 #export MX_HOME=${LOCAL}/mx
 # export BAZEL_HOME=${LOCAL}/bazel
 # export YASM_HOME=${LOCAL}/yasm
-# export YARN_HOME=${LOCAL}/yarn                # yarn
+export YARN_HOME=${LOCAL}/yarn                # yarn
 
 # repos
 export HASKELL_BIN=${TO_REPOS}/haskell
@@ -134,7 +136,6 @@ export JDK_12_HOME=${JAVA_12_HOME}
 export KOTLIN_HOME=${TO_SERVERS}/kotlinc
 export SCALA_HOME=${TO_SERVERS}/scala
 export SBT_HOME=${TO_SERVERS}/sbt
-export sbt_home=${TO_SERVERS}/sbt
 
 alias jdk8="export JAVA_HOME=${JAVA_8_HOME}"
 #alias jdk90="export JAVA_HOME=${JDK_19_ZERO_HOME}"
@@ -200,12 +201,14 @@ PATH=$PY2_HOME/bin:$PY3_HOME/bin:$LUA_HOME/bin:$PATH
 PATH=$GOROOT/bin:$GOPATH/bin:$CHEZ_SCHEME_HOME/bin:$NODE_PATH/bin:$NPM_GLOBAL/bin:$PATH
 PATH=$REDIS_HOME/bin:$NGINX:$PATH
 PATH=$RUBY_HOME/bin:$GEM_HOME/bin:$PATH
+PATH=${YARN_HOME}/bin:$PATH
+PATH=${STACK_HOME}:$PATH
 
 # PATH=$HASKELL_BIN/bin:$ZK_HOME/bin:$TOMCAT_HOME/bin:$PATH
 # PATH=${BTRACE_HOME}/bin:${HTOP_HOME}/bin:$PATH
 # PATH=$CBC_HOME/bin:$JAVACC_HOME/bin:$GCC_HOME/bin:$PATH
 # PATH${SPRINGCLI_HOME}/bin:${FFMPEG_HOME}/bin:$PATH
-# PATH=${NASM_HOME}/bin:${YASM_HOME}/bin:${YARN_HOME}/bin:${BISON_HOME}/bin:$PATH
+# PATH=${NASM_HOME}/bin:${YASM_HOME}/bin:${BISON_HOME}/bin:$PATH
 # PATH=${LOCAL}/jadx/bin:$PATH
 
 export PATH
@@ -257,6 +260,9 @@ alias ru="rustup update"
 alias rm="rm -v "
 alias gcr="git clone --recurse-submodules "
 alias gcr1="git clone --recurse-submodules --depth 1 "
+alias antlr4='java -Xmx500M -cp "/Volumes/To/app/antlr-4.7.2-complete.jar:$CLASSPATH" org.antlr.v4.Tool'
+alias grun='java -Xmx500M -cp "/Volumes/To/app/antlr-4.7.2-complete.jar:$CLASSPATH" org.antlr.v4.gui.TestRig'
+
 
 source $ZSH/oh-my-zsh.sh
  # source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

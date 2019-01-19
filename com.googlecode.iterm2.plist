@@ -225,6 +225,8 @@
 	</dict>
 	<key>Default Bookmark Guid</key>
 	<string>BF42B0A3-45D4-47FC-86EA-BD87FF0A7566</string>
+	<key>DisableAdaptiveFrameRateInInteractiveApps</key>
+	<false/>
 	<key>HideScrollbar</key>
 	<false/>
 	<key>HideTab</key>
@@ -235,6 +237,8 @@
 	<true/>
 	<key>MaxSemanticHistoryPrefixOrSuffix</key>
 	<integer>9223372036854775807</integer>
+	<key>MojaveVisualEffectView</key>
+	<false/>
 	<key>NSNavLastRootDirectory</key>
 	<string>~/Library/Mobile Documents/com~apple~CloudDocs/Developer/macOS-libs</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
@@ -275,12 +279,14 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
+	<key>NSWindow Frame SessionsPreferences</key>
+	<string>2189 184 606 469 1920 58 1920 1080 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>2008 741 928 394 1920 120 1920 1080 </string>
+	<string>2546 571 1018 447 1920 58 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1920 116 1564 1080 1920 120 1920 1080 </string>
+	<string>1920 58 1270 1080 1920 58 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>2146 232 1270 750 1920 120 1920 1080 </string>
+	<string>2864 58 976 1080 1920 58 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>2317 207 1270 750 1920 120 1920 1080 </string>
 	<key>New Bookmarks</key>
@@ -635,13 +641,6 @@
 					<key>Text</key>
 					<string>[1;6A</string>
 				</dict>
-				<key>0xf700-0x280000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1b 0x1b 0x5b 0x41</string>
-				</dict>
 				<key>0xf701-0x220000</key>
 				<dict>
 					<key>Action</key>
@@ -662,13 +661,6 @@
 					<integer>10</integer>
 					<key>Text</key>
 					<string>[1;6B</string>
-				</dict>
-				<key>0xf701-0x280000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1b 0x1b 0x5b 0x42</string>
 				</dict>
 				<key>0xf702-0x220000</key>
 				<dict>
@@ -691,13 +683,6 @@
 					<key>Text</key>
 					<string>[1;6D</string>
 				</dict>
-				<key>0xf702-0x280000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1b 0x1b 0x5b 0x44</string>
-				</dict>
 				<key>0xf703-0x220000</key>
 				<dict>
 					<key>Action</key>
@@ -718,13 +703,6 @@
 					<integer>10</integer>
 					<key>Text</key>
 					<string>[1;6C</string>
-				</dict>
-				<key>0xf703-0x280000</key>
-				<dict>
-					<key>Action</key>
-					<integer>11</integer>
-					<key>Text</key>
-					<string>0x1b 0x1b 0x5b 0x43</string>
 				</dict>
 				<key>0xf704-0x20000</key>
 				<dict>
@@ -950,6 +928,8 @@
 	<false/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>562049651.78684497</real>
+	<key>NumberOfLinesForAccessibility</key>
+	<integer>9999</integer>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
 	<key>PointerActions</key>
@@ -1001,6 +981,8 @@
 	<date>2018-11-04T10:07:37Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
+	<key>ShowMetalFPSmeter</key>
+	<false/>
 	<key>StretchTabsToFillBar</key>
 	<true/>
 	<key>TabStyle</key>
@@ -1009,10 +991,16 @@
 	<integer>3</integer>
 	<key>TabViewType</key>
 	<integer>0</integer>
+	<key>TerminalVMargin</key>
+	<integer>1</integer>
 	<key>UseBorder</key>
 	<false/>
+	<key>UseModernScrollWheelAccumulator</key>
+	<false/>
+	<key>findMode_iTerm</key>
+	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.2.6</string>
+	<string>3.2.7beta4</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>7</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

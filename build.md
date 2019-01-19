@@ -207,11 +207,12 @@ pip3 list --outdate
 [libksba](https://gnupg.org/ftp/gcrypt/libksba/)  
 [npth](https://gnupg.org/ftp/gcrypt/npth/)  
 [gnupg](https://www.gnupg.org)  
+[libsecret](http://ftp.gnome.org/pub/gnome/sources/libsecret)  
 [pinentry](https://gnupg.org/ftp/gcrypt/pinentry/)  
 
 ```bash
 pkgs=(
-    "libgpg-error-1.33.tar.bz2"
+    "libgpg-error-1.33.tar.gz"
     "libgcrypt-1.8.4.tar.bz2"
     "libassuan-2.5.2.tar.bz2"
     "libksba-1.3.5.tar.bz2"
@@ -219,6 +220,7 @@ pkgs=(
     "gnupg-2.2.12.tar.bz2"
     "gettext-0.19.8.1.tar.xz"
     "pinentry-1.1.0.tar.bz2"
+    "libsecret-0.18.7.tar.xz"
     "ntbtls-0.1.2.tar.bz2"
 );
 
@@ -291,8 +293,12 @@ done;
     --prefix=${LOCAL} && \
     make -j 12 && \
     make install
+# libsecret
+./configure --prefix=${LOCAL} \
+    --disable-static && \
+    make -j 12 && make install
 # pinentry
-./configure --disable-dependency-tracking \
+./configure --enable-dependency-tracking \
     --disable-silent-rules \
     --prefix=${LOCAL}/pinentry \
     --disable-pinentry-qt \
@@ -300,8 +306,11 @@ done;
     --disable-pinentry-gnome3 \
     --disable-pinentry-tqt \
     --disable-pinentry-fltk \
-    --enable-pinentry-tty \
-    --disable-pinentry-gtk2 && \
+    --disable-pinentry-gtk2 \
+    --enable-pinentry-curses \
+    --enable-fallback-curses \
+    --enable-silent-rules \
+    --enable-pinentry-tty && \
     make -j 12 && \
     make install
 # ntbtls
@@ -325,13 +334,13 @@ done;
       --disable-ccid-driver && make -j 12 && \
       make install
       
-# gpg-agent --homedir /Users/yakir/.gnupg --use-standard-socket --daemon
+gpg-agent --homedir /Users/yakir/.gnupg --daemon
 # 安装完成之后执行
-# gpgconf --kill gpg-agent && gpg-agent --use-standard-socket --pinentry-program ${LOCAL}/pinentry/bin/pinentry --daemon
-# gpg --list-secret-keys --keyid-format LONG
-# gpg -v --keyserver keyserver.ubuntu.com --send-keys
+gpgconf --kill gpg-agent && gpg-agent --homedir /Users/yakir/.gnupg --pinentry-program ${LOCAL}/pinentry/bin/pinentry --daemon
+gpg --list-secret-keys --keyid-format LONG
+gpg -v --keyserver keyserver.ubuntu.com --send-keys
 # dirmngr.conf
-# hkp-cacert /Users/yakir/Think/sks-keyservers.netCA.pem
+hkp-cacert /Users/yakir/Think/sks-keyservers.netCA.pem
 ```
 
 ### Python 模块安装
