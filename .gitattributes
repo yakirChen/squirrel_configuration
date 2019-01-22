@@ -6,5 +6,3 @@
 *.bin filter=lfs diff=lfs merge=lfs -text
 *.tgz filter=lfs diff=lfs merge=lfs -text
 *.tar.gz filter=lfs diff=lfs merge=lfs -text
-*.dict.yaml filter=lfs diff=lfs merge=lfs -text
-essay.txt filter=lfs diff=lfs merge=lfs -text

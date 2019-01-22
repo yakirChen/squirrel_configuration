@@ -227,6 +227,10 @@
 	<string>BF42B0A3-45D4-47FC-86EA-BD87FF0A7566</string>
 	<key>DisableAdaptiveFrameRateInInteractiveApps</key>
 	<false/>
+	<key>DisableFullscreenTransparency</key>
+	<false/>
+	<key>EnableProxyIcon</key>
+	<false/>
 	<key>HideScrollbar</key>
 	<false/>
 	<key>HideTab</key>
@@ -280,11 +284,11 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>2189 184 606 469 1920 58 1920 1080 </string>
+	<string>2189 132 599 521 1920 58 1920 1080 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>2546 571 1018 447 1920 58 1920 1080 </string>
+	<string>2606 572 1018 447 1920 58 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1920 58 1270 1080 1920 58 1920 1080 </string>
+	<string>2569 68 1270 1070 1920 58 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>2864 58 976 1080 1920 58 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -981,6 +985,8 @@
 	<date>2018-11-04T10:07:37Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
+	<key>ShowBookmarkName</key>
+	<false/>
 	<key>ShowMetalFPSmeter</key>
 	<false/>
 	<key>StretchTabsToFillBar</key>
@@ -996,6 +1002,8 @@
 	<key>UseBorder</key>
 	<false/>
 	<key>UseModernScrollWheelAccumulator</key>
+	<false/>
+	<key>WindowNumber</key>
 	<false/>
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
