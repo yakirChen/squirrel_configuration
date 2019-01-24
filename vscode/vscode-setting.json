@@ -56,7 +56,7 @@
     // - antialiased: 进行像素而不是次像素级别的字体平滑。可能会导致字体整体显示得更细
     // - none: 禁用字体平滑。将显示边缘粗糙、有锯齿的文字
     // - auto: 根据显示器 DPI 自动应用 "default" 或 "antialiased" 选项。
-    "workbench.fontAliasing": "default",
+    "workbench.fontAliasing": "auto",
     "workbench.panel.defaultLocation": "right",
     // 控制 Quick Open 是否应在失去焦点时自动关闭。
     "workbench.quickOpen.closeOnFocusLost": false,
@@ -74,7 +74,7 @@
     "java.implementationsCodeLens.enabled": true,
     "java.errors.incompleteClasspath.severity": "ignore",
     "java.configuration.maven.userSettings": "/Users/yakir/local/maven/conf/settings.xml",
-    "java.home": "/Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home",
+    "java.home": "/Library/Java/JavaVirtualMachines/jdk1.8.0_202.jdk/Contents/Home",
     "extensions.ignoreRecommendations": false,
     "update.channel": "default",
     "update.enableWindowsBackgroundUpdates": false,
@@ -94,7 +94,7 @@
     "workbench.iconTheme": "vs-minimal",
     "editor.tokenColorCustomizations": {},
     "scm.diffDecorationsGutterWidth": 2,
-    "workbench.colorTheme": "Quiet Light",
+    "workbench.colorTheme": "Default High Contrast",
     "rust-client.channel": "nightly",
     "rust.unstable_features": true,
     "rust.clippy_preference": "on",
