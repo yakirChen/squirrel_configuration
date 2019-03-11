@@ -1,4 +1,4 @@
-export CARGO_PATH=/Volumes/Toshiba/repos/cargo
-export CARGO_HOME=/Volumes/Toshiba/repos/cargo
-export RUSTUP_HOME=/Volumes/Toshiba/repos/rustup
+export CARGO_PATH=/Volumes/To/repos/cargo
+export CARGO_HOME=/Volumes/To/repos/cargo
+export RUSTUP_HOME=/Volumes/To/repos/cargo
 export PATH="$CARGO_PATH/bin:$PATH"

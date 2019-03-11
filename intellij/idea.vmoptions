@@ -1,68 +1,75 @@
 # custom IntelliJ IDEA VM options
 
-# 默认
-#-Xms128m
-#-Xmx750m
-#-XX:ReservedCodeCacheSize=240m
-#-XX:+UseCompressedOops
-#-Dfile.encoding=UTF-8
-#-XX:+UseConcMarkSweepGC
-#-XX:SoftRefLRUPolicyMSPerMB=50
-#-ea
-#-Dsun.io.useCanonCaches=false
-#-Djava.net.preferIPv4Stack=true
-#-Djdk.http.auth.tunneling.disabledSchemes=""
-#-XX:+HeapDumpOnOutOfMemoryError
-#-XX:-OmitStackTraceInFastThrow
-#-Xverify:none
-#
-#-XX:ErrorFile=$USER_HOME/java_error_in_idea_%p.log
-#-XX:HeapDumpPath=$USER_HOME/java_error_in_idea.hprof
-
 -server
 -ea
--Xdiag
 -XshowSettings:all
+-Xverify:none
+-Xdiag
+# -Xprof
+# -Xcomp
 -Xmx1536M
 -Xms1536M
--XX:ReservedCodeCacheSize=384M
+
+-XX:+UnlockCommercialFeatures
+-XX:+UnlockExperimentalVMOptions
+-XX:+UnlockDiagnosticVMOptions
+-XX:+PrintCommandLineFlags
+-XX:+Verbose
+-XX:+UseCompressedOops
+-XX:+AlwaysPreTouch
+-XX:+UseNUMA
+-XX:+HeapDumpOnOutOfMemoryError
+-XX:-OmitStackTraceInFastThrow
+-XX:-UseCounterDecay
+
+-XX:ReservedCodeCacheSize=512M
 -XX:MaxMetaspaceSize=512M
 -XX:MinMetaspaceFreeRatio=60
--Xverify:none
--XX:+UseG1GC
-# -XX:+DontCompileHugeMethods
--XX:+UseNUMA
+-XX:SoftRefLRUPolicyMSPerMB=50
 -XX:ParallelGCThreads=8
 -XX:ConcGCThreads=4
 -XX:SurvivorRatio=8
 -XX:MaxGCPauseMillis=1000
--XX:+UnlockExperimentalVMOptions
 -XX:InitiatingHeapOccupancyPercent=30
 -XX:G1NewSizePercent=6
 -XX:G1ReservePercent=15
--XX:+UseCompressedOops
--XX:SoftRefLRUPolicyMSPerMB=50
 
--XX:+AlwaysPreTouch
--XX:+UseNUMA
--Xverify:none
--XX:-OmitStackTraceInFastThrow
--XX:+HeapDumpOnOutOfMemoryError
+# -XcompilationThreads=6
+-XX:CICompilerCount=6
+-XX:+BackgroundCompilation=true
+-XX:CompileThreshold=100
+-XX:OnStackReplacePercentage=6
+-XX:+TieredCompilation
+# -XX:+CITime
+# -XX:+PrintInlining
+# -XX:+PrintCompilation
+# -XX:+PrintAssembly
+# -XX:+LogCompilation
+# -XX:LogVMOutput=true
+# -XX:LogFile=/Volumes/To/logs/idea/hotspot.%p.log
+# -XX:+TraceClassLoading
+# -XX:+PrintAssembly
 
--XX:+PrintGC
+-XX:+UseG1GC
 -XX:+UseGCLogFileRotation
--Xloggc:/Volumes/Toshiba/dev/logs/gc/idea.gc.%p.log
--XX:+PrintGCDetails
--XX:+PrintGCDateStamps
-
--XX:ErrorFile=/Volumes/Toshiba/dev/logs/error/java_error_in_idea_%p.log
--XX:HeapDumpPath=/Volumes/Toshiba/dev/logs/dump/java_error_in_idea.hprof
--Xbootclasspath/a:../lib/boot.jar
+-XX:NumberOfGCLogFiles=9
+-XX:GCLogFileSize=1024m
+-XX:ErrorFile=/Volumes/To/logs/idea/java_error_in_idea_%p.log
+-XX:HeapDumpPath=/Volumes/To/logs/idea/dump/java_error_in_idea.hprof
+# -XX:+PrintGC
+# -XX:+PrintGCDetails
+# -XX:+PrintGCApplicationStoppedTime
+# -XX:+PrintGCApplicationConcurrentTime
+# -XX:+PrintAdaptiveSizePolicy
+# -XX:+PrintTenuringDistribution
+# -XX:+PrintGCTimeStamps
+# -XX:+PrintGCDateStamps
+-Xloggc:/Volumes/To/logs/idea/idea.gc.%p.log
 
 -Dfile.encoding=UTF-8
 -Dsun.io.useCanonCaches=false
 -Djava.net.preferIPv4Stack=true
+-Djdk.http.auth.tunneling.disabledSchemes=""
 -Dos.detected.name=osx
 -Dos.detected.arch=x86_64
 -Dos.detected.classifier=osx-x86_64
-

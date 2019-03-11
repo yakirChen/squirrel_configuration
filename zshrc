@@ -6,16 +6,17 @@ export ZSH=${HOME}/.oh-my-zsh
 ZSH_THEME="jtriley"
 plugins=(
     ant
-   # mvn
+    # mvn
     spring
     rust
     cargo
     rustup
     golang
-    npm
-    docker
+    # npm
+    # docker
+    swift
     zsh-completions
-#    zsh-autosuggestions
+    # zsh-autosuggestions
     zsh-navigation-tools
     zsh-history-substring-search
     colorize
@@ -76,8 +77,8 @@ export MYSQL_LOGS_DIR=/Volumes/TO/repos/mysql/logs
 export PKG_CONFIG=${LOCAL}/bin/pkg-config       # pkg-config
 export PKG_CONFIG_PATH=/Users/yakir/local/lib/pkgconfig
 export PKG_CONFIG_LIBDIR=${LOCAL}/lib/pkgconfig
-export CFLAGS="-I${LOCAL}/include -I${LOCAL}/include/openssl -I${LOCAL}/include/readline -I${LOCAL}/include/sodium -I${LOCAL}/include/freetype2"
-# -I${LOCAL}/include/lzma -I${LOCAL}/include/freetype2
+export CFLAGS="-I${LOCAL}/include -I${LOCAL}/include/openssl" # -I${LOCAL}/include/readline -I${LOCAL}/include/sodium -I${LOCAL}/include/freetype2"
+# # -I${LOCAL}/include/lzma -I${LOCAL}/include/freetype2
 export CXXFLAGS="--std=c++17 "
 export CPPFLAGS=${CFLAGS}
 export LDFLAGS="-L${LOCAL}/lib"
@@ -107,8 +108,8 @@ export MAVEN_SKIP_RC=true
 export ANT_HOME=${LOCAL}/ant                    # ant
 export GRADLE_HOME=${LOCAL}/gradle              # gradle
 # export JAVACC_HOME=${LOCAL}/javacc
-# export NASM_HOME=${LOCAL}/nasm
-# export BISON_HOME=${LOCAL}/bison
+export NASM_HOME=${LOCAL}/nasm
+export BISON_HOME=${LOCAL}/bison
 # export PROTOBUF_HOME=${LOCAL}/protobuf
 #export MX_HOME=${LOCAL}/mx
 # export BAZEL_HOME=${LOCAL}/bazel
@@ -129,10 +130,12 @@ export JFX_HOME=${TO_SERVERS}/openjfx
 export JAVA_8_HOME=$(/usr/libexec/java_home -v 1.8)
 export JAVA_11_HOME=$(/usr/libexec/java_home -v 11)
 export JAVA_12_HOME=$(/usr/libexec/java_home -v 12)
+export JAVA_13_HOME=$(/usr/libexec/java_home -v 13)
 # export GRAAL_HOME='/Library/Java/JavaVirtualMachines/graalvm/Contents/Home'
-export JDK_18_HOME=${JAVA_8_HOME}
+export JDK_8_HOME=${JAVA_8_HOME}
 export JDK_11_HOME=${JAVA_11_HOME}
 export JDK_12_HOME=${JAVA_12_HOME}
+export JDK_13_HOME=${JAVA_13_HOME}
 export KOTLIN_HOME=${TO_SERVERS}/kotlinc
 export SCALA_HOME=${TO_SERVERS}/scala
 export SBT_HOME=${TO_SERVERS}/sbt
@@ -141,6 +144,7 @@ alias jdk8="export JAVA_HOME=${JAVA_8_HOME}"
 #alias jdk90="export JAVA_HOME=${JDK_19_ZERO_HOME}"
 alias jdk11="export JAVA_HOME=${JAVA_11_HOME}"
 alias jdk12="export JAVA_HOME=${JAVA_12_HOME}"
+alias jdk13="export JAVA_HOME=${JAVA_13_HOME}"
 # alias graal="export JAVA_HOME=${GRAAL_HOME} && \
     # export PATH=$JAVA_HOME/bin:$PATH"
 # alias zulujdk8="export JAVA_HOME=${ZULU_JDK_18_HOME}"
@@ -187,6 +191,7 @@ export OPENSSL_CFLAGS=${HOME}/local/include/openssl/        # openssl
 export OPENSSL_INCLUDE_DIR=${HOME}/local/include/openssl/
 export DEP_OPENSSL_INCLUDE=${HOME}/local/include/openssl/
 export OPENSSL_LIB_DIR=${HOME}/local/lib/
+export OPENSSL_ROOT_DIR=${OPENSSL_INCLUDE_DIR}
 
 # ############################################ PATH #################################################
 PATH=${LOCAL}/bin:${LOCAL}/kits:$PATH
@@ -208,7 +213,7 @@ PATH=${STACK_HOME}:$PATH
 # PATH=${BTRACE_HOME}/bin:${HTOP_HOME}/bin:$PATH
 # PATH=$CBC_HOME/bin:$JAVACC_HOME/bin:$GCC_HOME/bin:$PATH
 # PATH${SPRINGCLI_HOME}/bin:${FFMPEG_HOME}/bin:$PATH
-# PATH=${NASM_HOME}/bin:${YASM_HOME}/bin:${BISON_HOME}/bin:$PATH
+PATH=${NASM_HOME}:${YASM_HOME}/bin:${BISON_HOME}/bin:$PATH
 # PATH=${LOCAL}/jadx/bin:$PATH
 
 export PATH
@@ -237,17 +242,20 @@ alias mvnsrc="mvn dependency:sources"
 alias mvndocs="mvn dependency:resolve -Dclassifier=javadoc"
 alias mvncpst="${MVN_TEMPLATE}"
 alias mvncpstc="${MVN_TEMPLATE} -Pmaven2 ; mvn clean"
-alias mvna="mvn dependency:sources -P163 ; mvn dependency:resolve -Dclassifier=javadoc -P163 ; ${MVN_TEMPLATE} -P163 -Pmaven2 ; mvn clean -P163"
-alias mvna24="mvn -T24 dependency:sources -P163 -Papache; mvn -T24 dependency:resolve -Dclassifier=javadoc -P163 -Papache; ${MVN_TEMPLATE} -T24 -P163 -Pmaven2 ; mvn clean -P163 -Papache"
-alias mvnversion="mvn versions:display-plugin-updates -P163 -Pspring -Papache ; mvn -T24 versions:display-property-updates -P163 -Pspring -Papache"
+alias mvna="mvn dependency:sources -P163 -Pmaven2 ; mvn dependency:resolve -Dclassifier=javadoc -P163 -Pmaven2 ; ${MVN_TEMPLATE} -Pmaven2 -P163 ; mvn clean"
+alias mvna24="mvn -T24 dependency:sources -Papache; mvn -T24 dependency:resolve -Dclassifier=javadoc -Papache; ${MVN_TEMPLATE} -T24 -Pmaven2 ; mvn clean -Papache"
+alias mvnversion="mvn versions:display-plugin-updates -Pspring -Papache ; mvn -T24 versions:display-property-updates -Pspring -Papache"
 
-alias mvnaxw="mvn dependency:sources -P163 -Pxinwang; mvn dependency:resolve -Dclassifier=javadoc -P163 -Pxinwang; ${MVN_TEMPLATE} -P163 -Pmaven2"
-alias mvna24xw="mvn -T24 dependency:sources -P163 -Pxinwang; mvn -T24 dependency:resolve -Dclassifier=javadoc -P163 -Pxinwang; ${MVN_TEMPLATE} -T24 -P163 -Pmaven2 "
-alias mvnversionxw="mvn -T24 versions:display-plugin-updates -P163 -Pspring -Papache -Pxinwang; mvn -T24 versions:display-property-updates -P163 -Pspring -Papache -Pxinwang"
+alias mvnaxw="mvn dependency:sources -Pxinwang; mvn dependency:resolve -Dclassifier=javadoc -Pxinwang; ${MVN_TEMPLATE} -Pmaven2"
+alias mvna24xw="mvn -T24 dependency:sources -Pxinwang; mvn -T24 dependency:resolve -Dclassifier=javadoc -Pxinwang; ${MVN_TEMPLATE} -T24 -Pmaven2 "
+alias mvnversionxw="mvn -T24 versions:display-plugin-updates -Pspring -Papache -Pxinwang; mvn -T24 versions:display-property-updates -Pspring -Papache -Pxinwang"
 
 alias mx="mx --user-home=${TO_REPOS}/mx"
 alias schemescript='scheme --script'
 alias clojure='java -jar ${LOCAL_LIB_DIR}/clojure/clojure.jar'
+
+alias hgi='source /Volumes/To/repos/venv/hg/bin/activate'
+alias hgd='deactivate'
 
 ########################################### rustup ##################################################
 alias rnr="rustup run nightly cargo --color always "

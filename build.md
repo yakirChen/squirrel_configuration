@@ -74,6 +74,7 @@ chmod 600 ~/.ssh/*                  # -rw-------
   - https://github.com/libssh2/libssh2
 + [wget](https://ftp.gnu.org/gnu/wget/)
 + [bison](https://ftp.gnu.org/gnu/bison/)
+  - [m4](https://ftp.gnu.org/gnu/m4/)
 + [jq JSON processor](https://github.com/stedolan/jq)
 
 ### 配置 & 编译
@@ -124,8 +125,10 @@ cd libffi
     --with-gnu-ld=no \
     --with-libssl-prefix=/Users/yakir/local \
     --without-libgnutls-prefix && make -j 12 && make install
-# bison
+# m4 
 ./configure --prefix=${LOCAL} && make -j 12 && make install
+# bison
+./configure --prefix=${LOCAL}/bison && make -j 12 && make install
 # jq
 autoreconf -i && \
     ./configure --with-oniguruma=builtin --disable-maintainer-mode --prefix=${LOCAL} && \
@@ -151,7 +154,7 @@ gcl --depth 1  https://github.com/ruby/ruby.git && \
     --disable-silent-rules \
     --without-readline \
     --enable-libgdbm-compat && \
-    make && make install
+    make -j 12 && make install
 # sqlite
 export CPPFLAGS="$CPPFLAGS -DSQLITE_ENABLE_COLUMN_METADATA=1 \
 -DSQLITE_MAX_VARIABLE_NUMBER=250000 \
@@ -164,7 +167,7 @@ export CPPFLAGS="$CPPFLAGS -DSQLITE_ENABLE_COLUMN_METADATA=1 \
     --enable-dynamic-extensions \
     --enable-readline \
     --disable-editline && \
-    make && make install 
+    make -j 12 && make install
 # Readline
 git clone --depth 1 git://git.savannah.gnu.org/readline.git
 mkdir build && cd build && \
@@ -172,7 +175,11 @@ mkdir build && cd build && \
 make -j 12 && make install
 # python2
 mkdir build && cd build && \
-../configure --enable-shared --enable-optimizations --enable-unicode=ucs4  --prefix=${PY2_HOME} && \
+    ../configure \
+        --enable-shared 
+        --enable-optimizations 
+        --enable-unicode=ucs4 \
+        --prefix=${PY2_HOME} && \
 make -j 12 && make install && python2 --version
 # python2扩展包安装
 curl -O https://bootstrap.pypa.io/get-pip.py
@@ -180,6 +187,16 @@ python2 get-pip.py
 pip2 install requests
 # pip2包检查更新
 pip2 list --outdate
+
+# mercurial
+pip2 install virtualenv
+cd /Volumes/To/repos/venv/hg && /Volumes/To/repos/venv/hg
+virtualenv --no-site-packages .
+```bash
+source /Volumes/To/repos/venv/hg/bin/activate
+deactivate
+```
+
 
 # Docutils
 ./python2 setup.py install

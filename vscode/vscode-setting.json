@@ -3,10 +3,10 @@
     "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}",
     "breadcrumbs.enabled": true,
     // 字体
-    "editor.fontFamily": "Source Code Pro",
+    "editor.fontFamily": "SourceCodePro-Semibold",
     "editor.renderWhitespace": "boundary",
     // 控制行高。使用 0 通过字号计算行高。
-    "editor.lineHeight": 12,
+    "editor.lineHeight": 11,
     // 显示控制字符
     "editor.renderControlCharacters": true,
     // 控制编辑器是否在滚动时使用动画
@@ -94,8 +94,16 @@
     "workbench.iconTheme": "vs-minimal",
     "editor.tokenColorCustomizations": {},
     "scm.diffDecorationsGutterWidth": 2,
-    "workbench.colorTheme": "Default High Contrast",
+    "workbench.colorTheme": "Quiet Light",
     "rust-client.channel": "nightly",
     "rust.unstable_features": true,
     "rust.clippy_preference": "on",
+    "C_Cpp.default.cppStandard": "c++17",
+    "C_Cpp.default.cStandard": "c11",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
 }

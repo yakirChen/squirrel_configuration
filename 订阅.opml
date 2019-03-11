@@ -19,14 +19,15 @@
 			<outline htmlUrl="https://blog.codefx.org" title="blog@CodeFX" xmlUrl="https://blog.codefx.org/feed/" type="rss" text="blog@CodeFX"/>
 			<outline htmlUrl="https://nitschinger.at/" title="daschl writes. sometimes." xmlUrl="http://nitschinger.at//index.xml" type="rss" text="daschl writes. sometimes."/>
 			<outline htmlUrl="https://howtodoinjava.com" title="HowToDoInJava" xmlUrl="https://howtodoinjava.com/feed/" type="rss" text="HowToDoInJava"/>
-			<outline htmlUrl="http://www.ibm.com/developerworks/cn/" title="IBM developerWorks 中国 : Java technology : Articles,Tutorials" xmlUrl="https://www.ibm.com/developerworks/cn/views/rss/customrssatom.jsp?zone_by=Java+technology&amp;type_by=Articles&amp;type_by=Tutorials&amp;search_by=&amp;max_entries=50&amp;feed_by=rss" type="rss" text="IBM developerWorks 中国 : Java technology : Articles,Tutorials"/>
-			<outline htmlUrl="http://www.ibm.com/developerworks/cn/" title="IBM developerWorks 中国 : XML,Java technology,Rational,Linux,Open source,WebSphere : Tutorials" xmlUrl="http://www.ibm.com/developerworks/cn/views/rss/customrssatom.jsp?zone_by=XML&amp;zone_by=Java&amp;zone_by=Rational&amp;zone_by=Linux&amp;zone_by=Open+source&amp;zone_by=WebSphere&amp;type_by=Tutorials&amp;search_by=&amp;day=1&amp;month=06&amp;year=2007&amp;max_entries=20&amp;feed_by=rss&amp;isGUI=true&amp;Submit.x=48&amp;Submit.y=14" type="rss" text="IBM developerWorks 中国 : XML,Java technology,Rational,Linux,Open source,WebSphere : Tutorials"/>
+			<outline htmlUrl="http://www.ibm.com/developerworks/cn/" title="IBM Developer 中国 : Java technology : Articles,Tutorials" xmlUrl="https://www.ibm.com/developerworks/cn/views/rss/customrssatom.jsp?zone_by=Java+technology&amp;type_by=Articles&amp;type_by=Tutorials&amp;search_by=&amp;max_entries=50&amp;feed_by=rss" type="rss" text="IBM Developer 中国 : Java technology : Articles,Tutorials"/>
+			<outline htmlUrl="http://www.ibm.com/developerworks/cn/" title="IBM Developer 中国 : XML,Java technology,Rational,Linux,Open source,WebSphere : Tutorials" xmlUrl="http://www.ibm.com/developerworks/cn/views/rss/customrssatom.jsp?zone_by=XML&amp;zone_by=Java&amp;zone_by=Rational&amp;zone_by=Linux&amp;zone_by=Open+source&amp;zone_by=WebSphere&amp;type_by=Tutorials&amp;search_by=&amp;day=1&amp;month=06&amp;year=2007&amp;max_entries=20&amp;feed_by=rss&amp;isGUI=true&amp;Submit.x=48&amp;Submit.y=14" type="rss" text="IBM Developer 中国 : XML,Java technology,Rational,Linux,Open source,WebSphere : Tutorials"/>
 			<outline htmlUrl="http://www.importnew.com" title="ImportNew" xmlUrl="http://www.importnew.com/feed" type="rss" text="ImportNew"/>
 			<outline htmlUrl="http://blog.javachen.com/" title="JavaChen Blog" xmlUrl="http://blog.javachen.com/rss.xml" type="rss" text="JavaChen Blog"/>
 			<outline htmlUrl="https://jaxenter.com" title="JAXenter" xmlUrl="https://jaxenter.com/feed" type="rss" text="JAXenter"/>
 			<outline htmlUrl="https://imququ.com" title="JerryQu 的小站" xmlUrl="http://imququ.com/rss.html" type="rss" text="JerryQu 的小站"/>
 			<outline title="joyo's world" xmlUrl="http://www.iforfee.com/atom.xml" type="rss" text="joyo's world"/>
 			<outline htmlUrl="http://sherlock.help/" title="sherlock ☺ help" xmlUrl="http://sherlock.help/feed.xml" type="rss" text="sherlock ☺ help"/>
+			<outline htmlUrl="https://windmt.com/" title="Wind Mt" xmlUrl="https://windmt.com/atom.xml" type="rss" text="Wind Mt"/>
 			<outline htmlUrl="https://muyinchen.github.io/" title="一叶知秋" xmlUrl="https://muyinchen.github.io/atom.xml" type="rss" text="一叶知秋"/>
 			<outline title="天凉好个秋" xmlUrl="http://beautyboss.farbox.com/feed" type="rss" text="天凉好个秋"/>
 			<outline htmlUrl="http://ifeve.com" title="并发编程网 – ifeve.com" xmlUrl="http://ifeve.com/feed/" type="rss" text="并发编程网 – ifeve.com"/>
@@ -51,12 +52,12 @@
 			<outline title="hello it works" xmlUrl="http://helloitworks.com/feed" type="rss" text="hello it works"/>
 			<outline title="I'm Allen" xmlUrl="http://www.imallen.com/atom.xml" type="rss" text="I'm Allen"/>
 			<outline htmlUrl="http://imtx.me/" title="I'm TualatriX" xmlUrl="http://imtx.me/feed/latest/" type="rss" text="I'm TualatriX"/>
+			<outline title="internal error - server connection terminated" xmlUrl="http://geeklu.com/feed/" type="rss" text="internal error - server connection terminated"/>
 			<outline htmlUrl="http://zhowkev.in/" title="Kevin Blog" xmlUrl="http://zhowkev.in/rss" type="rss" text="Kevin Blog"/>
 			<outline title="KooFrank's Blog" xmlUrl="http://koofrank.com/rss" type="rss" text="KooFrank's Blog"/>
 			<outline htmlUrl="http://gracelancy.com/" title="Lancy's Blog" xmlUrl="http://gracelancy.com/atom.xml" type="rss" text="Lancy's Blog"/>
 			<outline title="Limboy 无网不剩" xmlUrl="http://feeds.feedburner.com/lzyy" type="rss" text="Limboy 无网不剩"/>
 			<outline htmlUrl="https://lukakerr.github.io/" title="lukakerr.github.io" xmlUrl="https://lukakerr.github.io/feed.xml" type="rss" text="lukakerr.github.io"/>
-			<outline title="Luke's Homepage" xmlUrl="http://geeklu.com/feed/" type="rss" text="Luke's Homepage"/>
 			<outline htmlUrl="http://blog.inico.me" title="Nico" xmlUrl="http://blog.inico.me/atom.xml" type="rss" text="Nico"/>
 			<outline title="Nonomori" xmlUrl="http://nonomori.farbox.com/feed" type="rss" text="Nonomori"/>
 			<outline htmlUrl="https://nshipster.cn/" title="NSHipster" xmlUrl="http://nshipster.cn/feed.xml" type="rss" text="NSHipster"/>
@@ -89,7 +90,7 @@
 			<outline htmlUrl="http://msching.github.io/" title="码农人生" xmlUrl="http://msching.github.io/atom.xml" type="rss" text="码农人生"/>
 			<outline htmlUrl="http://beyondvincent.com/" title="破船之家" xmlUrl="http://beyondvincent.com/atom.xml" type="rss" text="破船之家"/>
 			<outline title="老谭笔记" xmlUrl="http://www.tanhao.me/atom.xml" type="rss" text="老谭笔记"/>
-			<outline htmlUrl="http://iiiyu.com/" title="萧宸宇" xmlUrl="http://iiiyu.com/atom.xml" type="rss" text="萧宸宇"/>
+			<outline htmlUrl="https://iiiyu.com/" title="萧宸宇" xmlUrl="http://iiiyu.com/atom.xml" type="rss" text="萧宸宇"/>
 			<outline htmlUrl="http://adad184.com/" title="里脊串的开发随笔" xmlUrl="http://adad184.com/atom.xml" type="rss" text="里脊串的开发随笔"/>
 			<outline htmlUrl="http://hufeng825.github.com" title="阿峰的技术窝窝" xmlUrl="http://hufeng825.github.io/atom.xml" type="rss" text="阿峰的技术窝窝"/>
 			<outline title="阿毛的蛋疼地" xmlUrl="http://www.xiangwangfeng.com/atom.xml" type="rss" text="阿毛的蛋疼地"/>
@@ -116,7 +117,7 @@
 			<outline htmlUrl="http://yoursite.com/" title="pagefault" xmlUrl="http://www.pagefault.info/atom.xml" type="rss" text="pagefault"/>
 		</outline>
 		<outline text="安全" title="安全">
-			<outline title="翻牆網 ATGFW.ORG" xmlUrl="https://www.atgfw.org/feeds/posts/default" type="rss" text="翻牆網 ATGFW.ORG"/>
+			<outline htmlUrl="http://www.atgfw.org/" title="翻牆網 ATGFW.ORG" xmlUrl="https://www.atgfw.org/feeds/posts/default" type="rss" text="翻牆網 ATGFW.ORG"/>
 			<outline htmlUrl="http://keenlab.tencent.com/" title="腾讯科恩实验室官方博客" xmlUrl="http://keenlab.tencent.com/zh/atom.xml" type="rss" text="腾讯科恩实验室官方博客"/>
 			<outline htmlUrl="http://www.flygon.net/" title="龙哥盟" xmlUrl="http://flygon.net/atom.xml" type="rss" text="龙哥盟"/>
 		</outline>
@@ -139,7 +140,7 @@
 			<outline htmlUrl="http://" title="巢鹏的Pensieve" xmlUrl="http://chaopeng.me/blog/rss.xml" type="rss" text="巢鹏的Pensieve"/>
 			<outline htmlUrl="https://www.starduster.me" title="星尘独奏曲" xmlUrl="https://www.starduster.me/feed/" type="rss" text="星尘独奏曲"/>
 			<outline htmlUrl="https://www.tuna.moe/" title="清华大学 TUNA 协会" xmlUrl="https://tuna.moe/feed.xml" type="rss" text="清华大学 TUNA 协会"/>
-			<outline htmlUrl="http://ice1000.org/" title="知其变，守其恒，为天下式" xmlUrl="http://ice1000.org/feed.xml" type="rss" text="知其变，守其恒，为天下式"/>
+			<outline htmlUrl="https://ice1000.org/" title="知其变，守其恒，为天下式" xmlUrl="http://ice1000.org/feed.xml" type="rss" text="知其变，守其恒，为天下式"/>
 		</outline>
 	</body>
 </opml>

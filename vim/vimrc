@@ -53,7 +53,7 @@ set history=9999
 
 
 " set hidden
-let g:racer_cmd = '/Volumes/sd/repos/cargo/bin/racer'
+let g:racer_cmd = '/Volumes/To/repos/cargo/bin/racer'
 let g:racer_experimental_completer = 1
 let g:rustfmt_autosave = 1
 let g:rust_clip_command = 'pbcopy'
