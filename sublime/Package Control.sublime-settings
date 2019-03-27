@@ -1,0 +1,15 @@
+{
+	"bootstrapped": true,
+	"channels":
+	[
+		"https://raw.githubusercontent.com/yakirChen/q/master/channel_v3.json?token=AVprLTA--6deCJh6y-RItfdnZf0ZMWBKks5cieoEwA%3D%3D"
+	],
+	"in_process_packages":
+	[
+		"Rust Enhanced"
+	],
+	"installed_packages":
+	[
+		"Package Control"
+	]
+}

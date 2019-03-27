@@ -19,7 +19,7 @@ patch:
     # abnerworks.Typora:
       # ascii_mode: true
   chord_duration: 0.1
-  config_version: 0.30
+  config_version: 0.32
   preset_color_schemes:
     yakir_white:
       name: "yakir White主题／yakir_white"

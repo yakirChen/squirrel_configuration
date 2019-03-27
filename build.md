@@ -171,13 +171,18 @@ export CPPFLAGS="$CPPFLAGS -DSQLITE_ENABLE_COLUMN_METADATA=1 \
 # Readline
 git clone --depth 1 git://git.savannah.gnu.org/readline.git
 mkdir build && cd build && \
-../configure --prefix=${LOCAL} --enable-shared --enable-static --with-purify --enable-FEATURE=yes && \
+    ../configure --prefix=${LOCAL} \
+    --enable-shared \
+    --enable-static \
+    --with-purify \
+    --enable-FEATURE=yes && \
 make -j 12 && make install
 # python2
+export CFLAGS="-I${LOCAL}/include/readline -I${LOCAL}/include -I${LOCAL}/include/openssl"
 mkdir build && cd build && \
     ../configure \
-        --enable-shared 
-        --enable-optimizations 
+        --enable-shared \
+        --enable-optimizations \
         --enable-unicode=ucs4 \
         --prefix=${PY2_HOME} && \
 make -j 12 && make install && python2 --version
@@ -197,12 +202,11 @@ source /Volumes/To/repos/venv/hg/bin/activate
 deactivate
 ```
 
-
 # Docutils
 ./python2 setup.py install
 
 # python3 python3.7.2 依赖 libffi 3.2.1
-export CFLAGS="$CFLAGS -I/Users/yakir/local/sqlite/include"
+export CFLAGS="$CFLAGS -I/Users/yakir/local/sqlite/include -I/Users/yakir/local/lib/libffi-3.2.1/include"
 mkdir build && cd build && \
 ../configure --enable-shared \
     --enable-ipv6 \

@@ -22,14 +22,14 @@
 -XX:-OmitStackTraceInFastThrow
 -XX:-UseCounterDecay
 
--XX:ReservedCodeCacheSize=512M
--XX:MaxMetaspaceSize=512M
+-XX:ReservedCodeCacheSize=640M
+-XX:MaxMetaspaceSize=640M
 -XX:MinMetaspaceFreeRatio=60
 -XX:SoftRefLRUPolicyMSPerMB=50
 -XX:ParallelGCThreads=8
 -XX:ConcGCThreads=4
 -XX:SurvivorRatio=8
--XX:MaxGCPauseMillis=1000
+-XX:MaxGCPauseMillis=1200
 -XX:InitiatingHeapOccupancyPercent=30
 -XX:G1NewSizePercent=6
 -XX:G1ReservePercent=15

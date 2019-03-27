@@ -1,5 +1,6 @@
 scriptencoding utf-8
 
+" set packpath+=$VIM_CONFIG_PATH
 set nocompatible " 关闭vi兼容模式
 set t_Co=256 " 开启终端256色 terminal Color
 set showcmd
@@ -50,8 +51,6 @@ set modifiable
 set wildmenu " 增加命令行自动补全操作
 set history=9999
 
-
-
 " set hidden
 let g:racer_cmd = '/Volumes/To/repos/cargo/bin/racer'
 let g:racer_experimental_completer = 1
@@ -79,4 +78,3 @@ let g:NERDTreeIndicatorMapCustom = {
 
 source /Users/yakir/Library/Mobile Documents/com~apple~CloudDocs/Developer/macOS-libs/vim/plugins.vim
 source /Users/yakir/Library/Mobile Documents/com~apple~CloudDocs/Developer/macOS-libs/vim/mappings.vim
-

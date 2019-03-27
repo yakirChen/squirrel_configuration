@@ -97,7 +97,7 @@
     "workbench.colorTheme": "Quiet Light",
     "rust-client.channel": "nightly",
     "rust.unstable_features": true,
-    "rust.clippy_preference": "on",
+    "rust.clippy_preference": "off",
     "C_Cpp.default.cppStandard": "c++17",
     "C_Cpp.default.cStandard": "c11",
     "files.exclude": {
@@ -106,4 +106,10 @@
         "**/.settings": true,
         "**/.factorypath": true
     },
+    "leetcode.endpoint": "leetcode",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "rust.all_features": true,
+    "rust.cfg_test": true,
+    "rust.trace.server": "verbose",
 }

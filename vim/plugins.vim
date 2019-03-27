@@ -1,8 +1,9 @@
 call plug#begin('~/.vim/plugged')
 
 "Plug 'sheerun/vim-polyglot'
-Plug 'https://github.com/Shougo/vimproc.vim'
-Plug 'https://github.com/idanarye/vim-vebugger.git'
+Plug 'maralla/completor.vim'
+Plug 'Shougo/vimproc.vim'
+Plug 'idanarye/vim-vebugger'
 Plug 'vim-syntastic/syntastic'
 Plug 'junegunn/vim-easy-align'
 Plug 'rust-lang/rust.vim'
@@ -13,7 +14,7 @@ Plug 'fholgado/minibufexpl.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'majutsushi/tagbar'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'https://github.com/tommcdo/vim-lion.git'
+Plug 'tommcdo/vim-lion'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'

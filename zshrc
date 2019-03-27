@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 HIST_STAMPS="yyyy-mm-dd"
 DISABLE_UPDATE_PROMPT=true
 DISABLE_AUTO_UPDATE=true
@@ -7,20 +7,28 @@ ZSH_THEME="jtriley"
 plugins=(
     ant
     # mvn
-    spring
-    rust
+    # spring
+    # rust
     cargo
-    rustup
+    fd
+    # rustup
+    ripgrep
     golang
-    # npm
+    npm
     # docker
-    swift
-    zsh-completions
+    # swift
+    # zsh-completions
     # zsh-autosuggestions
     zsh-navigation-tools
-    zsh-history-substring-search
+    # zsh-history-substring-search
     colorize
 )
+
+# export PROMPT_COMMAND='echo -n [$(date +%H:%M:%S)]'
+# export PS1="\u@\h [\$(date +%H:%M:%S)]> "
+
+# export PS1="\\033[01;36m[cyan]%}%T%{$fg_bold[green]%} %{$fg_bold[white]%}%n%{$fg[magenta]%}@%{$fg_bold[white]%}%m %{$fg_bold[green]%}%d
+# %{$fg_bold[yellow]%}%% %{$reset_color%}"
 
 func ssproxy() {
     sslocal -s $1 -p $2 -l 1080 -k $3  -t 300 -m aes-256-cfb
@@ -49,10 +57,12 @@ export RUSTFLAGS='-C target-cpu=native'
 # export RUSTFLAGS='-C prefer-dynamic'
 #export RUSTUP_TOOLCHAIN=stable
 export RUSTUP_TOOLCHAIN=nightly
-#export RUSTUP_DIST_SERVER=https://static.rust-lang.ogr
+export MIRI_SYSROOT=${TO_REPOS}/miri
+#export RUSTUP_DIST_SERVER=https://static.rust-lang.org
 #export RUSTUP_UPDATE_ROOT=https://static.rust-lang.org/rustup
-# export RUST_SRC_PATH=${RUSTUP_HOME}/toolchains/${RUSTUP_TOOLCHAIN}-x86_64-apple-darwin/lib/rustlib/src/rust/src
+# export RUST_SRC_PATH=$(${CARGO_HOME}/bin/rustc --print sysroot)/lib/rustlib/src/rust/src
 # export DYLD_LIBRARY_PATH=$(${CARGO_HOME}/bin/rustc --print sysroot)/lib:$DYLD_LIBRARY_PATH
+# export LD_LIBRARY_PATH=$DYLD_LIBRARY_PATH
 # export DYLD_LIBRARY_PATH=$(rustc --print sysroot)/lib:$DYLD_LIBRARY_PATH
 export STACK_HOME=${LOCAL}/stack
 
@@ -65,6 +75,7 @@ export STACK_HOME=${LOCAL}/stack
 # export IGV_HOME=${LOCAL}/igv
 
 # 开发辅助
+export VIM_CONFIG_PATH=${HOME}/.vim
 export SQLITE=${LOCAL}/sqlite
 export MYSQL_BASE_DIR=/Volumes/TO/servers/mysql
 export MYSQL_DATA_DIR=/Volumes/TO/repos/mysql/data
@@ -102,7 +113,8 @@ export WGET_HOME=${LOCAL}/wget
 # 打包编译工具
 export CHEZ_SCHEME_HOME=${TO_SERVERS}/chez_scheme
 export CMAKE_HOME=${LOCAL}/cmake
-export M2_HOME=${LOCAL}/maven                   # maven
+export M2_HOME=${LOCAL}/maven0                   # maven
+# export M2_HOME=${LOCAL}/maven                   # maven
 export MAVEN_CONFIG=${M2_HOME}/conf
 export MAVEN_SKIP_RC=true
 export ANT_HOME=${LOCAL}/ant                    # ant
@@ -172,7 +184,7 @@ export JAVA_DEBUG_OPTS="-Xdebug -Xrunjdwp:server=y,transport=dt_socket,suspend=n
 export JAVA_OPTS="${DEF_JAVA_OPTS} -XX:HeapDumpPath=${TO_REPOS}/logs/jvm_error.hprof"
 #export MAVEN_OPTS="${DEF_JAVA_OPTS} -XX:HeapDumpPath=${TO_REPOS}/logs/maven_java_error.hprof"
 export ANT_ARGS="-nouserlib -lib ${TO_REPOS}/ant/lib"
-export ANT_OPTS="-Divy_install_path=${TO_REPOS}/ant/lib -Ddest=${TO_REPOS}/ant -Divy.default.ivy.user.dir=${TO_REPOS}/ivy2"
+export ANT_OPTS="-Djava.io.tmpdir=/Volumes/To/repos/javaiotmp -Divy_install_path=${TO_REPOS}/ant/lib -Ddest=${TO_REPOS}/ant -Divy.default.ivy.user.dir=${TO_REPOS}/ant"
 export SBT_OPTS="-Dsbt.global.base=${TO_SERVERS}/sbt \
 -Dsbt.version=1.0.4 \
 -Dsbt.boot.directory=${TO_REPOS}/sbt/boot \
@@ -192,6 +204,9 @@ export OPENSSL_INCLUDE_DIR=${HOME}/local/include/openssl/
 export DEP_OPENSSL_INCLUDE=${HOME}/local/include/openssl/
 export OPENSSL_LIB_DIR=${HOME}/local/lib/
 export OPENSSL_ROOT_DIR=${OPENSSL_INCLUDE_DIR}
+
+SILVER=(status:black:white dir:blue:black git:green:black cmdtime:magenta:black)
+export SILVER_SHELL=$0
 
 # ############################################ PATH #################################################
 PATH=${LOCAL}/bin:${LOCAL}/kits:$PATH
@@ -276,4 +291,15 @@ source $ZSH/oh-my-zsh.sh
  # source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
  
  # OPAM configuration
-. ${TO_REPOS}/opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+# . ${TO_REPOS}/opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
+# fpath=( "$HOME/.zfunctions" $fpath )
+# autoload -U promptinit; promptinit
+
+# # optionally define some options
+# PURE_CMD_MAX_EXEC_TIME=10
+
+# prompt pure
+
+
+# source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
