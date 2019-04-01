@@ -1,7 +1,6 @@
 {
     "window.newWindowDimensions": "inherit",
     "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}",
-    "breadcrumbs.enabled": true,
     // 字体
     "editor.fontFamily": "SourceCodePro-Semibold",
     "editor.renderWhitespace": "boundary",
@@ -14,13 +13,9 @@
     "editor.cursorStyle": "line-thin",
     "editor.wordWrapColumn": 120,
     "editor.fontLigatures": true,
-    "editor.accessibilitySupport": "off",
     "editor.trimAutoWhitespace": false,
-    "extensions.autoUpdate": false,
     "editor.find.autoFindInSelection": true,
     "editor.formatOnPaste": true,
-    // 编辑区缩览
-    "editor.minimap.enabled": false,
     "editor.tabCompletion": true,
     "editor.quickSuggestions": {
         "other": true,
@@ -37,8 +32,8 @@
         "*.json": "jsonc",
         "*.toml": "toml"
     },
-    "workbench.activityBar.visible": true,
-    "workbench.commandPalette.history": 9999999,
+    "workbench.activityBar.visible": false,
+    "workbench.commandPalette.history": 99999999,
     // 启动新建文档
     "workbench.startupEditor": "newUntitledFile",
     // 控制编辑器标签的格式。修改这项设置会让文件的路径更容易理解：
@@ -47,7 +42,6 @@
     // - long: "/home/user/workspace/src/parent"
     // - default: 当与另一选项卡标题相同时为 ".../parent"。选项卡被禁用时则为相对工作区路径
     "workbench.editor.labelFormat": "short",
-    "workbench.editor.showIcons": false,
     // 控制编辑器的选项卡关闭按钮的位置，或当设置为 "off" 时禁用关闭它们。
     "workbench.editor.tabCloseButton": "left",
     "workbench.editor.enablePreview": false,
@@ -62,7 +56,6 @@
     "workbench.quickOpen.closeOnFocusLost": false,
     "workbench.statusBar.feedback.visible": false,
     "explorer.confirmDelete": true,
-    "keyboard.touchbar.enabled": false,
     // php
     "php.suggest.basic": false,
     "php.validate.enable": false,
@@ -76,7 +69,7 @@
     "java.configuration.maven.userSettings": "/Users/yakir/local/maven/conf/settings.xml",
     "java.home": "/Library/Java/JavaVirtualMachines/jdk1.8.0_202.jdk/Contents/Home",
     "extensions.ignoreRecommendations": false,
-    "update.channel": "default",
+    "update.mode": "default",
     "update.enableWindowsBackgroundUpdates": false,
     // feedback
     "telemetry.enableCrashReporter": false,
@@ -91,25 +84,69 @@
     // markdown预览行高
     "markdown.preview.lineHeight": 1,
     "markdown.preview.fontFamily": "-apple-system, BlinkMacSystemFont, 'Source Code Pro', 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif",
-    "workbench.iconTheme": "vs-minimal",
     "editor.tokenColorCustomizations": {},
-    "scm.diffDecorationsGutterWidth": 2,
-    "workbench.colorTheme": "Quiet Light",
-    "rust-client.channel": "nightly",
+    "scm.diffDecorationsGutterWidth": 1,
+    "workbench.colorTheme": "Material Theme Lighter High Contrast",
+    // "rust-client.channel": "nightly",
+    "rust-client.channel": "stable",
     "rust.unstable_features": true,
-    "rust.clippy_preference": "off",
     "C_Cpp.default.cppStandard": "c++17",
     "C_Cpp.default.cStandard": "c11",
     "files.exclude": {
         "**/.classpath": true,
+        "**/.CVS": true,
+        "**/.factorypath": true,
         "**/.project": true,
         "**/.settings": true,
-        "**/.factorypath": true
+        "**/CVS": false
     },
     "leetcode.endpoint": "leetcode",
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "rust.all_features": true,
     "rust.cfg_test": true,
-    "rust.trace.server": "verbose",
+    "rust-client.revealOutputChannelOn": "info",
+    "workbench.colorCustomizations": {
+        "activityBarBadge.background": "#F44336",
+        "list.activeSelectionForeground": "#F44336",
+        "list.inactiveSelectionForeground": "#F44336",
+        "list.highlightForeground": "#F44336",
+        "scrollbarSlider.activeBackground": "#F4433650",
+        "editorSuggestWidget.highlightForeground": "#F44336",
+        "textLink.foreground": "#F44336",
+        "progressBar.background": "#F44336",
+        "pickerGroup.foreground": "#F44336",
+        "tab.activeBorder": "#F44336",
+        "notificationLink.foreground": "#F44336",
+        "editorWidget.resizeBorder": "#F44336",
+        "editorWidget.border": "#F44336",
+        "settings.modifiedItemIndicator": "#F44336",
+        "settings.headerForeground": "#F44336",
+        "panelTitle.activeBorder": "#F44336",
+        "breadcrumb.activeSelectionForeground": "#F44336",
+        "menu.selectionForeground": "#F44336",
+        "menubar.selectionForeground": "#F44336"
+    },
+    "materialTheme.accent": "Tomato",
+    "workbench.tree.indent": 4,
+    "breadcrumbs.enabled": true,
+    "breadcrumbs.symbolSortOrder": "name",
+    "workbench.editor.openPositioning": "first",
+    "workbench.editor.tabSizing": "shrink",
+    "editor.fontSize": 11,
+    "files.insertFinalNewline": true,
+    "files.maxMemoryForLargeFilesMB": 40960,
+    "workbench.enableExperiments": false,
+    "workbench.list.horizontalScrolling": true,
+    "debug.console.fontSize": 11,
+    "debug.inlineValues": true,
+    "terminal.explorerKind": "external",
+    "terminal.integrated.cursorStyle": "line",
+    "asciidoc.preview.fontSize": 12,
+    "asciidoc.preview.lineHeight": 1,
+    "explorer.openEditors.visible": 0,
+    "rust.rustup": {
+        "toolchain": "stable-x86_64-apple-darwin"
+    },
+    "rust.mode": "rls",
 }

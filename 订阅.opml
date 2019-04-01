@@ -138,6 +138,7 @@
 			<outline htmlUrl="http://www.chriskrycho.com/" title="Chris Krycho" xmlUrl="https://www.chriskrycho.com/feed.xml" type="rss" text="Chris Krycho"/>
 			<outline htmlUrl="https://www.goston.net" title="Goston's Blog" xmlUrl="https://www.goston.net/feed/" type="rss" text="Goston's Blog"/>
 			<outline htmlUrl="https://diygod.me/" title="Hi, DIYgod" xmlUrl="http://diygod.me/atom.xml" type="rss" text="Hi, DIYgod"/>
+			<outline htmlUrl="https://redpwn.xyz/" title="Home on redpwn" xmlUrl="https://redpwn.xyz/index.xml" type="rss" text="Home on redpwn"/>
 			<outline htmlUrl="http://lucida.me/" title="lucida" xmlUrl="http://zh.lucida.me/atom.xml" type="rss" text="lucida"/>
 			<outline htmlUrl="https://wwyqianqian.github.io/" title="WWY'S BLOG !" xmlUrl="https://wwyqianqian.github.io/atom.xml" type="rss" text="WWY'S BLOG !"/>
 			<outline htmlUrl="http://" title="巢鹏的Pensieve" xmlUrl="http://chaopeng.me/blog/rss.xml" type="rss" text="巢鹏的Pensieve"/>
