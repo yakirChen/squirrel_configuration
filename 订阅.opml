@@ -115,7 +115,7 @@
 		<outline text="存储" title="存储">
 			<outline htmlUrl="https://pingcap.com/blog-cn/" title="Blog-cns on PingCAP.com" xmlUrl="https://pingcap.com/blog-cn/index.xml" type="rss" text="Blog-cns on PingCAP.com"/>
 			<outline htmlUrl="https://ericfu.me/" title="Coding Husky" xmlUrl="https://ericfu.me/atom.xml" type="rss" text="Coding Husky"/>
-			<outline htmlUrl="http://yoursite.com/" title="pagefault" xmlUrl="http://www.pagefault.info/atom.xml" type="rss" text="pagefault"/>
+			<outline title="pagefault" xmlUrl="http://www.pagefault.info/atom.xml" type="rss" text="pagefault"/>
 		</outline>
 		<outline text="安全" title="安全">
 			<outline title="翻牆網 ATGFW.ORG" xmlUrl="https://www.atgfw.org/feeds/posts/default" type="rss" text="翻牆網 ATGFW.ORG"/>
@@ -124,6 +124,7 @@
 		</outline>
 		<outline text="扯扯" title="扯扯">
 			<outline htmlUrl="https://blog.blahgeek.com" title="BlahGeek's Blog" xmlUrl="https://blog.blahgeek.com/feeds/all.rss.xml" type="rss" text="BlahGeek's Blog"/>
+			<outline htmlUrl="http://www.derek520.com/" title="Derek" xmlUrl="http://derek520.com/feed.xml" type="rss" text="Derek"/>
 			<outline htmlUrl="https://hexilee.me/" title="Hexi Blog" xmlUrl="https://hexilee.me/feed.xml" type="rss" text="Hexi Blog"/>
 			<outline htmlUrl="http://maskray.me/blog/" title="MaskRay" xmlUrl="http://maskray.me/blog/atom.xml" type="rss" text="MaskRay"/>
 			<outline htmlUrl="http://ppwwyyxx.com/" title="Yuxin's Blog" xmlUrl="http://ppwwyyxx.com/atom.xml" type="rss" text="Yuxin's Blog"/>
@@ -133,19 +134,20 @@
     https://draveness.me" title="面向信仰编程 - Articles" xmlUrl="https://draveness.me/feed.xml" type="rss" text="面向信仰编程 - Articles"/>
 		</outline>
 		<outline text="野生技术" title="野生技术">
-			<outline htmlUrl="http://www.ahonn.me/" title="Ahonn's Blog" xmlUrl="http://www.ahonn.me/atom.xml" type="rss" text="Ahonn's Blog"/>
+			<outline htmlUrl="https://ice1000.org/" title="A dependently-typed life" xmlUrl="http://ice1000.org/feed.xml" type="rss" text="A dependently-typed life"/>
+			<outline htmlUrl="https://ice1000.org/" title="A dependently-typed life" xmlUrl="https://ice1000.org/feed.xml" type="rss" text="A dependently-typed life"/>
+			<outline htmlUrl="https://www.ahonn.me" title="Ahonn's Blog" xmlUrl="http://www.ahonn.me/atom.xml" type="rss" text="Ahonn's Blog"/>
 			<outline htmlUrl="https://blessing.studio/" title="Blessing Studio" xmlUrl="https://blessing.studio/atom.xml" type="rss" text="Blessing Studio"/>
 			<outline htmlUrl="http://www.chriskrycho.com/" title="Chris Krycho" xmlUrl="https://www.chriskrycho.com/feed.xml" type="rss" text="Chris Krycho"/>
 			<outline htmlUrl="https://www.goston.net" title="Goston's Blog" xmlUrl="https://www.goston.net/feed/" type="rss" text="Goston's Blog"/>
 			<outline htmlUrl="https://diygod.me/" title="Hi, DIYgod" xmlUrl="http://diygod.me/atom.xml" type="rss" text="Hi, DIYgod"/>
+			<outline htmlUrl="/" title="Hi,I`m fish" xmlUrl="https://liangyuanpeng.com/index.xml" type="rss" text="Hi,I`m fish"/>
 			<outline htmlUrl="https://redpwn.xyz/" title="Home on redpwn" xmlUrl="https://redpwn.xyz/index.xml" type="rss" text="Home on redpwn"/>
 			<outline htmlUrl="http://lucida.me/" title="lucida" xmlUrl="http://zh.lucida.me/atom.xml" type="rss" text="lucida"/>
 			<outline htmlUrl="https://wwyqianqian.github.io/" title="WWY'S BLOG !" xmlUrl="https://wwyqianqian.github.io/atom.xml" type="rss" text="WWY'S BLOG !"/>
 			<outline htmlUrl="http://" title="巢鹏的Pensieve" xmlUrl="http://chaopeng.me/blog/rss.xml" type="rss" text="巢鹏的Pensieve"/>
 			<outline htmlUrl="https://www.starduster.me" title="星尘独奏曲" xmlUrl="https://www.starduster.me/feed/" type="rss" text="星尘独奏曲"/>
-			<outline htmlUrl="https://www.tuna.moe/" title="清华大学 TUNA 协会" xmlUrl="https://tuna.moe/feed.xml" type="rss" text="清华大学 TUNA 协会"/>
-			<outline htmlUrl="https://ice1000.org/" title="知其变，守其恒，为天下式" xmlUrl="http://ice1000.org/feed.xml" type="rss" text="知其变，守其恒，为天下式"/>
-			<outline htmlUrl="https://ice1000.org/" title="知其变，守其恒，为天下式" xmlUrl="https://ice1000.org/feed.xml" type="rss" text="知其变，守其恒，为天下式"/>
+			<outline htmlUrl="https://tuna.moe/" title="清华大学 TUNA 协会" xmlUrl="https://tuna.moe/feed.xml" type="rss" text="清华大学 TUNA 协会"/>
 		</outline>
 	</body>
 </opml>

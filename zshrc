@@ -77,9 +77,9 @@ export STACK_HOME=${LOCAL}/stack
 # 开发辅助
 export VIM_CONFIG_PATH=${HOME}/.vim
 export SQLITE=${LOCAL}/sqlite
-export MYSQL_BASE_DIR=/Volumes/TO/servers/mysql
-export MYSQL_DATA_DIR=/Volumes/TO/repos/mysql/data
-export MYSQL_LOGS_DIR=/Volumes/TO/repos/mysql/logs
+export MYSQL_BASE_DIR=/Volumes/To/servers/mysql
+export MYSQL_DATA_DIR=/Volumes/To/repos/mysql/data
+export MYSQL_LOGS_DIR=/Volumes/To/repos/mysql/logs
 # export BTRACE_HOME=${LOCAL}/btrace
 # export HTOP_HOME=${LOCAL}/htop
 # export FISH_HOME=${LOCAL}/fish
@@ -138,6 +138,7 @@ export GEM_HOME=${TO_REPOS}/gem
 export FFMPEG_HOME=${LOCAL}/ffmpeg
 export GNUPG_HOME=${LOCAL}/gnupg
 
+export JABBA_HOME=${LOCAL}/jabba
 export JFX_HOME=${TO_SERVERS}/openjfx
 export JAVA_8_HOME=$(/usr/libexec/java_home -v 1.8)
 export JAVA_11_HOME=$(/usr/libexec/java_home -v 11)
@@ -210,6 +211,7 @@ export SILVER_SHELL=$0
 
 # ############################################ PATH #################################################
 PATH=${LOCAL}/bin:${LOCAL}/kits:$PATH
+PATH=${JABBA_HOME}/bin:$PATH
 PATH=${WGET_HOME}/bin:$PATH
 PATH=${GNUPG_HOME}/bin:$PATH
 PATH=${CMAKE_HOME}/bin:$PATH
@@ -303,3 +305,5 @@ source $ZSH/oh-my-zsh.sh
 
 
 # source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+
+#[ -s "/Users/yakir/local/jabba/jabba.sh" ] && source "/Users/yakir/local/jabba/jabba.sh"

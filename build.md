@@ -134,8 +134,8 @@ autoreconf -i && \
     ./configure --with-oniguruma=builtin --disable-maintainer-mode --prefix=${LOCAL} && \
     make LDFLAGS=-all-static -j 12 && make LDFLAGS=-all-static install
 # ruby 
-gcl --depth 1  https://github.com/ruby/ruby.git && \
-    autoconf && \
+gcr --depth 1 https://github.com/ruby/ruby.git && \
+    cd ruby && autoconf && \
     ./configure --prefix=${RUBY_HOME} && \
     make -j 12 && \
     make install && \
@@ -170,7 +170,7 @@ export CPPFLAGS="$CPPFLAGS -DSQLITE_ENABLE_COLUMN_METADATA=1 \
     make -j 12 && make install
 # Readline
 git clone --depth 1 git://git.savannah.gnu.org/readline.git
-mkdir build && cd build && \
+cd readline && mkdir build && cd build && \
     ../configure --prefix=${LOCAL} \
     --enable-shared \
     --enable-static \
