@@ -132,6 +132,7 @@ export YARN_HOME=${LOCAL}/yarn                # yarn
 export HASKELL_BIN=${TO_REPOS}/haskell
 export GRADLE_USER_HOME=${TO_REPOS}/gradle
 export GEM_HOME=${TO_REPOS}/gem
+export GEM_PATH=${TO_REPOS}/gem
 
 # 日常工具
 # export ARIA2_HOME=${LOCAL}/aria2              # aria2
@@ -307,3 +308,4 @@ source $ZSH/oh-my-zsh.sh
 # source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 
 #[ -s "/Users/yakir/local/jabba/jabba.sh" ] && source "/Users/yakir/local/jabba/jabba.sh"
+export FLUTTER_STORAGE_BASE_URL="https://mirrors.tuna.tsinghua.edu.cn/flutter"

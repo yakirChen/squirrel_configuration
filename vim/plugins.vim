@@ -20,5 +20,12 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'yianwillis/vimcdoc'
+"if has('nvim')
+"  Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
+"else
+"  Plug 'Shougo/defx.nvim'
+"  Plug 'roxma/nvim-yarp'
+"  Plug 'roxma/vim-hug-neovim-rpc'
+"endif
 
 call plug#end()
