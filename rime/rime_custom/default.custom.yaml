@@ -8,3 +8,4 @@ patch:
   #     # 按shift: 从中文状态切换成英文状态的时候自动上屏英文
   #     Shift_L: commit_code
   #     Shift_R: commit_code
+  "translator/dictionary": luna_pinyin.extended
