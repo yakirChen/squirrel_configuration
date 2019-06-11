@@ -16,7 +16,7 @@
     "editor.trimAutoWhitespace": false,
     "editor.find.autoFindInSelection": true,
     "editor.formatOnPaste": true,
-    "editor.tabCompletion": true,
+    "editor.tabCompletion": "on",
     "editor.maxTokenizationLineLength": 999999,
     "editor.quickSuggestions": {
         "other": true,

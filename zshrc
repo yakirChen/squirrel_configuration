@@ -154,7 +154,7 @@ export JDK_11_HOME=${JAVA_11_HOME}
 export JDK_12_HOME=${JAVA_12_HOME}
 export JDK_13_HOME=${JAVA_13_HOME}
 export KOTLIN_HOME=${TO_SERVERS}/kotlinc
-export SCALA_HOME=${TO_SERVERS}/scala
+export SCALA_HOME=${LOCAL}/scala
 export SBT_HOME=${TO_SERVERS}/sbt
 
 alias jdk8="export JAVA_HOME=${JAVA_8_HOME}"

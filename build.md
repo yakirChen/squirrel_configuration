@@ -29,7 +29,12 @@ git clone git@github.com:robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 
 ln -s ~/Library/Mobile\ Documents/com\~apple\~CloudDocs/Developer/macOS-libs/zshrc ~/.zshrc
 cp ~/Library/Mobile\ Documents/com\~apple\~CloudDocs/Developer/macOS-libs/zsh_history ~/.zsh_history
+
 ```
+#### pkg安装包可能在这个目录设置 PATH
+_安装wrk的时候错误_ 原因是 **/etc/paths.d/workbooks**文件内容中的路径包含空格,解决双引号括起
+`/etc/paths.d`
+
 
 ### SSH免密
 ```bash
@@ -76,6 +81,7 @@ chmod 600 ~/.ssh/*                  # -rw-------
 + [bison](https://ftp.gnu.org/gnu/bison/)
   - [m4](https://ftp.gnu.org/gnu/m4/)
 + [jq JSON processor](https://github.com/stedolan/jq)
++ [wrk](https://github.com/wg/wrk)
 
 ### 配置 & 编译
 
@@ -143,7 +149,33 @@ gcr --depth 1 https://github.com/ruby/ruby.git && \
 
 # libsodium 支持 shadowsocks chacha20
 ./configure --prefix=${LOCAL} && make -j 12 && make install
+
+# jabba
+JABBA_VERSION=$(curl -L https://shyiko.github.com/jabba/latest) && \
+    curl -L https://github.com/shyiko/jabba/releases/download/$JABBA_VERSION/jabba-$JABBA_VERSION-darwin-amd64 \
+    -o /Users/yakir/local/jabba/bin/jabba
 ```
+
+```bash
+#### wrk
+wrk Makefile内容
+```
+官方wiki中
+```makefile
+CFLAGS  := -std=c99 -Wall -O2 -D_REENTRANT -I/usr/local/opt/openssl/include
+LIBS    := -lpthread -lm -lcrypto -lssl -L/usr/local/opt/openssl/lib
+```
+实际
+```diff
+-CFLAGS  += -std=c99 -Wall -O2 -D_REENTRANT
+-LIBS    := -lm -lssl -lcrypto -lpthread
++# CFLAGS  += -std=c99 -Wall -O2 -D_REENTRANT
++# LIBS    := -lm -lssl -lcrypto -lpthread
++
++CFLAGS  := -Wall -O2 -D_REENTRANT -I/Users/yakir/local/include/openssl
++LIBS    := -lpthread -lm -lcrypto -lssl -L/Users/yakir/local/lib
+```
+
 
 ### Python2 & Python3 源码构建
 
