@@ -35,4 +35,42 @@ ln -s ${HOME}/Library/Mobile Documents/com~apple~CloudDocs/Developer/macOS-libs/
 ln -s ${HOME}/Library/Mobile Documents/com~apple~CloudDocs/Developer/macOS-libs/zshrc ${HOME}/.zshrc 
 ```
 
+## Too many open files
+
+```bash
+sudo cp "/Users/yakir/Library/Mobile Documents/com~apple~CloudDocs/Developer/macOS-libs/macOS-limit/limit.maxfiles.plist" /Library/LaunchDaemons/
+sudo cp "/Users/yakir/Library/Mobile Documents/com~apple~CloudDocs/Developer/macOS-libs/macOS-limit/limit.maxproc.plist" /Library/LaunchDaemons/
+
+sudo chown root:wheel /Library/LaunchDaemons/limit.maxfiles.plist
+sudo chown root:wheel /Library/LaunchDaemons/limit.maxproc.plist
+
+sudo launchctl load -w /Library/LaunchDaemons/limit.maxfiles.plist
+sudo launchctl load -w /Library/LaunchDaemons/limit.maxproc.plist
+
+```
+
+```bash
+sudo vim /etc/sysctl.conf
+sudo vim /etc/launchd.conf
+
+sysctl -A | grep kern.max
+kern.maxvnodes: 600000
+kern.maxproc: 10000
+kern.maxfiles: 300000
+kern.maxfilesperproc: 300000
+kern.maxprocperuid: 7500
+kern.maxnbuf: 16384
+
+launchctl limit
+	cpu         unlimited      unlimited
+	filesize    unlimited      unlimited
+	data        unlimited      unlimited
+	stack       8388608        67104768
+	core        0              unlimited
+	rss         unlimited      unlimited
+	memlock     unlimited      unlimited
+	maxproc     7500           10000
+	maxfiles    256            unlimited
+```
+
 :grinning:
