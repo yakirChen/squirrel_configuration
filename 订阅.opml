@@ -142,6 +142,7 @@
 			<outline htmlUrl="https://www.ahonn.me" title="Ahonn's Blog" xmlUrl="http://www.ahonn.me/atom.xml" type="rss" text="Ahonn's Blog"/>
 			<outline htmlUrl="https://blessing.studio/" title="Blessing Studio" xmlUrl="https://blessing.studio/atom.xml" type="rss" text="Blessing Studio"/>
 			<outline htmlUrl="http://www.chriskrycho.com/" title="Chris Krycho" xmlUrl="https://www.chriskrycho.com/feed.xml" type="rss" text="Chris Krycho"/>
+			<outline htmlUrl="https://dev.tail0r.com/" title="Frederic Chan - Tail0r DEV - Tail0r 旗下技术博客" xmlUrl="https://dev.tail0r.com/author/frederic/rss/" type="rss" text="Frederic Chan - Tail0r DEV - Tail0r 旗下技术博客"/>
 			<outline htmlUrl="https://www.goston.net" title="Goston's Blog" xmlUrl="https://www.goston.net/feed/" type="rss" text="Goston's Blog"/>
 			<outline htmlUrl="https://diygod.me/" title="Hi, DIYgod" xmlUrl="http://diygod.me/atom.xml" type="rss" text="Hi, DIYgod"/>
 			<outline htmlUrl="/" title="Hi,I`m fish" xmlUrl="https://liangyuanpeng.com/index.xml" type="rss" text="Hi,I`m fish"/>

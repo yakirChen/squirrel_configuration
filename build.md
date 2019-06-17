@@ -82,6 +82,8 @@ chmod 600 ~/.ssh/*                  # -rw-------
   - [m4](https://ftp.gnu.org/gnu/m4/)
 + [jq JSON processor](https://github.com/stedolan/jq)
 + [wrk](https://github.com/wg/wrk)
++ [ncurses]()
++ [zsh]()
 
 ### 配置 & 编译
 
@@ -140,6 +142,7 @@ autoreconf -i && \
     ./configure --with-oniguruma=builtin --disable-maintainer-mode --prefix=${LOCAL} && \
     make LDFLAGS=-all-static -j 12 && make LDFLAGS=-all-static install
 # ruby 
+unset CFLAGS CPPFLAGS CXXFLAGS LDFLAGS
 gcr --depth 1 https://github.com/ruby/ruby.git && \
     cd ruby && autoconf && \
     ./configure --prefix=${RUBY_HOME} && \
@@ -174,6 +177,23 @@ LIBS    := -lpthread -lm -lcrypto -lssl -L/usr/local/opt/openssl/lib
 +
 +CFLAGS  := -Wall -O2 -D_REENTRANT -I/Users/yakir/local/include/openssl
 +LIBS    := -lpthread -lm -lcrypto -lssl -L/Users/yakir/local/lib
+```
+
+```zsh
+# ncurses
+./configure --prefix=${LOCAL} \
+    --enable-pc-files \
+    --enable-sigwinch \
+    --enable-symlinks \
+    --enable-widec \
+    --with-shared \
+    --with-gpm=n && \
+    make && \
+    make install
+    
+# zsh
+./configure --prefix="${LOCAL}/zsh" && \
+    make -j && make install
 ```
 
 

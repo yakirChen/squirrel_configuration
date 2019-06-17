@@ -6,12 +6,12 @@ export ZSH=${HOME}/.oh-my-zsh
 ZSH_THEME="jtriley"
 plugins=(
     ant
-    # mvn
+    mvn
     # spring
-    # rust
+    rust
     cargo
     fd
-    # rustup
+    rustup
     ripgrep
     golang
     npm
@@ -50,15 +50,15 @@ export GOROOT=${LOCAL}/go
 export ERL_HOME=${LOCAL}/otp
 export NODE_PATH=${LOCAL}/node
 export NPM_GLOBAL=${TO_REPOS}/npm
-#export RUST_HOME=${LOCAL}/rust
-export CARGO_HOME=${TO_REPOS}/cargo
+# export RUST_HOME=${LOCAL}/rust
+export CARGO_HOME=${LOCAL}/rust
 export CARGO_PATH=${CARGO_HOME}/
-export RUSTUP_HOME=${TO_REPOS}/cargo
+export RUSTUP_HOME=${LOCAL}/rust
 export RUSTFLAGS='-C target-cpu=native'
 # export RUSTFLAGS='-C prefer-dynamic'
 #export RUSTUP_TOOLCHAIN=stable
 export RUSTUP_TOOLCHAIN=nightly
-export MIRI_SYSROOT=${TO_REPOS}/miri
+# export MIRI_SYSROOT=${TO_REPOS}/miri
 #export RUSTUP_DIST_SERVER=https://static.rust-lang.org
 #export RUSTUP_UPDATE_ROOT=https://static.rust-lang.org/rustup
 # export RUST_SRC_PATH=$(${CARGO_HOME}/bin/rustc --print sysroot)/lib/rustlib/src/rust/src
@@ -250,6 +250,7 @@ alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 alias recaf="${JAVA_11_HOME}/bin/java -Dapplication.home=${JAVA_11_HOME} -jar ${JARS}/recaf.jar >/dev/null 2>&1 &"
 alias bcv="${JAVA_11_HOME}/bin/java -Dapplication.home=${JAVA_11_HOME} -jar ${JARS}/Bytecode-Viewer.jar >/dev/null 2>&1 &"
 alias gitrb="git reset && git checkout -- . && git checkout origin/master &&  git branch -D master && git status && git checkout master && git status"
+alias pg="ps aux|grep $1"
 
 MVN_MB="-Dmaven.compiler.fork=true -T12"        # MVN_MULTI_THREADED_BUILDER
 # MVN_AS="-Paliyun -Pspring"
@@ -291,7 +292,6 @@ alias gcr="git clone --recurse-submodules "
 alias gcr1="git clone --recurse-submodules --depth 1 "
 alias antlr4='java -Xmx500M -cp "/Volumes/To/app/antlr-4.7.2-complete.jar:$CLASSPATH" org.antlr.v4.Tool'
 alias grun='java -Xmx500M -cp "/Volumes/To/app/antlr-4.7.2-complete.jar:$CLASSPATH" org.antlr.v4.gui.TestRig'
-
 
 source $ZSH/oh-my-zsh.sh
  # source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
