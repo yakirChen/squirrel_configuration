@@ -96,7 +96,7 @@ export CFLAGS="-I${LOCAL}/include -I${LOCAL}/include/openssl" # -I${LOCAL}/inclu
 export CXXFLAGS="--std=c++17 "
 export CPPFLAGS=${CFLAGS}
 export LDFLAGS="-L${LOCAL}/lib"
-export BOOST_ROOT=${TO_REPOS}/boost
+export BOOST_ROOT=${TO_REPOS}/boost69
 export BOOSTDIR=${BOOST_ROOT}/include
 # export OPAMROOT=${TO_REPOS}/opam
 # export OCAML_TOPLEVEL_PATH=${TO_REPOS}/ocaml
@@ -251,6 +251,7 @@ alias recaf="${JAVA_11_HOME}/bin/java -Dapplication.home=${JAVA_11_HOME} -jar ${
 alias bcv="${JAVA_11_HOME}/bin/java -Dapplication.home=${JAVA_11_HOME} -jar ${JARS}/Bytecode-Viewer.jar >/dev/null 2>&1 &"
 alias gitrb="git reset && git checkout -- . && git checkout origin/master &&  git branch -D master && git status && git checkout master && git status"
 alias pg="ps aux|grep $1"
+alias jpg="jps -lv|grep $1"
 
 MVN_MB="-Dmaven.compiler.fork=true -T12"        # MVN_MULTI_THREADED_BUILDER
 # MVN_AS="-Paliyun -Pspring"

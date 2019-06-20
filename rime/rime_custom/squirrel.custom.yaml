@@ -18,8 +18,6 @@ patch:
       ascii_mode: true
     # abnerworks.Typora:
       # ascii_mode: true
-  chord_duration: 0.1
-  config_version: 0.32
   preset_color_schemes:
     yakir2019:
       name: "yakir 2019"
