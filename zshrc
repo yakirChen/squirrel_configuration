@@ -7,6 +7,8 @@ ZSH_THEME="jtriley"
 plugins=(
     ant
     mvn
+    git
+    git-extras
     # spring
     rust
     cargo
@@ -188,8 +190,8 @@ export JAVA_DEBUG_OPTS="-Xdebug -Xrunjdwp:server=y,transport=dt_socket,suspend=n
 #export JAVA_OPTS="${DEF_JAVA_OPTS} --illegal-access=deny -XX:HeapDumpPath=${TO_REPOS}/logs/jvm_error.hprof"
 export JAVA_OPTS="${DEF_JAVA_OPTS} -XX:HeapDumpPath=${TO_REPOS}/logs/jvm_error.hprof"
 #export MAVEN_OPTS="${DEF_JAVA_OPTS} -XX:HeapDumpPath=${TO_REPOS}/logs/maven_java_error.hprof"
-export ANT_ARGS="-nouserlib -lib ${TO_REPOS}/ant/lib"
-export ANT_OPTS="-Djava.io.tmpdir=/Volumes/To/repos/javaiotmp -Divy_install_path=${TO_REPOS}/ant/lib -Ddest=${TO_REPOS}/ant -Divy.default.ivy.user.dir=${TO_REPOS}/ant"
+export ANT_ARGS="-nouserlib -lib ${LOCAL}/ant/lib"
+export ANT_OPTS="-Djava.io.tmpdir=${TO_REPOS}/javaiotmp -Divy_install_path=${LOCAL}/ant/lib -Ddest=${TO_REPOS}/ivy -Divy.default.ivy.user.dir=${TO_REPOS}/ivy -DdefaultCacheDir=${TO_REPOS}/ivy"
 export SBT_OPTS="-Dsbt.global.base=${TO_SERVERS}/sbt \
 -Dsbt.version=1.0.4 \
 -Dsbt.boot.directory=${TO_REPOS}/sbt/boot \
@@ -252,6 +254,7 @@ alias bcv="${JAVA_11_HOME}/bin/java -Dapplication.home=${JAVA_11_HOME} -jar ${JA
 alias gitrb="git reset && git checkout -- . && git checkout origin/master &&  git branch -D master && git status && git checkout master && git status"
 alias pg="ps aux|grep $1"
 alias jpg="jps -lv|grep $1"
+alias mdutildisto="sudo mdutil -i off -d -X /Volumes/To ; sudo mdutil -i off /Volumes/To"
 
 MVN_MB="-Dmaven.compiler.fork=true -T12"        # MVN_MULTI_THREADED_BUILDER
 # MVN_AS="-Paliyun -Pspring"
