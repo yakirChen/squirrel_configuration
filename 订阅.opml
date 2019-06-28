@@ -148,6 +148,7 @@
 			<outline htmlUrl="/" title="Hi,I`m fish" xmlUrl="https://liangyuanpeng.com/index.xml" type="rss" text="Hi,I`m fish"/>
 			<outline htmlUrl="https://redpwn.xyz/" title="Home on redpwn" xmlUrl="https://redpwn.xyz/index.xml" type="rss" text="Home on redpwn"/>
 			<outline htmlUrl="http://lucida.me/" title="lucida" xmlUrl="http://zh.lucida.me/atom.xml" type="rss" text="lucida"/>
+			<outline htmlUrl="https://butui.me/posts/" title="Posts on 逆水行舟" xmlUrl="https://butui.me/posts/index.xml" type="rss" text="Posts on 逆水行舟"/>
 			<outline htmlUrl="https://wwyqianqian.github.io/" title="WWY'S BLOG !" xmlUrl="https://wwyqianqian.github.io/atom.xml" type="rss" text="WWY'S BLOG !"/>
 			<outline htmlUrl="http://" title="巢鹏的Pensieve" xmlUrl="http://chaopeng.me/blog/rss.xml" type="rss" text="巢鹏的Pensieve"/>
 			<outline htmlUrl="https://www.starduster.me" title="星尘独奏曲" xmlUrl="https://www.starduster.me/feed/" type="rss" text="星尘独奏曲"/>
