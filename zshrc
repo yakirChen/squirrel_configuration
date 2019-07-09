@@ -150,11 +150,13 @@ export JAVA_8_HOME=$(/usr/libexec/java_home -v 1.8)
 export JAVA_11_HOME=$(/usr/libexec/java_home -v 11)
 export JAVA_12_HOME=$(/usr/libexec/java_home -v 12)
 export JAVA_13_HOME=$(/usr/libexec/java_home -v 13)
+export JAVA_14_HOME=$(/usr/libexec/java_home -v 14)
 # export GRAAL_HOME='/Library/Java/JavaVirtualMachines/graalvm/Contents/Home'
 export JDK_8_HOME=${JAVA_8_HOME}
 export JDK_11_HOME=${JAVA_11_HOME}
 export JDK_12_HOME=${JAVA_12_HOME}
 export JDK_13_HOME=${JAVA_13_HOME}
+export JDK_14_HOME=${JAVA_14_HOME}
 export KOTLIN_HOME=${TO_SERVERS}/kotlinc
 export SCALA_HOME=${LOCAL}/scala
 export SBT_HOME=${TO_SERVERS}/sbt
@@ -164,6 +166,7 @@ alias jdk8="export JAVA_HOME=${JAVA_8_HOME}"
 alias jdk11="export JAVA_HOME=${JAVA_11_HOME}"
 alias jdk12="export JAVA_HOME=${JAVA_12_HOME}"
 alias jdk13="export JAVA_HOME=${JAVA_13_HOME}"
+alias jdk14="export JAVA_HOME=${JAVA_14_HOME}"
 # alias graal="export JAVA_HOME=${GRAAL_HOME} && \
     # export PATH=$JAVA_HOME/bin:$PATH"
 # alias zulujdk8="export JAVA_HOME=${ZULU_JDK_18_HOME}"

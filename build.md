@@ -82,6 +82,7 @@ chmod 600 ~/.ssh/*                  # -rw-------
   - [m4](https://ftp.gnu.org/gnu/m4/)
 + [jq JSON processor](https://github.com/stedolan/jq)
 + [wrk](https://github.com/wg/wrk)
++ [libevent](https://github.com/libevent/libevent)
 + [ncurses]()
 + [zsh]()
 
