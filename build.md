@@ -255,10 +255,16 @@ source /Volumes/To/repos/venv/hg/bin/activate
 deactivate
 ```
 
+python3 virtualenv
+```bash
+python3 -m venv xxxxx
+source xxxxx/bin/activate
+```
+
 # Docutils
 ./python2 setup.py install
 
-# python3 python3.7.2 依赖 libffi 3.2.1
+# python3 python3.7.4 依赖 libffi 3.2.1
 export CFLAGS="$CFLAGS -I/Users/yakir/local/sqlite/include -I/Users/yakir/local/lib/libffi-3.2.1/include"
 mkdir build && cd build && \
 ../configure --enable-shared \

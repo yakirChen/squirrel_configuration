@@ -1,70 +1,25 @@
-# custom IntelliJ IDEA VM options
-
 -server
 -ea
+
 -XshowSettings:all
 -Xverify:none
--Xdiag
-# -Xprof
-# -Xcomp
--Xmx1536M
--Xms1536M
-
 -XX:+UnlockCommercialFeatures
 -XX:+UnlockExperimentalVMOptions
 -XX:+UnlockDiagnosticVMOptions
 -XX:+PrintCommandLineFlags
 -XX:+Verbose
 -XX:+UseCompressedOops
--XX:+AlwaysPreTouch
+#-XX:+AlwaysPreTouch
 -XX:+UseNUMA
 -XX:+HeapDumpOnOutOfMemoryError
 -XX:-OmitStackTraceInFastThrow
 -XX:-UseCounterDecay
 
--XX:ReservedCodeCacheSize=640M
--XX:MaxMetaspaceSize=640M
--XX:MinMetaspaceFreeRatio=60
+-Xdiag
+-Xmx1536M
+-Xms1536M
+-XX:ReservedCodeCacheSize=240m
 -XX:SoftRefLRUPolicyMSPerMB=50
--XX:ParallelGCThreads=8
--XX:ConcGCThreads=4
--XX:SurvivorRatio=8
--XX:MaxGCPauseMillis=1200
--XX:InitiatingHeapOccupancyPercent=30
--XX:G1NewSizePercent=6
--XX:G1ReservePercent=15
-
-# -XcompilationThreads=6
--XX:CICompilerCount=6
--XX:+BackgroundCompilation=true
--XX:CompileThreshold=100
--XX:OnStackReplacePercentage=6
--XX:+TieredCompilation
-# -XX:+CITime
-# -XX:+PrintInlining
-# -XX:+PrintCompilation
-# -XX:+PrintAssembly
-# -XX:+LogCompilation
-# -XX:LogVMOutput=true
-# -XX:LogFile=/Volumes/To/logs/idea/hotspot.%p.log
-# -XX:+TraceClassLoading
-# -XX:+PrintAssembly
-
--XX:+UseG1GC
--XX:+UseGCLogFileRotation
--XX:NumberOfGCLogFiles=9
--XX:GCLogFileSize=1024m
--XX:ErrorFile=/Volumes/To/logs/idea/java_error_in_idea_%p.log
--XX:HeapDumpPath=/Volumes/To/logs/idea/dump/java_error_in_idea.hprof
-# -XX:+PrintGC
-# -XX:+PrintGCDetails
-# -XX:+PrintGCApplicationStoppedTime
-# -XX:+PrintGCApplicationConcurrentTime
-# -XX:+PrintAdaptiveSizePolicy
-# -XX:+PrintTenuringDistribution
-# -XX:+PrintGCTimeStamps
-# -XX:+PrintGCDateStamps
--Xloggc:/Volumes/To/logs/idea/idea.gc.%p.log
 
 -Dfile.encoding=UTF-8
 -Dsun.io.useCanonCaches=false
@@ -73,3 +28,31 @@
 -Dos.detected.name=osx
 -Dos.detected.arch=x86_64
 -Dos.detected.classifier=osx-x86_64
+
+-XX:+HeapDumpOnOutOfMemoryError
+-XX:-OmitStackTraceInFastThrow
+
+-XX:CICompilerCount=6
+#-XX:+BackgroundCompilation=true
+#-XX:CompileThreshold=100
+#-XX:OnStackReplacePercentage=6
+-XX:+TieredCompilation
+
+-XX:MaxMetaspaceSize=640M
+-XX:MinMetaspaceFreeRatio=60
+-XX:ParallelGCThreads=8
+-XX:ConcGCThreads=4
+-XX:SurvivorRatio=8
+-XX:MaxGCPauseMillis=1200
+-XX:InitiatingHeapOccupancyPercent=30
+-XX:G1NewSizePercent=6
+-XX:G1ReservePercent=15
+
+# -XX:+FlightRecorder
+
+-XX:+UseG1GC
+-XX:+UseGCLogFileRotation
+-XX:NumberOfGCLogFiles=9
+-XX:GCLogFileSize=1024m
+#-XX:ErrorFile=/Volumes/To/logs/idea/java_error_in_idea_%p.log
+#-XX:HeapDumpPath=/Volumes/To/logs/idea/dump/java_error_in_idea.hprof

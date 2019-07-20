@@ -157,7 +157,7 @@ export JDK_11_HOME=${JAVA_11_HOME}
 export JDK_12_HOME=${JAVA_12_HOME}
 export JDK_13_HOME=${JAVA_13_HOME}
 export JDK_14_HOME=${JAVA_14_HOME}
-export KOTLIN_HOME=${TO_SERVERS}/kotlinc
+export KOTLIN_HOME=${LOCAL}/kotlinc
 export SCALA_HOME=${LOCAL}/scala
 export SBT_HOME=${TO_SERVERS}/sbt
 
@@ -258,6 +258,7 @@ alias gitrb="git reset && git checkout -- . && git checkout origin/master &&  gi
 alias pg="ps aux|grep $1"
 alias jpg="jps -lv|grep $1"
 alias mdutildisto="sudo mdutil -i off -d -X /Volumes/To ; sudo mdutil -i off /Volumes/To"
+alias cat=bat
 
 MVN_MB="-Dmaven.compiler.fork=true -T12"        # MVN_MULTI_THREADED_BUILDER
 # MVN_AS="-Paliyun -Pspring"
@@ -283,7 +284,7 @@ alias mx="mx --user-home=${TO_REPOS}/mx"
 alias schemescript='scheme --script'
 alias clojure='java -jar ${LOCAL_LIB_DIR}/clojure/clojure.jar'
 
-alias hgi='source /Volumes/To/repos/venv/hg/bin/activate'
+alias hg='source /Volumes/To/repos/venv/hg/bin/activate'
 alias hgd='deactivate'
 
 ########################################### rustup ##################################################

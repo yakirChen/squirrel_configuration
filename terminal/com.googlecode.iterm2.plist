@@ -12,6 +12,10 @@
 	<string>manual</string>
 	<key>BadgeFont</key>
 	<string>Source Code Pro</string>
+	<key>BadgeRightMargin</key>
+	<integer>2</integer>
+	<key>BadgeTopMargin</key>
+	<integer>2</integer>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>gruvbox-dark</key>
@@ -951,8 +955,8 @@
 	<false/>
 	<key>NSSplitView Subview Frames NSColorPanelSplitView</key>
 	<array>
-		<string>0.000000, 0.000000, 228.000000, 294.000000, NO, NO</string>
-		<string>0.000000, 295.000000, 228.000000, 48.000000, NO, NO</string>
+		<string>0.000000, 0.000000, 228.000000, 263.000000, NO, NO</string>
+		<string>0.000000, 264.000000, 228.000000, 48.000000, NO, NO</string>
 	</array>
 	<key>NSTableView Columns v2 KeyBingingTable</key>
 	<data>
@@ -984,10 +988,14 @@
 	</dict>
 	<key>NSWindow Frame NSColorPanel</key>
 	<string>1212 511 228 280 0 0 1920 1200 </string>
+	<key>NSWindow Frame SessionsPreferences</key>
+	<string>2189 246 606 469 1920 120 1920 1080 </string>
+	<key>NSWindow Frame SharedPreferences</key>
+	<string>2300 474 1018 447 1920 120 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>668 11 1270 1189 0 0 1920 1200 </string>
+	<string>460 0 1459 1200 0 0 1920 1200 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>650 431 1270 769 0 0 1920 1200 </string>
+	<string>1920 452 1270 748 1920 120 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>650 0 1270 1200 0 0 1920 1200 </string>
 	<key>New Bookmarks</key>
@@ -1838,6 +1846,10 @@
 	<key>NoSyncAllAppVersions</key>
 	<array>
 		<string>3.3.0beta10</string>
+		<string>3.3.0beta13</string>
+		<string>3.2.9</string>
+		<string>3.3.0beta12</string>
+		<string>3.3.git.53e1f14725</string>
 		<string>3.3.0beta11</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
@@ -1859,10 +1871,12 @@
 		<key>topLeft</key>
 		<string>{482, 967}</string>
 	</dict>
+	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
+	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>FFBE595C-E2D6-41A2-B984-69E21B59B8D4</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>137</integer>
+	<integer>188</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
 	<real>577885092.917804</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
@@ -2056,6 +2070,14 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+				<string>tmuxPaneTitle</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
 				<string>rows</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
@@ -2089,6 +2111,14 @@
 				<true/>
 				<key>name</key>
 				<string>badge</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>tab.tmuxWindowName</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -2334,6 +2364,14 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+				<string>tmuxWindowTitle</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
 				<string>currentSession.presentationName</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
@@ -2383,6 +2421,14 @@
 				<true/>
 				<key>name</key>
 				<string>currentSession.name</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>tmuxWindowName</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -2513,6 +2559,9 @@
 	</dict>
 	<key>NoSyncSearchHistory</key>
 	<array>
+		<string>metrics-jetty9</string>
+		<string>103.135.250.239</string>
+		<string>216.83.57.224</string>
 		<string>toString</string>
 		<string>flink</string>
 		<string>elasticinfo</string>
@@ -2520,8 +2569,9 @@
 		<string>graphql</string>
 		<string>graph</string>
 		<string>igraph</string>
-		<string>quick</string>
 	</array>
+	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
+	<real>584023875.78757799</real>
 	<key>NoSyncTipOfTheDayEligibilityBeganTime</key>
 	<real>577617172.68800497</real>
 	<key>NumberOfLinesForAccessibility</key>
@@ -2576,7 +2626,7 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/final_new.xml?shard=33</string>
+	<string>https://iterm2.com/appcasts/final.xml?shard=33</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SUSendProfileInfo</key>
@@ -2612,7 +2662,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.0beta11</string>
+	<string>3.2.9</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>7</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
