@@ -16,15 +16,17 @@
 -XX:-UseCounterDecay
 
 -Xdiag
--Xmx1536M
--Xms1536M
--XX:ReservedCodeCacheSize=240m
+-Xmx2048M
+-Xms2048M
+-XX:InitialCodeCacheSize=240m
+-XX:ReservedCodeCacheSize=600m
 -XX:SoftRefLRUPolicyMSPerMB=50
 
 -Dfile.encoding=UTF-8
 -Dsun.io.useCanonCaches=false
 -Djava.net.preferIPv4Stack=true
 -Djdk.http.auth.tunneling.disabledSchemes=""
+-Djdk.attach.allowAttachSelf
 -Dos.detected.name=osx
 -Dos.detected.arch=x86_64
 -Dos.detected.classifier=osx-x86_64
@@ -32,27 +34,35 @@
 -XX:+HeapDumpOnOutOfMemoryError
 -XX:-OmitStackTraceInFastThrow
 
--XX:CICompilerCount=6
+-XX:CICompilerCount=4
 #-XX:+BackgroundCompilation=true
 #-XX:CompileThreshold=100
 #-XX:OnStackReplacePercentage=6
 -XX:+TieredCompilation
 
+-XX:G1HeapRegionSize=2
 -XX:MaxMetaspaceSize=640M
 -XX:MinMetaspaceFreeRatio=60
 -XX:ParallelGCThreads=8
--XX:ConcGCThreads=4
+-XX:ConcGCThreads=2
 -XX:SurvivorRatio=8
--XX:MaxGCPauseMillis=1200
+-XX:MaxGCPauseMillis=1000
+-XX:G1HeapWastePercent=8
 -XX:InitiatingHeapOccupancyPercent=30
--XX:G1NewSizePercent=6
--XX:G1ReservePercent=15
+-XX:G1MixedGCLiveThresholdPercent=60
+-XX:G1NewSizePercent=20
+-XX:G1ReservePercent=10
 
 # -XX:+FlightRecorder
 
+-XX:+AggressiveOpts
+-XX:+DoEscapeAnalysis
+-XX:+UseCodeCacheFlushing
+
 -XX:+UseG1GC
 -XX:+UseGCLogFileRotation
+-Xlog:gc*:/Volumes/To/logs/idea/gc_%p.log
 -XX:NumberOfGCLogFiles=9
 -XX:GCLogFileSize=1024m
-#-XX:ErrorFile=/Volumes/To/logs/idea/java_error_in_idea_%p.log
-#-XX:HeapDumpPath=/Volumes/To/logs/idea/dump/java_error_in_idea.hprof
+-XX:ErrorFile=/Volumes/To/logs/idea/java_error_in_idea_%p.log
+-XX:HeapDumpPath=/Volumes/To/logs/idea/dump/java_error_in_idea.hprof

@@ -9,8 +9,8 @@ Config Development Environment On macOS
     + [SSH免密](./build.md#ssh免密)
 - [安装包下载链接](./build.md#安装包下载链接)
     + [配置 & 编译](./build.md#配置--编译)
-    + [Python2.7.15 & Python3.7.2 源码构建](./build.md#python2--python3-源码构建)  
-      使用 **LibreSSL 2.8.3**  _macOS 自带 LibreSSL 2.6.5(`/usr/bin/openssl version`)_
+    + [Python2.7.15 & Python3.7.4 源码构建](./build.md#python2--python3-源码构建)  
+      使用 **LibreSSL 2.9.2**  _macOS 自带 LibreSSL 2.6.5(`/usr/bin/openssl version`)_
     + [Python 模块安装](./build.md#python-模块安装)
     + [Nginx](./build.md#nginx)
     + [构建流程备份](./build.md#构建流程备份)
