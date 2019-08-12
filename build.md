@@ -82,8 +82,11 @@ chmod 600 ~/.ssh/*                  # -rw-------
   - [m4](https://ftp.gnu.org/gnu/m4/)
 + [jq JSON processor](https://github.com/stedolan/jq)
 + [wrk](https://github.com/wg/wrk)
++ [flatbuffers](https://github.com/google/flatbuffers)
++ [tmux](https://github.com/tmux/tmux)
 + [libevent](https://github.com/libevent/libevent)
-+ [ncurses]()
+  - [libevent](http://libevent.org/)
++ [ncurses](https://invisible-island.net/ncurses/)
 + [zsh]()
 
 ### 配置 & 编译
@@ -180,6 +183,15 @@ LIBS    := -lpthread -lm -lcrypto -lssl -L/usr/local/opt/openssl/lib
 +LIBS    := -lpthread -lm -lcrypto -lssl -L/Users/yakir/local/lib
 ```
 
+flatbuffers
+```shell
+git clone https://github.com/google/flatbuffers.git
+cd flatbuffers
+cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX=/Users/yakir/Developer/local/flatbuffers
+make
+make install
+```
+
 ```zsh
 # ncurses
 ./configure --prefix=${LOCAL} \
@@ -191,7 +203,18 @@ LIBS    := -lpthread -lm -lcrypto -lssl -L/usr/local/opt/openssl/lib
     --with-gpm=n && \
     make && \
     make install
-    
+
+# libevent
+./configure --disable-dependency-tracking \
+    --disable-debug-mode \
+    --prefix=${LOCAL} 
+
+# tmux
+git clone https://github.com/tmux/tmux.git
+cd tmux
+sh autogen.sh
+./configure --prefix=/Users/yakir/local/tmux --disable-Dependency-tracking && make && make install
+
 # zsh
 ./configure --prefix="${LOCAL}/zsh" && \
     make -j && make install

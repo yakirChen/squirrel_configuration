@@ -23,6 +23,7 @@ plugins=(
     # zsh-autosuggestions
     zsh-navigation-tools
     # zsh-history-substring-search
+    colored-man-pages
     colorize
     torrent
 )
@@ -68,6 +69,7 @@ export RUSTUP_TOOLCHAIN=nightly
 # export LD_LIBRARY_PATH=$DYLD_LIBRARY_PATH
 # export DYLD_LIBRARY_PATH=$(rustc --print sysroot)/lib:$DYLD_LIBRARY_PATH
 export STACK_HOME=${LOCAL}/stack
+export FLATBUFFERS_HOME=${LOCAL}/flatbuffers
 
 export IPFS_PATH=/Volumes/To/repos/ipfs
 
@@ -82,9 +84,10 @@ export IPFS_PATH=/Volumes/To/repos/ipfs
 # 开发辅助
 export VIM_CONFIG_PATH=${HOME}/.vim
 export SQLITE=${LOCAL}/sqlite
-export MYSQL_BASE_DIR=/Volumes/To/servers/mysql
+export MYSQL_BASE_DIR=${LOCAL}/mysql
 export MYSQL_DATA_DIR=/Volumes/To/repos/mysql/data
 export MYSQL_LOGS_DIR=/Volumes/To/repos/mysql/logs
+export TMUX=${LOCAL}/tmux
 # export BTRACE_HOME=${LOCAL}/btrace
 # export HTOP_HOME=${LOCAL}/htop
 # export FISH_HOME=${LOCAL}/fish
@@ -110,7 +113,7 @@ export GOCACHE=${TO_REPOS}/go/gocache
 export ZK_HOME=${TO_SERVERS}/zookeeper
 # export ZK_HOME=${LOCAL}/zookeeper
 # export TOMCAT_HOME=${TO_SERVERS}/tomcat
-export REDIS_HOME=${TO_SERVERS}/redis
+export REDIS_HOME=${LOCAL}/redis
 export NGINX=${LOCAL}/nginx
 # export MYSQL_SHELL=${LOCAL}/mysqlsh
 export WGET_HOME=${LOCAL}/wget
@@ -118,8 +121,8 @@ export WGET_HOME=${LOCAL}/wget
 # 打包编译工具
 export CHEZ_SCHEME_HOME=${TO_SERVERS}/chez_scheme
 export CMAKE_HOME=${LOCAL}/cmake
-export M2_HOME=${LOCAL}/maven0                   # maven
-# export M2_HOME=${LOCAL}/maven                   # maven
+# export M2_HOME=${LOCAL}/maven0                   # maven
+export M2_HOME=${LOCAL}/maven                   # maven
 export MAVEN_CONFIG=${M2_HOME}/conf
 export MAVEN_SKIP_RC=true
 export ANT_HOME=${LOCAL}/ant                    # ant
@@ -219,11 +222,11 @@ SILVER=(status:black:white dir:blue:black git:green:black cmdtime:magenta:black)
 export SILVER_SHELL=$0
 
 # ############################################ PATH #################################################
-PATH=${LOCAL}/bin:${LOCAL}/kits:$PATH
+PATH=${LOCAL}/bin:${LOCAL}/kits:${TMUX}/bin:$PATH
 PATH=${JABBA_HOME}/bin:$PATH
 PATH=${WGET_HOME}/bin:$PATH
 PATH=${GNUPG_HOME}/bin:$PATH
-PATH=${CMAKE_HOME}/bin:$PATH
+PATH=${CMAKE_HOME}/bin:${FLATBUFFERS_HOME}/bin:$PATH
 PATH=${CARGO_HOME}/bin:${M2_HOME}/bin:${GRADLE_HOME}/bin:${ANT_HOME}/bin:$PATH
 PATH=${ERL_HOME}/bin:$PATH
 PATH=${SQLITE}/bin:$MYSQL_BASE_DIR/bin:$MYSQL_BASE_DIR/support-files:${MYSQL_SHELL}/bin:$PATH
