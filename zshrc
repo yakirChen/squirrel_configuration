@@ -101,7 +101,8 @@ export CFLAGS="-I${LOCAL}/include -I${LOCAL}/include/openssl" # -I${LOCAL}/inclu
 export CXXFLAGS="--std=c++17 "
 export CPPFLAGS=${CFLAGS}
 export LDFLAGS="-L${LOCAL}/lib"
-export BOOST_ROOT=${TO_REPOS}/boost69
+#export BOOST_ROOT=${TO_REPOS}/boost69
+export BOOST_ROOT=${TO_REPOS}/boost71
 export BOOSTDIR=${BOOST_ROOT}/include
 # export OPAMROOT=${TO_REPOS}/opam
 # export OCAML_TOPLEVEL_PATH=${TO_REPOS}/ocaml
@@ -121,8 +122,8 @@ export WGET_HOME=${LOCAL}/wget
 # 打包编译工具
 export CHEZ_SCHEME_HOME=${TO_SERVERS}/chez_scheme
 export CMAKE_HOME=${LOCAL}/cmake
-# export M2_HOME=${LOCAL}/maven0                   # maven
-export M2_HOME=${LOCAL}/maven                   # maven
+export M2_HOME=${LOCAL}/maven0                   # maven
+# export M2_HOME=${LOCAL}/maven                   # maven
 export MAVEN_CONFIG=${M2_HOME}/conf
 export MAVEN_SKIP_RC=true
 export ANT_HOME=${LOCAL}/ant                    # ant

@@ -15,7 +15,7 @@ Config Development Environment On macOS
     + [Nginx](./build.md#nginx)
     + [构建流程备份](./build.md#构建流程备份)
     + [GnuPG](./build.md#gnupg)
-- [`Squirrel`(`鼠鬚管`)安装](http://yakirchen.com/2016/11-20-squirrel-build-on-macOS/)
+- [`Squirrel`(`鼠鬚管`)安装](https://yakirchen.github.io/tech/2016/11/20/squirrel-build-on-macOS.html)
 - [Shadowsocks](./build.md#shadowsocks)
 
 - [Useful Shell Fragment](./useful-shell.md)

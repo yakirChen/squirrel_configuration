@@ -1,4 +1,4 @@
-export CARGO_PATH=/Volumes/To/repos/cargo
-export CARGO_HOME=/Volumes/To/repos/cargo
-export RUSTUP_HOME=/Volumes/To/repos/cargo
+export CARGO_PATH=//Users/yakir/local/rust
+export CARGO_HOME=/Users/yakir/local/rust
+export RUSTUP_HOME=/Users/yakir/local/rust
 export PATH="$CARGO_PATH/bin:$PATH"
