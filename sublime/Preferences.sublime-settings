@@ -2,17 +2,21 @@
 	"always_show_minimap_viewport": false,
 	"atomic_save": false,
 	"auto_find_in_selection": true,
-	"bold_folder_labels": true,
-	"caret_style": "phase",
-	"color_scheme": "Packages/Color Scheme - Default/Celeste.sublime-color-scheme",
+	"bold_folder_labels": false,
+	"caret_extra_width": 1,
+	"caret_style": "smooth",
+	"color_scheme": "Packages/User/themer-sublime-text-light.tmTheme",
 	"draw_minimap_border": false,
 	"draw_white_space": "all",
 	"enable_tab_scrolling": false,
 	"ensure_newline_at_eof_on_save": true,
+	"fade_fold_buttons": true,
 	"font_face": "Source Code Pro Medium",
 	"font_size": "11",
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
+	"drag_text": false,
+	// "gpu_window_buffer": true,
 	"ignored_packages":
 	[
 		"ActionScript",
@@ -20,21 +24,15 @@
 		"ASP",
 		"Batch File",
 		"C#",
-		"Clojure",
-		"CSS",
 		"D",
 		"Erlang",
-		"Go",
 		"Graphviz",
 		"Groovy",
 		"Haskell",
-		"HTML",
 		"LaTeX",
-		"Lisp",
 		"Lua",
 		"Matlab",
 		"Objective-C",
-		"OCaml",
 		"Pascal",
 		"Perl",
 		"PHP",
@@ -44,12 +42,18 @@
 		"RestructuredText",
 		"Ruby",
 		"Rust",
-		"Rust Enhanced",
 		"Scala",
 		"TCL",
 		"Textile",
 		"Vintage"
 	],
+	"indent_guide_options":
+	[
+		"draw_normal",
+		"draw_active"
+	],
+	"line_padding_bottom": 0,
+	"line_padding_top": 0,
 	"preview_on_click": false,
 	"rulers":
 	[
@@ -61,5 +65,6 @@
 	"show_navigation_bar": false,
 	"theme": "Adaptive.sublime-theme",
 	"translate_tabs_to_spaces": true,
+	"word_separators": "./\\()\"':,.;<>~!@#$%^&*|+=[]{}`~?",
 	"word_wrap": false
 }
