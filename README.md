@@ -73,4 +73,8 @@ launchctl limit
 	maxfiles    256            unlimited
 ```
 
+macOS 高性能模式(performance mode)
++ [针对 macOS Server 开启性能模式](https://support.apple.com/zh-cn/HT202528)
++ [Turn on performance mode for macOS Server](https://support.apple.com/pl-pl/HT202528)
+
 :grinning:
