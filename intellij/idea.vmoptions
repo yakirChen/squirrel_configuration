@@ -16,8 +16,8 @@
 -XX:-UseCounterDecay
 
 -Xdiag
--Xmx2048M
--Xms2048M
+-Xmx1536M
+-Xms1536M
 -XX:InitialCodeCacheSize=240m
 -XX:ReservedCodeCacheSize=600m
 -XX:SoftRefLRUPolicyMSPerMB=50
@@ -39,17 +39,20 @@
 #-XX:CompileThreshold=100
 #-XX:OnStackReplacePercentage=6
 -XX:+TieredCompilation
+-XX:+LogTouchedMethods
 
--XX:G1HeapRegionSize=2
+-XX:G1HeapRegionSize=1
 -XX:MaxMetaspaceSize=640M
--XX:MinMetaspaceFreeRatio=60
--XX:ParallelGCThreads=8
+-XX:MaxMetaspaceFreeRatio=70
+-XX:MinMetaspaceFreeRatio=30
+-XX:MinMetaspaceExpansion=1M
+-XX:ParallelGCThreads=6
 -XX:ConcGCThreads=2
 -XX:SurvivorRatio=8
 -XX:MaxGCPauseMillis=1000
 -XX:G1HeapWastePercent=8
 -XX:InitiatingHeapOccupancyPercent=30
--XX:G1MixedGCLiveThresholdPercent=60
+# -XX:G1MixedGCLiveThresholdPercent=60
 -XX:G1NewSizePercent=20
 -XX:G1ReservePercent=10
 

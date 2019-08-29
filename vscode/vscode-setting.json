@@ -5,7 +5,7 @@
     "editor.fontFamily": "SourceCodePro-Semibold",
     "editor.renderWhitespace": "all",
     // 控制行高。使用 0 通过字号计算行高。
-    "editor.lineHeight": 11,
+    "editor.lineHeight": 13,
     // 显示控制字符
     "editor.renderControlCharacters": true,
     "editor.cursorStyle": "line-thin",
@@ -58,9 +58,9 @@
     "java.implementationsCodeLens.enabled": true,
     "java.errors.incompleteClasspath.severity": "ignore",
     "java.configuration.maven.userSettings": "/Users/yakir/local/maven/conf/settings.xml",
-    "java.home": "/Library/Java/JavaVirtualMachines/jdk1.8.0_212.jdk/Contents/Home",
+    "java.home": "/Library/Java/JavaVirtualMachines/jdk1.8.0_221.jdk/Contents/Home",
     "extensions.ignoreRecommendations": false,
-    "update.mode": "none",
+    "update.mode": "manual",
     "update.enableWindowsBackgroundUpdates": false,
     // feedback
     "telemetry.enableCrashReporter": false,
@@ -122,7 +122,7 @@
     "workbench.tree.indent": 6,
     "breadcrumbs.enabled": true,
     "workbench.editor.tabSizing": "shrink",
-    "editor.fontSize": 11,
+    "editor.fontSize": 12,
     "files.insertFinalNewline": true,
     "files.maxMemoryForLargeFilesMB": 40960,
     "workbench.enableExperiments": false,
@@ -140,11 +140,12 @@
     "http.proxySupport": "off",
     "explorer.confirmDragAndDrop": false,
     "editor.minimap.enabled": false,
-    "workbench.colorTheme": "Material Theme Lighter High Contrast",
     "workbench.activityBar.visible": false,
     "workbench.tips.enabled": false,
     "workbench.tree.renderIndentGuides": "always",
     "window.openFilesInNewWindow": "on",
     "editor.scrollBeyondLastColumn": 6,
     "editor.smoothScrolling": true,
+    "java.jdt.ls.vmargs": "-noverify -Xmx1G -XX:+UseG1GC -XX:+UseStringDeduplication -javaagent:\"/Users/yakir/.vscode/extensions/gabrielbb.vscode-lombok-0.9.8/server/lombok.jar\"",
+    "workbench.colorTheme": "Noctis Lux",
 }
