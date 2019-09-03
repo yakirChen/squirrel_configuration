@@ -43,10 +43,15 @@ ssh-keygen -t rsa -b 4096 -C "iamyakirchen@outlook.com"
 # 远程免密登录
 touch ~/.ssh/authorized_keys
 chmod 700 ~/.ssh                    # drwx------
-chmod 600 ~/.ssh/*                  # -rw------- 
+chmod 600 ~/.ssh/*                  # -rw-------
 ```
 
 ## 安装包下载链接
+
+homebrew 自定义目录安装
+```shell
+mkdir brew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C brew
+```
 
 + [autoconf](https://www.gnu.org/software/autoconf/autoconf.html)
   - https://ftp.gnu.org/gnu/autoconf/
@@ -87,7 +92,6 @@ chmod 600 ~/.ssh/*                  # -rw-------
 + [libevent](https://github.com/libevent/libevent)
   - [libevent](http://libevent.org/)
 + [ncurses](https://invisible-island.net/ncurses/)
-+ [zsh]()
 
 ### 配置 & 编译
 
@@ -127,17 +131,25 @@ cd libffi
     make -j 12 && make install
 # 拷贝 $LOCAL/lib/libffixxx/include/***.h -> $LOCAL/include
 
-# 使用macOS自带Python2 
+# 使用macOS自带Python2
 # Ccache
 ./configure --prefix=${LOCAL} && make -j 12 && make install
 # wget
-./configure --prefix=${LOCAL}/wget \
+./configure --prefix=${LOCAL}/wget2 \
+    --sysconfdir=${LOCAL}/wget2 \
     --with-ssl=openssl \
-    --with-openssl=yes \
+    --with-openssl=auto \
     --with-gnu-ld=no \
+    --enable-threads=posix \
+    --disable-debug \
+    --disable-libpcre \
+    --disable-libpcre2 \
+    --without-libpsl \
+    --without-zstd \
+    --without-brotlidec \
     --with-libssl-prefix=/Users/yakir/local \
     --without-libgnutls-prefix && make -j 12 && make install
-# m4 
+# m4
 ./configure --prefix=${LOCAL} && make -j 12 && make install
 # bison
 ./configure --prefix=${LOCAL}/bison && make -j 12 && make install
@@ -145,7 +157,7 @@ cd libffi
 autoreconf -i && \
     ./configure --with-oniguruma=builtin --disable-maintainer-mode --prefix=${LOCAL} && \
     make LDFLAGS=-all-static -j 12 && make LDFLAGS=-all-static install
-# ruby 
+# ruby
 unset CFLAGS CPPFLAGS CXXFLAGS LDFLAGS
 gcr --depth 1 https://github.com/ruby/ruby.git && \
     cd ruby && autoconf && \
@@ -207,7 +219,7 @@ make install
 # libevent
 ./configure --disable-dependency-tracking \
     --disable-debug-mode \
-    --prefix=${LOCAL} 
+    --prefix=${LOCAL}
 
 # tmux
 git clone https://github.com/tmux/tmux.git
@@ -279,15 +291,17 @@ deactivate
 ```
 
 python3 virtualenv
+
 ```bash
 python3 -m venv xxxxx
 source xxxxx/bin/activate
 ```
 
-# Docutils
+### Docutils
 ./python2 setup.py install
 
-# python3 python3.7.4 依赖 libffi 3.2.1
+### python3 python3.7.4 依赖 libffi 3.2.1
+```bash
 export CFLAGS="$CFLAGS -I/Users/yakir/local/sqlite/include -I/Users/yakir/local/lib/libffi-3.2.1/include"
 mkdir build && cd build && \
 ../configure --enable-shared \

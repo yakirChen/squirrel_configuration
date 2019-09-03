@@ -7,6 +7,7 @@ ZSH_THEME="jtriley"
 plugins=(
     ant
     mvn
+    xcode
     git
     git-extras
     # spring
@@ -39,6 +40,8 @@ func ssproxy() {
 }
 
 # ########################################## User Configuration #####################################
+export BREW=${HOME}/brew
+export BREW_OPT=${HOME}/brew/opt
 export LOCAL=${HOME}/local
 export TO=/Volumes/To
 export TO_REPOS=/Volumes/To/repos
@@ -87,37 +90,30 @@ export SQLITE=${LOCAL}/sqlite
 export MYSQL_BASE_DIR=${LOCAL}/mysql
 export MYSQL_DATA_DIR=/Volumes/To/repos/mysql/data
 export MYSQL_LOGS_DIR=/Volumes/To/repos/mysql/logs
-export TMUX=${LOCAL}/tmux
 # export BTRACE_HOME=${LOCAL}/btrace
 # export HTOP_HOME=${LOCAL}/htop
 # export FISH_HOME=${LOCAL}/fish
 
 # 运行时环境变量
-export PKG_CONFIG=${LOCAL}/bin/pkg-config       # pkg-config
-export PKG_CONFIG_PATH=/Users/yakir/local/lib/pkgconfig
-export PKG_CONFIG_LIBDIR=${LOCAL}/lib/pkgconfig
-export CFLAGS="-I${LOCAL}/include -I${LOCAL}/include/openssl" # -I${LOCAL}/include/readline -I${LOCAL}/include/sodium -I${LOCAL}/include/freetype2"
+export PKG_CONFIG=${BREW_OPT}/pkg-config/bin/pkg-config       # pkg-config
+export PKG_CONFIG_PATH="${BREW_OPT}/openssl@1.0/lib/pkgconfig"
+# export PKG_CONFIG_LIBDIR=${LOCAL}/lib/pkgconfig
+# export CFLAGS="-I${LOCAL}/include -I${LOCAL}/include/openssl" # -I${LOCAL}/include/readline -I${LOCAL}/include/sodium -I${LOCAL}/include/freetype2"
 # # -I${LOCAL}/include/lzma -I${LOCAL}/include/freetype2
 export CXXFLAGS="--std=c++17 "
-export CPPFLAGS=${CFLAGS}
-export LDFLAGS="-L${LOCAL}/lib"
-#export BOOST_ROOT=${TO_REPOS}/boost69
+# export CPPFLAGS=${CFLAGS}
+# export LDFLAGS="-L${LOCAL}/lib"
 export BOOST_ROOT=${TO_REPOS}/boost71
 export BOOSTDIR=${BOOST_ROOT}/include
 # export OPAMROOT=${TO_REPOS}/opam
 # export OCAML_TOPLEVEL_PATH=${TO_REPOS}/ocaml
-# export COREUTILS=${LOCAL}/coreutils
 export GOPATH=${TO_REPOS}/go/gopath
 export GOCACHE=${TO_REPOS}/go/gocache
 
 # 服务
 export ZK_HOME=${TO_SERVERS}/zookeeper
-# export ZK_HOME=${LOCAL}/zookeeper
-# export TOMCAT_HOME=${TO_SERVERS}/tomcat
 export REDIS_HOME=${LOCAL}/redis
 export NGINX=${LOCAL}/nginx
-# export MYSQL_SHELL=${LOCAL}/mysqlsh
-export WGET_HOME=${LOCAL}/wget
 
 # 打包编译工具
 export CHEZ_SCHEME_HOME=${TO_SERVERS}/chez_scheme
@@ -132,8 +128,6 @@ export GRADLE_HOME=${LOCAL}/gradle              # gradle
 export NASM_HOME=${LOCAL}/nasm
 export BISON_HOME=${LOCAL}/bison
 # export PROTOBUF_HOME=${LOCAL}/protobuf
-#export MX_HOME=${LOCAL}/mx
-# export BAZEL_HOME=${LOCAL}/bazel
 # export YASM_HOME=${LOCAL}/yasm
 export YARN_HOME=${LOCAL}/yarn                # yarn
 
@@ -148,8 +142,6 @@ export GEM_PATH=${TO_REPOS}/gem
 export FFMPEG_HOME=${LOCAL}/ffmpeg
 export GNUPG_HOME=${LOCAL}/gnupg
 
-export JABBA_HOME=${LOCAL}/jabba
-export JFX_HOME=${TO_SERVERS}/openjfx
 export JAVA_8_HOME=$(/usr/libexec/java_home -v 1.8)
 export JAVA_11_HOME=$(/usr/libexec/java_home -v 11)
 export JAVA_12_HOME=$(/usr/libexec/java_home -v 12)
@@ -172,7 +164,7 @@ alias jdk12="export JAVA_HOME=${JAVA_12_HOME}"
 alias jdk13="export JAVA_HOME=${JAVA_13_HOME}"
 alias jdk14="export JAVA_HOME=${JAVA_14_HOME}"
 # alias graal="export JAVA_HOME=${GRAAL_HOME} && \
-    # export PATH=$JAVA_HOME/bin:$PATH"
+# export PATH=$JAVA_HOME/bin:$PATH"
 # alias zulujdk8="export JAVA_HOME=${ZULU_JDK_18_HOME}"
 # alias zulujdk9="export JAVA_HOME=${ZULU_JDK_19_HOME}"
 
@@ -180,31 +172,15 @@ export JDK_BOOT_DIR=${JAVA_8_HOME}
 
 jdk8
 
-export DEF_JAVA_OPTS="-Xms100M \
--Xmx256M \
--Xverify:none \
--XX:ReservedCodeCacheSize=100m \
--XX:+UseG1GC \
--XX:+AlwaysPreTouch \
--XX:+UseNUMA \
--XX:+UseCompressedOops \
--XX:-OmitStackTraceInFastThrow \
--XX:+HeapDumpOnOutOfMemoryError"
-#-XX:+PrintGCDetails \
-
+# export DEF_JAVA_OPTS="-Xms100M -Xmx256M -Xverify:none -XX:ReservedCodeCacheSize=100m -XX:+UseG1GC -XX:+AlwaysPreTouch -XX:+UseNUMA -XX:+UseCompressedOops -XX:-OmitStackTraceInFastThrow -XX:+HeapDumpOnOutOfMemoryErro-XX:+PrintGCDetails \
 # export ES_JAVA_OPTS="-Xms1G -Xmx1G -server -XX:+UseG1GC -XX:+UseNUMA -XX:+UseCompressedOops -XX:+AlwaysPreTouch -XX:SurvivorRatio=8 -XX:+AlwaysPreTouch"
-export JAVA_DEBUG_OPTS="-Xdebug -Xrunjdwp:server=y,transport=dt_socket,suspend=n,address="
+# export JAVA_DEBUG_OPTS="-Xdebug -Xrunjdwp:server=y,transport=dt_socket,suspend=n,address="
 #export JAVA_OPTS="${DEF_JAVA_OPTS} --illegal-access=deny -XX:HeapDumpPath=${TO_REPOS}/logs/jvm_error.hprof"
-export JAVA_OPTS="${DEF_JAVA_OPTS} -XX:HeapDumpPath=${TO_REPOS}/logs/jvm_error.hprof"
+# export JAVA_OPTS="${DEF_JAVA_OPTS} -XX:HeapDumpPath=${TO_REPOS}/logs/jvm_error.hprof"
 #export MAVEN_OPTS="${DEF_JAVA_OPTS} -XX:HeapDumpPath=${TO_REPOS}/logs/maven_java_error.hprof"
 export ANT_ARGS="-nouserlib -lib ${LOCAL}/ant/lib"
 export ANT_OPTS="-Djava.io.tmpdir=${TO_REPOS}/javaiotmp -Divy_install_path=${LOCAL}/ant/lib -Ddest=${TO_REPOS}/ivy -Divy.default.ivy.user.dir=${TO_REPOS}/ivy -DdefaultCacheDir=${TO_REPOS}/ivy"
-export SBT_OPTS="-Dsbt.global.base=${TO_SERVERS}/sbt \
--Dsbt.version=1.0.4 \
--Dsbt.boot.directory=${TO_REPOS}/sbt/boot \
--Dsbt.ivy.home=${TO_REPOS}/ivy2 \
--Dsbt.override.build.repos=true \
--Dsbt.repository.config=${TO_REPOS}/sbt/repositories"
+export SBT_OPTS="-Dsbt.global.base=${TO_SERVERS}/sbt -Dsbt.version=1.0.4 -Dsbt.boot.directory=${TO_REPOS}/sbt/boot -Dsbt.ivy.home=${TO_REPOS}/ivy2 -Dsbt.override.build.repos=true -Dsbt.repository.config=${TO_REPOS}/sbt/repositories"
 
 # for HTTP_METHOD in GET HEAD POST PUT DELETE TRACE OPTIONS; do
 #     alias "${HTTP_METHOD}"="lwp-request -m '${HTTP_METHOD}'"
@@ -212,21 +188,18 @@ export SBT_OPTS="-Dsbt.global.base=${TO_SERVERS}/sbt \
 # GET www.baidu.com
 
 ########################################### OpenSSL ##################################################
-export OPENSSL_CFLAGS=${HOME}/local/include/openssl/        # openssl
-# export OPENSSL_LIBS=${HOME}/local/lib/                    # openssl lib 貌似要所有的动态链接库都列出来
-export OPENSSL_INCLUDE_DIR=${HOME}/local/include/openssl/
-export DEP_OPENSSL_INCLUDE=${HOME}/local/include/openssl/
-export OPENSSL_LIB_DIR=${HOME}/local/lib/
+export OPENSSL_CFLAGS=${BREW_OPT}/openssl/include        # openssl
+# export OPENSSL_LIBS=${HOME}/local/lib/                 # openssl lib 貌似要所有的动态链接库都列出来
+export OPENSSL_INCLUDE_DIR=${OPENSSL_CFLAGS}
+export DEP_OPENSSL_INCLUDE=${OPENSSL_CFLAGS}
+export OPENSSL_LIB_DIR=${BREW_OPT}/openssl/lib/
 export OPENSSL_ROOT_DIR=${OPENSSL_INCLUDE_DIR}
 
 SILVER=(status:black:white dir:blue:black git:green:black cmdtime:magenta:black)
 export SILVER_SHELL=$0
 
 # ############################################ PATH #################################################
-PATH=${LOCAL}/bin:${LOCAL}/kits:${TMUX}/bin:$PATH
-PATH=${JABBA_HOME}/bin:$PATH
-PATH=${WGET_HOME}/bin:$PATH
-PATH=${GNUPG_HOME}/bin:$PATH
+PATH=${LOCAL}/bin:${LOCAL}/kits:${BREW}/bin:$PATH
 PATH=${CMAKE_HOME}/bin:${FLATBUFFERS_HOME}/bin:$PATH
 PATH=${CARGO_HOME}/bin:${M2_HOME}/bin:${GRADLE_HOME}/bin:${ANT_HOME}/bin:$PATH
 PATH=${ERL_HOME}/bin:$PATH
@@ -259,36 +232,27 @@ alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 alias recaf="${JAVA_11_HOME}/bin/java -Dapplication.home=${JAVA_11_HOME} -jar ${JARS}/recaf.jar >/dev/null 2>&1 &"
 alias bcv="${JAVA_11_HOME}/bin/java -Dapplication.home=${JAVA_11_HOME} -jar ${JARS}/Bytecode-Viewer.jar >/dev/null 2>&1 &"
 alias gitrb="git reset && git checkout -- . && git checkout origin/master &&  git branch -D master && git status && git checkout master && git status"
-alias pg="ps aux|grep $1"
-alias jpg="jps -lv|grep $1"
+alias pg="ps aux|rg $1"
+alias jpg="jps -lv|rg $1"
 alias mdutildisto="sudo mdutil -i off -d -X /Volumes/To ; sudo mdutil -i off /Volumes/To"
 alias cat=bat
 
-MVN_MB="-Dmaven.compiler.fork=true -T12"        # MVN_MULTI_THREADED_BUILDER
-# MVN_AS="-Paliyun -Pspring"
-# MVN_ASA="-Paliyun -Pspring -Pmaven2 -Papache"
-# MVN_ALL="-Paliyun -Pspring -Pmaven2 -Papache -Psonatype -Pxinwang"
+MVN_MB="-Dmaven.compiler.fork=true -T12"
 MVN_TEMPLATE="mvn clean package -DskipTests ${1} -U "
-# ; mvn dependency:sources ${1} -U ; mvn dependency:resolve -Dclassifier=javadoc ${1} -U
-
-alias mvnc="mvn clean"
-alias mvnsrc="mvn dependency:sources"
-alias mvndocs="mvn dependency:resolve -Dclassifier=javadoc"
+alias mvnc="${M2_HOME}/bin/mvn clean"
+alias mvnsrc="${M2_HOME}/bin/mvn dependency:sources"
+alias mvndocs="${M2_HOME}/bin/mvn dependency:resolve -Dclassifier=javadoc"
 alias mvncpst="${MVN_TEMPLATE}"
 alias mvncpstc="${MVN_TEMPLATE} -Pmaven2 ; mvn clean"
-alias mvna="mvn dependency:sources -P163 -Pmaven2 ; mvn dependency:resolve -Dclassifier=javadoc -P163 -Pmaven2 ; ${MVN_TEMPLATE} -Pmaven2 -P163 ; mvn clean"
+alias mvna="${M2_HOME}/bin/mvn dependency:sources -P163 -Pmaven2 ; ${M2_HOME}/bin/mvn dependency:resolve -Dclassifier=javadoc -P163 -Pmaven2 ; ${MVN_TEMPLATE} -Pmaven2 -P163 ; ${M2_HOME}/bin/mvn clean"
 alias mvna24="mvn -T24 dependency:sources -Papache; mvn -T24 dependency:resolve -Dclassifier=javadoc -Papache; ${MVN_TEMPLATE} -T24 -Pmaven2 ; mvn clean -Papache"
 alias mvnversion="mvn versions:display-plugin-updates -Pspring -Papache ; mvn -T24 versions:display-property-updates -Pspring -Papache"
-
-alias mvnaxw="mvn dependency:sources -Pxinwang; mvn dependency:resolve -Dclassifier=javadoc -Pxinwang; ${MVN_TEMPLATE} -Pmaven2"
-alias mvna24xw="mvn -T24 dependency:sources -Pxinwang; mvn -T24 dependency:resolve -Dclassifier=javadoc -Pxinwang; ${MVN_TEMPLATE} -T24 -Pmaven2 "
-alias mvnversionxw="mvn -T24 versions:display-plugin-updates -Pspring -Papache -Pxinwang; mvn -T24 versions:display-property-updates -Pspring -Papache -Pxinwang"
 
 alias mx="mx --user-home=${TO_REPOS}/mx"
 alias schemescript='scheme --script'
 alias clojure='java -jar ${LOCAL_LIB_DIR}/clojure/clojure.jar'
 
-alias hg='source /Volumes/To/repos/venv/hg/bin/activate'
+alias hg="source ${TO_REPOS}/venv/hg/bin/activate"
 alias hgd='deactivate'
 
 ########################################### rustup ##################################################
@@ -296,10 +260,11 @@ alias rnr="rustup run nightly cargo --color always "
 alias rsr="rustup run stable cargo --color always "
 alias rbr="rustup run beta cargo --color always "
 alias rsu="rustup self update"
-alias ru="rustup update"
+alias ru="rustup self update && rustup update"
 
 ############################################ alias ##################################################
 #alias rm="rm -v "
+alias bs="brew search --desc -v"
 alias gcr="git clone --recurse-submodules "
 alias gcr1="git clone --recurse-submodules --depth 1 "
 alias antlr4='java -Xmx500M -cp "/Volumes/To/app/antlr-4.7.2-complete.jar:$CLASSPATH" org.antlr.v4.Tool'
@@ -310,17 +275,6 @@ source $ZSH/oh-my-zsh.sh
  
  # OPAM configuration
 # . ${TO_REPOS}/opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-
-# fpath=( "$HOME/.zfunctions" $fpath )
-# autoload -U promptinit; promptinit
-
-# # optionally define some options
-# PURE_CMD_MAX_EXEC_TIME=10
-
-# prompt pure
-
-
-# source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 
 #[ -s "/Users/yakir/local/jabba/jabba.sh" ] && source "/Users/yakir/local/jabba/jabba.sh"
 export FLUTTER_STORAGE_BASE_URL="https://mirrors.tuna.tsinghua.edu.cn/flutter"
