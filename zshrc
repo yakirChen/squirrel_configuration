@@ -50,8 +50,8 @@ export JARS=${LOCAL}/jars
 
 # 语言工具
 export RUBY_HOME=${LOCAL}/ruby
-export PY2_HOME=${LOCAL}/python2
-export PY3_HOME=${LOCAL}/python3
+# export PY2_HOME=${LOCAL}/python2
+# export PY3_HOME=${LOCAL}/python3
 export GOROOT=${LOCAL}/go
 export ERL_HOME=${LOCAL}/otp
 export NODE_PATH=${LOCAL}/node
@@ -205,7 +205,7 @@ PATH=${CARGO_HOME}/bin:${M2_HOME}/bin:${GRADLE_HOME}/bin:${ANT_HOME}/bin:$PATH
 PATH=${ERL_HOME}/bin:$PATH
 PATH=${SQLITE}/bin:$MYSQL_BASE_DIR/bin:$MYSQL_BASE_DIR/support-files:${MYSQL_SHELL}/bin:$PATH
 PATH=$KOTLIN_HOME/bin:$PATH
-PATH=$PY2_HOME/bin:$PY3_HOME/bin:$LUA_HOME/bin:$PATH
+# PATH=$PY2_HOME/bin:$PY3_HOME/bin:$LUA_HOME/bin:$PATH
 PATH=$GOROOT/bin:$GOPATH/bin:$CHEZ_SCHEME_HOME/bin:$NODE_PATH/bin:$NPM_GLOBAL/bin:$PATH
 PATH=$REDIS_HOME/bin:$NGINX:$PATH
 PATH=$RUBY_HOME/bin:$GEM_HOME/bin:$PATH
@@ -260,7 +260,7 @@ alias rnr="rustup run nightly cargo --color always "
 alias rsr="rustup run stable cargo --color always "
 alias rbr="rustup run beta cargo --color always "
 alias rsu="rustup self update"
-alias ru="rustup self update && rustup update"
+alias ru="rustup update"
 
 ############################################ alias ##################################################
 #alias rm="rm -v "
@@ -269,6 +269,10 @@ alias gcr="git clone --recurse-submodules "
 alias gcr1="git clone --recurse-submodules --depth 1 "
 alias antlr4='java -Xmx500M -cp "/Volumes/To/app/antlr-4.7.2-complete.jar:$CLASSPATH" org.antlr.v4.Tool'
 alias grun='java -Xmx500M -cp "/Volumes/To/app/antlr-4.7.2-complete.jar:$CLASSPATH" org.antlr.v4.gui.TestRig'
+
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+fi
 
 source $ZSH/oh-my-zsh.sh
  # source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

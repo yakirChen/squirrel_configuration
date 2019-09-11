@@ -199,7 +199,7 @@ flatbuffers
 ```shell
 git clone https://github.com/google/flatbuffers.git
 cd flatbuffers
-cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX=/Users/yakir/Developer/local/flatbuffers
+cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX=/Users/yakir/local/flatbuffers
 make
 make install
 ```

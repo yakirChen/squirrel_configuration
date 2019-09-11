@@ -995,7 +995,7 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>2300 474 1018 447 1920 120 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1920 120 990 1080 1920 120 1920 1080 </string>
+	<string>1920 452 1270 748 1920 120 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>2797 452 1270 748 1920 120 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -1847,15 +1847,18 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
-		<string>3.3.git.53e1f14725</string>
+		<string>3.3.0beta12</string>
+		<string>3.3.2</string>
 		<string>3.3.0beta11</string>
 		<string>3.3.0beta16</string>
+		<string>3.3.1</string>
 		<string>3.3.0beta13</string>
-		<string>3.3.0beta10</string>
+		<string>3.3.3</string>
+		<string>3.3.git.53e1f14725</string>
 		<string>3.3.0beta15</string>
-		<string>3.3.0</string>
 		<string>3.2.9</string>
-		<string>3.3.0beta12</string>
+		<string>3.3.0beta10</string>
+		<string>3.3.0</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
@@ -1874,14 +1877,14 @@
 		<key>screenFrame</key>
 		<string>{{1920, 120}, {1920, 1080}}</string>
 		<key>topLeft</key>
-		<string>{2432, 658}</string>
+		<string>{2450, 948}</string>
 	</dict>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>FFBE595C-E2D6-41A2-B984-69E21B59B8D4</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>224</integer>
+	<integer>247</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -2258,6 +2261,14 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+				<string>currentTab.currentSession.termid</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
 				<string>currentTab.currentSession.terminalIconName</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
@@ -2331,6 +2342,14 @@
 				<true/>
 				<key>name</key>
 				<string>currentTab.currentSession.commandLine</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>number</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -2677,7 +2696,7 @@
 	<key>TabStyle</key>
 	<integer>3</integer>
 	<key>TabStyleWithAutomaticOption</key>
-	<integer>3</integer>
+	<integer>6</integer>
 	<key>TabViewType</key>
 	<integer>0</integer>
 	<key>TerminalVMargin</key>
@@ -2695,7 +2714,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.0</string>
+	<string>3.3.3</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>7</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
