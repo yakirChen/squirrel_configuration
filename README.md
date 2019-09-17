@@ -28,11 +28,13 @@ Config Development Environment On macOS
 ```bash
 ln -s /Volumes/To/repos/m2 ${HOME}/.m2 
 ln -s /Volumes/To/repos/vscode ${HOME}/.vscode 
-ln -s ${HOME}/Library/Mobile Documents/com~apple~CloudDocs/Developer/macOS-libs/npmrc ${HOME}/.npmrc 
-ln -s ${HOME}/Library/Mobile Documents/com~apple~CloudDocs/Developer/macOS-libs/tm_properties ${HOME}/.tm_properties 
-ln -s ${HOME}/Library/Mobile Documents/com~apple~CloudDocs/Developer/macOS-libs/vim/vimrc ${HOME}/.vimrc 
-ln -s ${HOME}/Library/Mobile Documents/com~apple~CloudDocs/Developer/macOS-libs/yarnrc ${HOME}/.yarnrc 
-ln -s ${HOME}/Library/Mobile Documents/com~apple~CloudDocs/Developer/macOS-libs/zshrc ${HOME}/.zshrc 
+ln -s ${HOME}/Library/Mobile Documents/com~apple~CloudDocs/Developer/macOS-libs/npmrc ${HOME}/.npmrc
+ln -s ${HOME}/Library/Mobile Documents/com~apple~CloudDocs/Developer/macOS-libs/tm_properties ${HOME}/.tm_properties
+ln -s ${HOME}/Library/Mobile Documents/com~apple~CloudDocs/Developer/macOS-libs/vim/vimrc ${HOME}/.vimrc
+ln -s ${HOME}/Library/Mobile Documents/com~apple~CloudDocs/Developer/macOS-libs/yarnrc ${HOME}/.yarnrc
+ln -s ${HOME}/Library/Mobile Documents/com~apple~CloudDocs/Developer/macOS-libs/zshrc ${HOME}/.zshrc
+ln -s /Users/yakir/Library/Mobile\ Documents/com\~apple\~CloudDocs/Developer/macOS-libs/vscode/vscode-keymap.json keybindings.json
+ln -s /Users/yakir/Library/Mobile\ Documents/com\~apple\~CloudDocs/Developer/macOS-libs/vscode/vscode-keybindings.json keybindings.json
 ```
 
 ## Too many open files
@@ -74,6 +76,7 @@ launchctl limit
 ```
 
 macOS 高性能模式(performance mode)
++ [performance-mode-for-macOS](https://yakirchen.github.io/tech/2018/11/23/performance-mode-for-macOS.html)
 + [针对 macOS Server 开启性能模式](https://support.apple.com/zh-cn/HT202528)
 + [Turn on performance mode for macOS Server](https://support.apple.com/pl-pl/HT202528)
 

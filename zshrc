@@ -96,7 +96,7 @@ export MYSQL_LOGS_DIR=/Volumes/To/repos/mysql/logs
 
 # 运行时环境变量
 export PKG_CONFIG=${BREW_OPT}/pkg-config/bin/pkg-config       # pkg-config
-export PKG_CONFIG_PATH="${BREW_OPT}/openssl@1.0/lib/pkgconfig"
+export PKG_CONFIG_PATH="${BREW_OPT}/libressl/lib/pkgconfig"
 # export PKG_CONFIG_LIBDIR=${LOCAL}/lib/pkgconfig
 # export CFLAGS="-I${LOCAL}/include -I${LOCAL}/include/openssl" # -I${LOCAL}/include/readline -I${LOCAL}/include/sodium -I${LOCAL}/include/freetype2"
 # # -I${LOCAL}/include/lzma -I${LOCAL}/include/freetype2
@@ -118,8 +118,7 @@ export NGINX=${LOCAL}/nginx
 # 打包编译工具
 export CHEZ_SCHEME_HOME=${TO_SERVERS}/chez_scheme
 export CMAKE_HOME=${LOCAL}/cmake
-export M2_HOME=${LOCAL}/maven0                   # maven
-# export M2_HOME=${LOCAL}/maven                   # maven
+export M2_HOME=${LOCAL}/maven                   # maven
 export MAVEN_CONFIG=${M2_HOME}/conf
 export MAVEN_SKIP_RC=true
 export ANT_HOME=${LOCAL}/ant                    # ant
@@ -143,11 +142,11 @@ export FFMPEG_HOME=${LOCAL}/ffmpeg
 export GNUPG_HOME=${LOCAL}/gnupg
 
 export JAVA_8_HOME=$(/usr/libexec/java_home -v 1.8)
+export GRAALVM_HOME=/Users/yakir/local/graalvm
 export JAVA_11_HOME=$(/usr/libexec/java_home -v 11)
 export JAVA_12_HOME=$(/usr/libexec/java_home -v 12)
 export JAVA_13_HOME=$(/usr/libexec/java_home -v 13)
 export JAVA_14_HOME=$(/usr/libexec/java_home -v 14)
-# export GRAAL_HOME='/Library/Java/JavaVirtualMachines/graalvm/Contents/Home'
 export JDK_8_HOME=${JAVA_8_HOME}
 export JDK_11_HOME=${JAVA_11_HOME}
 export JDK_12_HOME=${JAVA_12_HOME}
@@ -188,11 +187,11 @@ export SBT_OPTS="-Dsbt.global.base=${TO_SERVERS}/sbt -Dsbt.version=1.0.4 -Dsbt.b
 # GET www.baidu.com
 
 ########################################### OpenSSL ##################################################
-export OPENSSL_CFLAGS=${BREW_OPT}/openssl/include        # openssl
+export OPENSSL_CFLAGS=${BREW_OPT}/libressl/include        # openssl
 # export OPENSSL_LIBS=${HOME}/local/lib/                 # openssl lib 貌似要所有的动态链接库都列出来
 export OPENSSL_INCLUDE_DIR=${OPENSSL_CFLAGS}
 export DEP_OPENSSL_INCLUDE=${OPENSSL_CFLAGS}
-export OPENSSL_LIB_DIR=${BREW_OPT}/openssl/lib/
+export OPENSSL_LIB_DIR=${BREW_OPT}/libressl/lib/
 export OPENSSL_ROOT_DIR=${OPENSSL_INCLUDE_DIR}
 
 SILVER=(status:black:white dir:blue:black git:green:black cmdtime:magenta:black)

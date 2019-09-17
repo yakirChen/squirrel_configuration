@@ -2,3 +2,5 @@
 zsh_history
 *.userdb.txt
 OmegaOptions.bak
+vim/autoload/
+vim/plugged/
