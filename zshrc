@@ -47,6 +47,9 @@ export TO=/Volumes/To
 export TO_REPOS=/Volumes/To/repos
 export TO_SERVERS=/Volumes/To/servers
 export JARS=${LOCAL}/jars
+export CHEAT_USER_DIR='/Users/yakir/app/cheats'
+export CHEAT_PATH='/Users/yakir/app/cheats'
+export CHEAT_COLORS=true
 
 # 语言工具
 export RUBY_HOME=${LOCAL}/ruby
@@ -88,6 +91,7 @@ export IPFS_PATH=/Volumes/To/repos/ipfs
 export VIM_CONFIG_PATH=${HOME}/.vim
 export SQLITE=${LOCAL}/sqlite
 export MYSQL_BASE_DIR=${LOCAL}/mysql
+export MYSQL_COMMON_DIR=/Volumes/To/repos/mysql
 export MYSQL_DATA_DIR=/Volumes/To/repos/mysql/data
 export MYSQL_LOGS_DIR=/Volumes/To/repos/mysql/logs
 # export BTRACE_HOME=${LOCAL}/btrace
