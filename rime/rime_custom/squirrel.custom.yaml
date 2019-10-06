@@ -21,6 +21,37 @@ patch:
   chord_duration: 0.1
   config_version: 0.32
   preset_color_schemes:
+    yakir2019:
+      name: "yakir 2019"
+      author: "yakirChen <iamyakirchen@outlook.com>"
+      horizontal: true                              # 水平排列
+      inline_preedit: true                          # 单行显示，false双行显示
+      candidate_format: "%c\u2005%@"                # 用 1/6 em 空格 U+2005 来控制编号 %c 和候选词 %@ 前后的空间。
+      corner_radius: 5                              # 候选条圆角
+      hilited_corner_radius: 3                      # 高亮圆角
+      border_height: 6                              # 窗口邊界高度，大於圓角半徑才有效果 
+      border_width: 6                               # 窗口邊界寬度，大於圓角半徑才有效果
+      border_color_width: 0                         # 边框宽度
+      font_face: "PingFangSC"                       # 候选词字体
+      label_font_face: "PingFangSC"                 # 候选编号字体
+      font_point: 16                                # 候选字词大小
+      label_font_point: 10                          # 候选编号大小
+      text_color: 0xCCCCCC                          # 拼音行文字颜色，24位色值，16进制，BGR顺序
+      # back_color: 0x36342d                          # 候选条背景色
+      back_color: 0x0D0F0A                          # 候选条背景色
+      border_color: 0x1E1E1E                        # 边框颜色
+      # label_color: 0x6154DB                         # 预选栏编号颜色
+      # label_color: 0xA9A6EB                         # 预选栏编号颜色
+      label_color: 0x666666                         # 预选栏编号颜色
+      candidate_text_color: 0x6642EE                # 预选项文字颜色
+      comment_text_color: 0x726e63                  # 拼音等提示文字颜色
+      hilited_text_color: 0x252320                  # 高亮拼音 (需要开启内嵌编码)
+      hilited_candidate_text_color: 0x6642EE        # 第一候选项文字颜色 
+      hilited_candidate_back_color: 0x363634        # 第一候选项背景背景色
+      hilited_candidate_label_color: 0xE1ECF7       # 第一候选项编号颜色
+      hilited_comment_text_color: 0x666666          # 注解文字高亮
+      # line_spacing: 0
+      # spacing: 10
     yakir_white:
       name: "yakir White主题／yakir_white"
       author: "yakirChen <iamyakirchen@outlook.com>"
@@ -119,19 +150,26 @@ patch:
       font_point: 16                                # 候选字词大小
       label_font_point: 10                          # 候选编号大小
       text_color: 0xFFFFFF                          # 拼音行文字颜色，24位色值，16进制，BGR顺序
+      # text_color: 0xA3D4E6                          # 拼音行文字颜色，24位色值，16进制，BGR顺序
       # back_color: 0x252320                          # 候选条背景色
       back_color: 0x1E1E1E                          # 候选条背景色
       # border_color: 0x020202                        # 边框颜色
       border_color: 0x1E1E1E                        # 边框颜色
-      label_color: 0xA0A0A0                         # 预选栏编号颜色
+      # label_color: 0xA0A0A0                         # 预选栏编号颜色
+      # label_color: 0xA3D4E6                         # 预选栏编号颜色
+      label_color: 0x839EA7                         # 预选栏编号颜色
       # candidate_text_color: 0xFFFFFF                # 预选项文字颜色
       candidate_text_color: 0xdedddd                # 预选项文字颜色
+      # candidate_text_color: 0xA3D4E6                # 预选项文字颜色
       comment_text_color: 0xdedddd                  # 拼音等提示文字颜色
+      # comment_text_color: 0xA3D4E6                  # 拼音等提示文字颜色
       hilited_text_color: 0x252320                  # 高亮拼音 (需要开启内嵌编码)
       hilited_candidate_text_color: 0xFFFFFF        # 第一候选项文字颜色 
-      # hilited_candidate_back_color: 0xCAAF16        # 第一候选项背景背景色
-      hilited_candidate_back_color: 0xcb5d00        # 第一候选项背景背景色
+      # hilited_candidate_text_color: 0x839EA7F        # 第一候选项文字颜色 
+      hilited_candidate_back_color: 0xCAAF16        # 第一候选项背景背景色
+      # hilited_candidate_back_color: 0xcb5d00        # 第一候选项背景背景色
       hilited_candidate_label_color: 0xFFFFFF       # 第一候选项编号颜色
+      # hilited_candidate_label_color: 0x839EA7       # 第一候选项编号颜色
       # hilited_comment_text_color: 0x1DEDDDD          # 注解文字高亮
       hilited_comment_text_color: 0x666666          # 注解文字高亮
       # line_spacing: 0
@@ -361,5 +399,5 @@ patch:
       text_color: 0xccaa88
   show_notifications_when: appropriate
   style:
-    color_scheme: yakir 
+    color_scheme: yakir2019 
   us_keyboard_layout: true

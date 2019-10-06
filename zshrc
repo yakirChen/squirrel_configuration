@@ -22,6 +22,7 @@ plugins=(
     zsh-navigation-tools
     # zsh-history-substring-search
     colorize
+    torrent
 )
 
 # export PROMPT_COMMAND='echo -n [$(date +%H:%M:%S)]'
@@ -65,6 +66,8 @@ export MIRI_SYSROOT=${TO_REPOS}/miri
 # export LD_LIBRARY_PATH=$DYLD_LIBRARY_PATH
 # export DYLD_LIBRARY_PATH=$(rustc --print sysroot)/lib:$DYLD_LIBRARY_PATH
 export STACK_HOME=${LOCAL}/stack
+
+export IPFS_PATH=/Volumes/To/repos/ipfs
 
 # export RUST_SRC_PATH=
 # export OCAML_HOME=${LOCAL}/ocaml
@@ -283,7 +286,7 @@ alias rsu="rustup self update"
 alias ru="rustup update"
 
 ############################################ alias ##################################################
-alias rm="rm -v "
+#alias rm="rm -v "
 alias gcr="git clone --recurse-submodules "
 alias gcr1="git clone --recurse-submodules --depth 1 "
 alias antlr4='java -Xmx500M -cp "/Volumes/To/app/antlr-4.7.2-complete.jar:$CLASSPATH" org.antlr.v4.Tool'

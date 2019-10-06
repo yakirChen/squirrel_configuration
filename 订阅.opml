@@ -100,20 +100,21 @@
 		<outline text="rust" title="rust">
 			<outline htmlUrl="https://www.aloxaf.com/" title="Aloxaf's blog" xmlUrl="https://www.aloxaf.com/atom.xml" type="rss" text="Aloxaf's blog"/>
 			<outline htmlUrl="http://www.ncameron.org/blog/" title="featherweight musings" xmlUrl="https://www.ncameron.org/blog/rss/" type="rss" text="featherweight musings"/>
+			<outline htmlUrl="//owent.net/" title="I'm OWenT" xmlUrl="https://owent.net/index.xml" type="rss" text="I'm OWenT"/>
 			<outline htmlUrl="https://blog.rust-lang.org/" title="Rust Blog" xmlUrl="https://blog.rust-lang.org/feed.xml" type="rss" text="Rust Blog"/>
 		</outline>
 		<outline text="Spring" title="Spring">
 			<outline htmlUrl="https://spring.io/blog" title="Spring" xmlUrl="https://spring.io/blog.atom" type="rss" text="Spring"/>
 		</outline>
 		<outline text="前端" title="前端">
-			<outline htmlUrl="http://fex.baidu.com" title="百度 FEX 团队" xmlUrl="http://fex.baidu.com/feed.xml" type="rss" text="百度 FEX 团队"/>
+			<outline htmlUrl="http://localhost:4000" title="百度 FEX 团队" xmlUrl="http://fex.baidu.com/feed.xml" type="rss" text="百度 FEX 团队"/>
 		</outline>
 		<outline text="各种算法" title="各种算法">
 			<outline htmlUrl="http://blog.codinglabs.org" title="CodingLabs" xmlUrl="http://blog.codinglabs.org/rss.xml" type="rss" text="CodingLabs"/>
 			<outline htmlUrl="http://blog.fnil.net/" title="庄周梦蝶" xmlUrl="http://blog.fnil.net/atom.xml" type="rss" text="庄周梦蝶"/>
 		</outline>
 		<outline text="存储" title="存储">
-			<outline htmlUrl="https://pingcap.com/blog-cn/" title="Blog-cns on PingCAP.com" xmlUrl="https://pingcap.com/blog-cn/index.xml" type="rss" text="Blog-cns on PingCAP.com"/>
+			<outline htmlUrl="https://pingcap.com/blog-cn/" title="Blog-cns on MySQL at Scale" xmlUrl="https://pingcap.com/blog-cn/index.xml" type="rss" text="Blog-cns on MySQL at Scale"/>
 			<outline htmlUrl="https://ericfu.me/" title="Coding Husky" xmlUrl="https://ericfu.me/atom.xml" type="rss" text="Coding Husky"/>
 			<outline title="pagefault" xmlUrl="http://www.pagefault.info/atom.xml" type="rss" text="pagefault"/>
 		</outline>
@@ -128,8 +129,9 @@
 			<outline htmlUrl="https://hexilee.me/" title="Hexi Blog" xmlUrl="https://hexilee.me/feed.xml" type="rss" text="Hexi Blog"/>
 			<outline htmlUrl="http://maskray.me/blog/" title="MaskRay" xmlUrl="http://maskray.me/blog/atom.xml" type="rss" text="MaskRay"/>
 			<outline htmlUrl="http://ppwwyyxx.com/" title="Yuxin's Blog" xmlUrl="http://ppwwyyxx.com/atom.xml" type="rss" text="Yuxin's Blog"/>
-			<outline htmlUrl="https://waylau.com/" title="柳伟卫/老卫/Way Lau's Personal Site - 关注编程、系统架构、性能优化" xmlUrl="https://waylau.com/feed.xml" type="rss" text="柳伟卫/老卫/Way Lau's Personal Site - 关注编程、系统架构、性能优化"/>
+			<outline htmlUrl="https://liqi.io" title="利器" xmlUrl="https://liqi.io/feed/" type="rss" text="利器"/>
 			<outline htmlUrl="http://yoursite.com/" title="栋哥的博客" xmlUrl="https://liuyandong.com/atom.xml" type="rss" text="栋哥的博客"/>
+			<outline htmlUrl="https://waylau.com/" title="老卫的博客 - 关注编程、系统架构、性能优化" xmlUrl="https://waylau.com/feed.xml" type="rss" text="老卫的博客 - 关注编程、系统架构、性能优化"/>
 			<outline htmlUrl="
     https://draveness.me" title="面向信仰编程 - Articles" xmlUrl="https://draveness.me/feed.xml" type="rss" text="面向信仰编程 - Articles"/>
 		</outline>
@@ -148,6 +150,7 @@
 			<outline htmlUrl="http://" title="巢鹏的Pensieve" xmlUrl="http://chaopeng.me/blog/rss.xml" type="rss" text="巢鹏的Pensieve"/>
 			<outline htmlUrl="https://www.starduster.me" title="星尘独奏曲" xmlUrl="https://www.starduster.me/feed/" type="rss" text="星尘独奏曲"/>
 			<outline htmlUrl="https://tuna.moe/" title="清华大学 TUNA 协会" xmlUrl="https://tuna.moe/feed.xml" type="rss" text="清华大学 TUNA 协会"/>
+			<outline htmlUrl="http://congcong0806.github.io/" title="聪聪 Blog" xmlUrl="https://congcong0806.github.io/feed.xml" type="rss" text="聪聪 Blog"/>
 		</outline>
 	</body>
 </opml>

@@ -59,4 +59,8 @@
         "key": "ctrl+g",
         "command": "actions.findWithSelection"
     },
+    {
+        "key": "alt+f12",
+        "command": "workbench.action.terminal.toggleTerminal"
+    }
 ]

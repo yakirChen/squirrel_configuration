@@ -52,7 +52,6 @@
     // - none: 禁用字体平滑。将显示边缘粗糙、有锯齿的文字
     // - auto: 根据显示器 DPI 自动应用 "default" 或 "antialiased" 选项。
     "workbench.fontAliasing": "auto",
-    "workbench.panel.defaultLocation": "right",
     // 控制 Quick Open 是否应在失去焦点时自动关闭。
     "workbench.quickOpen.closeOnFocusLost": false,
     "workbench.statusBar.feedback.visible": false,
@@ -88,8 +87,8 @@
     "editor.tokenColorCustomizations": {},
     "scm.diffDecorationsGutterWidth": 1,
     "workbench.colorTheme": "Material Theme Lighter",
-    // "rust-client.channel": "nightly",
-    "rust-client.channel": "stable",
+    "rust-client.channel": "nightly",
+    // "rust-client.channel": "stable",
     "rust.unstable_features": true,
     "C_Cpp.default.cppStandard": "c++17",
     "C_Cpp.default.cStandard": "c11",
@@ -129,7 +128,7 @@
         "menubar.selectionForeground": "#388E3C"
     },
     "materialTheme.accent": "Breaking Bad",
-    "workbench.tree.indent": 4,
+    "workbench.tree.indent": 8,
     "breadcrumbs.enabled": true,
     "breadcrumbs.symbolSortOrder": "name",
     "workbench.editor.openPositioning": "first",
@@ -146,12 +145,6 @@
     "asciidoc.preview.fontSize": 12,
     "asciidoc.preview.lineHeight": 1,
     "explorer.openEditors.visible": 0,
-    "rust.rustup": {
-        "toolchain": "stable-x86_64-apple-darwin",
-        "nightlyToolchain": "nightly-x86_64-apple-darwin"
-    },
-    "rust.cargoHomePath": "/Volumes/To/repos/cargo",
-    "rust.mode": "legacy",
-    "rust.actionOnSave": "check",
     "C_Cpp.updateChannel": "Insiders",
+    "rust-client.rustupPath": "/Volumes/To/repos/cargo/bin/rustup",
 }
