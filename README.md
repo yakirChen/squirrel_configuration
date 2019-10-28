@@ -20,6 +20,24 @@ Config Development Environment On macOS
 
 - [Useful Shell Fragment](./useful-shell.md)
 
+
+## rwx
+```bash
+# r 4
+# w 2
+# x 1
+chmod 111 rwx
+# ---x--x--x  1 yakir  staff     0B 10 28 18:02 rwx
+chmod 333 rwx
+# --wx-wx-wx  1 yakir  staff     0B 10 28 18:02 rwx
+chmod 555 rwx
+# -r-xr-xr-x  1 yakir  staff     0B 10 28 18:02 rwx
+chmod 755 rwx
+# -rwxr-xr-x  1 yakir  staff     0B 10 28 18:02 rwx
+chmod 777 rwx
+# -rwxrwxrwx  1 yakir  staff     0B 10 28 18:02 rwx
+```
+
 ## 自签名证书生成 & Nginx开启 h2、ssl
 [自签名证书生成 & Nginx开启 h2、ssl](nginx自签名证书.md)
 
@@ -27,7 +45,7 @@ Config Development Environment On macOS
 
 ```bash
 ln -s /Volumes/To/repos/m2 ${HOME}/.m2 
-ln -s /Volumes/To/repos/vscode ${HOME}/.vscode 
+ln -s /Volumes/To/repos/vscode ${HOME}/.vscode
 ln -s ${HOME}/Library/Mobile Documents/com~apple~CloudDocs/Developer/macOS-libs/npmrc ${HOME}/.npmrc
 ln -s ${HOME}/Library/Mobile Documents/com~apple~CloudDocs/Developer/macOS-libs/tm_properties ${HOME}/.tm_properties
 ln -s ${HOME}/Library/Mobile Documents/com~apple~CloudDocs/Developer/macOS-libs/vim/vimrc ${HOME}/.vimrc

@@ -14,7 +14,7 @@ plugins=(
     rust
     cargo
     fd
-    rustup
+    #rustup
     ripgrep
     golang
     npm
@@ -25,7 +25,7 @@ plugins=(
     zsh-navigation-tools
     # zsh-history-substring-search
     colored-man-pages
-    colorize
+    # colorize
     torrent
 )
 
@@ -100,11 +100,11 @@ export MYSQL_LOGS_DIR=/Volumes/To/repos/mysql/logs
 
 # 运行时环境变量
 export PKG_CONFIG=${BREW_OPT}/pkg-config/bin/pkg-config       # pkg-config
-export PKG_CONFIG_PATH="${BREW_OPT}/libressl/lib/pkgconfig"
+export PKG_CONFIG_PATH="${BREW_OPT}/libressl/lib/pkgconfig:${BREW_OPT}/libffi/lib/pkgconfig/"
 # export PKG_CONFIG_LIBDIR=${LOCAL}/lib/pkgconfig
 # export CFLAGS="-I${LOCAL}/include -I${LOCAL}/include/openssl" # -I${LOCAL}/include/readline -I${LOCAL}/include/sodium -I${LOCAL}/include/freetype2"
 # # -I${LOCAL}/include/lzma -I${LOCAL}/include/freetype2
-export CXXFLAGS="--std=c++17 "
+# export CXXFLAGS="--std=c++17 "
 # export CPPFLAGS=${CFLAGS}
 # export LDFLAGS="-L${LOCAL}/lib"
 export BOOST_ROOT=${TO_REPOS}/boost71
@@ -148,12 +148,10 @@ export GNUPG_HOME=${LOCAL}/gnupg
 export JAVA_8_HOME=$(/usr/libexec/java_home -v 1.8)
 export GRAALVM_HOME=/Users/yakir/local/graalvm
 export JAVA_11_HOME=$(/usr/libexec/java_home -v 11)
-export JAVA_12_HOME=$(/usr/libexec/java_home -v 12)
 export JAVA_13_HOME=$(/usr/libexec/java_home -v 13)
 export JAVA_14_HOME=$(/usr/libexec/java_home -v 14)
 export JDK_8_HOME=${JAVA_8_HOME}
 export JDK_11_HOME=${JAVA_11_HOME}
-export JDK_12_HOME=${JAVA_12_HOME}
 export JDK_13_HOME=${JAVA_13_HOME}
 export JDK_14_HOME=${JAVA_14_HOME}
 export KOTLIN_HOME=${LOCAL}/kotlinc
@@ -163,7 +161,6 @@ export SBT_HOME=${TO_SERVERS}/sbt
 alias jdk8="export JAVA_HOME=${JAVA_8_HOME}"
 #alias jdk90="export JAVA_HOME=${JDK_19_ZERO_HOME}"
 alias jdk11="export JAVA_HOME=${JAVA_11_HOME}"
-alias jdk12="export JAVA_HOME=${JAVA_12_HOME}"
 alias jdk13="export JAVA_HOME=${JAVA_13_HOME}"
 alias jdk14="export JAVA_HOME=${JAVA_14_HOME}"
 # alias graal="export JAVA_HOME=${GRAAL_HOME} && \
@@ -255,8 +252,8 @@ alias mx="mx --user-home=${TO_REPOS}/mx"
 alias schemescript='scheme --script'
 alias clojure='java -jar ${LOCAL_LIB_DIR}/clojure/clojure.jar'
 
-alias hg="source ${TO_REPOS}/venv/hg/bin/activate"
-alias hgd='deactivate'
+#alias hg="source ${TO_REPOS}/venv/hg/bin/activate"
+#alias hgd='deactivate'
 
 ########################################### rustup ##################################################
 alias rnr="rustup run nightly cargo --color always "

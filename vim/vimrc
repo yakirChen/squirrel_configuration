@@ -56,6 +56,7 @@ let g:racer_cmd = '/Users/yakir/local/rust/bin/racer'
 let g:racer_experimental_completer = 1
 let g:rustfmt_autosave = 1
 let g:rust_clip_command = 'pbcopy'
+let g:go_version_warning = 0
 
 " Plugin indentLine settings.
 let g:indentLine_char = "┆"
