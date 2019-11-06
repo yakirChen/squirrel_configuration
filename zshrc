@@ -40,8 +40,8 @@ func ssproxy() {
 }
 
 # ########################################## User Configuration #####################################
-export BREW=${HOME}/brew
-export BREW_OPT=${HOME}/brew/opt
+export BREW=${HOME}/local/brew
+export BREW_OPT=${HOME}/local/brew/opt
 export LOCAL=${HOME}/local
 export TO=/Volumes/To
 export TO_REPOS=/Volumes/To/repos
@@ -244,7 +244,7 @@ alias mvnsrc="${M2_HOME}/bin/mvn dependency:sources"
 alias mvndocs="${M2_HOME}/bin/mvn dependency:resolve -Dclassifier=javadoc"
 alias mvncpst="${MVN_TEMPLATE}"
 alias mvncpstc="${MVN_TEMPLATE} -Pmaven2 ; mvn clean"
-alias mvna="${M2_HOME}/bin/mvn dependency:sources -P163 -Pmaven2 ; ${M2_HOME}/bin/mvn dependency:resolve -Dclassifier=javadoc -P163 -Pmaven2 ; ${MVN_TEMPLATE} -Pmaven2 -P163 ; ${M2_HOME}/bin/mvn clean"
+alias mvna="${M2_HOME}/bin/mvn dependency:sources -Paliyun -Pmaven2 ; ${M2_HOME}/bin/mvn dependency:resolve -Dclassifier=javadoc -Paliyun -Pmaven2 ; ${MVN_TEMPLATE} -Pmaven2 -Paliyun ; ${M2_HOME}/bin/mvn clean"
 alias mvna24="mvn -T24 dependency:sources -Papache; mvn -T24 dependency:resolve -Dclassifier=javadoc -Papache; ${MVN_TEMPLATE} -T24 -Pmaven2 ; mvn clean -Papache"
 alias mvnversion="mvn versions:display-plugin-updates -Pspring -Papache ; mvn -T24 versions:display-property-updates -Pspring -Papache"
 

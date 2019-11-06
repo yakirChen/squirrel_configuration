@@ -46,13 +46,15 @@ chmod 777 rwx
 ```bash
 ln -s /Volumes/To/repos/m2 ${HOME}/.m2 
 ln -s /Volumes/To/repos/vscode ${HOME}/.vscode
-ln -s ${HOME}/Library/Mobile Documents/com~apple~CloudDocs/Developer/macOS-libs/npmrc ${HOME}/.npmrc
-ln -s ${HOME}/Library/Mobile Documents/com~apple~CloudDocs/Developer/macOS-libs/tm_properties ${HOME}/.tm_properties
-ln -s ${HOME}/Library/Mobile Documents/com~apple~CloudDocs/Developer/macOS-libs/vim/vimrc ${HOME}/.vimrc
-ln -s ${HOME}/Library/Mobile Documents/com~apple~CloudDocs/Developer/macOS-libs/yarnrc ${HOME}/.yarnrc
-ln -s ${HOME}/Library/Mobile Documents/com~apple~CloudDocs/Developer/macOS-libs/zshrc ${HOME}/.zshrc
-ln -s /Users/yakir/Library/Mobile\ Documents/com\~apple\~CloudDocs/Developer/macOS-libs/vscode/vscode-keymap.json keybindings.json
-ln -s /Users/yakir/Library/Mobile\ Documents/com\~apple\~CloudDocs/Developer/macOS-libs/vscode/vscode-keybindings.json keybindings.json
+ln -s "${HOME}/Library/Mobile Documents/com~apple~CloudDocs/Developer/macOS-libs/npmrc" ${HOME}/.npmrc
+ln -s "${HOME}/Library/Mobile Documents/com~apple~CloudDocs/Developer/macOS-libs/tm_properties" ${HOME}/.tm_properties
+ln -s "${HOME}/Library/Mobile Documents/com~apple~CloudDocs/Developer/macOS-libs/vim/vimrc" ${HOME}/.vimrc
+ln -s "${HOME}/Library/Mobile Documents/com~apple~CloudDocs/Developer/macOS-libs/yarnrc" ${HOME}/.yarnrc
+ln -s "${HOME}/Library/Mobile Documents/com~apple~CloudDocs/Developer/macOS-libs/zshrc" ${HOME}/.zshrc
+rm ${HOME}/Library/Application\ Support/Code/User/settings.json
+rm ${HOME}/Library/Application\ Support/Code/User/keybindings.json
+ln -s /Users/yakir/Library/Mobile\ Documents/com\~apple\~CloudDocs/Developer/macOS-libs/vscode/vscode-settings.json ${HOME}/Library/Application\ Support/Code/User/settings.json
+ln -s /Users/yakir/Library/Mobile\ Documents/com\~apple\~CloudDocs/Developer/macOS-libs/vscode/vscode-keybindings.json ${HOME}/Library/Application\ Support/Code/User/keybindings.json
 ```
 
 ## Too many open files
