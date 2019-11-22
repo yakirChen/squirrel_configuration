@@ -1,5 +1,5 @@
 __patch:
-# Rx: emoji:customize:schema=luna_pinyin_simp {
+# Rx: emoji:customize:schema=luna_pinyin {
   - patch/+:
       __include: emoji_suggestion:/patch
 # }

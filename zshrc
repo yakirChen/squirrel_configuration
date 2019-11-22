@@ -7,6 +7,7 @@ ZSH_THEME="jtriley"
 plugins=(
     ant
     mvn
+    osx
     xcode
     git
     git-extras
@@ -43,9 +44,9 @@ func ssproxy() {
 export BREW=${HOME}/local/brew
 export BREW_OPT=${HOME}/local/brew/opt
 export LOCAL=${HOME}/local
-export TO=/Volumes/To
-export TO_REPOS=/Volumes/To/repos
-export TO_SERVERS=/Volumes/To/servers
+export VLM=/Volumes/sm
+export VLM_REPOS=/Volumes/sm/repos
+export VLM_SERVERS=/Volumes/sm/servers
 export JARS=${LOCAL}/jars
 export CHEAT_USER_DIR='/Users/yakir/app/cheats'
 export CHEAT_PATH='/Users/yakir/app/cheats'
@@ -58,7 +59,7 @@ export RUBY_HOME=${LOCAL}/ruby
 export GOROOT=${LOCAL}/go
 export ERL_HOME=${LOCAL}/otp
 export NODE_PATH=${LOCAL}/node
-export NPM_GLOBAL=${TO_REPOS}/npm
+export NPM_GLOBAL=${VLM_REPOS}/npm
 # export RUST_HOME=${LOCAL}/rust
 export CARGO_HOME=${LOCAL}/rust
 export CARGO_PATH=${CARGO_HOME}/
@@ -67,7 +68,7 @@ export RUSTFLAGS='-C target-cpu=native'
 # export RUSTFLAGS='-C prefer-dynamic'
 #export RUSTUP_TOOLCHAIN=stable
 export RUSTUP_TOOLCHAIN=nightly
-# export MIRI_SYSROOT=${TO_REPOS}/miri
+# export MIRI_SYSROOT=${VLM_REPOS}/miri
 #export RUSTUP_DIST_SERVER=https://static.rust-lang.org
 #export RUSTUP_UPDATE_ROOT=https://static.rust-lang.org/rustup
 # export RUST_SRC_PATH=$(${CARGO_HOME}/bin/rustc --print sysroot)/lib/rustlib/src/rust/src
@@ -77,23 +78,23 @@ export RUSTUP_TOOLCHAIN=nightly
 export STACK_HOME=${LOCAL}/stack
 export FLATBUFFERS_HOME=${LOCAL}/flatbuffers
 
-export IPFS_PATH=/Volumes/To/repos/ipfs
+export IPFS_PATH=/Volumes/sm/repos/ipfs
 
 # export RUST_SRC_PATH=
 # export OCAML_HOME=${LOCAL}/ocaml
 # export GROOVY_HOME=${LOCAL}/groovy
 # export LUA_HOME=${LOCAL}/lua
 # export GCC_HOME=${LOCAL}/gcc
-#export CLANG_HOME=${TO_REPOS}/clang
+#export CLANG_HOME=${VLM_REPOS}/clang
 # export IGV_HOME=${LOCAL}/igv
 
 # 开发辅助
 export VIM_CONFIG_PATH=${HOME}/.vim
 export SQLITE=${LOCAL}/sqlite
-export MYSQL_BASE_DIR=${LOCAL}/mysql
-export MYSQL_COMMON_DIR=/Volumes/To/repos/mysql
-export MYSQL_DATA_DIR=/Volumes/To/repos/mysql/data
-export MYSQL_LOGS_DIR=/Volumes/To/repos/mysql/logs
+export MYSQL_BASE_DIR=/Volumes/sm/servers/mysql
+export MYSQL_COMMON_DIR=/Volumes/sm/repos/mysql
+export MYSQL_DATA_DIR=/Volumes/sm/repos/mysql/data
+export MYSQL_LOGS_DIR=/Volumes/sm/repos/mysql/logs
 # export BTRACE_HOME=${LOCAL}/btrace
 # export HTOP_HOME=${LOCAL}/htop
 # export FISH_HOME=${LOCAL}/fish
@@ -107,20 +108,15 @@ export PKG_CONFIG_PATH="${BREW_OPT}/libressl/lib/pkgconfig:${BREW_OPT}/libffi/li
 # export CXXFLAGS="--std=c++17 "
 # export CPPFLAGS=${CFLAGS}
 # export LDFLAGS="-L${LOCAL}/lib"
-export BOOST_ROOT=${TO_REPOS}/boost71
+export BOOST_ROOT=${VLM_REPOS}/boost
 export BOOSTDIR=${BOOST_ROOT}/include
-# export OPAMROOT=${TO_REPOS}/opam
-# export OCAML_TOPLEVEL_PATH=${TO_REPOS}/ocaml
-export GOPATH=${TO_REPOS}/go/gopath
-export GOCACHE=${TO_REPOS}/go/gocache
-
-# 服务
-export ZK_HOME=${TO_SERVERS}/zookeeper
-export REDIS_HOME=${LOCAL}/redis
-export NGINX=${LOCAL}/nginx
+# export OPAMROOT=${VLM_REPOS}/opam
+# export OCAML_TOPLEVEL_PATH=${VLM_REPOS}/ocaml
+export GOPATH=${VLM_REPOS}/go/gopath
+export GOCACHE=${VLM_REPOS}/go/gocache
 
 # 打包编译工具
-export CHEZ_SCHEME_HOME=${TO_SERVERS}/chez_scheme
+export CHEZ_SCHEME_HOME=${VLM_SERVERS}/chez_scheme
 export CMAKE_HOME=${LOCAL}/cmake
 export M2_HOME=${LOCAL}/maven                   # maven
 export MAVEN_CONFIG=${M2_HOME}/conf
@@ -135,10 +131,10 @@ export BISON_HOME=${LOCAL}/bison
 export YARN_HOME=${LOCAL}/yarn                # yarn
 
 # repos
-export HASKELL_BIN=${TO_REPOS}/haskell
-export GRADLE_USER_HOME=${TO_REPOS}/gradle
-export GEM_HOME=${TO_REPOS}/gem
-export GEM_PATH=${TO_REPOS}/gem
+export HASKELL_BIN=${VLM_REPOS}/haskell
+export GRADLE_USER_HOME=${VLM_REPOS}/gradle
+export GEM_HOME=${VLM_REPOS}/gem
+export GEM_PATH=${VLM_REPOS}/gem
 
 # 日常工具
 # export ARIA2_HOME=${LOCAL}/aria2              # aria2
@@ -149,20 +145,20 @@ export JAVA_8_HOME=$(/usr/libexec/java_home -v 1.8)
 export GRAALVM_HOME=/Users/yakir/local/graalvm
 export JAVA_11_HOME=$(/usr/libexec/java_home -v 11)
 export JAVA_13_HOME=$(/usr/libexec/java_home -v 13)
-export JAVA_14_HOME=$(/usr/libexec/java_home -v 14)
+#export JAVA_14_HOME=$(/usr/libexec/java_home -v 14)
 export JDK_8_HOME=${JAVA_8_HOME}
 export JDK_11_HOME=${JAVA_11_HOME}
 export JDK_13_HOME=${JAVA_13_HOME}
-export JDK_14_HOME=${JAVA_14_HOME}
+#export JDK_14_HOME=${JAVA_14_HOME}
 export KOTLIN_HOME=${LOCAL}/kotlinc
 export SCALA_HOME=${LOCAL}/scala
-export SBT_HOME=${TO_SERVERS}/sbt
+export SBT_HOME=${VLM_SERVERS}/sbt
 
 alias jdk8="export JAVA_HOME=${JAVA_8_HOME}"
 #alias jdk90="export JAVA_HOME=${JDK_19_ZERO_HOME}"
 alias jdk11="export JAVA_HOME=${JAVA_11_HOME}"
 alias jdk13="export JAVA_HOME=${JAVA_13_HOME}"
-alias jdk14="export JAVA_HOME=${JAVA_14_HOME}"
+#alias jdk14="export JAVA_HOME=${JAVA_14_HOME}"
 # alias graal="export JAVA_HOME=${GRAAL_HOME} && \
 # export PATH=$JAVA_HOME/bin:$PATH"
 # alias zulujdk8="export JAVA_HOME=${ZULU_JDK_18_HOME}"
@@ -172,15 +168,15 @@ export JDK_BOOT_DIR=${JAVA_8_HOME}
 
 jdk8
 
-# export DEF_JAVA_OPTS="-Xms100M -Xmx256M -Xverify:none -XX:ReservedCodeCacheSize=100m -XX:+UseG1GC -XX:+AlwaysPreTouch -XX:+UseNUMA -XX:+UseCompressedOops -XX:-OmitStackTraceInFastThrow -XX:+HeapDumpOnOutOfMemoryErro-XX:+PrintGCDetails \
-# export ES_JAVA_OPTS="-Xms1G -Xmx1G -server -XX:+UseG1GC -XX:+UseNUMA -XX:+UseCompressedOops -XX:+AlwaysPreTouch -XX:SurvivorRatio=8 -XX:+AlwaysPreTouch"
+# export DEF_JAVA_OPTS="-Xms100M -Xmx256M -Xverify:none -XX:ReservedCodeCacheSize=100m -XX:+UseG1GC -XX:+AlwaysPresmuch -XX:+UseNUMA -XX:+UseCompressedOops -XX:-OmitStackTraceInFastThrow -XX:+HeapDumpOnOutOfMemoryErro-XX:+PrintGCDetails \
+# export ES_JAVA_OPTS="-Xms1G -Xmx1G -server -XX:+UseG1GC -XX:+UseNUMA -XX:+UseCompressedOops -XX:+AlwaysPresmuch -XX:SurvivorRatio=8 -XX:+AlwaysPresmuch"
 # export JAVA_DEBUG_OPTS="-Xdebug -Xrunjdwp:server=y,transport=dt_socket,suspend=n,address="
-#export JAVA_OPTS="${DEF_JAVA_OPTS} --illegal-access=deny -XX:HeapDumpPath=${TO_REPOS}/logs/jvm_error.hprof"
-# export JAVA_OPTS="${DEF_JAVA_OPTS} -XX:HeapDumpPath=${TO_REPOS}/logs/jvm_error.hprof"
-#export MAVEN_OPTS="${DEF_JAVA_OPTS} -XX:HeapDumpPath=${TO_REPOS}/logs/maven_java_error.hprof"
+#export JAVA_OPTS="${DEF_JAVA_OPTS} --illegal-access=deny -XX:HeapDumpPath=${VLM_REPOS}/logs/jvm_error.hprof"
+# export JAVA_OPTS="${DEF_JAVA_OPTS} -XX:HeapDumpPath=${VLM_REPOS}/logs/jvm_error.hprof"
+#export MAVEN_OPTS="${DEF_JAVA_OPTS} -XX:HeapDumpPath=${VLM_REPOS}/logs/maven_java_error.hprof"
 export ANT_ARGS="-nouserlib -lib ${LOCAL}/ant/lib"
-export ANT_OPTS="-Djava.io.tmpdir=${TO_REPOS}/javaiotmp -Divy_install_path=${LOCAL}/ant/lib -Ddest=${TO_REPOS}/ivy -Divy.default.ivy.user.dir=${TO_REPOS}/ivy -DdefaultCacheDir=${TO_REPOS}/ivy"
-export SBT_OPTS="-Dsbt.global.base=${TO_SERVERS}/sbt -Dsbt.version=1.0.4 -Dsbt.boot.directory=${TO_REPOS}/sbt/boot -Dsbt.ivy.home=${TO_REPOS}/ivy2 -Dsbt.override.build.repos=true -Dsbt.repository.config=${TO_REPOS}/sbt/repositories"
+export ANT_OPTS="-Djava.io.tmpdir=${VLM_REPOS}/javaiotmp -Divy_install_path=${LOCAL}/ant/lib -Ddest=${VLM_REPOS}/ivy -Divy.default.ivy.user.dir=${VLM_REPOS}/ivy -DdefaultCacheDir=${VLM_REPOS}/ivy"
+export SBT_OPTS="-Dsbt.global.base=${VLM_SERVERS}/sbt -Dsbt.version=1.0.4 -Dsbt.boot.directory=${VLM_REPOS}/sbt/boot -Dsbt.ivy.home=${VLM_REPOS}/ivy2 -Dsbt.override.build.repos=true -Dsbt.repository.config=${VLM_REPOS}/sbt/repositories"
 
 # for HTTP_METHOD in GET HEAD POST PUT DELETE TRACE OPTIONS; do
 #     alias "${HTTP_METHOD}"="lwp-request -m '${HTTP_METHOD}'"
@@ -207,7 +203,6 @@ PATH=${SQLITE}/bin:$MYSQL_BASE_DIR/bin:$MYSQL_BASE_DIR/support-files:${MYSQL_SHE
 PATH=$KOTLIN_HOME/bin:$PATH
 # PATH=$PY2_HOME/bin:$PY3_HOME/bin:$LUA_HOME/bin:$PATH
 PATH=$GOROOT/bin:$GOPATH/bin:$CHEZ_SCHEME_HOME/bin:$NODE_PATH/bin:$NPM_GLOBAL/bin:$PATH
-PATH=$REDIS_HOME/bin:$NGINX:$PATH
 PATH=$RUBY_HOME/bin:$GEM_HOME/bin:$PATH
 PATH=${YARN_HOME}/bin:$PATH
 PATH=${STACK_HOME}:$PATH
@@ -234,7 +229,7 @@ alias bcv="${JAVA_11_HOME}/bin/java -Dapplication.home=${JAVA_11_HOME} -jar ${JA
 alias gitrb="git reset && git checkout -- . && git checkout origin/master &&  git branch -D master && git status && git checkout master && git status"
 alias pg="ps aux|rg $1"
 alias jpg="jps -lv|rg $1"
-alias mdutildisto="sudo mdutil -i off -d -X /Volumes/To ; sudo mdutil -i off /Volumes/To"
+alias mdutildisto="sudo mdutil -i off -d -X /Volumes/sm ; sudo mdutil -i off /Volumes/sm"
 alias cat=bat
 
 MVN_MB="-Dmaven.compiler.fork=true -T12"
@@ -248,11 +243,11 @@ alias mvna="${M2_HOME}/bin/mvn dependency:sources -Paliyun -Pmaven2 ; ${M2_HOME}
 alias mvna24="mvn -T24 dependency:sources -Papache; mvn -T24 dependency:resolve -Dclassifier=javadoc -Papache; ${MVN_TEMPLATE} -T24 -Pmaven2 ; mvn clean -Papache"
 alias mvnversion="mvn versions:display-plugin-updates -Pspring -Papache ; mvn -T24 versions:display-property-updates -Pspring -Papache"
 
-alias mx="mx --user-home=${TO_REPOS}/mx"
+alias mx="mx --user-home=${VLM_REPOS}/mx"
 alias schemescript='scheme --script'
 alias clojure='java -jar ${LOCAL_LIB_DIR}/clojure/clojure.jar'
 
-#alias hg="source ${TO_REPOS}/venv/hg/bin/activate"
+#alias hg="source ${VLM_REPOS}/venv/hg/bin/activate"
 #alias hgd='deactivate'
 
 ########################################### rustup ##################################################
@@ -267,8 +262,8 @@ alias ru="rustup update"
 alias bs="brew search --desc -v"
 alias gcr="git clone --recurse-submodules "
 alias gcr1="git clone --recurse-submodules --depth 1 "
-alias antlr4='java -Xmx500M -cp "/Volumes/To/app/antlr-4.7.2-complete.jar:$CLASSPATH" org.antlr.v4.Tool'
-alias grun='java -Xmx500M -cp "/Volumes/To/app/antlr-4.7.2-complete.jar:$CLASSPATH" org.antlr.v4.gui.TestRig'
+alias antlr4='java -Xmx500M -cp "/Volumes/sm/app/antlr-4.7.2-complete.jar:$CLASSPATH" org.antlr.v4.smol'
+alias grun='java -Xmx500M -cp "/Volumes/sm/app/antlr-4.7.2-complete.jar:$CLASSPATH" org.antlr.v4.gui.TestRig'
 
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
@@ -278,7 +273,7 @@ source $ZSH/oh-my-zsh.sh
  # source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
  
  # OPAM configuration
-# . ${TO_REPOS}/opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+# . ${VLM_REPOS}/opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
 #[ -s "/Users/yakir/local/jabba/jabba.sh" ] && source "/Users/yakir/local/jabba/jabba.sh"
 export FLUTTER_STORAGE_BASE_URL="https://mirrors.tuna.tsinghua.edu.cn/flutter"
