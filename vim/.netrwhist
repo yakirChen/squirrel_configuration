@@ -1,3 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/Users/yakir/brew/Cellar/neovim/0.4.2/share/nvim'
+let g:netrw_dirhist_2='/Volumes/sm/servers/default.etcd'
+let g:netrw_dirhist_3='/Volumes/sm/servers/default.etcd/member'
+let g:netrw_dirhist_4='/Volumes/sm/servers/default.etcd'
+let g:netrw_dirhist_5='/Volumes/sm/servers/default.etcd/member'
+let g:netrw_dirhist_6='/Volumes/sm/servers/default.etcd/member/snap'
+let g:netrw_dirhist_7='/Volumes/sm/build/etcd-browser'

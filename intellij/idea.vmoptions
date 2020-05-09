@@ -64,8 +64,8 @@
 
 -XX:+UseG1GC
 -XX:+UseGCLogFileRotation
--Xlog:gc*:/Volumes/To/logs/idea/gc_%p.log
+-Xlog:gc*:/Volumes/sm/logs/idea/gc_%p.log
 -XX:NumberOfGCLogFiles=9
 -XX:GCLogFileSize=1024m
--XX:ErrorFile=/Volumes/To/logs/idea/java_error_in_idea_%p.log
--XX:HeapDumpPath=/Volumes/To/logs/idea/dump/java_error_in_idea.hprof
+-XX:ErrorFile=/Volumes/sm/logs/idea/java_error_in_idea_%p.log
+-XX:HeapDumpPath=/Volumes/sm/logs/idea/dump/java_error_in_idea.hprof

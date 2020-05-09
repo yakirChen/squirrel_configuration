@@ -15,10 +15,10 @@ plugins=(
     rust
     cargo
     fd
-    #rustup
     ripgrep
     golang
     npm
+    brew
     # docker
     # swift
     # zsh-completions
@@ -26,7 +26,7 @@ plugins=(
     zsh-navigation-tools
     # zsh-history-substring-search
     colored-man-pages
-    # colorize
+    colorize
     torrent
 )
 
@@ -46,6 +46,7 @@ export BREW_OPT=${HOME}/local/brew/opt
 export LOCAL=${HOME}/local
 export VLM=/Volumes/sm
 export VLM_REPOS=/Volumes/sm/repos
+export TVLM_REPOS=/Volumes/To/repos
 export VLM_SERVERS=/Volumes/sm/servers
 export JARS=${LOCAL}/jars
 export CHEAT_USER_DIR='/Users/yakir/app/cheats'
@@ -53,13 +54,11 @@ export CHEAT_PATH='/Users/yakir/app/cheats'
 export CHEAT_COLORS=true
 
 # 语言工具
-export RUBY_HOME=${LOCAL}/ruby
+export RUBY_HOME=${VLM_SERVERS}/ruby
 # export PY2_HOME=${LOCAL}/python2
-# export PY3_HOME=${LOCAL}/python3
+export PY3_HOME=${BREW_OPT}/python3
 export GOROOT=${LOCAL}/go
 export ERL_HOME=${LOCAL}/otp
-export NODE_PATH=${LOCAL}/node
-export NPM_GLOBAL=${VLM_REPOS}/npm
 # export RUST_HOME=${LOCAL}/rust
 export CARGO_HOME=${LOCAL}/rust
 export CARGO_PATH=${CARGO_HOME}/
@@ -95,6 +94,7 @@ export MYSQL_BASE_DIR=/Volumes/sm/servers/mysql
 export MYSQL_COMMON_DIR=/Volumes/sm/repos/mysql
 export MYSQL_DATA_DIR=/Volumes/sm/repos/mysql/data
 export MYSQL_LOGS_DIR=/Volumes/sm/repos/mysql/logs
+export NGINX=/Users/yakir/local/nginx
 # export BTRACE_HOME=${LOCAL}/btrace
 # export HTOP_HOME=${LOCAL}/htop
 # export FISH_HOME=${LOCAL}/fish
@@ -108,7 +108,7 @@ export PKG_CONFIG_PATH="${BREW_OPT}/libressl/lib/pkgconfig:${BREW_OPT}/libffi/li
 # export CXXFLAGS="--std=c++17 "
 # export CPPFLAGS=${CFLAGS}
 # export LDFLAGS="-L${LOCAL}/lib"
-export BOOST_ROOT=${VLM_REPOS}/boost
+export BOOST_ROOT=${VLM_SERVERS}/boost
 export BOOSTDIR=${BOOST_ROOT}/include
 # export OPAMROOT=${VLM_REPOS}/opam
 # export OCAML_TOPLEVEL_PATH=${VLM_REPOS}/ocaml
@@ -121,6 +121,7 @@ export CMAKE_HOME=${LOCAL}/cmake
 export M2_HOME=${LOCAL}/maven                   # maven
 export MAVEN_CONFIG=${M2_HOME}/conf
 export MAVEN_SKIP_RC=true
+export MAVEN_REPOSITORY=/Volumes/sm/repos/m2/repository
 export ANT_HOME=${LOCAL}/ant                    # ant
 export GRADLE_HOME=${LOCAL}/gradle              # gradle
 # export JAVACC_HOME=${LOCAL}/javacc
@@ -133,6 +134,7 @@ export YARN_HOME=${LOCAL}/yarn                # yarn
 # repos
 export HASKELL_BIN=${VLM_REPOS}/haskell
 export GRADLE_USER_HOME=${VLM_REPOS}/gradle
+# export GRADLE_USER_HOME=${TVLM_REPOS}/gradle
 export GEM_HOME=${VLM_REPOS}/gem
 export GEM_PATH=${VLM_REPOS}/gem
 
@@ -141,32 +143,45 @@ export GEM_PATH=${VLM_REPOS}/gem
 export FFMPEG_HOME=${LOCAL}/ffmpeg
 export GNUPG_HOME=${LOCAL}/gnupg
 
+# java 多版本切换
 export JAVA_8_HOME=$(/usr/libexec/java_home -v 1.8)
 export GRAALVM_HOME=/Users/yakir/local/graalvm
 export JAVA_11_HOME=$(/usr/libexec/java_home -v 11)
-export JAVA_13_HOME=$(/usr/libexec/java_home -v 13)
-#export JAVA_14_HOME=$(/usr/libexec/java_home -v 14)
-export JDK_8_HOME=${JAVA_8_HOME}
+export JAVA_14_HOME=$(/usr/libexec/java_home -v 14)
+export JAVA_15_HOME=$(/usr/libexec/java_home -v 15)
+export JDK_16_HOME=${JAVA_8_HOME}
+export JDK_18_HOME=${JAVA_8_HOME}
 export JDK_11_HOME=${JAVA_11_HOME}
-export JDK_13_HOME=${JAVA_13_HOME}
-#export JDK_14_HOME=${JAVA_14_HOME}
+export JDK_14_HOME=${JAVA_14_HOME}
+export JDK_15_HOME=${JAVA_15_HOME}
 export KOTLIN_HOME=${LOCAL}/kotlinc
 export SCALA_HOME=${LOCAL}/scala
 export SBT_HOME=${VLM_SERVERS}/sbt
+export JDK_BOOT_DIR=${JAVA_8_HOME}
 
 alias jdk8="export JAVA_HOME=${JAVA_8_HOME}"
 #alias jdk90="export JAVA_HOME=${JDK_19_ZERO_HOME}"
 alias jdk11="export JAVA_HOME=${JAVA_11_HOME}"
-alias jdk13="export JAVA_HOME=${JAVA_13_HOME}"
-#alias jdk14="export JAVA_HOME=${JAVA_14_HOME}"
+alias jdk14="export JAVA_HOME=${JAVA_14_HOME}"
+alias jdk15="export JAVA_HOME=${JAVA_15_HOME}"
 # alias graal="export JAVA_HOME=${GRAAL_HOME} && \
 # export PATH=$JAVA_HOME/bin:$PATH"
 # alias zulujdk8="export JAVA_HOME=${ZULU_JDK_18_HOME}"
 # alias zulujdk9="export JAVA_HOME=${ZULU_JDK_19_HOME}"
 
-export JDK_BOOT_DIR=${JAVA_8_HOME}
-
 jdk8
+
+# node 多版本切换
+export NODE8_PATH=${LOCAL}/node8
+export NODE12_PATH=${LOCAL}/node12
+export NODE11_PATH=${LOCAL}/node11
+export NODE_OPTIONS="--max_old_space_size=6144"
+export NPM_GLOBAL=${VLM_REPOS}/npm
+alias node8="export NODE_PATH=${NODE8_PATH}"
+alias node11="export NODE_PATH=${NODE11_PATH}"
+alias node12="export NODE_PATH=${NODE12_PATH}"
+
+node12
 
 # export DEF_JAVA_OPTS="-Xms100M -Xmx256M -Xverify:none -XX:ReservedCodeCacheSize=100m -XX:+UseG1GC -XX:+AlwaysPresmuch -XX:+UseNUMA -XX:+UseCompressedOops -XX:-OmitStackTraceInFastThrow -XX:+HeapDumpOnOutOfMemoryErro-XX:+PrintGCDetails \
 # export ES_JAVA_OPTS="-Xms1G -Xmx1G -server -XX:+UseG1GC -XX:+UseNUMA -XX:+UseCompressedOops -XX:+AlwaysPresmuch -XX:SurvivorRatio=8 -XX:+AlwaysPresmuch"
@@ -202,7 +217,8 @@ PATH=${ERL_HOME}/bin:$PATH
 PATH=${SQLITE}/bin:$MYSQL_BASE_DIR/bin:$MYSQL_BASE_DIR/support-files:${MYSQL_SHELL}/bin:$PATH
 PATH=$KOTLIN_HOME/bin:$PATH
 # PATH=$PY2_HOME/bin:$PY3_HOME/bin:$LUA_HOME/bin:$PATH
-PATH=$GOROOT/bin:$GOPATH/bin:$CHEZ_SCHEME_HOME/bin:$NODE_PATH/bin:$NPM_GLOBAL/bin:$PATH
+PATH=$PY3_HOME/bin:$LUA_HOME/bin:$PATH
+PATH=$GOROOT/bin:$GOPATH/bin:$CHEZ_SCHEME_HOME/bin:${NODE_PATH}/bin:$NPM_GLOBAL/bin:$PATH
 PATH=$RUBY_HOME/bin:$GEM_HOME/bin:$PATH
 PATH=${YARN_HOME}/bin:$PATH
 PATH=${STACK_HOME}:$PATH
@@ -215,6 +231,10 @@ PATH=${NASM_HOME}:${YASM_HOME}/bin:${BISON_HOME}/bin:$PATH
 # PATH=${LOCAL}/jadx/bin:$PATH
 
 export PATH
+
+source $ZSH/oh-my-zsh.sh
+
+unalias mvn
 
 # ########################################## User Alias Commond #####################################
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
@@ -239,7 +259,7 @@ alias mvnsrc="${M2_HOME}/bin/mvn dependency:sources"
 alias mvndocs="${M2_HOME}/bin/mvn dependency:resolve -Dclassifier=javadoc"
 alias mvncpst="${MVN_TEMPLATE}"
 alias mvncpstc="${MVN_TEMPLATE} -Pmaven2 ; mvn clean"
-alias mvna="${M2_HOME}/bin/mvn dependency:sources -Paliyun -Pmaven2 ; ${M2_HOME}/bin/mvn dependency:resolve -Dclassifier=javadoc -Paliyun -Pmaven2 ; ${MVN_TEMPLATE} -Pmaven2 -Paliyun ; ${M2_HOME}/bin/mvn clean"
+alias mvna="${M2_HOME}/bin/mvn dependency:sources -Paliyun ; ${M2_HOME}/bin/mvn dependency:resolve -Dclassifier=javadoc -Paliyun ; ${MVN_TEMPLATE} -Paliyun ; ${M2_HOME}/bin/mvn clean"
 alias mvna24="mvn -T24 dependency:sources -Papache; mvn -T24 dependency:resolve -Dclassifier=javadoc -Papache; ${MVN_TEMPLATE} -T24 -Pmaven2 ; mvn clean -Papache"
 alias mvnversion="mvn versions:display-plugin-updates -Pspring -Papache ; mvn -T24 versions:display-property-updates -Pspring -Papache"
 
@@ -260,6 +280,7 @@ alias ru="rustup update"
 ############################################ alias ##################################################
 #alias rm="rm -v "
 alias bs="brew search --desc -v"
+alias g="git fetch --prune --tag; git pull --all"
 alias gcr="git clone --recurse-submodules "
 alias gcr1="git clone --recurse-submodules --depth 1 "
 alias antlr4='java -Xmx500M -cp "/Volumes/sm/app/antlr-4.7.2-complete.jar:$CLASSPATH" org.antlr.v4.smol'
@@ -269,7 +290,6 @@ if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
 
-source $ZSH/oh-my-zsh.sh
  # source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
  
  # OPAM configuration
