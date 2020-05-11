@@ -6,6 +6,7 @@
 	"caret_extra_width": 1,
 	"caret_style": "smooth",
 	"color_scheme": "Packages/User/themer-sublime-text-light.tmTheme",
+	"drag_text": false,
 	"draw_minimap_border": false,
 	"draw_white_space": "all",
 	"enable_tab_scrolling": false,
@@ -15,8 +16,6 @@
 	"font_size": "11",
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
-	"drag_text": false,
-	// "gpu_window_buffer": true,
 	"ignored_packages":
 	[
 		"ActionScript",
@@ -30,14 +29,11 @@
 		"Groovy",
 		"Haskell",
 		"LaTeX",
-		"Lua",
 		"Matlab",
 		"Objective-C",
 		"Pascal",
 		"Perl",
 		"PHP",
-		"Python",
-		"R",
 		"Rails",
 		"RestructuredText",
 		"Ruby",
@@ -54,6 +50,7 @@
 	],
 	"line_padding_bottom": 0,
 	"line_padding_top": 0,
+	"node_path": "/Users/yakir/local/node12/bin/node",
 	"preview_on_click": false,
 	"rulers":
 	[

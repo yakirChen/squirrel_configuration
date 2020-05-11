@@ -3,7 +3,9 @@ HIST_STAMPS="yyyy-mm-dd"
 DISABLE_UPDATE_PROMPT=true
 DISABLE_AUTO_UPDATE=true
 export ZSH=${HOME}/.oh-my-zsh
-ZSH_THEME="jtriley"
+# ZSH_THEME="jtriley"
+ZSH_THEME="yakir"
+# ZSH_THEME="zeta"
 plugins=(
     ant
     mvn
