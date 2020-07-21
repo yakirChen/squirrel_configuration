@@ -3,9 +3,7 @@ HIST_STAMPS="yyyy-mm-dd"
 DISABLE_UPDATE_PROMPT=true
 DISABLE_AUTO_UPDATE=true
 export ZSH=${HOME}/.oh-my-zsh
-# ZSH_THEME="jtriley"
-ZSH_THEME="yakir"
-# ZSH_THEME="zeta"
+ZSH_THEME="jtriley"
 plugins=(
     ant
     mvn
@@ -22,7 +20,7 @@ plugins=(
     npm
     brew
     # docker
-    # swift
+    swiftpm
     # zsh-completions
     # zsh-autosuggestions
     zsh-navigation-tools
@@ -121,6 +119,7 @@ export GOCACHE=${VLM_REPOS}/go/gocache
 export CHEZ_SCHEME_HOME=${VLM_SERVERS}/chez_scheme
 export CMAKE_HOME=${LOCAL}/cmake
 export M2_HOME=${LOCAL}/maven                   # maven
+# export M2_HOME=${LOCAL}/maven3.7                   # maven
 export MAVEN_CONFIG=${M2_HOME}/conf
 export MAVEN_SKIP_RC=true
 export MAVEN_REPOSITORY=/Volumes/sm/repos/m2/repository
@@ -151,11 +150,15 @@ export GRAALVM_HOME=/Users/yakir/local/graalvm
 export JAVA_11_HOME=$(/usr/libexec/java_home -v 11)
 export JAVA_14_HOME=$(/usr/libexec/java_home -v 14)
 export JAVA_15_HOME=$(/usr/libexec/java_home -v 15)
-export JDK_16_HOME=${JAVA_8_HOME}
+export JAVA_16_HOME=$(/usr/libexec/java_home -v 16)
+export JAVA_ADOPT_HOT_14_HOME=/Users/yakir/local/jdk/jdk-14.0.1+7/Contents/Home/
+export JAVA_ZERO_HOME=/Users/yakir/local/jdk-15.jdk/Contents/Home
+export JAVA_LANAI_HOME=/Users/yakir/local/jdk-16.jdk.lanai/Contents/Home
 export JDK_18_HOME=${JAVA_8_HOME}
 export JDK_11_HOME=${JAVA_11_HOME}
 export JDK_14_HOME=${JAVA_14_HOME}
 export JDK_15_HOME=${JAVA_15_HOME}
+export JDK_16_HOME=${JAVA_16_HOME}
 export KOTLIN_HOME=${LOCAL}/kotlinc
 export SCALA_HOME=${LOCAL}/scala
 export SBT_HOME=${VLM_SERVERS}/sbt
@@ -166,6 +169,10 @@ alias jdk8="export JAVA_HOME=${JAVA_8_HOME}"
 alias jdk11="export JAVA_HOME=${JAVA_11_HOME}"
 alias jdk14="export JAVA_HOME=${JAVA_14_HOME}"
 alias jdk15="export JAVA_HOME=${JAVA_15_HOME}"
+alias jdk16="export JAVA_HOME=${JAVA_16_HOME}"
+alias zero="export JAVA_HOME=${JAVA_ZERO_HOME}"
+alias lanai="export JAVA_HOME=${JAVA_LANAI_HOME}"
+alias ahjdk14="export JAVA_HOME=${JAVA_ADOPT_HOT_14_HOME}"
 # alias graal="export JAVA_HOME=${GRAAL_HOME} && \
 # export PATH=$JAVA_HOME/bin:$PATH"
 # alias zulujdk8="export JAVA_HOME=${ZULU_JDK_18_HOME}"
@@ -182,6 +189,7 @@ export NPM_GLOBAL=${VLM_REPOS}/npm
 alias node8="export NODE_PATH=${NODE8_PATH}"
 alias node11="export NODE_PATH=${NODE11_PATH}"
 alias node12="export NODE_PATH=${NODE12_PATH}"
+export ELECTRON_MIRROR=https://npm.taobao.org/mirrors/electron/
 
 node12
 

@@ -1,5 +1,6 @@
 -server
 -ea
+-verbose:class
 
 -XshowSettings:all
 -Xverify:none
@@ -7,19 +8,16 @@
 -XX:+UnlockExperimentalVMOptions
 -XX:+UnlockDiagnosticVMOptions
 -XX:+PrintCommandLineFlags
--XX:+Verbose
 -XX:+UseCompressedOops
 #-XX:+AlwaysPreTouch
 -XX:+UseNUMA
--XX:+HeapDumpOnOutOfMemoryError
--XX:-OmitStackTraceInFastThrow
 -XX:-UseCounterDecay
 
 -Xdiag
--Xmx1536M
--Xms1536M
--XX:InitialCodeCacheSize=240m
--XX:ReservedCodeCacheSize=600m
+-Xmx2048M
+-Xms2048M
+-XX:InitialCodeCacheSize=256m
+-XX:ReservedCodeCacheSize=384m
 -XX:SoftRefLRUPolicyMSPerMB=50
 
 -Dfile.encoding=UTF-8
@@ -41,15 +39,21 @@
 -XX:+TieredCompilation
 -XX:+LogTouchedMethods
 
--XX:G1HeapRegionSize=1
+#-XX:+EnableJVMCI
+#-XX:+UseJVMCICompiler
+
+
+-XX:G1HeapRegionSize=2M
+-XX:+PrintHeapAtGC
+-XX:MetaspaceSize=640M
 -XX:MaxMetaspaceSize=640M
 -XX:MaxMetaspaceFreeRatio=70
 -XX:MinMetaspaceFreeRatio=30
 -XX:MinMetaspaceExpansion=1M
--XX:ParallelGCThreads=6
+-XX:ParallelGCThreads=4
 -XX:ConcGCThreads=2
 -XX:SurvivorRatio=8
--XX:MaxGCPauseMillis=1000
+-XX:MaxGCPauseMillis=100
 -XX:G1HeapWastePercent=8
 -XX:InitiatingHeapOccupancyPercent=30
 # -XX:G1MixedGCLiveThresholdPercent=60
@@ -61,6 +65,7 @@
 -XX:+AggressiveOpts
 -XX:+DoEscapeAnalysis
 -XX:+UseCodeCacheFlushing
+-XX:+ParallelRefProcEnabled
 
 -XX:+UseG1GC
 -XX:+UseGCLogFileRotation

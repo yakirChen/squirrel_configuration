@@ -183,7 +183,7 @@
     "java.implementationsCodeLens.enabled": true,
     "java.errors.incompleteClasspath.severity": "ignore",
     "java.configuration.maven.userSettings": "/Users/yakir/local/maven/conf/settings.xml",
-    "java.home": "/Library/Java/JavaVirtualMachines/jdk1.8.0_231.jdk/Contents/Home",
+    "java.home": "/Library/Java/JavaVirtualMachines/jdk1.8.0_251.jdk/Contents/Home",
     "extensions.ignoreRecommendations": false,
     "update.mode": "manual",
     "update.enableWindowsBackgroundUpdates": false,
@@ -249,5 +249,6 @@
     "editor.scrollBeyondLastColumn": 6,
     "editor.smoothScrolling": true,
     "java.jdt.ls.vmargs": "-noverify -Xmx1G -XX:+UseG1GC -XX:+UseStringDeduplication -javaagent:\"/Users/yakir/.vscode/extensions/gabrielbb.vscode-lombok-0.9.8/server/lombok.jar\"",
-    "workbench.colorTheme": "Solarized Light",
+    "workbench.colorTheme": "Monokai Dimmed",
+    "workbench.iconTheme": "vscode-icons",
 }
