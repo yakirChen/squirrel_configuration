@@ -2,10 +2,9 @@ patch:
   "menu/page_size": 10
   schema_list:
   - schema: luna_pinyin_simp  # 简体拼音
-  # - schema: luna_pinyin       # 繁体拼音
+  - schema: luna_pinyin       # 繁体拼音
   # ascii_composer:
   #   switch_key:
   #     # 按shift: 从中文状态切换成英文状态的时候自动上屏英文
   #     Shift_L: commit_code
   #     Shift_R: commit_code
-  "translator/dictionary": luna_pinyin.extended

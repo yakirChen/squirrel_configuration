@@ -2,7 +2,7 @@
 HIST_STAMPS="yyyy-mm-dd"
 DISABLE_UPDATE_PROMPT=true
 DISABLE_AUTO_UPDATE=true
-export ZSH=${HOME}/.oh-my-zsh
+export ZSH=${HOME}/.ohmyzsh
 ZSH_THEME="jtriley"
 plugins=(
     ant
@@ -94,7 +94,7 @@ export MYSQL_BASE_DIR=/Volumes/sm/servers/mysql
 export MYSQL_COMMON_DIR=/Volumes/sm/repos/mysql
 export MYSQL_DATA_DIR=/Volumes/sm/repos/mysql/data
 export MYSQL_LOGS_DIR=/Volumes/sm/repos/mysql/logs
-export NGINX=/Users/yakir/local/nginx
+export NGINX_HOME=/Users/yakir/local/nginx
 # export BTRACE_HOME=${LOCAL}/btrace
 # export HTOP_HOME=${LOCAL}/htop
 # export FISH_HOME=${LOCAL}/fish
@@ -144,6 +144,8 @@ export GEM_PATH=${VLM_REPOS}/gem
 export FFMPEG_HOME=${LOCAL}/ffmpeg
 export GNUPG_HOME=${LOCAL}/gnupg
 
+export ARTHAS_HOME=${LOCAL}/arthas
+
 # java 多版本切换
 export JAVA_8_HOME=$(/usr/libexec/java_home -v 1.8)
 export GRAALVM_HOME=/Users/yakir/local/graalvm
@@ -154,6 +156,7 @@ export JAVA_16_HOME=$(/usr/libexec/java_home -v 16)
 export JAVA_ADOPT_HOT_14_HOME=/Users/yakir/local/jdk/jdk-14.0.1+7/Contents/Home/
 export JAVA_ZERO_HOME=/Users/yakir/local/jdk-15.jdk/Contents/Home
 export JAVA_LANAI_HOME=/Users/yakir/local/jdk-16.jdk.lanai/Contents/Home
+export JAVA_LOOM_HOME=/Library/Java/JavaVirtualMachines/jdk-16.loom.jdk/Contents/Home
 export JDK_18_HOME=${JAVA_8_HOME}
 export JDK_11_HOME=${JAVA_11_HOME}
 export JDK_14_HOME=${JAVA_14_HOME}
@@ -172,6 +175,7 @@ alias jdk15="export JAVA_HOME=${JAVA_15_HOME}"
 alias jdk16="export JAVA_HOME=${JAVA_16_HOME}"
 alias zero="export JAVA_HOME=${JAVA_ZERO_HOME}"
 alias lanai="export JAVA_HOME=${JAVA_LANAI_HOME}"
+alias loom="export JAVA_HOME=${JAVA_LOOM_HOME}"
 alias ahjdk14="export JAVA_HOME=${JAVA_ADOPT_HOT_14_HOME}"
 # alias graal="export JAVA_HOME=${GRAAL_HOME} && \
 # export PATH=$JAVA_HOME/bin:$PATH"
