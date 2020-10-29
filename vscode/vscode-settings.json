@@ -1,10 +1,10 @@
 {
     "window.newWindowDimensions": "inherit",
-    "workbench.colorTheme": "Quiet Light",
+    "workbench.colorTheme": "Solarized Light",
     "workbench.iconTheme": "vscode-icons",
     "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}",
     // 字体
-    "editor.fontFamily": "SourceCodePro-Semibold",
+    "editor.fontFamily": "Hack",
     "editor.renderWhitespace": "all",
     // 控制行高。使用 0 通过字号计算行高。
     "editor.lineHeight": 13,

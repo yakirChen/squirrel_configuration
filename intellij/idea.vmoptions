@@ -38,9 +38,12 @@
 #-XX:OnStackReplacePercentage=6
 -XX:+TieredCompilation
 -XX:+LogTouchedMethods
+#-XX:+PrintCompilation
+#-XX:+PrintInlining
 
 #-XX:+EnableJVMCI
 #-XX:+UseJVMCICompiler
+#-XX:+AutoBoxCacheMax=512 # Integer自动装箱拆箱缓存的最大值
 
 
 -XX:G1HeapRegionSize=2M
@@ -74,3 +77,6 @@
 -XX:GCLogFileSize=1024m
 -XX:ErrorFile=/Volumes/sm/logs/idea/java_error_in_idea_%p.log
 -XX:HeapDumpPath=/Volumes/sm/logs/idea/dump/java_error_in_idea.hprof
+
+-Deditable.java.test.console=true
+-Daction.aware.typeAhead=false

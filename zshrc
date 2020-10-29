@@ -11,6 +11,8 @@ plugins=(
     xcode
     git
     git-extras
+    git-lfs
+    # git-prompt
     # spring
     rust
     cargo
@@ -19,6 +21,8 @@ plugins=(
     golang
     npm
     brew
+    # history
+    # history-substring-search
     # docker
     swiftpm
     # zsh-completions
@@ -28,6 +32,7 @@ plugins=(
     colored-man-pages
     colorize
     torrent
+    brew
 )
 
 # export PROMPT_COMMAND='echo -n [$(date +%H:%M:%S)]'
@@ -61,6 +66,7 @@ export GOROOT=${LOCAL}/go
 export ERL_HOME=${LOCAL}/otp
 # export RUST_HOME=${LOCAL}/rust
 export CARGO_HOME=${LOCAL}/rust
+# export SRCROOT=${LOCAL}/rust
 export CARGO_PATH=${CARGO_HOME}/
 export RUSTUP_HOME=${LOCAL}/rust
 export RUSTFLAGS='-C target-cpu=native'
@@ -101,7 +107,10 @@ export NGINX_HOME=/Users/yakir/local/nginx
 
 # 运行时环境变量
 export PKG_CONFIG=${BREW_OPT}/pkg-config/bin/pkg-config       # pkg-config
-export PKG_CONFIG_PATH="${BREW_OPT}/libressl/lib/pkgconfig:${BREW_OPT}/libffi/lib/pkgconfig/"
+export PKG_CONFIG_PATH="${BREW_OPT}/libressl/lib/pkgconfig"
+export PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:"${BREW_OPT}/libffi/lib/pkgconfig/"
+export PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:"${BREW_OPT}/ncurses/lib/pkgconfig"
+export PKG_CONFIG_PATH=${PKG_CONFIG_PATH}:"${BREW_OPT}/guile@2/lib/pkgconfig"
 # export PKG_CONFIG_LIBDIR=${LOCAL}/lib/pkgconfig
 # export CFLAGS="-I${LOCAL}/include -I${LOCAL}/include/openssl" # -I${LOCAL}/include/readline -I${LOCAL}/include/sodium -I${LOCAL}/include/freetype2"
 # # -I${LOCAL}/include/lzma -I${LOCAL}/include/freetype2
@@ -147,36 +156,49 @@ export GNUPG_HOME=${LOCAL}/gnupg
 export ARTHAS_HOME=${LOCAL}/arthas
 
 # java 多版本切换
+#export JAVA_8_HOME=
+#export JAVA_11_HOME=
+#export JAVA_14_HOME=
+#export JAVA_15_HOME=
+#export JAVA_16_HOME=
+
+# alias jdk8="export JAVA_VERSION=1.8 && export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)"
+# alias jdk11="export JAVA_VERSION=11 && export JAVA_HOME=$(/usr/libexec/java_home -v 11)"
+# alias jdk14="export JAVA_VERSION=14 && export JAVA_HOME=$(/usr/libexec/java_home -v 14)"
+# alias jdk15="export JAVA_VERSION=15 && export JAVA_HOME=$(/usr/libexec/java_home -v 15)"
+# alias jdk16="export JAVA_VERSION=16 && export JAVA_HOME=$(/usr/libexec/java_home -v 16)"
+
+
 export JAVA_8_HOME=$(/usr/libexec/java_home -v 1.8)
-export GRAALVM_HOME=/Users/yakir/local/graalvm
 export JAVA_11_HOME=$(/usr/libexec/java_home -v 11)
 export JAVA_14_HOME=$(/usr/libexec/java_home -v 14)
 export JAVA_15_HOME=$(/usr/libexec/java_home -v 15)
 export JAVA_16_HOME=$(/usr/libexec/java_home -v 16)
-export JAVA_ADOPT_HOT_14_HOME=/Users/yakir/local/jdk/jdk-14.0.1+7/Contents/Home/
-export JAVA_ZERO_HOME=/Users/yakir/local/jdk-15.jdk/Contents/Home
-export JAVA_LANAI_HOME=/Users/yakir/local/jdk-16.jdk.lanai/Contents/Home
-export JAVA_LOOM_HOME=/Library/Java/JavaVirtualMachines/jdk-16.loom.jdk/Contents/Home
-export JDK_18_HOME=${JAVA_8_HOME}
-export JDK_11_HOME=${JAVA_11_HOME}
-export JDK_14_HOME=${JAVA_14_HOME}
-export JDK_15_HOME=${JAVA_15_HOME}
-export JDK_16_HOME=${JAVA_16_HOME}
-export KOTLIN_HOME=${LOCAL}/kotlinc
-export SCALA_HOME=${LOCAL}/scala
-export SBT_HOME=${VLM_SERVERS}/sbt
-export JDK_BOOT_DIR=${JAVA_8_HOME}
+export GRAALVM_HOME=/Users/yakir/local/graalvm
+#export JAVA_ADOPT_HOT_14_HOME=/Users/yakir/local/jdk/jdk-14.0.1+7/Contents/Home/
+#export JAVA_ZERO_HOME=/Users/yakir/local/jdk-15.jdk/Contents/Home
+#export JAVA_LANAI_HOME=/Users/yakir/local/jdk-16.jdk.lanai/Contents/Home
+#export JAVA_LOOM_HOME=/Library/Java/JavaVirtualMachines/jdk-16.loom.jdk/Contents/Home
+#export JDK_18_HOME=${JAVA_8_HOME}
+#export JDK_11_HOME=${JAVA_11_HOME}
+#export JDK_14_HOME=${JAVA_14_HOME}
+#export JDK_15_HOME=${JAVA_15_HOME}
+#export JDK_16_HOME=${JAVA_16_HOME}
+#export KOTLIN_HOME=${LOCAL}/kotlinc
+#export SCALA_HOME=${LOCAL}/scala
+#export SBT_HOME=${VLM_SERVERS}/sbt
+#export JDK_BOOT_DIR=${JAVA_8_HOME}
 
 alias jdk8="export JAVA_HOME=${JAVA_8_HOME}"
-#alias jdk90="export JAVA_HOME=${JDK_19_ZERO_HOME}"
+alias jdk90="export JAVA_HOME=${JDK_19_ZERO_HOME}"
 alias jdk11="export JAVA_HOME=${JAVA_11_HOME}"
 alias jdk14="export JAVA_HOME=${JAVA_14_HOME}"
 alias jdk15="export JAVA_HOME=${JAVA_15_HOME}"
 alias jdk16="export JAVA_HOME=${JAVA_16_HOME}"
-alias zero="export JAVA_HOME=${JAVA_ZERO_HOME}"
-alias lanai="export JAVA_HOME=${JAVA_LANAI_HOME}"
-alias loom="export JAVA_HOME=${JAVA_LOOM_HOME}"
-alias ahjdk14="export JAVA_HOME=${JAVA_ADOPT_HOT_14_HOME}"
+#alias zero="export JAVA_HOME=${JAVA_ZERO_HOME}"
+#alias lanai="export JAVA_HOME=${JAVA_LANAI_HOME}"
+#alias loom="export JAVA_HOME=${JAVA_LOOM_HOME}"
+# alias ahjdk14="export JAVA_HOME=${JAVA_ADOPT_HOT_14_HOME}"
 # alias graal="export JAVA_HOME=${GRAAL_HOME} && \
 # export PATH=$JAVA_HOME/bin:$PATH"
 # alias zulujdk8="export JAVA_HOME=${ZULU_JDK_18_HOME}"
@@ -213,11 +235,13 @@ export SBT_OPTS="-Dsbt.global.base=${VLM_SERVERS}/sbt -Dsbt.version=1.0.4 -Dsbt.
 # GET www.baidu.com
 
 ########################################### OpenSSL ##################################################
-export OPENSSL_CFLAGS=${BREW_OPT}/libressl/include        # openssl
+# export OPENSSL_CFLAGS=${BREW_OPT}/libressl/include        # openssl
+export OPENSSL_CFLAGS=${BREW_OPT}/openssl@1.1/include        # openssl
 # export OPENSSL_LIBS=${HOME}/local/lib/                 # openssl lib 貌似要所有的动态链接库都列出来
 export OPENSSL_INCLUDE_DIR=${OPENSSL_CFLAGS}
 export DEP_OPENSSL_INCLUDE=${OPENSSL_CFLAGS}
-export OPENSSL_LIB_DIR=${BREW_OPT}/libressl/lib/
+# export OPENSSL_LIB_DIR=${BREW_OPT}/libressl/lib/
+export OPENSSL_LIB_DIR=${BREW_OPT}/openssl@1.1/lib/
 export OPENSSL_ROOT_DIR=${OPENSSL_INCLUDE_DIR}
 
 SILVER=(status:black:white dir:blue:black git:green:black cmdtime:magenta:black)
@@ -311,3 +335,6 @@ fi
 
 #[ -s "/Users/yakir/local/jabba/jabba.sh" ] && source "/Users/yakir/local/jabba/jabba.sh"
 export FLUTTER_STORAGE_BASE_URL="https://mirrors.tuna.tsinghua.edu.cn/flutter"
+
+setopt inc_append_history     # add commands to HISTFILE in order of execution
+setopt share_history          # share command history data
