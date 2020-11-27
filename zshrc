@@ -137,9 +137,8 @@ export GRADLE_HOME=${LOCAL}/gradle              # gradle
 # export JAVACC_HOME=${LOCAL}/javacc
 export NASM_HOME=${LOCAL}/nasm
 export BISON_HOME=${LOCAL}/bison
-# export PROTOBUF_HOME=${LOCAL}/protobuf
+export PROTOBUF_HOME=${LOCAL}/protoc
 # export YASM_HOME=${LOCAL}/yasm
-export YARN_HOME=${LOCAL}/yarn                # yarn
 
 # repos
 export HASKELL_BIN=${VLM_REPOS}/haskell
@@ -188,6 +187,7 @@ export GRAALVM_HOME=/Users/yakir/local/graalvm
 #export SCALA_HOME=${LOCAL}/scala
 #export SBT_HOME=${VLM_SERVERS}/sbt
 #export JDK_BOOT_DIR=${JAVA_8_HOME}
+export GRAALVM_HOME=${LOCAL}/graalvm-ce-java11-20.3.0/Contents/Home
 
 alias jdk8="export JAVA_HOME=${JAVA_8_HOME}"
 alias jdk90="export JAVA_HOME=${JDK_19_ZERO_HOME}"
@@ -254,6 +254,7 @@ PATH=${CARGO_HOME}/bin:${M2_HOME}/bin:${GRADLE_HOME}/bin:${ANT_HOME}/bin:$PATH
 PATH=${ERL_HOME}/bin:$PATH
 PATH=${SQLITE}/bin:$MYSQL_BASE_DIR/bin:$MYSQL_BASE_DIR/support-files:${MYSQL_SHELL}/bin:$PATH
 PATH=$KOTLIN_HOME/bin:$PATH
+PATH=$PROTOBUF_HOME/bin:$PATH
 # PATH=$PY2_HOME/bin:$PY3_HOME/bin:$LUA_HOME/bin:$PATH
 PATH=$PY3_HOME/bin:$LUA_HOME/bin:$PATH
 PATH=$GOROOT/bin:$GOPATH/bin:$CHEZ_SCHEME_HOME/bin:${NODE_PATH}/bin:$NPM_GLOBAL/bin:$PATH

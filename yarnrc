@@ -2,5 +2,6 @@
 # yarn lockfile v1
 
 
-lastUpdateCheck 1571651345836
-yarn-offline-mirror "/Volumes/sm/repos/yarn"
+cache-folder "/Volumes/sm/repos/yarn"
+global-folder "/Volumes/sm/repos/yarn"
+lastUpdateCheck 1606109709013
