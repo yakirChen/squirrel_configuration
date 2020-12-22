@@ -10979,7 +10979,8 @@ use_preset_vocabulary: true
 婿	xu
 媀	yu
 媁	wei
-媂	di
+媂	di	100%
+媂	ti	0%
 媃	rou
 媄	mei
 媅	dan
@@ -15051,6 +15052,7 @@ use_preset_vocabulary: true
 曯	zhu
 曰	yue
 曱	ya
+曱	yue
 曲	qu
 曳	ye
 曳	yi
@@ -15334,7 +15336,6 @@ use_preset_vocabulary: true
 柕	mou
 柖	shao
 柗	song
-柘	tuo
 柘	zhe
 柙	jia
 柙	xia
@@ -16795,7 +16796,8 @@ use_preset_vocabulary: true
 沉	chen
 沊	dan
 沋	you
-沌	dun
+沌	dun	100%
+沌	zhuan	0%
 沍	hu
 沎	hua
 沎	huo
@@ -32462,14 +32464,14 @@ use_preset_vocabulary: true
 麬	fu
 麭	pao
 麮	qu
-麯	ju
-麯	qu
+麯	ju	0%
+麯	qu	100%
 麰	mou
 麱	fu
 麲	xian
 麳	lai
-麴	ju
-麴	qu
+麴	ju	0%
+麴	qu	100%
 麵	mian
 麶	chi
 麶	li
@@ -32790,6 +32792,8 @@ use_preset_vocabulary: true
 龤	yue
 龥	yu
 鿃	shan
+鿫	ao
+鿬	tian
 𠀀	he
 𠀁	qi
 𠀃	ji
@@ -47142,6 +47146,7 @@ use_preset_vocabulary: true
 𩭳	huo
 𩭷	min
 𩭺	fu
+𬌗	he
 𩭼	bao
 𩭽	ke
 𩭾	mao

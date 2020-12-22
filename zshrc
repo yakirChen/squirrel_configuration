@@ -100,6 +100,7 @@ export MYSQL_BASE_DIR=/Volumes/sm/servers/mysql
 export MYSQL_COMMON_DIR=/Volumes/sm/repos/mysql
 export MYSQL_DATA_DIR=/Volumes/sm/repos/mysql/data
 export MYSQL_LOGS_DIR=/Volumes/sm/repos/mysql/logs
+export MYSQL_SHELL=/Users/yakir/local/mysql_shell
 export NGINX_HOME=/Users/yakir/local/nginx
 # export BTRACE_HOME=${LOCAL}/btrace
 # export HTOP_HOME=${LOCAL}/htop
@@ -128,7 +129,7 @@ export GOCACHE=${VLM_REPOS}/go/gocache
 export CHEZ_SCHEME_HOME=${VLM_SERVERS}/chez_scheme
 export CMAKE_HOME=${LOCAL}/cmake
 export M2_HOME=${LOCAL}/maven                   # maven
-# export M2_HOME=${LOCAL}/maven3.7                   # maven
+# export M2_HOME=${LOCAL}/maven4                   # maven
 export MAVEN_CONFIG=${M2_HOME}/conf
 export MAVEN_SKIP_RC=true
 export MAVEN_REPOSITORY=/Volumes/sm/repos/m2/repository
@@ -176,7 +177,7 @@ export JAVA_16_HOME=$(/usr/libexec/java_home -v 16)
 export GRAALVM_HOME=/Users/yakir/local/graalvm
 #export JAVA_ADOPT_HOT_14_HOME=/Users/yakir/local/jdk/jdk-14.0.1+7/Contents/Home/
 #export JAVA_ZERO_HOME=/Users/yakir/local/jdk-15.jdk/Contents/Home
-#export JAVA_LANAI_HOME=/Users/yakir/local/jdk-16.jdk.lanai/Contents/Home
+export JAVA_LANAI_HOME=/Users/yakir/local/openjdk-lanai.jdk/Contents/Home
 #export JAVA_LOOM_HOME=/Library/Java/JavaVirtualMachines/jdk-16.loom.jdk/Contents/Home
 #export JDK_18_HOME=${JAVA_8_HOME}
 #export JDK_11_HOME=${JAVA_11_HOME}
@@ -196,10 +197,10 @@ alias jdk14="export JAVA_HOME=${JAVA_14_HOME}"
 alias jdk15="export JAVA_HOME=${JAVA_15_HOME}"
 alias jdk16="export JAVA_HOME=${JAVA_16_HOME}"
 #alias zero="export JAVA_HOME=${JAVA_ZERO_HOME}"
-#alias lanai="export JAVA_HOME=${JAVA_LANAI_HOME}"
+alias lanai="export JAVA_HOME=${JAVA_LANAI_HOME}"
 #alias loom="export JAVA_HOME=${JAVA_LOOM_HOME}"
 # alias ahjdk14="export JAVA_HOME=${JAVA_ADOPT_HOT_14_HOME}"
-# alias graal="export JAVA_HOME=${GRAAL_HOME} && \
+alias graal="export JAVA_HOME=${GRAAL_HOME} && \
 # export PATH=$JAVA_HOME/bin:$PATH"
 # alias zulujdk8="export JAVA_HOME=${ZULU_JDK_18_HOME}"
 # alias zulujdk9="export JAVA_HOME=${ZULU_JDK_19_HOME}"
@@ -207,14 +208,16 @@ alias jdk16="export JAVA_HOME=${JAVA_16_HOME}"
 jdk8
 
 # node 多版本切换
-export NODE8_PATH=${LOCAL}/node8
-export NODE12_PATH=${LOCAL}/node12
 export NODE11_PATH=${LOCAL}/node11
-export NODE_OPTIONS="--max_old_space_size=6144"
+export NODE12_PATH=${LOCAL}/node12
+export NODE14_PATH=${LOCAL}/node14
+export NODE15_PATH=${LOCAL}/node15
+export NODE_OPTIONS="--max_old_space_size=4096"
 export NPM_GLOBAL=${VLM_REPOS}/npm
-alias node8="export NODE_PATH=${NODE8_PATH}"
 alias node11="export NODE_PATH=${NODE11_PATH}"
 alias node12="export NODE_PATH=${NODE12_PATH}"
+alias node14="export NODE_PATH=${NODE14_PATH}"
+alias node15="export NODE_PATH=${NODE15_PATH}"
 export ELECTRON_MIRROR=https://npm.taobao.org/mirrors/electron/
 
 node12
@@ -252,7 +255,7 @@ PATH=${LOCAL}/bin:${LOCAL}/kits:${BREW}/bin:$PATH
 PATH=${CMAKE_HOME}/bin:${FLATBUFFERS_HOME}/bin:$PATH
 PATH=${CARGO_HOME}/bin:${M2_HOME}/bin:${GRADLE_HOME}/bin:${ANT_HOME}/bin:$PATH
 PATH=${ERL_HOME}/bin:$PATH
-PATH=${SQLITE}/bin:$MYSQL_BASE_DIR/bin:$MYSQL_BASE_DIR/support-files:${MYSQL_SHELL}/bin:$PATH
+PATH=${SQLITE}/bin:$MYSQL_BASE_DIR/bin:$MYSQL_BASE_DIR/support-files:${MYSQL_SHELL}/bin:${MYSQL_SHELL}:$PATH
 PATH=$KOTLIN_HOME/bin:$PATH
 PATH=$PROTOBUF_HOME/bin:$PATH
 # PATH=$PY2_HOME/bin:$PY3_HOME/bin:$LUA_HOME/bin:$PATH
@@ -325,6 +328,28 @@ alias gcr1="git clone --recurse-submodules --depth 1 "
 alias antlr4='java -Xmx500M -cp "/Volumes/sm/app/antlr-4.7.2-complete.jar:$CLASSPATH" org.antlr.v4.smol'
 alias grun='java -Xmx500M -cp "/Volumes/sm/app/antlr-4.7.2-complete.jar:$CLASSPATH" org.antlr.v4.gui.TestRig'
 
+unalias gg
+function gg() {
+    git_url=${1}
+    repo_name=${2}
+    repo_dir=''
+    if [[ ! -z "$repo_name" ]]; then
+        repo_dir=$repo_name
+    else
+        temp=${git_url##*/}
+        repo_dir=${temp%*.git}
+    fi
+    remain_str=${git_url##*https://github.com/}
+    head_str="https://github.com.cnpmjs.org/"
+    `git clone --recurse-submodules ${head_str}${remain_str}`
+    echo "$repo_dir $git_url"
+    cd $repo_dir
+    git_remote=`git remote`
+    git remote remove ${git_remote}
+    git remote add ${git_remote} ${git_url}
+    cd -
+}
+
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
@@ -339,3 +364,22 @@ export FLUTTER_STORAGE_BASE_URL="https://mirrors.tuna.tsinghua.edu.cn/flutter"
 
 setopt inc_append_history     # add commands to HISTFILE in order of execution
 setopt share_history          # share command history data
+
+export TIUP_HOME=/Volumes/sm/servers/tidb
+export PATH=/Volumes/sm/servers/tidb/bin:$PATH
+
+# # >>> conda initialize >>>
+# # !! Contents within this block are managed by 'conda init' !!
+# __conda_setup="$('/Users/yakir/local/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/Users/yakir/local/anaconda3/etc/profile.d/conda.sh" ]; then
+#         . "/Users/yakir/local/anaconda3/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/Users/yakir/local/anaconda3/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
+# # <<< conda initialize <<<
+
