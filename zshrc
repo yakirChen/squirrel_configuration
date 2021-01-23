@@ -81,6 +81,7 @@ export RUSTUP_TOOLCHAIN=nightly
 # export LD_LIBRARY_PATH=$DYLD_LIBRARY_PATH
 # export DYLD_LIBRARY_PATH=$(rustc --print sysroot)/lib:$DYLD_LIBRARY_PATH
 export STACK_HOME=${LOCAL}/stack
+export CARTHAGE_HOME=${LOCAL}/carthage
 export FLATBUFFERS_HOME=${LOCAL}/flatbuffers
 
 export IPFS_PATH=/Volumes/sm/repos/ipfs
@@ -101,6 +102,13 @@ export MYSQL_COMMON_DIR=/Volumes/sm/repos/mysql
 export MYSQL_DATA_DIR=/Volumes/sm/repos/mysql/data
 export MYSQL_LOGS_DIR=/Volumes/sm/repos/mysql/logs
 export MYSQL_SHELL=/Users/yakir/local/mysql_shell
+
+export PGSOCKET=/Volumes/sm/repos/pgsql
+export PGDATA=/Volumes/sm/repos/pgsql/data
+export PGWAL=/Volumes/sm/repos/pgsql/wal
+export PGLOG=/Volumes/sm/repos/pgsql/pglog.log
+export PGCTLLOG=/Volumes/sm/repos/pgsql/pgctllog.log
+
 export NGINX_HOME=/Users/yakir/local/nginx
 # export BTRACE_HOME=${LOCAL}/btrace
 # export HTOP_HOME=${LOCAL}/htop
@@ -128,8 +136,8 @@ export GOCACHE=${VLM_REPOS}/go/gocache
 # 打包编译工具
 export CHEZ_SCHEME_HOME=${VLM_SERVERS}/chez_scheme
 export CMAKE_HOME=${LOCAL}/cmake
-export M2_HOME=${LOCAL}/maven                   # maven
-# export M2_HOME=${LOCAL}/maven4                   # maven
+# export M2_HOME=${LOCAL}/maven                   # maven
+export M2_HOME=${LOCAL}/maven4                   # maven
 export MAVEN_CONFIG=${M2_HOME}/conf
 export MAVEN_SKIP_RC=true
 export MAVEN_REPOSITORY=/Volumes/sm/repos/m2/repository
@@ -174,6 +182,7 @@ export JAVA_11_HOME=$(/usr/libexec/java_home -v 11)
 export JAVA_14_HOME=$(/usr/libexec/java_home -v 14)
 export JAVA_15_HOME=$(/usr/libexec/java_home -v 15)
 export JAVA_16_HOME=$(/usr/libexec/java_home -v 16)
+export JAVA_17_HOME=$(/usr/libexec/java_home -v 17)
 export GRAALVM_HOME=/Users/yakir/local/graalvm
 #export JAVA_ADOPT_HOT_14_HOME=/Users/yakir/local/jdk/jdk-14.0.1+7/Contents/Home/
 #export JAVA_ZERO_HOME=/Users/yakir/local/jdk-15.jdk/Contents/Home
@@ -196,6 +205,7 @@ alias jdk11="export JAVA_HOME=${JAVA_11_HOME}"
 alias jdk14="export JAVA_HOME=${JAVA_14_HOME}"
 alias jdk15="export JAVA_HOME=${JAVA_15_HOME}"
 alias jdk16="export JAVA_HOME=${JAVA_16_HOME}"
+alias jdk17="export JAVA_HOME=${JAVA_17_HOME}"
 #alias zero="export JAVA_HOME=${JAVA_ZERO_HOME}"
 alias lanai="export JAVA_HOME=${JAVA_LANAI_HOME}"
 #alias loom="export JAVA_HOME=${JAVA_LOOM_HOME}"
@@ -239,12 +249,12 @@ export SBT_OPTS="-Dsbt.global.base=${VLM_SERVERS}/sbt -Dsbt.version=1.0.4 -Dsbt.
 
 ########################################### OpenSSL ##################################################
 # export OPENSSL_CFLAGS=${BREW_OPT}/libressl/include        # openssl
-export OPENSSL_CFLAGS=${BREW_OPT}/openssl@1.1/include        # openssl
+export OPENSSL_CFLAGS=${BREW_OPT}/openssl/include        # openssl
 # export OPENSSL_LIBS=${HOME}/local/lib/                 # openssl lib 貌似要所有的动态链接库都列出来
 export OPENSSL_INCLUDE_DIR=${OPENSSL_CFLAGS}
 export DEP_OPENSSL_INCLUDE=${OPENSSL_CFLAGS}
 # export OPENSSL_LIB_DIR=${BREW_OPT}/libressl/lib/
-export OPENSSL_LIB_DIR=${BREW_OPT}/openssl@1.1/lib/
+export OPENSSL_LIB_DIR=${BREW_OPT}/openssl/lib/
 export OPENSSL_ROOT_DIR=${OPENSSL_INCLUDE_DIR}
 
 SILVER=(status:black:white dir:blue:black git:green:black cmdtime:magenta:black)
@@ -264,6 +274,7 @@ PATH=$GOROOT/bin:$GOPATH/bin:$CHEZ_SCHEME_HOME/bin:${NODE_PATH}/bin:$NPM_GLOBAL/
 PATH=$RUBY_HOME/bin:$GEM_HOME/bin:$PATH
 PATH=${YARN_HOME}/bin:$PATH
 PATH=${STACK_HOME}:$PATH
+PATH=${CARTHAGE_HOME}/bin:$PATH
 
 # PATH=$HASKELL_BIN/bin:$ZK_HOME/bin:$TOMCAT_HOME/bin:$PATH
 # PATH=${BTRACE_HOME}/bin:${HTOP_HOME}/bin:$PATH

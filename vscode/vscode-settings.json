@@ -1,6 +1,6 @@
 {
     "window.newWindowDimensions": "inherit",
-    "workbench.colorTheme": "Solarized Light",
+    "workbench.colorTheme": "Monokai Dimmed",
     "workbench.iconTheme": "vscode-icons",
     "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}",
     // 字体

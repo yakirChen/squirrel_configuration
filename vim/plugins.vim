@@ -12,12 +12,14 @@ Plug 'cespare/vim-toml'
 Plug 'itchyny/lightline.vim'
 Plug 'fholgado/minibufexpl.vim'
 Plug 'Yggdroot/indentLine'
-Plug 'majutsushi/tagbar'
+"Plug 'majutsushi/tagbar'
+Plug 'preservim/tagbar'
+Plug 'preservim/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tommcdo/vim-lion'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'Xuyuanp/nerdtree-git-plugin'
+"Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+"Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'yianwillis/vimcdoc'
 "if has('nvim')
