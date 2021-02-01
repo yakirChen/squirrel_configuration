@@ -136,11 +136,13 @@ export GOCACHE=${VLM_REPOS}/go/gocache
 # 打包编译工具
 export CHEZ_SCHEME_HOME=${VLM_SERVERS}/chez_scheme
 export CMAKE_HOME=${LOCAL}/cmake
-# export M2_HOME=${LOCAL}/maven                   # maven
-export M2_HOME=${LOCAL}/maven4                   # maven
+export M2_HOME=${LOCAL}/maven                   # maven
+# export M2_HOME=${LOCAL}/maven4                   # maven
+export SBT_HOME=${LOCAL}/sbt                   # maven
 export MAVEN_CONFIG=${M2_HOME}/conf
 export MAVEN_SKIP_RC=true
 export MAVEN_REPOSITORY=/Volumes/sm/repos/m2/repository
+export SBT_OPTS="-Dsbt.global.base=/Volumes/sm/repos/sbt -Dsbt.ivy.home=/Volumes/sm/repos/ivy2"
 export ANT_HOME=${LOCAL}/ant                    # ant
 export GRADLE_HOME=${LOCAL}/gradle              # gradle
 # export JAVACC_HOME=${LOCAL}/javacc
@@ -169,13 +171,12 @@ export ARTHAS_HOME=${LOCAL}/arthas
 #export JAVA_14_HOME=
 #export JAVA_15_HOME=
 #export JAVA_16_HOME=
-
+    
 # alias jdk8="export JAVA_VERSION=1.8 && export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)"
 # alias jdk11="export JAVA_VERSION=11 && export JAVA_HOME=$(/usr/libexec/java_home -v 11)"
 # alias jdk14="export JAVA_VERSION=14 && export JAVA_HOME=$(/usr/libexec/java_home -v 14)"
 # alias jdk15="export JAVA_VERSION=15 && export JAVA_HOME=$(/usr/libexec/java_home -v 15)"
 # alias jdk16="export JAVA_VERSION=16 && export JAVA_HOME=$(/usr/libexec/java_home -v 16)"
-
 
 export JAVA_8_HOME=$(/usr/libexec/java_home -v 1.8)
 export JAVA_11_HOME=$(/usr/libexec/java_home -v 11)
@@ -263,7 +264,7 @@ export SILVER_SHELL=$0
 # ############################################ PATH #################################################
 PATH=${LOCAL}/bin:${LOCAL}/kits:${BREW}/bin:$PATH
 PATH=${CMAKE_HOME}/bin:${FLATBUFFERS_HOME}/bin:$PATH
-PATH=${CARGO_HOME}/bin:${M2_HOME}/bin:${GRADLE_HOME}/bin:${ANT_HOME}/bin:$PATH
+PATH=${CARGO_HOME}/bin:${M2_HOME}/bin:${SBT_HOME}/bin:${GRADLE_HOME}/bin:${ANT_HOME}/bin:$PATH
 PATH=${ERL_HOME}/bin:$PATH
 PATH=${SQLITE}/bin:$MYSQL_BASE_DIR/bin:$MYSQL_BASE_DIR/support-files:${MYSQL_SHELL}/bin:${MYSQL_SHELL}:$PATH
 PATH=$KOTLIN_HOME/bin:$PATH
@@ -376,8 +377,8 @@ export FLUTTER_STORAGE_BASE_URL="https://mirrors.tuna.tsinghua.edu.cn/flutter"
 setopt inc_append_history     # add commands to HISTFILE in order of execution
 setopt share_history          # share command history data
 
-export TIUP_HOME=/Volumes/sm/servers/tidb
-export PATH=/Volumes/sm/servers/tidb/bin:$PATH
+# export TIUP_HOME=/Volumes/sm/servers/tidb
+# export PATH=/Volumes/sm/servers/tidb/bin:$PATH
 
 # # >>> conda initialize >>>
 # # !! Contents within this block are managed by 'conda init' !!
