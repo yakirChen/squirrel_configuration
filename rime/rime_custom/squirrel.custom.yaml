@@ -1,11 +1,48 @@
 patch:
   app_options:
-    com.sublimetext.3:
-      ascii_mode: true
     com.apple.Spotlight:
+      ascii_mode: true
+    com.alfredapp.Alfred:
+      ascii_mode: true
+    com.runningwithcrayons.Alfred-2:
+      ascii_mode: true
+    com.blacktree.Quicksilver:
       ascii_mode: true
     com.apple.Terminal:
       ascii_mode: true
+      no_inline: true
+    com.googlecode.iterm2:
+      ascii_mode: true
+      no_inline: true
+    org.vim.MacVim:
+      ascii_mode: true  # 初始爲西文模式
+      no_inline: true   # 不使用行內編輯
+      vim_mode: true    # 退出VIM插入模式自動切換輸入法狀態
+    com.apple.dt.Xcode:
+      ascii_mode: true
+    com.barebones.textwrangler:
+      ascii_mode: true
+    com.macromates.TextMate.preview:
+      ascii_mode: true
+    com.github.atom:
+      ascii_mode: true
+    com.microsoft.VSCode:
+      ascii_mode: true
+    com.sublimetext.2:
+      ascii_mode: true
+    org.gnu.Aquamacs:
+      ascii_mode: true
+    org.gnu.Emacs:
+      ascii_mode: true
+      no_inline: true
+    co.zeit.hyper:
+      ascii_mode: true
+    com.google.Chrome:
+      # 規避 https://github.com/rime/squirrel/issues/435
+      inline: true
+    ru.keepcoder.Telegram:
+      # 規避 https://github.com/rime/squirrel/issues/475
+      inline: true
     com.torusknot.SourceTreeNotMAS:
       ascii_mode: true
     com.googlecode.iterm2:
@@ -163,6 +200,7 @@ patch:
       hilited_candidate_back_color: 0xeefa3a0a
       comment_text_color: 0x5a5a5a
       hilited_comment_text_color: 0xfcac9d
+  
     azure:
       name: 青天／Azure
       author: 佛振 <chen.sst@gmail.com>
@@ -173,6 +211,7 @@ patch:
       hilited_candidate_text_color: 0x7ffeff
       hilited_candidate_back_color: 0x00000000
       comment_text_color: 0xc69664
+  
     luna:
       name: 明月／Luna
       author: 佛振 <chen.sst@gmail.com>
@@ -184,6 +223,7 @@ patch:
       hilited_candidate_back_color: 0x40000000
       comment_text_color: 0xa5a5a5
       hilited_comment_text_color: 0x449c9d
+  
     ink:
       name: 墨池／Ink
       author: 佛振 <chen.sst@gmail.com>
@@ -196,6 +236,7 @@ patch:
       hilited_candidate_back_color: 0xcc000000
       comment_text_color: 0x5a5a5a
       hilited_comment_text_color: 0x808080
+  
     lost_temple:
       name: 孤寺／Lost Temple
       author: 佛振 <chen.sst@gmail.com>, based on ir_black
@@ -206,6 +247,7 @@ patch:
       hilited_candidate_back_color: 0x82e6ca
       comment_text_color: 0xbb82e6ca
       hilited_comment_text_color: 0xbb203d34
+  
     dark_temple:
       name: 暗堂／Dark Temple
       author: 佛振 <chen.sst@gmail.com>, based on ir_black
@@ -217,6 +259,7 @@ patch:
       hilited_candidate_text_color: 0x92f6da
       hilited_candidate_back_color: 0x10000000  # 0x333333
       comment_text_color: 0x606cff
+  
     psionics:
       name: 幽能／Psionics
       author: 雨過之後、佛振
@@ -230,6 +273,7 @@ patch:
       hilited_candidate_back_color: 0xd4bc00
       comment_text_color: 0x808080
       hilited_comment_text_color: 0x444444
+  
     purity_of_form:
       name: 純粹的形式／Purity of Form
       author: 雨過之後、佛振
@@ -241,6 +285,7 @@ patch:
       hilited_candidate_text_color: 0x000000
       hilited_candidate_back_color: 0xfafafa
       comment_text_color: 0x808080
+  
     purity_of_essence:
       name: 純粹的本質／Purity of Essence
       author: 佛振
@@ -252,6 +297,7 @@ patch:
       hilited_candidate_text_color: 0xeeeeee
       hilited_candidate_back_color: 0x444444
       comment_text_color: 0x808080
+  
     starcraft:
       name: 星際我爭霸／StarCraft
       author: Contralisk <contralisk@gmail.com>, original artwork by Blizzard Entertainment
@@ -265,6 +311,7 @@ patch:
       hilited_candidate_back_color: 0x00000000
       comment_text_color: 0x1010d0
       hilited_comment_text_color: 0x1010f0
+  
     google:
       name: 谷歌／Google
       author: skoj <skoj@qq.com>
@@ -278,6 +325,7 @@ patch:
       hilited_candidate_back_color: 0xCE7539 #第一候选项背景
       comment_text_color: 0x6D6D6D #注解文字
       hilited_comment_text_color: 0xEBC6B0 #注解文字高亮
+  
     solarized_rock:
       name: 曬經石／Solarized Rock
       author: "Aben <tntaben@gmail.com>, based on Ethan Schoonover's Solarized color scheme"
@@ -290,6 +338,7 @@ patch:
       hilited_candidate_text_color: 0xffffff
       hilited_candidate_back_color: 0x8236d3
       hilited_comment_text_color: 0x362b00
+  
     clean_white:
       name: 简约白／Clean White
       author: Chongyu Zhu <lembacon@gmail.com>, based on 搜狗「简约白」
@@ -309,6 +358,7 @@ patch:
       hilited_candidate_label_color: 0xa0c98915
       hilited_candidate_text_color: 0xc98915
       hilited_candidate_back_color: 0xeeeeee
+  
     apathy:
       name: 冷漠／Apathy
       author: LIANG Hai
@@ -327,6 +377,7 @@ patch:
       hilited_candidate_text_color: 0xEE6E00  #候选文字颜色
       hilited_candidate_back_color: 0xFFF0E4  #候选文字背景色
       comment_text_color: 0x999999  #拼音等提示文字颜色
+  
     dust:
       name: 浮尘／Dust
       author: Superoutman <asticosmo@gmail.com>
@@ -351,6 +402,7 @@ patch:
       hilited_candidate_back_color: 0xfff0e4             # 第一候选项背景背景色
       hilited_candidate_label_color: 0x555555            # 第一候选项编号颜色
       hilited_comment_text_color: 0x9e9e9e               # 注解文字高亮
+  
     mojave_dark:
       name: 沙漠夜／Mojave Dark
       author: xiehuc <xiehuc@gmail.com>
@@ -361,10 +413,10 @@ patch:
       hilited_corner_radius: 3                # 高亮圆角
       border_height: 6                        # 窗口边界高度，大于圆角半径才生效
       border_width: 6                         # 窗口边界宽度，大于圆角半径才生效
-      border_color_width: 0
       font_face: "PingFangSC"                 # 候选词字体
       font_point: 16                          # 候选字词大小
       label_font_point: 14                    # 候选编号大小
+  
       text_color: 0xdedddd                    # 拼音行文字颜色，24位色值，16进制，BGR顺序
       back_color: 0x252320                    # 候选条背景色
       label_color: 0x888785                   # 预选栏编号颜色
@@ -377,6 +429,42 @@ patch:
       hilited_candidate_label_color: 0xffffff # 第一候选项编号颜色
       comment_text_color: 0xdedddd            # 拼音等提示文字颜色
       #hilited_comment_text_color: 0xdedddd    # 注解文字高亮
+  
+    solarized_light:
+      name: 曬經・日／Solarized Light
+      author: 雪齋 <lyc20041@gmail.com>
+      color_space: display_p3 # Only available on macOS 10.12+
+      back_color: 0xf0E5F6FB #Lab 97, 0, 10
+      border_color: 0xf0EDFFFF #Lab 100, 0, 10
+      preedit_back_color: 0xf0D7E8ED #Lab 92, 0, 10
+      candidate_text_color: 0x3942CB #Lab 50, 65, 45
+      label_color: 0x2566C6 #Lab 55, 45, 65
+      comment_text_color: 0x8144C2 #Lab 50, 65, -5
+      text_color: 0x756E5D #Lab 45, -7, -7
+      hilited_back_color: 0xf0C9DADF #Lab 87, 0, 10
+      hilited_candidate_back_color: 0x403516 #Lab 20, -12, -12
+      hilited_candidate_text_color: 0x989F52 #Lab 60, -35, -5
+      hilited_candidate_label_color: 0xCC8947 #Lab 55, -10, -45
+      hilited_comment_text_color: 0x289989 #Lab 60, -20, 65
+      hilited_text_color: 0xBE706D #Lab 50, 15, -45
+  
+    solarized_dark:
+      name: 曬經・月／Solarized Dark
+      author: 雪齋 <lyc20041@gmail.com>
+      color_space: display_p3 # Only available on macOS 10.12+
+      back_color: 0xf0352A0A #Lab 15, -12, -12
+      border_color: 0xf02A1F00 #Lab 10, -12, -12
+      preedit_back_color: 0xf0403516 #Lab 20, -12, -12
+      candidate_text_color: 0x989F52 #Lab 60, -35, -5
+      label_color: 0xCC8947 #Lab 55, -10, -45
+      comment_text_color: 0x289989 #Lab 60, -20, 65
+      text_color: 0xA1A095 #Lab 65, -05, -02
+      hilited_back_color: 0xf04C4022 #Lab 25, -12, -12
+      hilited_candidate_back_color: 0xD7E8ED #Lab 92, 0, 10
+      hilited_candidate_text_color: 0x3942CB #Lab 50, 65, 45
+      hilited_candidate_label_color: 0x2566C6 #Lab 55, 45, 65
+      hilited_comment_text_color: 0x8144C2 #Lab 50, 65, -5
+      hilited_text_color: 0x2C8BAE #Lab 60, 10, 65
     dark_yakir:
       name: "dark yakir"
       author: "yakirChen <iamyakirchen@outlook.com>"

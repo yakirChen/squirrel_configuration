@@ -95,6 +95,7 @@ export IPFS_PATH=/Volumes/sm/repos/ipfs
 # export IGV_HOME=${LOCAL}/igv
 
 # 开发辅助
+export JADX_HOME=${LOCAL}/jadx
 export VIM_CONFIG_PATH=${HOME}/.vim
 export SQLITE=${LOCAL}/sqlite
 export MYSQL_BASE_DIR=/Volumes/sm/servers/mysql
@@ -263,6 +264,7 @@ export SILVER_SHELL=$0
 
 # ############################################ PATH #################################################
 PATH=${LOCAL}/bin:${LOCAL}/kits:${BREW}/bin:$PATH
+PATH=${JADX_HOME}/bin:$PATH
 PATH=${CMAKE_HOME}/bin:${FLATBUFFERS_HOME}/bin:$PATH
 PATH=${CARGO_HOME}/bin:${M2_HOME}/bin:${SBT_HOME}/bin:${GRADLE_HOME}/bin:${ANT_HOME}/bin:$PATH
 PATH=${ERL_HOME}/bin:$PATH
