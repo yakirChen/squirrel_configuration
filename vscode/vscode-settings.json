@@ -1,6 +1,6 @@
 {
     "window.newWindowDimensions": "inherit",
-    "workbench.colorTheme": "Monokai Dimmed",
+    "workbench.colorTheme": "Visual Studio Light",
     "workbench.iconTheme": "vscode-icons",
     "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}",
     // 字体
@@ -60,7 +60,7 @@
     "java.implementationsCodeLens.enabled": true,
     "java.errors.incompleteClasspath.severity": "ignore",
     "java.configuration.maven.userSettings": "/Users/yakir/Library/Mobile Documents/com~apple~CloudDocs/Developer/maven/settings.xml",
-    "java.home": "/Library/Java/JavaVirtualMachines/jdk1.8.0_271.jdk/Contents/Home",
+    "java.home": "/Library/Java/JavaVirtualMachines/jdk1.8.0_281.jdk/Contents/Home",
     "extensions.ignoreRecommendations": false,
     "update.mode": "manual",
     "update.enableWindowsBackgroundUpdates": false,

@@ -2,7 +2,7 @@
 HIST_STAMPS="yyyy-mm-dd"
 DISABLE_UPDATE_PROMPT=true
 DISABLE_AUTO_UPDATE=true
-export ZSH=${HOME}/.ohmyzsh
+# export ZSH=${HOME}/.ohmyzsh
 ZSH_THEME="jtriley"
 plugins=(
     ant
@@ -288,9 +288,8 @@ PATH=${NASM_HOME}:${YASM_HOME}/bin:${BISON_HOME}/bin:$PATH
 
 export PATH
 
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
 
-unalias mvn
 
 # ########################################## User Alias Commond #####################################
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
@@ -300,11 +299,11 @@ alias zshconfig="sl ~/.zshrc"
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias week='date +%V'
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
-alias recaf="${JAVA_11_HOME}/bin/java -Dapplication.home=${JAVA_11_HOME} -jar ${JARS}/recaf.jar >/dev/null 2>&1 &"
-alias bcv="${JAVA_11_HOME}/bin/java -Dapplication.home=${JAVA_11_HOME} -jar ${JARS}/Bytecode-Viewer.jar >/dev/null 2>&1 &"
+# alias recaf="${JAVA_11_HOME}/bin/java -Dapplication.home=${JAVA_11_HOME} -jar ${JARS}/recaf.jar >/dev/null 2>&1 &"
+# alias bcv="${JAVA_11_HOME}/bin/java -Dapplication.home=${JAVA_11_HOME} -jar ${JARS}/Bytecode-Viewer.jar >/dev/null 2>&1 &"
 alias gitrb="git reset && git checkout -- . && git checkout origin/master &&  git branch -D master && git status && git checkout master && git status"
-alias pg="ps aux|rg $1"
-alias jpg="jps -lv|rg $1"
+# alias pg="ps aux|rg $1"
+# alias jpg="jps -lv|rg $1"
 alias mdutildisto="sudo mdutil -i off -d -X /Volumes/sm ; sudo mdutil -i off /Volumes/sm"
 alias cat=bat
 
@@ -342,7 +341,6 @@ alias gcr1="git clone --recurse-submodules --depth 1 "
 alias antlr4='java -Xmx500M -cp "/Volumes/sm/app/antlr-4.7.2-complete.jar:$CLASSPATH" org.antlr.v4.smol'
 alias grun='java -Xmx500M -cp "/Volumes/sm/app/antlr-4.7.2-complete.jar:$CLASSPATH" org.antlr.v4.gui.TestRig'
 
-unalias gg
 function gg() {
     git_url=${1}
     repo_name=${2}
@@ -397,3 +395,5 @@ setopt share_history          # share command history data
 # unset __conda_setup
 # # <<< conda initialize <<<
 
+
+eval "$(starship init zsh)"

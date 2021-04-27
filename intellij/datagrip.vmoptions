@@ -1,8 +1,8 @@
 -server
 -ea
 -verbose:class
--Xms1024M
--Xmx1536M
+-Xms256M
+-Xmx1024M
 
 -Xdiag
 # -Xlog:gc*:/Volumes/sm/logs/idea/gc_%p.log
@@ -14,8 +14,8 @@
 # -XX:InitialCodeCacheSize=256m
 -XX:+HeapDumpOnOutOfMemoryError
 -XX:-OmitStackTraceInFastThrow
--XX:ErrorFile=/Volumes/sm/logs/idea/java_error_in_idea_%p.log
--XX:HeapDumpPath=/Volumes/sm/logs/idea/dump/java_error_in_idea.hprof
+-XX:ErrorFile=/Volumes/sm/logs/idea/java_error_in_datagrip_%p.log
+-XX:HeapDumpPath=/Volumes/sm/logs/idea/dump/java_error_in_datagrip.hprof
 #-XX:OnStackReplacePercentage=6
 # -XX:+LogTouchedMethods
 #-XX:+PrintCompilation

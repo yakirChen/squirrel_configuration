@@ -1,0 +1,28 @@
+# Rime dictionary
+# encoding: utf-8
+# Luna Pinyin - 明月拼音
+
+---
+name: luna_pinyin.zonghe
+version: "2021.02.21"
+sort: by_weight
+use_preset_vocabulary: false
+...
+
+# 常见中英词汇
+H&M	h m
+Q币	q bi
+QQ号	q q hao
+QQ号码	q q haoma
+QQ会员	q q huiyuan
+QQ空间	q q kongjian
+QQ群	q q qun
+QQ邮箱	q q youxiang
+T恤	t xu
+U盘	u pan
+Up主	u p zhu
+
+# 地区
+🇭🇰	h k	10002
+HK	h k	10001
+Hong Kong	h k	10000

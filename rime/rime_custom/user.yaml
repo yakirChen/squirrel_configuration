@@ -1,8 +1,2 @@
 var:
-  last_build_time: 1613613055
-  option:
-    ascii_punct: true
-  previously_selected_schema: luna_pinyin_simp
-  schema_access_time:
-    luna_pinyin: 1608280861
-    luna_pinyin_simp: 1608289903
+  last_build_time: 1618380697
