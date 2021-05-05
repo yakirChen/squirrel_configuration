@@ -224,15 +224,15 @@ jdk8
 # node 多版本切换
 export NODE10_PATH=${LOCAL}/node10
 export NODE11_PATH=${LOCAL}/node11
-export NODE12_PATH=${LOCAL}/node12
-export NODE14_PATH=${LOCAL}/node14
+# export NODE12_PATH=${LOCAL}/node12
+# export NODE14_PATH=${LOCAL}/node14
 export NODE15_PATH=${LOCAL}/node15
 export NODE_OPTIONS="--max_old_space_size=4096"
 export NPM_GLOBAL=${VLM_REPOS}/npm
 alias node10="export NODE_PATH=${NODE10_PATH}"
 alias node11="export NODE_PATH=${NODE11_PATH}"
-alias node12="export NODE_PATH=${NODE12_PATH}"
-alias node14="export NODE_PATH=${NODE14_PATH}"
+# alias node12="export NODE_PATH=${NODE12_PATH}"
+# alias node14="export NODE_PATH=${NODE14_PATH}"
 alias node15="export NODE_PATH=${NODE15_PATH}"
 export ELECTRON_MIRROR=https://npm.taobao.org/mirrors/electron/
 

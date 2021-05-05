@@ -19,7 +19,7 @@
 [fetch]
 	prune = true
 [pull]
-	ff = only
+	rebase = false
 [color "branch"]
 	current = yellow reverse
 	local = yellow
