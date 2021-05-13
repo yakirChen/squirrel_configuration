@@ -224,19 +224,17 @@ jdk8
 # node 多版本切换
 export NODE10_PATH=${LOCAL}/node10
 export NODE11_PATH=${LOCAL}/node11
-# export NODE12_PATH=${LOCAL}/node12
-# export NODE14_PATH=${LOCAL}/node14
-export NODE15_PATH=${LOCAL}/node15
+export NODE14_PATH=${LOCAL}/node14
+export NODE16_PATH=${LOCAL}/node16
 export NODE_OPTIONS="--max_old_space_size=4096"
 export NPM_GLOBAL=${VLM_REPOS}/npm
 alias node10="export NODE_PATH=${NODE10_PATH}"
 alias node11="export NODE_PATH=${NODE11_PATH}"
-# alias node12="export NODE_PATH=${NODE12_PATH}"
-# alias node14="export NODE_PATH=${NODE14_PATH}"
-alias node15="export NODE_PATH=${NODE15_PATH}"
+alias node14="export NODE_PATH=${NODE14_PATH}"
+alias node16="export NODE_PATH=${NODE16_PATH}"
 export ELECTRON_MIRROR=https://npm.taobao.org/mirrors/electron/
 
-node15
+node14
 
 # export DEF_JAVA_OPTS="-Xms100M -Xmx256M -Xverify:none -XX:ReservedCodeCacheSize=100m -XX:+UseG1GC -XX:+AlwaysPresmuch -XX:+UseNUMA -XX:+UseCompressedOops -XX:-OmitStackTraceInFastThrow -XX:+HeapDumpOnOutOfMemoryErro-XX:+PrintGCDetails \
 # export ES_JAVA_OPTS="-Xms1G -Xmx1G -server -XX:+UseG1GC -XX:+UseNUMA -XX:+UseCompressedOops -XX:+AlwaysPresmuch -XX:SurvivorRatio=8 -XX:+AlwaysPresmuch"
@@ -315,13 +313,14 @@ alias cat=bat
 
 MVN_MB="-Dmaven.compiler.fork=true -T12"
 MVN_TEMPLATE="mvn clean package -DskipTests ${1} -U "
+MVN_COMPILE_TEMPLATE="mvn clean compile -DskipTests ${1} -U "
 alias mvnc="${M2_HOME}/bin/mvn clean"
 alias mvnsrc="${M2_HOME}/bin/mvn dependency:sources"
 alias mvndocs="${M2_HOME}/bin/mvn dependency:resolve -Dclassifier=javadoc"
 alias mvncpst="${MVN_TEMPLATE}"
 alias mvncpstc="${MVN_TEMPLATE} -Pmaven2 ; mvn clean"
-alias mvna="${M2_HOME}/bin/mvn dependency:sources -Paliyun ; ${M2_HOME}/bin/mvn dependency:resolve -Dclassifier=javadoc -Paliyun ; ${MVN_TEMPLATE} -Paliyun ; ${M2_HOME}/bin/mvn clean"
-alias mvna24="mvn -T24 dependency:sources -Papache; mvn -T24 dependency:resolve -Dclassifier=javadoc -Papache; ${MVN_TEMPLATE} -T24 -Pmaven2 ; mvn clean -Papache"
+alias mvna="${M2_HOME}/bin/mvn dependency:sources -Paliyun ; ${M2_HOME}/bin/mvn dependency:resolve -Dclassifier=javadoc -Paliyun ; ${MVN_COMPILE_TEMPLATE} -Paliyun ; ${M2_HOME}/bin/mvn clean"
+alias mvna24="mvn -T24 dependency:sources -Papache; mvn -T24 dependency:resolve -Dclassifier=javadoc -Papache; ${MVN_COMPILE_TEMPLATE} -T24 -Pmaven2 ; mvn clean -Papache"
 alias mvnversion="mvn versions:display-plugin-updates -Pspring -Papache ; mvn -T24 versions:display-property-updates -Pspring -Papache"
 
 alias mx="mx --user-home=${VLM_REPOS}/mx"

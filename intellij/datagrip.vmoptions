@@ -2,7 +2,7 @@
 -ea
 -verbose:class
 -Xms256M
--Xmx1024M
+-Xmx896M
 
 -Xdiag
 # -Xlog:gc*:/Volumes/sm/logs/idea/gc_%p.log

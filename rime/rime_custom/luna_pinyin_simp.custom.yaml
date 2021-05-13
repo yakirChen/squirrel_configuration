@@ -1,9 +1,3 @@
-# __patch:
-# # Rx: emoji:customize:schema=luna_pinyin {
-#   - patch/+:
-#       __include: emoji_suggestion:/patch
-# # }
-
 patch:
   switches:
     - name: ascii_mode
@@ -11,19 +5,18 @@ patch:
       states: ["中文", "西文"]
     - name: full_shape
       states: ["半角", "全角"]
-    - name: zh_simp                      # 繁简转换
+    - name: show_emoji
+      reset: 1
+      states: [ "🈚️️\uFE0E", "🈶️️\uFE0F" ]
+    - name: zh_simp                      # (※1) 繁简转换
       reset: 1
       states: ["漢字", "汉字"]
-    - options: ["utf8", "gbk", "gb2312"] # 字符集选单
-      reset: 0                           # 默认 UTF8
+    - options: ["utf8", "gbk", "gb2312"] # (※2)字符集选单
+      reset: 0                           #     默认 UTF8
       states:
         - UTF-8
         - GBK
         - GB2312
-    - name: show_emoji
-      reset: 1
-      states: [ "🈚️️\uFE0E", "🈶️️\uFE0F" ]
-
   simplifier:
     option_name: zh_simp
     
@@ -31,15 +24,16 @@ patch:
       - simplifier
       - simplifier@emoji_conversion
       - uniquifier
-      - charset_filter@gbk              # GBK 过滤
+      - charset_filter@gbk              # (※3) GBK 过滤
       - single_char_filter
 
   emoji_conversion:
     opencc_config: emoji.json
     option_name: show_emoji
     tags: abc
+    # tips: all    # Emoji 显示注释（去掉 # 开启）
 
-# 改写拼写运算，使得含西文的词汇（luna_pinyin.cn_en.dict.yaml）不影响简拼功能
+# 改写拼写运算，含英文的词汇（luna_pinyin.cn_en.dict.yaml）不影响简拼
   "speller/algebra/@before 0": xform/^([b-df-hj-np-tv-z])$/$1_/
 
 #  载入朙月拼音扩充词库
@@ -53,9 +47,9 @@ patch:
   english:
     dictionary: easy_en
     spelling_hints: 9
-    enable_completion: false     # 是否启用英文输入联想补全
+    enable_completion: false      # 是否启用英文输入联想补全
     enable_sentence: false
-    initial_quality: 1           # 调整英文候选词的位置
+    initial_quality: 1            # 调整英文候选词的位置
 
  # 符号快速输入和部分符号的快速上屏
   punctuator:
@@ -76,22 +70,26 @@ patch:
       "@": "@"
       "=": "="
       '\': "、"
+      "%": "%"
+      "$": ["¥", "$", "€", "£", "¢", "¤"]
+      "|": ["|", "｜", "·", "・", "§", "¦", "‖", "︴"]
       "/": ["/", "÷"]
       "'": { pair: ["「", "」"] }
-      "[": "【"
-      "]": "】"
+      "[": ["【", "〔", "［"]
+      "]": ["】", "〕", "］"]
       "<": "《"
       ">": "》"
-      "*": "*"
+
   recognizer/patterns/punct: "^/([a-z]+|[0-9]0?)$"
 
 # 模糊拼音
-  #'speller/algebra':
-    #- erase/^xx$/                       # 第一行保留
+  'speller/algebra':
+    - erase/^xx$/                      # 第一行保留
 
-    # 模糊音，需要哪组就刪去行首的 # 号
-    #- derive/^([zcs])h/$1/             # zh, ch, sh => z, c, s
-    #- derive/^([zcs])([^h])/$1h$2/     # z, c, s => zh, ch, sh
+    # 模糊音定義
+    # 需要哪組就刪去行首的 # 號，單雙向任選
+    #derive/^([zcs])h/$1/             # zh, ch, sh => z, c, s
+    #derive/^([zcs])([^h])/$1h$2/     # z, c, s => zh, ch, sh
 
     #- derive/^n/l/                     # n => l
     #- derive/^l/n/                     # l => n
@@ -117,18 +115,56 @@ patch:
     #- derive/^([bpmf])eng$/$1ong/      # meng = mong, ...
     #- derive/([ei])n$/$1ng/            # en => eng, in => ing
     #- derive/([ei])ng$/$1n/            # eng => en, ing => in
-    
-    # 智能纠错
-    #- derive/(^[zcs])h([aeiou])ng$/$1hn$2g/   # chnegji = chengji
-    #- derive/ao$/oa/                          # oa = ao
-    #- derive/([iu])a(o|ng?)$/a$1$2/           # aio = iao; aing = iang; aung = uang
-    #- derive/([aeiou])ng$/$1gn/               # gn = ng
-    #- derive/un$/uen/                         # uen = un
-    #- derive/ui$/uei/                         # uei = ui
-    #- derive/iu$/iou/                         # iou = ui
-    #- derive/tie$/tei/                        # tei = tie
-    #- derive/i$/ii/                           # ii = i  # i 不小心按两下
-    #- derive/u$/uu/                           # ui = u  # u 不小心按两下
+
+    # 樣例足夠了，其他請自己總結……
+
+    # 反模糊音？
+    # 誰說方言沒有普通話精確、有模糊音，就能有反模糊音。
+    # 示例爲分尖團的中原官話：
+    #- derive/^ji$/zii/   # 在設計者安排下鳩佔鵲巢，尖音i只好雙寫了
+    #- derive/^qi$/cii/
+    #- derive/^xi$/sii/
+    #- derive/^ji/zi/
+    #- derive/^qi/ci/
+    #- derive/^xi/si/
+    #- derive/^ju/zv/
+    #- derive/^qu/cv/
+    #- derive/^xu/sv/
+    # 韻母部份，只能從大面上覆蓋
+    #- derive/^([bpm])o$/$1eh/          # bo => beh, ...
+    #- derive/(^|[dtnlgkhzcs]h?)e$/$1eh/  # ge => geh, se => sheh, ...
+    #- derive/^([gkh])uo$/$1ue/         # guo => gue, ...
+    #- derive/^([gkh])e$/$1uo/          # he => huo, ...
+    #- derive/([uv])e$/$1o/             # jue => juo, lve => lvo, ...
+    #- derive/^fei$/fi/                 # fei => fi
+    #- derive/^wei$/vi/                 # wei => vi
+    #- derive/^([nl])ei$/$1ui/          # nei => nui, lei => lui
+    #- derive/^([nlzcs])un$/$1vn/       # lun => lvn, zun => zvn, ... 
+    #- derive/^([nlzcs])ong$/$1iong/    # long => liong, song => siong, ...
+    # 這個辦法雖從拼寫上做出了區分，然而受詞典制約，候選字仍是混的。
+    # 只有真正的方音輸入方案纔能做到！但「反模糊音」這個玩法快速而有效！
+
+    # 模糊音定義先於簡拼定義，方可令簡拼支持以上模糊音
+    - abbrev/^([a-z]).+$/$1/           # 簡拼（首字母）
+    - abbrev/^([zcs]h).+$/$1/          # 簡拼（zh, ch, sh）
+
+    # 以下是一組容錯拼寫，《漢語拼音》方案以前者爲正
+    - derive/^([nl])ve$/$1ue/          # nve = nue, lve = lue
+    - derive/^([jqxy])u/$1v/           # ju = jv,
+    - derive/un$/uen/                  # gun = guen,
+    - derive/ui$/uei/                  # gui = guei,
+    - derive/iu$/iou/                  # jiu = jiou,
+
+    # 自動糾正一些常見的按鍵錯誤
+    - derive/([aeiou])ng$/$1gn/        # dagn => dang 
+    - derive/([dtngkhrzcs])o(u|ng)$/$1o/  # zho => zhong|zhou
+    - derive/ong$/on/                  # zhonguo => zhong guo
+    - derive/ao$/oa/                   # hoa => hao
+    - derive/([iu])a(o|ng?)$/a$1$2/    # tain => tian
+
+  # 分尖團後 v => ü 的改寫條件也要相應地擴充：
+  #'translator/preedit_format':
+  #  - "xform/([nljqxyzcs])v/$1ü/"
 
 # librime-lua 输入动态时间和日期
   "engine/translators/@6": lua_translator@date_translator
