@@ -1,4 +1,5 @@
 #!/usr/bin/env zsh
+setopt no_nomatch
 HIST_STAMPS="yyyy-mm-dd"
 DISABLE_UPDATE_PROMPT=true
 DISABLE_AUTO_UPDATE=true
@@ -65,6 +66,7 @@ export RUBY_HOME=${VLM_SERVERS}/ruby
 # export PY2_HOME=${LOCAL}/python2
 export PY3_HOME=${BREW_OPT}/python3
 export GOROOT=${LOCAL}/go
+export GOPROXY=https://mirrors.aliyun.com/goproxy/
 export ERL_HOME=${LOCAL}/otp
 # export RUST_HOME=${LOCAL}/rust
 export CARGO_HOME=${LOCAL}/rust
@@ -159,6 +161,8 @@ export PROTOBUF_HOME=${LOCAL}/protoc
 # repos
 export HASKELL_BIN=${VLM_REPOS}/haskell
 export GRADLE_USER_HOME=${VLM_REPOS}/gradle
+export COURSIER_CACHE=${VLM_REPOS}/coursier
+export COURSIER_INSTALL_DIR=${LOCAL}/coursier
 # export GRADLE_USER_HOME=${TVLM_REPOS}/gradle
 export GEM_HOME=${VLM_REPOS}/gem
 export GEM_PATH=${VLM_REPOS}/gem
@@ -189,6 +193,8 @@ export JAVA_11_HOME=$(/usr/libexec/java_home -v 11)
 #export JAVA_15_HOME=$(/usr/libexec/java_home -v 15)
 export JAVA_16_HOME=$(/usr/libexec/java_home -v 16)
 export JAVA_17_HOME=$(/usr/libexec/java_home -v 17)
+export JAVA_ZERO_SLOWDEBUG_HOME=${HOME}/local/jdk/jdk-17.slowdebug.jdk/Contents/Home
+export JAVA_ZERO_FASTDEBUG_HOME=${HOME}/local/jdk/jdk-17.fastdebug.jdk/Contents/Home
 export GRAALVM_HOME=/Users/yakir/local/graalvm
 #export JAVA_ADOPT_HOT_14_HOME=/Users/yakir/local/jdk/jdk-14.0.1+7/Contents/Home/
 #export JAVA_ZERO_HOME=/Users/yakir/local/jdk-15.jdk/Contents/Home
@@ -210,7 +216,8 @@ alias jdk11="export JAVA_HOME=${JAVA_11_HOME}"
 #alias jdk15="export JAVA_HOME=${JAVA_15_HOME}"
 alias jdk16="export JAVA_HOME=${JAVA_16_HOME}"
 alias jdk17="export JAVA_HOME=${JAVA_17_HOME}"
-#alias zero="export JAVA_HOME=${JAVA_ZERO_HOME}"
+alias zeroslow="export JAVA_HOME=${JAVA_ZERO_SLOWDEBUG_HOME}"
+alias zerofast="export JAVA_HOME=${JAVA_ZERO_FASTDEBUG_HOME}"
 # alias lanai="export JAVA_HOME=${JAVA_LANAI_HOME}"
 #alias loom="export JAVA_HOME=${JAVA_LOOM_HOME}"
 # alias ahjdk14="export JAVA_HOME=${JAVA_ADOPT_HOT_14_HOME}"
@@ -242,6 +249,15 @@ node14
 #export JAVA_OPTS="${DEF_JAVA_OPTS} --illegal-access=deny -XX:HeapDumpPath=${VLM_REPOS}/logs/jvm_error.hprof"
 # export JAVA_OPTS="${DEF_JAVA_OPTS} -XX:HeapDumpPath=${VLM_REPOS}/logs/jvm_error.hprof"
 #export MAVEN_OPTS="${DEF_JAVA_OPTS} -XX:HeapDumpPath=${VLM_REPOS}/logs/maven_java_error.hprof"
+
+# export MAVEN_OPTS="${MAVEN_OPTS} -agentpath:/Users/yakir/Library/Java/Extensions/libConfusing.dylib"
+# export MAVEN_OPTS="${MAVEN_OPTS} -XX:+TraceClassLoading -XX:+TraceClassUnloading -XX:+TraceClassLoadingPreorder -XX:+TraceExceptions"
+
+# export MAVEN_OPTS="${MAVEN_OPTS} -agentpath:/Users/yakir/Developer/think/book/book-instrument/book-confusing/libConfusing.dylib"
+# export MAVEN_OPTS="${MAVEN_OPTS} -Xlog:class+load=info -Xlog:class+unload=info"
+# export MAVEN_OPTS="${MAVEN_OPTS} -Xlog:class+load=info -Xlog:class+unload=info -Xlog:exceptions=info"
+# export MAVEN_OPTS="${MAVEN_OPTS} -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=4000"
+
 export ANT_ARGS="-nouserlib -lib ${LOCAL}/ant/lib"
 export ANT_OPTS="-Djava.io.tmpdir=${VLM_REPOS}/javaiotmp -Divy_install_path=${LOCAL}/ant/lib -Ddest=${VLM_REPOS}/ivy -Divy.default.ivy.user.dir=${VLM_REPOS}/ivy -DdefaultCacheDir=${VLM_REPOS}/ivy"
 export SBT_OPTS="-Dsbt.global.base=${VLM_SERVERS}/sbt -Dsbt.version=1.0.4 -Dsbt.boot.directory=${VLM_REPOS}/sbt/boot -Dsbt.ivy.home=${VLM_REPOS}/ivy2 -Dsbt.override.build.repos=true -Dsbt.repository.config=${VLM_REPOS}/sbt/repositories"
@@ -266,6 +282,7 @@ export SILVER_SHELL=$0
 
 # ############################################ PATH #################################################
 PATH=${LOCAL}/bin:${LOCAL}/kits:${BREW}/bin:$PATH
+PATH=${COURSIER_INSTALL_DIR}:$PATH
 PATH=${JADX_HOME}/bin:$PATH
 PATH=${HUB_HOME}/bin:$PATH
 PATH=${CMAKE_HOME}/bin:${FLATBUFFERS_HOME}/bin:$PATH

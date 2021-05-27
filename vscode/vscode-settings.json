@@ -1,6 +1,6 @@
 {
     "window.newWindowDimensions": "inherit",
-    "workbench.colorTheme": "Quiet Light",
+    "workbench.colorTheme": "Visual Studio Light",
     "workbench.iconTheme": "vscode-icons",
     "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}",
     // 字体
@@ -60,7 +60,7 @@
     "java.implementationsCodeLens.enabled": true,
     "java.errors.incompleteClasspath.severity": "ignore",
     "java.configuration.maven.userSettings": "/Users/yakir/Library/Mobile Documents/com~apple~CloudDocs/Developer/maven/settings.xml",
-    "java.home": "/Library/Java/JavaVirtualMachines/jdk1.8.0_281.jdk/Contents/Home",
+    "java.home": "/Library/Java/JavaVirtualMachines/jdk1.8.0_291.jdk/Contents/Home",
     "extensions.ignoreRecommendations": false,
     "update.mode": "manual",
     "update.enableWindowsBackgroundUpdates": false,
@@ -83,7 +83,7 @@
     // "rust-client.channel": "stable",
     "rust.unstable_features": true,
     "C_Cpp.default.cppStandard": "c++17",
-    "C_Cpp.default.cStandard": "c11",
+    "C_Cpp.default.cStandard": "c17",
     "files.exclude": {
         "**/.classpath": true,
         "**/.CVS": true,
@@ -124,5 +124,6 @@
     "window.openFilesInNewWindow": "on",
     "editor.scrollBeyondLastColumn": 6,
     "editor.smoothScrolling": true,
+    "C_Cpp.default.includePath": ["/Library/Java/JavaVirtualMachines/jdk1.8.0_291.jdk/Contents/Home/include","/Library/Java/JavaVirtualMachines/jdk1.8.0_291.jdk/Contents/Home/include/darwin"],
     // "java.jdt.ls.vmargs": "-noverify -Xmx1G -XX:+UseG1GC -XX:+UseStringDeduplication -javaagent:\"/Users/yakir/.vscode/extensions/gabrielbb.vscode-lombok-0.9.9/server/lombok.jar\"",
 }
