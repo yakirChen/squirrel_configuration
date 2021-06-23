@@ -124,6 +124,10 @@
     "window.openFilesInNewWindow": "on",
     "editor.scrollBeyondLastColumn": 6,
     "editor.smoothScrolling": true,
-    "C_Cpp.default.includePath": ["/Library/Java/JavaVirtualMachines/jdk1.8.0_291.jdk/Contents/Home/include","/Library/Java/JavaVirtualMachines/jdk1.8.0_291.jdk/Contents/Home/include/darwin"],
+    "C_Cpp.default.includePath": [
+        "/Library/Java/JavaVirtualMachines/jdk1.8.0_291.jdk/Contents/Home/include",
+        "/Library/Java/JavaVirtualMachines/jdk1.8.0_291.jdk/Contents/Home/include/darwin"
+    ],
+    "redhat.telemetry.enabled": false,
     // "java.jdt.ls.vmargs": "-noverify -Xmx1G -XX:+UseG1GC -XX:+UseStringDeduplication -javaagent:\"/Users/yakir/.vscode/extensions/gabrielbb.vscode-lombok-0.9.9/server/lombok.jar\"",
 }

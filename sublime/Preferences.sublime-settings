@@ -12,10 +12,13 @@
 	"enable_tab_scrolling": false,
 	"ensure_newline_at_eof_on_save": true,
 	"fade_fold_buttons": true,
-	"font_face": "Source Code Pro Medium",
+	"font_face": "Hack",
 	"font_size": "11",
 	"highlight_line": true,
+	"highlight_gutter": true,
 	"highlight_modified_tabs": true,
+	"margin": 0,
+	"block_caret": false,
 	"ignored_packages":
 	[
 		"ActionScript",
@@ -29,11 +32,13 @@
 		"Groovy",
 		"Haskell",
 		"LaTeX",
+		"Lua",
 		"Matlab",
 		"Objective-C",
 		"Pascal",
 		"Perl",
 		"PHP",
+		"R",
 		"Rails",
 		"RestructuredText",
 		"Ruby",
@@ -41,7 +46,8 @@
 		"Scala",
 		"TCL",
 		"Textile",
-		"Vintage"
+		"Vintage",
+		"XSL",
 	],
 	"indent_guide_options":
 	[
@@ -49,8 +55,8 @@
 		"draw_active"
 	],
 	"line_padding_bottom": 0,
-	"line_padding_top": 0,
-	"node_path": "/Users/yakir/local/node12/bin/node",
+	"line_padding_top": -1,
+	"node_path": "/Users/yakir/local/node14/bin/node",
 	"preview_on_click": false,
 	"rulers":
 	[

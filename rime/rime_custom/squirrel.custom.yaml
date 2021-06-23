@@ -194,6 +194,9 @@ patch:
       author: "yakirChen <iamyakirchen@outlook.com>"
       horizontal: true                              # 水平排列
       inline_preedit: true
+      candidate_list_layout: linear
+      text_orientation: horizontal
+      color_space: srgb
       candidate_format: "%c %@"
       corner_radius: 6
       border_height: 6
