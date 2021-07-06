@@ -7,7 +7,7 @@
     "editor.fontFamily": "Hack",
     "editor.renderWhitespace": "all",
     // 控制行高。使用 0 通过字号计算行高。
-    "editor.lineHeight": 13,
+    "editor.lineHeight": 12,
     // 显示控制字符
     "editor.renderControlCharacters": true,
     "editor.cursorStyle": "line-thin",
@@ -76,13 +76,14 @@
     "markdown.preview.fontSize": 12,
     // markdown预览行高
     "markdown.preview.lineHeight": 1,
-    "markdown.preview.fontFamily": "-apple-system, BlinkMacSystemFont, 'Source Code Pro', 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif",
+    "markdown.preview.fontFamily": "-apple-system, Hack, BlinkMacSystemFont, 'Source Code Pro', 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif",
     "editor.tokenColorCustomizations": {},
     "scm.diffDecorationsGutterWidth": 1,
     "rust-client.channel": "nightly",
     // "rust-client.channel": "stable",
     "rust.unstable_features": true,
-    "C_Cpp.default.cppStandard": "c++17",
+    "C_Cpp.default.cppStandard": "c++20",
+    // 等价于 c18
     "C_Cpp.default.cStandard": "c17",
     "files.exclude": {
         "**/.classpath": true,
@@ -98,7 +99,7 @@
     "rust.all_features": true,
     "rust.cfg_test": true,
     "rust-client.revealOutputChannelOn": "info",
-    "workbench.tree.indent": 6,
+    "workbench.tree.indent": 8,
     "breadcrumbs.enabled": true,
     "workbench.editor.tabSizing": "shrink",
     "files.insertFinalNewline": true,
@@ -113,6 +114,7 @@
     "asciidoc.preview.lineHeight": 1,
     "explorer.openEditors.visible": 0,
     "C_Cpp.updateChannel": "Insiders",
+    "cmake.cmakePath": "/Users/yakir/local/brew/bin/cmake",
     "rust-client.rustupPath": "/Users/yakir/local/rust/bin/rustup",
     "materialTheme.accent": "Bright Teal",
     "http.proxySupport": "off",
@@ -129,5 +131,8 @@
         "/Library/Java/JavaVirtualMachines/jdk1.8.0_291.jdk/Contents/Home/include/darwin"
     ],
     "redhat.telemetry.enabled": false,
+    "cmake.configureOnOpen": true,
+    "editor.fontSize": 11,
+    "security.workspace.trust.untrustedFiles": "open",
     // "java.jdt.ls.vmargs": "-noverify -Xmx1G -XX:+UseG1GC -XX:+UseStringDeduplication -javaagent:\"/Users/yakir/.vscode/extensions/gabrielbb.vscode-lombok-0.9.9/server/lombok.jar\"",
 }

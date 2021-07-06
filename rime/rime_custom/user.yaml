@@ -1,2 +1,5 @@
 var:
-  last_build_time: 1624421270
+  last_build_time: 1625574120
+  previously_selected_schema: luna_pinyin_simp
+  schema_access_time:
+    luna_pinyin_simp: 1625573018

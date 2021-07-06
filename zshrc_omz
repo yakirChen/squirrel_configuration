@@ -226,6 +226,7 @@ alias graal="export JAVA_HOME=${GRAAL_HOME} && \
 # export PATH=$JAVA_HOME/bin:$PATH"
 # alias zulujdk8="export JAVA_HOME=${ZULU_JDK_18_HOME}"
 # alias zulujdk9="export JAVA_HOME=${ZULU_JDK_19_HOME}"
+alias ydll="ydl --proxy socks5://127.0.0.1:1080 --write-sub --all-subs --yes-playlist "
 
 jdk8
 

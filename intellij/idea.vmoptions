@@ -2,7 +2,7 @@
 -ea
 -verbose:class
 -Xms1024M
--Xmx1536M
+-Xmx1536m
 
 -Xdiag
 # -Xlog:gc*:/Volumes/sm/logs/idea/gc_%p.log
@@ -40,7 +40,7 @@
 -XX:G1HeapRegionSize=2M
 # -XX:+PrintHeapAtGC
 -XX:MetaspaceSize=640M
--XX:MaxMetaspaceSize=640M
+-XX:MaxMetaspaceSize=640m
 -XX:MaxMetaspaceFreeRatio=70
 -XX:MinMetaspaceFreeRatio=40
 -XX:MinMetaspaceExpansion=332K

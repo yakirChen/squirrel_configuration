@@ -28,4 +28,4 @@ patch:
   # "speller/algebra/@before 0": xform/^([b-df-hj-np-tv-z])$/$1_/
 
 #  载入朙月拼音扩充词库
-  "translator/dictionary": luna_pinyin.extended
+  # "translator/dictionary": luna_pinyin.extended
